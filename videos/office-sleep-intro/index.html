@@ -1,0 +1,604 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1920, height=1080" />
+    <script src="vendor/gsap.min.js"></script>
+    <style>
+      @font-face {
+        font-family: "Noto Serif KR";
+        font-weight: 400;
+        font-style: normal;
+        font-display: block;
+        src: url("public/fonts/NotoSerifKR-400.woff2") format("woff2");
+      }
+      @font-face {
+        font-family: "Noto Serif KR";
+        font-weight: 500;
+        font-style: normal;
+        font-display: block;
+        src: url("public/fonts/NotoSerifKR-500.woff2") format("woff2");
+      }
+      @font-face {
+        font-family: "Noto Serif KR";
+        font-weight: 700;
+        font-style: normal;
+        font-display: block;
+        src: url("public/fonts/NotoSerifKR-700.woff2") format("woff2");
+      }
+      @font-face {
+        font-family: "JetBrains Mono";
+        font-weight: 500;
+        font-style: normal;
+        font-display: block;
+        src: url("public/fonts/JetBrainsMono-500.woff2") format("woff2");
+      }
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      html, body {
+        margin: 0;
+        width: 1920px;
+        height: 1080px;
+        overflow: hidden;
+        background: #efe7d4;
+        color: #1a1a17;
+        font-family: "Noto Serif KR", serif;
+        font-feature-settings: "kern" 1, "liga" 1;
+        -webkit-font-smoothing: antialiased;
+      }
+
+      /* ---- Design tokens (Editorial Forest, Korean-swapped) ---- */
+      :root {
+        --green: #2e4a2a;
+        --green-deep: #243a21;
+        --green-lite: #3a5a36;
+        --pink: #e89cb1;
+        --pink-deep: #d27e96;
+        --pink-text: #9c3f5a;
+        --cream: #efe7d4;
+        --cream-2: #e6dcc4;
+        --ink: #1a1a17;
+        --pad: 128px;
+        --rule: 2px;
+        --serif: "Noto Serif KR", serif;
+        --sans: "Noto Serif KR", serif;
+        --mono: "JetBrains Mono", monospace;
+      }
+
+      /* ---- Root canvas ---- */
+      #root {
+        position: relative;
+        width: 1920px;
+        height: 1080px;
+        background: var(--cream);
+        overflow: hidden;
+      }
+
+      /* ---- Scene container ---- */
+      .scene {
+        position: absolute;
+        inset: 0;
+        opacity: 0;
+        will-change: opacity, transform;
+      }
+      .scene .stage {
+        position: absolute;
+        inset: 0;
+        padding: var(--pad);
+        display: flex;
+        flex-direction: column;
+      }
+
+      /* ---- Chrome (topbar / footline) ---- */
+      .topbar {
+        position: absolute;
+        top: 60px;
+        left: var(--pad);
+        right: var(--pad);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-family: var(--mono);
+        font-size: 22px;
+        font-weight: 500;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+        color: var(--green);
+      }
+      .topbar .num { color: var(--pink-text); }
+      .footline {
+        position: absolute;
+        bottom: 60px;
+        left: var(--pad);
+        right: var(--pad);
+        display: flex;
+        justify-content: space-between;
+        font-family: var(--mono);
+        font-size: 20px;
+        font-weight: 500;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        color: var(--green-lite);
+      }
+      .on-green .topbar { color: var(--cream); }
+      .on-green .topbar .num { color: var(--pink); }
+      .on-green .footline { color: var(--cream-2); }
+
+      /* ---- Grounds ---- */
+      .ground-cream { background: var(--cream); }
+      .ground-green { background: var(--green); color: var(--cream); }
+
+      /* ---- Reveal atoms ---- */
+      .line {
+        display: block;
+      }
+      .line > span {
+        display: inline-block;
+        opacity: 0;
+        will-change: opacity, transform;
+      }
+
+      /* ---- Type scales ---- */
+      .kicker {
+        font-family: var(--mono);
+        font-size: 24px;
+        font-weight: 500;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        color: var(--pink-text);
+        margin-bottom: 32px;
+      }
+      .on-green .kicker { color: var(--pink); }
+
+      .title-hero {
+        font-family: var(--serif);
+        font-weight: 500;
+        font-size: 148px;
+        line-height: 1.14;
+        letter-spacing: -0.02em;
+        color: var(--green);
+      }
+      .on-green .title-hero { color: var(--cream); }
+      .title-hero em {
+        font-style: normal;
+        color: var(--pink-text);
+      }
+      .on-green .title-hero em { color: var(--pink); }
+
+      .headline {
+        font-family: var(--serif);
+        font-weight: 500;
+        font-size: 108px;
+        line-height: 1.18;
+        letter-spacing: -0.02em;
+        color: var(--green);
+      }
+      .on-green .headline { color: var(--cream); }
+      .headline em {
+        font-style: normal;
+        color: var(--pink-text);
+      }
+      .on-green .headline em { color: var(--pink); }
+
+      .subhead {
+        font-family: var(--serif);
+        font-weight: 500;
+        font-size: 76px;
+        line-height: 1.22;
+        letter-spacing: -0.015em;
+        color: var(--green);
+      }
+      .on-green .subhead { color: var(--cream); }
+
+      .body-lead {
+        font-family: var(--sans);
+        font-weight: 400;
+        font-size: 34px;
+        line-height: 1.55;
+        color: var(--ink);
+        max-width: 1200px;
+      }
+      .on-green .body-lead { color: var(--cream-2); }
+
+      /* ---- Layout helpers ---- */
+      .centered {
+        justify-content: center;
+      }
+      .row {
+        display: flex;
+        gap: 96px;
+        align-items: stretch;
+      }
+      .col {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+      }
+      .col .day-label {
+        font-family: var(--mono);
+        font-size: 22px;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+        color: var(--pink-text);
+        padding-bottom: 20px;
+        border-bottom: 2px solid var(--green);
+      }
+      .col .day-value {
+        font-family: var(--serif);
+        font-weight: 500;
+        font-size: 96px;
+        line-height: 1.1;
+        letter-spacing: -0.02em;
+        color: var(--green);
+      }
+      .col .day-note {
+        font-family: var(--sans);
+        font-weight: 400;
+        font-size: 30px;
+        line-height: 1.5;
+        color: var(--ink);
+        max-width: 560px;
+      }
+
+      /* Time strip visual — the "irregular time" idea */
+      .strip {
+        display: flex;
+        align-items: flex-end;
+        gap: 6px;
+        margin-top: 48px;
+        height: 120px;
+      }
+      .strip .bar {
+        width: 44px;
+        background: var(--green);
+        border-radius: 3px 3px 0 0;
+        transform-origin: bottom center;
+      }
+      .strip .bar.accent { background: var(--pink-deep); }
+
+      /* Numbered list for agenda */
+      .agenda {
+        display: flex;
+        flex-direction: column;
+        gap: 40px;
+        margin-top: 24px;
+        max-width: 1500px;
+      }
+      .agenda .item {
+        display: grid;
+        grid-template-columns: 120px 1fr;
+        gap: 40px;
+        align-items: baseline;
+        padding-bottom: 28px;
+        border-bottom: 2px solid rgba(239, 231, 212, 0.25);
+      }
+      .agenda .item:last-child { border-bottom: 0; }
+      .agenda .num {
+        font-family: var(--mono);
+        font-weight: 500;
+        font-size: 40px;
+        letter-spacing: 0.06em;
+        color: var(--pink);
+      }
+      .agenda .text {
+        font-family: var(--serif);
+        font-weight: 500;
+        font-size: 62px;
+        line-height: 1.25;
+        letter-spacing: -0.01em;
+        color: var(--cream);
+      }
+      .agenda .text em {
+        font-style: normal;
+        color: var(--pink);
+      }
+
+      /* Bonus preview chips */
+      .chips {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 24px;
+        margin-top: 56px;
+      }
+      .chip {
+        font-family: var(--sans);
+        font-weight: 500;
+        font-size: 36px;
+        color: var(--green);
+        padding: 22px 40px;
+        border: 2px solid var(--green);
+        border-radius: 999px;
+        background: var(--cream-2);
+      }
+      .chip.pink {
+        color: var(--green-deep);
+        background: var(--pink);
+        border-color: var(--green);
+      }
+
+      /* End card */
+      .endcard {
+        text-align: left;
+      }
+      .endcard .hint {
+        font-family: var(--mono);
+        font-size: 24px;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        color: var(--pink-text);
+        margin-top: 40px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div
+      id="root"
+      data-composition-id="main"
+      data-start="0"
+      data-duration="47"
+      data-width="1920"
+      data-height="1080"
+    >
+      <!-- ============ Scene 1 · Title (0.0 – 4.2s) ============ -->
+      <div class="scene clip ground-cream" id="s1"
+           data-start="0" data-duration="4.4" data-track-index="1">
+        <div class="topbar">
+          <span>SLEEP · EP.01 INTRO</span>
+          <span class="num">01 / 07</span>
+        </div>
+        <div class="stage centered">
+          <div class="kicker" id="s1-kicker">직장인 수면 시리즈 · 01</div>
+          <h1 class="title-hero">
+            <span class="line rmask"><span id="s1-l1">직장인의 수면 시간이</span></span>
+            <span class="line rmask"><span id="s1-l2"><em>불규칙</em>해지면 생기는 일</span></span>
+          </h1>
+        </div>
+        <div class="footline">
+          <span>SLEEP · WORK · RHYTHM</span>
+          <span>00 : 00</span>
+        </div>
+      </div>
+
+      <!-- ============ Scene 2 · Hook question (4.2 – 9.6s) ============ -->
+      <div class="scene clip ground-cream" id="s2"
+           data-start="4.2" data-duration="5.6" data-track-index="2">
+        <div class="topbar">
+          <span>QUESTION</span>
+          <span class="num">02 / 07</span>
+        </div>
+        <div class="stage centered">
+          <div class="kicker" id="s2-kicker">잠깐, 스스로에게</div>
+          <h2 class="headline">
+            <span class="line rmask"><span id="s2-l1">평일과 주말,</span></span>
+            <span class="line rmask"><span id="s2-l2">각각 <em>몇 시</em>에 잠드시나요?</span></span>
+          </h2>
+        </div>
+      </div>
+
+      <!-- ============ Scene 3 · Weekday vs Weekend (9.6 – 17.6s) ============ -->
+      <div class="scene clip ground-cream" id="s3"
+           data-start="9.6" data-duration="8.2" data-track-index="3">
+        <div class="topbar">
+          <span>WEEKDAY VS WEEKEND</span>
+          <span class="num">03 / 07</span>
+        </div>
+        <div class="stage" style="justify-content: center;">
+          <div class="kicker" id="s3-kicker">엇갈리는 두 개의 리듬</div>
+          <div class="row" id="s3-row" style="margin-top: 24px;">
+            <div class="col" id="s3-c1">
+              <div class="day-label">평일 · MON – FRI</div>
+              <div class="day-value">억지로<br/>이른 기상</div>
+              <div class="day-note">출근 시간에 맞춰 알람으로 몸을 깨웁니다.</div>
+            </div>
+            <div class="col" id="s3-c2" style="border-left: 2px solid var(--green); padding-left: 96px;">
+              <div class="day-label" style="color: var(--pink-text);">주말 · SAT – SUN</div>
+              <div class="day-value" style="color: var(--pink-text);">점심까지<br/>몰아 잠</div>
+              <div class="day-note">밀린 잠을 한꺼번에 보충하려 합니다.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ============ Scene 4 · Late nights / early mornings (17.6 – 24.8s) ============ -->
+      <div class="scene clip ground-cream" id="s4"
+           data-start="17.6" data-duration="7.4" data-track-index="4">
+        <div class="topbar">
+          <span>WHEN LIFE INTERRUPTS</span>
+          <span class="num">04 / 07</span>
+        </div>
+        <div class="stage" style="justify-content: center;">
+          <div class="kicker" id="s4-kicker">그리고 예외의 날들</div>
+          <h2 class="headline" style="max-width: 1500px;">
+            <span class="line rmask"><span id="s4-l1">야근·회식엔 <em>새벽</em>에 잠들고,</span></span>
+            <span class="line rmask"><span id="s4-l2">다음 날엔 다시 일찍 일어나죠.</span></span>
+          </h2>
+          <div class="strip" id="s4-strip" aria-hidden="true">
+            <span class="bar" style="height: 60%"></span>
+            <span class="bar" style="height: 90%"></span>
+            <span class="bar" style="height: 45%"></span>
+            <span class="bar accent" style="height: 100%"></span>
+            <span class="bar" style="height: 40%"></span>
+            <span class="bar" style="height: 78%"></span>
+            <span class="bar accent" style="height: 30%"></span>
+            <span class="bar" style="height: 62%"></span>
+            <span class="bar" style="height: 88%"></span>
+            <span class="bar" style="height: 52%"></span>
+            <span class="bar" style="height: 74%"></span>
+            <span class="bar accent" style="height: 96%"></span>
+            <span class="bar" style="height: 46%"></span>
+            <span class="bar" style="height: 68%"></span>
+          </div>
+        </div>
+      </div>
+
+      <!-- ============ Scene 5 · The problem (24.8 – 31.2s) ============ -->
+      <div class="scene clip ground-cream" id="s5"
+           data-start="24.8" data-duration="6.6" data-track-index="5">
+        <div class="topbar">
+          <span>THE HIDDEN COST</span>
+          <span class="num">05 / 07</span>
+        </div>
+        <div class="stage centered">
+          <div class="kicker" id="s5-kicker">그래서 이런 일이 생깁니다</div>
+          <h2 class="title-hero" style="font-size: 132px;">
+            <span class="line rmask"><span id="s5-l1">충분히 잤다고 <em>느껴도</em></span></span>
+            <span class="line rmask"><span id="s5-l2">계속 <em>피곤</em>합니다.</span></span>
+          </h2>
+        </div>
+      </div>
+
+      <!-- ============ Scene 6 · Today's agenda (31.2 – 39.8s) ============ -->
+      <div class="scene clip ground-green on-green" id="s6"
+           data-start="31.2" data-duration="8.8" data-track-index="6">
+        <div class="topbar">
+          <span>오늘 다룰 것 · TODAY'S BRIEF</span>
+          <span class="num">06 / 07</span>
+        </div>
+        <div class="stage" style="justify-content: center;">
+          <h3 class="subhead" style="max-width: 1500px; color: var(--cream);">
+            <span class="line rmask"><span id="s6-l1">오늘, 이 세 가지를 정리합니다.</span></span>
+          </h3>
+          <div class="agenda" id="s6-agenda">
+            <div class="item">
+              <div class="num">01</div>
+              <div class="text">직장인에게 <em>필요한 수면 시간</em>은 몇 시간인가</div>
+            </div>
+            <div class="item">
+              <div class="num">02</div>
+              <div class="text"><em>규칙적으로</em> 자면 무엇이 좋아지는가</div>
+            </div>
+            <div class="item">
+              <div class="num">03</div>
+              <div class="text"><em>불규칙하면</em> 어떤 문제가 생기는가</div>
+            </div>
+          </div>
+        </div>
+        <div class="footline">
+          <span>SERIES · EP.01</span>
+          <span>KEEP IT SIMPLE</span>
+        </div>
+      </div>
+
+      <!-- ============ Scene 7 · Bonus / outro (39.8 – 46.5s) ============ -->
+      <div class="scene clip ground-cream" id="s7"
+           data-start="39.8" data-duration="7.0" data-track-index="7">
+        <div class="topbar">
+          <span>BONUS</span>
+          <span class="num">07 / 07</span>
+        </div>
+        <div class="stage endcard" style="justify-content: center;">
+          <div class="kicker" id="s7-kicker">잠들기 어려운 분들을 위해</div>
+          <h2 class="headline" style="max-width: 1600px;">
+            <span class="line rmask"><span id="s7-l1">도움 되는 <em>음식·성분·습관</em>도</span></span>
+            <span class="line rmask"><span id="s7-l2">함께 이야기합니다.</span></span>
+          </h2>
+          <div class="chips" id="s7-chips">
+            <span class="chip">음식</span>
+            <span class="chip pink">성분</span>
+            <span class="chip">생활 습관</span>
+          </div>
+          <div class="hint" id="s7-hint">계속 이어집니다 →</div>
+        </div>
+      </div>
+
+      <!-- ============ Narration audio ============ -->
+      <audio
+        id="narration"
+        class="clip"
+        data-start="0"
+        data-duration="45.76"
+        data-track-index="0"
+        src="public/A1.wav"
+        preload="auto"
+      ></audio>
+    </div>
+
+    <script>
+      window.__timelines = window.__timelines || {};
+      const tl = gsap.timeline({ paused: true, defaults: { ease: "power2.out" } });
+
+      // Utility: scene enter/exit crossfade
+      function fadeIn(sel, at, dur = 0.45) {
+        tl.fromTo(sel, { opacity: 0, y: 8 }, { opacity: 1, y: 0, duration: dur }, at);
+      }
+      function fadeOut(sel, at, dur = 0.35) {
+        tl.to(sel, { opacity: 0, duration: dur, ease: "power1.in" }, at);
+      }
+      // Text reveal: opacity + subtle upward slide (no overflow tricks)
+      function reveal(sel, at, dur = 0.7, delay = 0) {
+        tl.fromTo(sel,
+          { opacity: 0, y: 24 },
+          { opacity: 1, y: 0, duration: dur, ease: "power3.out" },
+          at + delay);
+      }
+
+      /* ---- Scene 1 · 0.0 – 4.4 ---- */
+      fadeIn("#s1", 0.0, 0.5);
+      tl.fromTo("#s1-kicker", { opacity: 0, y: 8 }, { opacity: 1, y: 0, duration: 0.5 }, 0.15);
+      reveal("#s1-l1", 0.35, 0.75);
+      reveal("#s1-l2", 0.35, 0.75, 0.22);
+      fadeOut("#s1", 4.05, 0.35);
+
+      /* ---- Scene 2 · 4.2 – 9.8 ---- */
+      fadeIn("#s2", 4.2, 0.4);
+      tl.fromTo("#s2-kicker", { opacity: 0, y: 8 }, { opacity: 1, y: 0, duration: 0.4 }, 4.35);
+      reveal("#s2-l1", 4.6, 0.75);
+      reveal("#s2-l2", 4.6, 0.75, 0.28);
+      fadeOut("#s2", 9.45, 0.35);
+
+      /* ---- Scene 3 · 9.6 – 17.8 ---- */
+      fadeIn("#s3", 9.6, 0.4);
+      tl.fromTo("#s3-kicker", { opacity: 0, y: 8 }, { opacity: 1, y: 0, duration: 0.4 }, 9.75);
+      tl.fromTo("#s3-c1", { opacity: 0, x: -16 }, { opacity: 1, x: 0, duration: 0.6 }, 10.1);
+      tl.fromTo("#s3-c2", { opacity: 0, x: 16 }, { opacity: 1, x: 0, duration: 0.6 }, 13.4);
+      fadeOut("#s3", 17.4, 0.35);
+
+      /* ---- Scene 4 · 17.6 – 25.0 ---- */
+      fadeIn("#s4", 17.6, 0.4);
+      tl.fromTo("#s4-kicker", { opacity: 0, y: 8 }, { opacity: 1, y: 0, duration: 0.4 }, 17.75);
+      reveal("#s4-l1", 18.0, 0.75);
+      reveal("#s4-l2", 18.0, 0.75, 0.3);
+      // Bars stagger — the "irregular" motion, subtle
+      tl.to("#s4-strip .bar", {
+        scaleY: 1,
+        duration: 0.55,
+        ease: "power3.out",
+        stagger: { each: 0.045, from: "start" },
+      }, 19.7);
+      fadeOut("#s4", 24.65, 0.35);
+
+      /* ---- Scene 5 · 24.8 – 31.4 ---- */
+      fadeIn("#s5", 24.8, 0.4);
+      tl.fromTo("#s5-kicker", { opacity: 0, y: 8 }, { opacity: 1, y: 0, duration: 0.4 }, 24.95);
+      reveal("#s5-l1", 25.2, 0.75);
+      reveal("#s5-l2", 25.2, 0.75, 0.35);
+      fadeOut("#s5", 31.05, 0.35);
+
+      /* ---- Scene 6 · 31.2 – 40.0 ---- */
+      fadeIn("#s6", 31.2, 0.5);
+      reveal("#s6-l1", 31.55, 0.7);
+      const agendaItems = "#s6-agenda .item";
+      tl.fromTo(agendaItems,
+        { opacity: 0, y: 24 },
+        { opacity: 1, y: 0, duration: 0.55, stagger: 1.7 },
+        33.0);
+      fadeOut("#s6", 39.65, 0.35);
+
+      /* ---- Scene 7 · 39.8 – 46.5 ---- */
+      fadeIn("#s7", 39.8, 0.4);
+      tl.fromTo("#s7-kicker", { opacity: 0, y: 8 }, { opacity: 1, y: 0, duration: 0.4 }, 39.95);
+      reveal("#s7-l1", 40.2, 0.75);
+      reveal("#s7-l2", 40.2, 0.75, 0.28);
+      tl.fromTo("#s7-chips .chip",
+        { opacity: 0, y: 16 },
+        { opacity: 1, y: 0, duration: 0.45, stagger: 0.12 },
+        42.0);
+      tl.fromTo("#s7-hint", { opacity: 0 }, { opacity: 1, duration: 0.5 }, 43.6);
+      // Hold to the end; a soft ease-out on the whole scene
+      tl.to("#s7", { opacity: 1, duration: 0.4 }, 46.1);
+
+      window.__timelines["main"] = tl;
+    </script>
+  </body>
+</html>
