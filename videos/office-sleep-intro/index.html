@@ -541,7 +541,7 @@
       <!-- ================================================================ -->
       <!-- Scene 5 · The hidden cost (23.85 – 27.40) — audio block G: 24.00–27.10 -->
       <!-- ================================================================ -->
-      <div class="scene clip" id="s5" data-start="23.85" data-duration="3.30" data-track-index="6">
+      <div class="scene clip" id="s5" data-start="23.85" data-duration="2.85" data-track-index="6">
         <div class="topbar" data-layout-allow-overlap>
           <div class="l">
             <div class="row1"><span class="dot"></span><span>SLEEP · 수면 시리즈</span></div>
@@ -563,7 +563,7 @@
       <!-- Scene 6 · Today's brief (27.30 – 40.80) -->
       <!--   audio H: 27.48–32.57 (item 01)   I: 32.96–36.65 (item 02)   J: 37.00–40.60 (item 03) -->
       <!-- ================================================================ -->
-      <div class="scene clip" id="s6" data-start="27.15" data-duration="13.55" data-track-index="7">
+      <div class="scene clip" id="s6" data-start="26.70" data-duration="13.60" data-track-index="7">
         <div class="topbar" data-layout-allow-overlap>
           <div class="l">
             <div class="row1"><span class="dot"></span><span>SLEEP · 수면 시리즈</span></div>
@@ -595,7 +595,7 @@
       <!--   audio K: 41.03–43.11 (그리고 잠들기 어려운 분들에게 도움이 될 수 있는) -->
       <!--   audio L: 43.57–45.76 (음식과 성분, 생활 습관도 함께) -->
       <!-- ================================================================ -->
-      <div class="scene clip" id="s7" data-start="40.60" data-duration="6.40" data-track-index="8">
+      <div class="scene clip" id="s7" data-start="40.30" data-duration="6.70" data-track-index="8">
         <div class="topbar" data-layout-allow-overlap>
           <div class="l">
             <div class="row1"><span class="dot"></span><span>SLEEP · 수면 시리즈</span></div>
@@ -643,11 +643,11 @@
       function sceneOut(sel, at, dur = 0.28) {
         tl.to(sel, { opacity: 0, duration: dur, ease: "power1.in" }, at);
       }
-      // Text/line reveal — opacity + small y (12px), 380ms
+      // Text/line reveal — opacity + small y, sine.out eases faster to full opacity
       function reveal(sel, at, dur = 0.4, delay = 0) {
         tl.fromTo(sel,
-          { opacity: 0, y: 14 },
-          { opacity: 1, y: 0, duration: dur, ease: "power3.out" },
+          { opacity: 0, y: 12 },
+          { opacity: 1, y: 0, duration: dur, ease: "sine.out" },
           at + delay);
       }
       // Rule / bar grow
@@ -707,39 +707,40 @@
       reveal("#s45-l2", 21.73, 0.4, 0.22);
       sceneOut("#s45", 23.77);
 
-      /* ========= Scene 5 · 23.85 → 27.15 (block G speech 24.00–27.10) ========= */
-      sceneIn("#s5", 23.75, 0.14);
-      reveal("#s5-kicker", 23.80, 0.28);
-      reveal("#s5-l1", 23.85, 0.30);
-      reveal("#s5-l2", 23.85, 0.30, 0.18);
-      grow("#s5-rule", 24.60, 0.4);
-      sceneOut("#s5", 27.00, 0.16);
+      /* ========= Scene 5 · 23.85 → 26.70 (block G 24.00–27.10) ========= */
+      sceneIn("#s5", 23.65, 0.14);
+      reveal("#s5-kicker", 23.68, 0.24);
+      reveal("#s5-l1", 23.72, 0.26);
+      reveal("#s5-l2", 23.72, 0.26, 0.16);
+      grow("#s5-rule", 24.45, 0.4);
+      sceneOut("#s5", 26.55, 0.14);
 
-      /* ========= Scene 6 · 27.15 → 40.70 (speech H 27.47 · I 32.95 · J 37.00) ========= */
-      sceneIn("#s6", 27.10, 0.16);
-      // Kicker up front — visible before H starts speaking at 27.47
-      reveal("#s6-kicker", 27.15, 0.28);
-      // Item 01 in place ~50ms BEFORE H at 27.47 → target visible 27.42
-      // reveal 0.28s → set reveal_at = 27.14; also parent opacity must be 1 by then
-      reveal("#s6-i1", 27.14, 0.28);
-      // Item 02 before I at 32.95 → visible 32.90 → reveal_at 32.62
-      reveal("#s6-i2", 32.62, 0.28);
-      // Item 03 before J at 37.00 → visible 36.95 → reveal_at 36.67
-      reveal("#s6-i3", 36.67, 0.28);
-      sceneOut("#s6", 40.55, 0.16);
+      /* ========= Scene 6 · 26.70 → 40.30 (H 27.47 · I 32.95 · J 37.00) ========= */
+      // Aim: each item fully visible ~500 ms BEFORE its narration block
+      sceneIn("#s6", 26.65, 0.14);
+      reveal("#s6-kicker", 26.70, 0.24);
+      // Item 01: target visible 26.95 (520 ms before H at 27.47) → reveal_at 26.71
+      reveal("#s6-i1", 26.71, 0.24);
+      // Item 02: target visible 32.42 (530 ms before I at 32.95) → reveal_at 32.18
+      reveal("#s6-i2", 32.18, 0.24);
+      // Item 03: target visible 36.47 (530 ms before J at 37.00) → reveal_at 36.23
+      reveal("#s6-i3", 36.23, 0.24);
+      sceneOut("#s6", 40.15, 0.14);
 
-      /* ========= Scene 7 · 40.60 → 47.00 (speech K 41.01 · L 43.52) ========= */
-      sceneIn("#s7", 40.55, 0.16);
-      // Kicker + headline in place before K at 41.01 → visible 40.95 → reveal_at 40.67
-      reveal("#s7-kicker", 40.65, 0.28);
-      reveal("#s7-l1", 40.67, 0.28);
-      reveal("#s7-l2", 40.67, 0.28, 0.18);
-      // Chips stagger before / during L at 43.52 → first chip visible ~43.45 → reveal_at 43.17
-      tl.fromTo("#s7-chips .chip",
-        { opacity: 0, y: 12 },
-        { opacity: 1, y: 0, duration: 0.28, ease: "power3.out", stagger: 0.12 },
-        43.17);
-      reveal("#s7-hint", 45.10, 0.35);
+      /* ========= Scene 7 · 40.30 → 47.00 (K 41.01 · L 43.52) ========= */
+      sceneIn("#s7", 40.25, 0.14);
+      // Kicker + headline: target visible 40.55 (460 ms before K at 41.01) → reveal_at 40.31
+      reveal("#s7-kicker", 40.30, 0.24);
+      reveal("#s7-l1", 40.31, 0.24);
+      reveal("#s7-l2", 40.31, 0.24, 0.16);
+      // Chips: each aligns roughly to its word in L
+      //   음식과   ≈ 43.52 → chip1 visible 43.30 → reveal_at 43.06
+      //   성분     ≈ 44.02 → chip2 visible 43.80 → reveal_at 43.56
+      //   생활 습관 ≈ 44.55 → chip3 visible 44.32 → reveal_at 44.08
+      tl.fromTo("#s7-chip1", { opacity: 0, y: 12 }, { opacity: 1, y: 0, duration: 0.24, ease: "sine.out" }, 43.06);
+      tl.fromTo("#s7-chip2", { opacity: 0, y: 12 }, { opacity: 1, y: 0, duration: 0.24, ease: "sine.out" }, 43.56);
+      tl.fromTo("#s7-chip3", { opacity: 0, y: 12 }, { opacity: 1, y: 0, duration: 0.24, ease: "sine.out" }, 44.08);
+      reveal("#s7-hint", 45.30, 0.3);
 
       window.__timelines["main"] = tl;
     </script>
