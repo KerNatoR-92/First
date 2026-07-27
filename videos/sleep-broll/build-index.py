@@ -251,7 +251,7 @@ def bg_clock_hands():
       <line x1="960" y1="500" x2="960" y2="280" stroke="#e6ecf3" stroke-width="5" stroke-linecap="round"/>
       <circle cx="960" cy="500" r="12" fill="#f0c674"/>
       <!-- 7 AM label -->
-      <text x="960" y="880" text-anchor="middle" font-family="'JetBrains Mono', monospace" font-size="28" letter-spacing="0.3em" fill="#f0c674">WAKE · 07:00</text>
+      <text x="960" y="880" text-anchor="middle" font-family="'JetBrains Mono', monospace" font-size="28" letter-spacing="0.3em" fill="#f0c674" data-layout-allow-occlusion>WAKE · 07:00</text>
     </svg>
     """
 

@@ -1,210 +1,245 @@
 {
   "narration": "public/narration.wav",
-  "narration_duration": 120.118,
+  "narration_duration": 117.117,
+  "a1_end": 42.759,
   "captions": [
     {
       "text": "여러분은 평일과 주말에 각각 몇 시에 잠드시나요?",
       "start": 0.0,
-      "end": 3.549,
-      "duration": 3.549
+      "end": 3.61,
+      "duration": 3.61,
+      "anchored": true
     },
     {
       "text": "평일에는 출근 때문에 억지로 일찍 일어나고,",
-      "start": 3.449,
-      "end": 6.805,
-      "duration": 3.356
+      "start": 3.61,
+      "end": 7.23,
+      "duration": 3.62,
+      "anchored": true
     },
     {
       "text": "주말에는 밀린 잠을 보충하느라 점심때까지 자는 분들이 많습니다.",
-      "start": 6.705,
-      "end": 11.604,
-      "duration": 4.899
+      "start": 7.23,
+      "end": 11.424,
+      "duration": 4.194,
+      "anchored": false
     },
     {
       "text": "야근이나 회식이 있는 날에는 새벽에 잠들고,",
-      "start": 11.504,
-      "end": 14.861,
-      "duration": 3.356
+      "start": 11.424,
+      "end": 14.27,
+      "duration": 2.846,
+      "anchored": true
     },
     {
       "text": "다음 날 중요한 일정이 있으면 평소보다 일찍 일어나기도 합니다.",
-      "start": 14.761,
-      "end": 19.488,
-      "duration": 4.727
+      "start": 14.27,
+      "end": 18.515,
+      "duration": 4.245,
+      "anchored": false
     },
     {
       "text": "이렇게 하루하루 자는 시간이 달라지면",
-      "start": 19.388,
-      "end": 22.23,
-      "duration": 2.842
+      "start": 18.515,
+      "end": 21.03,
+      "duration": 2.515,
+      "anchored": true
     },
     {
       "text": "우리는 충분히 잤다고 생각해도 계속 피곤할 수 있습니다.",
-      "start": 22.13,
-      "end": 26.343,
-      "duration": 4.213
+      "start": 21.03,
+      "end": 23.993,
+      "duration": 2.963,
+      "anchored": false
     },
     {
       "text": "오늘은 직장인에게 필요한 수면 시간은 몇 시간인지,",
-      "start": 26.243,
-      "end": 30.114,
-      "duration": 3.87
+      "start": 23.993,
+      "end": 26.71,
+      "duration": 2.717,
+      "anchored": true
     },
     {
       "text": "규칙적으로 잠을 자면 무엇이 좋아지는지,",
-      "start": 30.014,
-      "end": 33.199,
-      "duration": 3.185
+      "start": 26.71,
+      "end": 32.19,
+      "duration": 5.48,
+      "anchored": true
     },
     {
       "text": "반대로 수면 시간이 불규칙하면 어떤 문제가 생기는지 알아보겠습니다.",
-      "start": 33.099,
-      "end": 38.34,
-      "duration": 5.242
+      "start": 32.19,
+      "end": 36.27,
+      "duration": 4.08,
+      "anchored": true
     },
     {
       "text": "그리고 잠들기 어려운 분들에게 도움이 될 수 있는",
-      "start": 38.24,
-      "end": 41.768,
-      "duration": 3.528
+      "start": 36.27,
+      "end": 40.27,
+      "duration": 4.0,
+      "anchored": true
     },
     {
       "text": "음식과 성분, 생활 습관도 함께 이야기해 보겠습니다.",
-      "start": 41.668,
-      "end": 45.46,
-      "duration": 3.792
+      "start": 40.27,
+      "end": 42.509,
+      "duration": 2.239,
+      "anchored": false
     },
     {
       "text": "성인은 일반적으로 하루에 최소 7시간 이상의 수면이 필요합니다.",
-      "start": 45.76,
-      "end": 50.431,
-      "duration": 4.671
+      "start": 42.759,
+      "end": 45.729,
+      "duration": 2.97,
+      "anchored": true
     },
     {
       "text": "개인차는 있지만 대부분의 성인은",
-      "start": 50.331,
-      "end": 52.792,
-      "duration": 2.461
+      "start": 45.729,
+      "end": 50.489,
+      "duration": 4.76,
+      "anchored": true
     },
     {
       "text": "약 7시간에서 9시간 정도 잠을 자는 것이 좋습니다.",
-      "start": 52.692,
-      "end": 56.501,
-      "duration": 3.809
+      "start": 50.489,
+      "end": 52.929,
+      "duration": 2.44,
+      "anchored": true
     },
     {
       "text": "하지만 모든 사람에게 적용되는 절대적인 취침 시간이",
-      "start": 56.401,
-      "end": 60.211,
-      "duration": 3.809
+      "start": 52.929,
+      "end": 57.069,
+      "duration": 4.14,
+      "anchored": true
     },
     {
       "text": "따로 정해져 있는 것은 아닙니다.",
-      "start": 60.111,
-      "end": 62.571,
-      "duration": 2.461
+      "start": 57.069,
+      "end": 60.709,
+      "duration": 3.64,
+      "anchored": true
     },
     {
       "text": "중요한 것은 자신이 일어나야 하는 시간에서",
-      "start": 62.471,
-      "end": 65.606,
-      "duration": 3.135
+      "start": 60.709,
+      "end": 63.269,
+      "duration": 2.56,
+      "anchored": true
     },
     {
       "text": "필요한 수면 시간을 거꾸로 계산하는 것입니다.",
-      "start": 65.506,
-      "end": 68.978,
-      "duration": 3.472
+      "start": 63.269,
+      "end": 66.289,
+      "duration": 3.02,
+      "anchored": true
     },
     {
       "text": "예를 들어 아침 7시에 일어나야 하는 사람이라면",
-      "start": 68.878,
-      "end": 72.351,
-      "duration": 3.472
+      "start": 66.289,
+      "end": 69.509,
+      "duration": 3.22,
+      "anchored": true
     },
     {
       "text": "밤 10시부터 12시 사이에는 잠들 수 있도록 준비하는 것이 좋습니다.",
-      "start": 72.251,
-      "end": 77.409,
-      "duration": 5.158
+      "start": 69.509,
+      "end": 72.789,
+      "duration": 3.28,
+      "anchored": true
     },
     {
       "text": "7시간을 자려면 자정 전에 잠들어야 하고,",
-      "start": 77.309,
-      "end": 80.444,
-      "duration": 3.135
+      "start": 72.789,
+      "end": 77.309,
+      "duration": 4.52,
+      "anchored": true
     },
     {
       "text": "8시간을 자려면 밤 11시,",
-      "start": 80.344,
-      "end": 82.467,
-      "duration": 2.123
+      "start": 77.309,
+      "end": 80.329,
+      "duration": 3.02,
+      "anchored": true
     },
     {
       "text": "9시간을 자려면 밤 10시쯤 잠들어야 합니다.",
-      "start": 82.367,
-      "end": 85.84,
-      "duration": 3.472
+      "start": 80.329,
+      "end": 83.809,
+      "duration": 3.48,
+      "anchored": true
     },
     {
       "text": "여기서 중요한 점은 침대에 들어가는 시간이 아니라",
-      "start": 85.74,
-      "end": 89.381,
-      "duration": 3.641
+      "start": 83.809,
+      "end": 85.889,
+      "duration": 2.08,
+      "anchored": true
     },
     {
       "text": "실제로 잠드는 시간을 기준으로 계산해야 한다는 것입니다.",
-      "start": 89.281,
-      "end": 93.596,
-      "duration": 4.315
+      "start": 85.889,
+      "end": 89.089,
+      "duration": 3.2,
+      "anchored": true
     },
     {
       "text": "평소 잠드는 데 30분 정도 걸린다면",
-      "start": 93.496,
-      "end": 96.125,
-      "duration": 2.629
+      "start": 89.089,
+      "end": 95.249,
+      "duration": 6.16,
+      "anchored": true
     },
     {
       "text": "목표 취침 시간보다 30분 정도 일찍 침대에 들어가는 것이 좋습니다.",
-      "start": 96.025,
-      "end": 101.015,
-      "duration": 4.99
+      "start": 95.249,
+      "end": 98.324,
+      "duration": 3.075,
+      "anchored": false
     },
     {
       "text": "그리고 수면 시간만큼 중요한 것이",
-      "start": 100.915,
-      "end": 103.375,
-      "duration": 2.461
+      "start": 98.324,
+      "end": 99.809,
+      "duration": 1.485,
+      "anchored": true
     },
     {
       "text": "매일 비슷한 시간에 자고 일어나는 것입니다.",
-      "start": 103.275,
-      "end": 106.579,
-      "duration": 3.304
+      "start": 99.809,
+      "end": 102.169,
+      "duration": 2.36,
+      "anchored": true
     },
     {
       "text": "주말이라고 해서 평일보다 서너 시간 늦게 자고 일어나면",
-      "start": 106.479,
-      "end": 110.457,
-      "duration": 3.978
+      "start": 102.169,
+      "end": 108.709,
+      "duration": 6.54,
+      "anchored": true
     },
     {
       "text": "우리 몸은 매주 작은 시차 적응을 반복하게 됩니다.",
-      "start": 110.357,
-      "end": 113.998,
-      "duration": 3.641
+      "start": 108.709,
+      "end": 111.788,
+      "duration": 3.079,
+      "anchored": false
     },
     {
       "text": "따라서 주말에도 기상 시간 차이를",
-      "start": 113.898,
-      "end": 116.359,
-      "duration": 2.461
+      "start": 111.788,
+      "end": 113.841,
+      "duration": 2.053,
+      "anchored": false
     },
     {
       "text": "가능하면 한두 시간 이내로 유지하는 것이 좋습니다.",
-      "start": 116.259,
-      "end": 119.818,
-      "duration": 3.559
+      "start": 113.841,
+      "end": 116.867,
+      "duration": 3.026,
+      "anchored": false
     }
   ],
   "scenes": [
@@ -223,49 +258,49 @@
     {
       "id": "s3-lateshift",
       "start": 18.5,
-      "end": 28.5,
+      "end": 27.0,
       "bg": "laptop-glow"
     },
     {
       "id": "s4-tired",
-      "start": 28.5,
-      "end": 35.5,
+      "start": 27.0,
+      "end": 33.5,
       "bg": "timeline-drift"
     },
     {
       "id": "s5-topic-intro",
-      "start": 35.5,
-      "end": 45.76,
+      "start": 33.5,
+      "end": 42.759,
       "bg": "title-fade"
     },
     {
       "id": "s6-need-hours",
-      "start": 45.76,
-      "end": 60.0,
+      "start": 42.759,
+      "end": 57.5,
       "bg": "number-focus"
     },
     {
       "id": "s7-no-absolute",
-      "start": 60.0,
-      "end": 74.0,
+      "start": 57.5,
+      "end": 71.5,
       "bg": "reverse-calc"
     },
     {
       "id": "s8-example-7am",
-      "start": 74.0,
-      "end": 92.0,
+      "start": 71.5,
+      "end": 89.5,
       "bg": "clock-hands"
     },
     {
       "id": "s9-real-vs-bed",
-      "start": 92.0,
-      "end": 104.0,
+      "start": 89.5,
+      "end": 101.5,
       "bg": "bed-latency"
     },
     {
       "id": "s10-consist",
-      "start": 104.0,
-      "end": 120.118,
+      "start": 101.5,
+      "end": 117.117,
       "bg": "weekly-grid"
     }
   ]
