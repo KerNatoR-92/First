@@ -5,6 +5,38 @@
     <meta name="viewport" content="width=1920, height=1080" />
     <script src="assets/vendor/gsap.min.js"></script>
     <style>
+      /* CJK font — resolved from system-installed Noto Sans CJK KR */
+      @font-face {
+        font-family: "Noto Sans CJK KR";
+        font-weight: 300;
+        src: local("Noto Sans CJK KR Light"), local("Noto Sans CJK KR");
+      }
+      @font-face {
+        font-family: "Noto Sans CJK KR";
+        font-weight: 400;
+        src: local("Noto Sans CJK KR Regular"), local("Noto Sans CJK KR");
+      }
+      @font-face {
+        font-family: "Noto Sans CJK KR";
+        font-weight: 500;
+        src: local("Noto Sans CJK KR Medium"), local("Noto Sans CJK KR");
+      }
+      @font-face {
+        font-family: "Noto Sans CJK KR";
+        font-weight: 700;
+        src: local("Noto Sans CJK KR Bold"), local("Noto Sans CJK KR");
+      }
+      @font-face {
+        font-family: "Noto Sans CJK KR";
+        font-weight: 800;
+        src: local("Noto Sans CJK KR Black"), local("Noto Sans CJK KR Bold"), local("Noto Sans CJK KR");
+      }
+      @font-face {
+        font-family: "Noto Sans CJK KR";
+        font-weight: 900;
+        src: local("Noto Sans CJK KR Black"), local("Noto Sans CJK KR");
+      }
+
       * { margin: 0; padding: 0; box-sizing: border-box; }
       html, body {
         margin: 0;
@@ -12,299 +44,258 @@
         height: 1080px;
         overflow: hidden;
         background: #08090d;
-        font-family: "Inter", "Helvetica Neue", Arial, sans-serif;
         color: #ffffff;
+        font-family: "Noto Sans CJK KR", "Inter", sans-serif;
         -webkit-font-smoothing: antialiased;
       }
       .mono { font-family: "JetBrains Mono", "Menlo", monospace; letter-spacing: 0.02em; }
 
-      /* ---- Layout ---- */
       #stage {
         position: relative;
         width: 1920px;
         height: 1080px;
         background:
-          radial-gradient(1200px 800px at 60% 45%, #14161f 0%, #0a0b12 55%, #06070b 100%);
+          radial-gradient(1400px 900px at 50% 45%, #12141c 0%, #0a0b12 55%, #06070b 100%);
         overflow: hidden;
       }
 
-      /* Corner brackets (yellow) */
+      /* Persistent corner brackets */
       .bracket {
         position: absolute;
-        width: 46px;
-        height: 46px;
+        width: 40px;
+        height: 40px;
         border-color: #ffd400;
         border-style: solid;
         border-width: 0;
       }
-      .bracket.tl { top: 44px; left: 60px; border-top-width: 2px; border-left-width: 2px; }
-      .bracket.tr { top: 44px; right: 60px; border-top-width: 2px; border-right-width: 2px; }
-      .bracket.bl { bottom: 44px; left: 60px; border-bottom-width: 2px; border-left-width: 2px; }
-      .bracket.br { bottom: 44px; right: 60px; border-bottom-width: 2px; border-right-width: 2px; }
+      .bracket.tl { top: 48px; left: 60px; border-top-width: 2px; border-left-width: 2px; }
+      .bracket.tr { top: 48px; right: 60px; border-top-width: 2px; border-right-width: 2px; }
+      .bracket.bl { bottom: 48px; left: 60px; border-bottom-width: 2px; border-left-width: 2px; }
+      .bracket.br { bottom: 48px; right: 60px; border-bottom-width: 2px; border-right-width: 2px; }
 
-      /* Header kicker */
-      .kicker {
+      /* Top-left session badge */
+      .badge {
         position: absolute;
         top: 60px;
-        left: 120px;
+        left: 100px;
         display: flex;
         align-items: center;
         gap: 14px;
-        font-size: 18px;
-        letter-spacing: 0.38em;
+        font-family: "JetBrains Mono", monospace;
+        font-size: 16px;
+        letter-spacing: 0.4em;
         color: #ffffff;
         text-transform: uppercase;
       }
-      .kicker .dot {
+      .badge .dot {
         width: 10px; height: 10px; border-radius: 50%;
         background: #ffd400; box-shadow: 0 0 12px rgba(255,212,0,0.55);
       }
-      .kicker .dim { color: #cfd1d6; }
-      .kicker .slash { color: #ffd400; margin: 0 4px; }
+      .badge .slash { color: #ffd400; margin: 0 2px; }
+      .badge .dim  { color: #cfd1d6; }
 
-      .header-line {
+      /* Top-right minor meta */
+      .badge-r {
         position: absolute;
-        top: 108px;
-        left: 120px;
-        width: 240px;
-        height: 1px;
-        background: #ffd400;
-        transform-origin: left;
-      }
-      /* GSAP owns bars scaleY — no initial CSS transform */
-
-      /* Chapter big block (contains chapter number + labels) */
-      .chapter {
-        position: absolute;
-        top: 300px;
-        left: 120px;
-        width: 1080px;
-        color: #fff;
-      }
-      .chapter .lead {
-        font-family: "JetBrains Mono", monospace;
-        font-size: 22px;
-        letter-spacing: 0.42em;
-        color: #dcdde1;
-        text-transform: uppercase;
-        margin-bottom: 40px;
-        line-height: 1.2;
-      }
-      .chapter .num {
-        display: block;
-        height: 260px;
-        font-size: 260px;
-        line-height: 260px;
-        font-weight: 200;
-        color: #ffd400;
-        letter-spacing: -0.02em;
-        font-family: "Inter", sans-serif;
-      }
-      .chapter .num .sep {
-        color: rgba(255,255,255,0.35);
-        font-weight: 100;
-        margin: 0 0.08em;
-      }
-      .chapter .num .of {
-        color: #cfd1d6;
-        font-size: 60px;
-        vertical-align: super;
-        margin-left: 0.15em;
-        letter-spacing: 0.1em;
-        line-height: 1;
-      }
-      .chapter .title {
-        margin-top: 56px;
-        font-size: 56px;
-        font-weight: 300;
-        letter-spacing: 0.02em;
-        color: #ffffff;
-        line-height: 1.2;
-      }
-      .chapter .title .accent { color: #ffd400; }
-      .chapter .range {
-        margin-top: 24px;
-        font-family: "JetBrains Mono", monospace;
-        font-size: 20px;
-        letter-spacing: 0.24em;
-        color: #cfd1d6;
-        line-height: 1.3;
-      }
-      .chapter .range .bar {
-        display: inline-block;
-        width: 46px; height: 1px;
-        background: #8b8d92;
-        vertical-align: middle;
-        margin: 0 14px;
-      }
-
-      /* Yellow growing underline near title */
-      .grow-line {
-        position: absolute;
-        top: 900px;
-        left: 120px;
-        height: 2px;
-        background: #ffd400;
-        transform-origin: left center;
-        width: 0px;
-      }
-
-      /* Vertical bar rig (right side) — decorative "waveform" */
-      #bars {
-        position: absolute;
-        top: 300px;
-        right: 130px;
-        width: 460px;
-        height: 480px;
+        top: 60px;
+        right: 100px;
         display: flex;
-        align-items: flex-end;
-        justify-content: space-between;
-        gap: 4px;
-      }
-      #bars .bar {
-        flex: 1 1 0;
-        height: 100%;
-        background: linear-gradient(to top, #ffd400 0%, rgba(255,212,0,0.15) 100%);
-        border-radius: 1px;
-        transform-origin: bottom;
-      }
-      #bars .bar.w {
-        background: linear-gradient(to top, #ffffff 0%, rgba(255,255,255,0.12) 100%);
-      }
-      #bars-baseline {
-        position: absolute;
-        top: 782px;
-        right: 130px;
-        width: 460px;
-        height: 1px;
-        background: rgba(255,255,255,0.15);
-      }
-      #bars-label {
-        position: absolute;
-        top: 260px;
-        right: 130px;
-        width: 460px;
-        display: flex;
-        justify-content: space-between;
+        align-items: center;
+        gap: 14px;
         font-family: "JetBrains Mono", monospace;
         font-size: 14px;
-        letter-spacing: 0.24em;
+        letter-spacing: 0.35em;
         color: #cfd1d6;
         text-transform: uppercase;
       }
-      #bars-label .accent { color: #ffd400; }
-
-      /* Right side vertical index (thin rule + phrase marks) */
-      #index-col {
-        position: absolute;
-        top: 300px;
-        right: 60px;
-        width: 40px;
-        height: 480px;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        align-items: center;
-      }
-      #index-col .tick {
-        width: 12px;
-        height: 1px;
-        background: rgba(255,255,255,0.28);
-        transition: none;
-      }
-      #index-col .tick.big { width: 28px; background: #ffd400; height: 2px; }
+      .badge-r .yellow { color: #ffd400; }
 
       /* Bottom progress rig */
       #progress {
         position: absolute;
         left: 120px;
         right: 120px;
-        bottom: 130px;
-        height: 60px;
+        bottom: 90px;
+        height: 36px;
       }
       #progress .rail {
         position: absolute;
-        left: 0; right: 0; top: 30px;
+        left: 0; right: 0; top: 20px;
         height: 1px;
-        background: rgba(255,255,255,0.18);
+        background: rgba(255,255,255,0.20);
       }
       #progress .fill {
         position: absolute;
-        left: 0; top: 29px;
+        left: 0; top: 19px;
         height: 3px;
         width: 0px;
         background: #ffd400;
-        box-shadow: 0 0 10px rgba(255,212,0,0.4);
+        box-shadow: 0 0 12px rgba(255,212,0,0.55);
       }
       #progress .chapter-mark {
         position: absolute;
-        top: 18px;
+        top: 6px;
         width: 1px;
-        height: 24px;
-        background: rgba(255,255,255,0.4);
+        height: 30px;
+        background: rgba(255,255,255,0.45);
       }
       #progress .chapter-mark .lbl {
         position: absolute;
-        top: -28px;
+        top: -26px;
         left: 8px;
         font-family: "JetBrains Mono", monospace;
-        font-size: 14px;
-        letter-spacing: 0.24em;
+        font-size: 13px;
+        letter-spacing: 0.28em;
         color: #cfd1d6;
         white-space: nowrap;
       }
       #progress .phrase-mark {
         position: absolute;
-        top: 40px;
+        top: 26px;
         width: 1px;
-        height: 10px;
-        background: rgba(255,255,255,0.22);
+        height: 12px;
+        background: rgba(255,255,255,0.25);
       }
-      #progress .phrase-mark.on {
+      #progress .phrase-mark.on { background: #ffd400; }
+
+      /* Main text stage — where kinetic lines live */
+      #text-stage {
+        position: absolute;
+        left: 0; right: 0;
+        top: 180px;
+        bottom: 200px;
+      }
+      .line {
+        position: absolute;
+        inset: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 0 180px;
+        opacity: 0;
+        text-align: center;
+      }
+      .line .kicker {
+        font-family: "JetBrains Mono", monospace;
+        font-size: 18px;
+        letter-spacing: 0.42em;
+        color: #ffd400;
+        text-transform: uppercase;
+        margin-bottom: 34px;
+        display: flex;
+        gap: 18px;
+        align-items: center;
+      }
+      .line .kicker .num { color: #ffffff; }
+      .line .kicker .bar {
+        display: inline-block;
+        width: 36px; height: 1px; background: #ffd400;
+      }
+      .line .text-row {
+        line-height: 1.28;
+        font-size: 68px;
+        font-weight: 500;
+        color: #ffffff;
+        letter-spacing: -0.005em;
+        max-width: 1560px;
+      }
+      .line .text-row .w {
+        display: inline-block;
+        white-space: nowrap;
+        opacity: 0;
+        transform: translateY(24px);
+        margin: 0 3px;
+      }
+      .line .text-row .emph {
+        color: #ffd400;
+        font-weight: 700;
+        position: relative;
+      }
+      .line .text-row .emph::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: -8px;
+        height: 3px;
+        width: 100%;
         background: #ffd400;
+        transform: scaleX(0);
+        transform-origin: left center;
       }
+      .line.title .text-row {
+        font-size: 104px;
+        font-weight: 800;
+        line-height: 1.16;
+        letter-spacing: -0.01em;
+        max-width: 1620px;
+      }
+      .line.title .kicker { font-size: 22px; margin-bottom: 44px; }
+      .line.title .halo {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 260px;
+        height: 2px;
+        background: #ffd400;
+        top: 110px;
+        opacity: 0;
+      }
+      .line.title .halo.bottom {
+        top: auto;
+        bottom: 110px;
+      }
+      .line .caption {
+        margin-top: 42px;
+        font-family: "JetBrains Mono", monospace;
+        font-size: 16px;
+        letter-spacing: 0.3em;
+        color: #cfd1d6;
+        text-transform: uppercase;
+        opacity: 0;
+      }
+
+      /* Progress-label bottom row */
       #progress .tc {
         position: absolute;
         left: 0;
         bottom: -30px;
         font-family: "JetBrains Mono", monospace;
-        font-size: 15px;
-        letter-spacing: 0.2em;
-        color: #dcdde1;
+        font-size: 14px;
+        letter-spacing: 0.24em;
+        color: #cfd1d6;
       }
       #progress .tc.end {
         left: auto;
         right: 0;
         color: #cfd1d6;
       }
-
-      /* Footer meta */
-      .footer-meta {
-        position: absolute;
-        left: 120px;
-        bottom: 60px;
-        display: flex;
-        gap: 34px;
-        font-family: "JetBrains Mono", monospace;
-        font-size: 13px;
-        letter-spacing: 0.32em;
-        color: #cfd1d6;
-        text-transform: uppercase;
-      }
-      .footer-meta .val { color: #ffffff; margin-left: 8px; }
-      .footer-meta .amp { color: #ffd400; }
-
-      /* Diagonal accent hairline */
-      .diag {
-        position: absolute;
-        pointer-events: none;
+      #progress .tc.mid {
+        left: 50%;
+        transform: translateX(-50%);
+        color: #ffd400;
       }
 
-      /* Chapter card wrapper — used for cross-fade between 01 and 02 */
-      .chapter { will-change: opacity, transform; }
-
-      /* Initial hidden state for animated pieces (safe: not on .clip and not visibility) */
-      .fade-init { opacity: 0; }
+      /* Bottom yellow accent — dwell indicator under text */
+      #dwell {
+        position: absolute;
+        bottom: 170px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 400px;
+        height: 2px;
+        background: rgba(255,255,255,0.14);
+        overflow: hidden;
+      }
+      #dwell .inner {
+        position: absolute;
+        left: 0; top: 0;
+        height: 100%;
+        width: 100%;
+        background: #ffd400;
+        transform: scaleX(0);
+        transform-origin: left center;
+      }
     </style>
   </head>
   <body>
@@ -316,84 +307,44 @@
       data-width="1920"
       data-height="1080"
     >
-      <!-- Full-bleed background layer (required by full-screen-fill rule) -->
       <div id="bg" style="position:absolute; inset:0; background:#08090d;"></div>
 
       <div id="stage">
-        <!-- Corner brackets -->
-        <span class="bracket tl fade-init"></span>
-        <span class="bracket tr fade-init"></span>
-        <span class="bracket bl fade-init"></span>
-        <span class="bracket br fade-init"></span>
+        <span class="bracket tl"></span>
+        <span class="bracket tr"></span>
+        <span class="bracket bl"></span>
+        <span class="bracket br"></span>
 
-        <!-- Top kicker -->
-        <div class="kicker fade-init" id="kicker">
+        <div class="badge" id="badge">
           <span class="dot"></span>
-          <span>Narration</span>
+          <span>PART</span>
           <span class="slash">/</span>
-          <span class="dim mono">Session · A</span>
-        </div>
-        <div class="header-line fade-init" id="header-line"></div>
-
-        <!-- Diagonal minor hairline (top-right) -->
-        <svg class="diag" style="top: 40px; right: 120px; width: 260px; height: 90px;" viewBox="0 0 260 90" fill="none">
-          <path id="diag-path" d="M 6 84 L 254 6" stroke="#ffd400" stroke-width="1" stroke-dasharray="260" stroke-dashoffset="260" />
-          <circle cx="6" cy="84" r="3" fill="#ffd400" opacity="0" id="diag-dot" />
-        </svg>
-
-        <!-- Chapter 01 -->
-        <div class="chapter fade-init" id="ch1">
-          <div class="lead">Part One</div>
-          <div class="num">01<span class="of">/ 02</span></div>
-          <div class="title">Opening<span class="accent"> · </span><span>첫 번째 이야기</span></div>
-          <div class="range">00 : 00 <span class="bar"></span> 00 : 43</div>
+          <span class="dim" id="badge-num">01</span>
         </div>
 
-        <!-- Chapter 02 (hidden until transition) -->
-        <div class="chapter fade-init" id="ch2" style="opacity:0;">
-          <div class="lead">Part Two</div>
-          <div class="num">02<span class="of">/ 02</span></div>
-          <div class="title">Continuation<span class="accent"> · </span><span>두 번째 이야기</span></div>
-          <div class="range">00 : 43 <span class="bar"></span> 01 : 57</div>
+        <div class="badge-r">
+          <span>SLEEP</span>
+          <span class="yellow">·</span>
+          <span>SESSION</span>
         </div>
 
-        <!-- Growing yellow underline near lower left -->
-        <div class="grow-line" id="grow-line"></div>
+        <!-- Text stage: all lines pre-rendered, opacity toggled by timeline -->
+        <div id="text-stage"></div>
 
-        <!-- Right-side bar rig -->
-        <div id="bars-label" class="fade-init">
-          <span>WAVE</span>
-          <span class="accent">SIGNAL 22</span>
-        </div>
-        <div id="bars"></div>
-        <div id="bars-baseline" class="fade-init"></div>
+        <!-- Yellow dwell indicator under text -->
+        <div id="dwell"><div class="inner" id="dwell-inner"></div></div>
 
-        <!-- Right index column -->
-        <div id="index-col"></div>
-
-        <!-- Bottom progress rig -->
-        <div id="progress" class="fade-init">
+        <div id="progress">
           <div class="rail"></div>
           <div class="fill" id="prog-fill"></div>
           <div id="phrase-marks"></div>
-          <div class="chapter-mark" id="ch-mark" style="left: 0%;">
-            <span class="lbl">01</span>
-          </div>
-          <div class="chapter-mark" id="ch-mark2" style="left: 36.3%;">
-            <span class="lbl">02</span>
-          </div>
-          <div class="tc mono">T · 00 : 00</div>
+          <div class="chapter-mark" style="left: 0%;"><span class="lbl">PART 01</span></div>
+          <div class="chapter-mark" style="left: 36.3%;"><span class="lbl">PART 02</span></div>
+          <div class="tc mono">00 : 00</div>
           <div class="tc end mono">01 : 57</div>
         </div>
 
-        <div class="footer-meta fade-init" id="footer-meta">
-          <div>Format<span class="val">1920 × 1080</span></div>
-          <div>Frame<span class="val">30 fps</span></div>
-          <div>Runtime<span class="val">01 : 57</span></div>
-          <div>Audio<span class="val amp">A1 + A2</span></div>
-        </div>
-
-        <!-- Audio tracks (framework-owned playback) -->
+        <!-- Audio -->
         <audio
           id="a1-audio"
           class="clip"
@@ -416,164 +367,346 @@
     </div>
 
     <script>
-      // ---- Sync data (from ffmpeg silencedetect) ----
-      const A1 = { start: 0.0, dur: 42.76, phrases: [
-        [0.000, 2.925], [3.669, 6.771], [7.285, 13.962], [14.335, 20.733],
-        [21.097, 26.420], [26.771, 31.881], [32.252, 39.910], [40.307, 42.759]
-      ]};
-      const A2 = { start: 42.76, dur: 74.36, phrases: [
-        [0.381, 2.422], [2.944, 7.163], [7.780, 9.821], [10.232, 13.733],
-        [14.328, 17.599], [18.004, 19.695], [20.483, 23.124], [23.568, 26.248],
-        [26.807, 29.666], [30.070, 34.230], [34.599, 37.242], [37.633, 45.952],
-        [46.359, 56.591], [57.101, 74.358]
-      ]};
+      // -----------------------------------------------------------------------
+      // Script → kinetic typography lines
+      // Timings from ffmpeg silencedetect on A1.wav and A2.wav.
+      // Each `at: [start, end]` is a phrase slot; `sub: [...]` are display lines
+      // that share that slot (duration proportional to syllable count).
+      // -----------------------------------------------------------------------
+      const A2_OFFSET = 42.76;
 
-      const TOTAL = 117.12;   // A1 + A2 exact
+      const PHRASES = [
+        // ---------- A1 : PART 01 ----------
+        { part: 1, at: [0.000, 2.925], sub: [
+          { text: "직장인의 수면 시간이 불규칙해지면 생기는 일",
+            emph: ["수면 시간", "불규칙"], kind: "title" }
+        ]},
+        { part: 1, at: [3.669, 6.771], sub: [
+          { text: "여러분은 평일과 주말에 각각 몇 시에 잠드시나요?",
+            emph: ["평일", "주말", "몇 시"] }
+        ]},
+        { part: 1, at: [7.285, 13.962], sub: [
+          { text: "평일에는 출근 때문에 억지로 일찍 일어나고,",
+            emph: ["평일", "일찍 일어나고"] },
+          { text: "주말에는 밀린 잠을 보충하느라 점심때까지 자는 분들이 많습니다.",
+            emph: ["주말", "밀린 잠", "점심때까지"] }
+        ]},
+        { part: 1, at: [14.335, 20.733], sub: [
+          { text: "야근이나 회식이 있는 날에는 새벽에 잠들고,",
+            emph: ["야근", "회식", "새벽"] },
+          { text: "다음 날 중요한 일정이 있으면 평소보다 일찍 일어나기도 합니다.",
+            emph: ["중요한 일정", "일찍"] }
+        ]},
+        { part: 1, at: [21.097, 26.420], sub: [
+          { text: "이렇게 하루하루 자는 시간이 달라지면",
+            emph: ["하루하루", "달라지면"] },
+          { text: "우리는 충분히 잤다고 생각해도 계속 피곤할 수 있습니다.",
+            emph: ["충분히", "피곤할"] }
+        ]},
+        { part: 1, at: [26.771, 31.881], sub: [
+          { text: "오늘은 직장인에게 필요한 수면 시간은 몇 시간인지,",
+            emph: ["직장인", "수면 시간", "몇 시간"] }
+        ]},
+        { part: 1, at: [32.252, 39.910], sub: [
+          { text: "규칙적으로 잠을 자면 무엇이 좋아지는지,",
+            emph: ["규칙적", "좋아지는지"] },
+          { text: "반대로 수면 시간이 불규칙하면 어떤 문제가 생기는지 알아보겠습니다.",
+            emph: ["불규칙", "어떤 문제"] }
+        ]},
+        { part: 1, at: [40.307, 42.759], sub: [
+          { text: "그리고 잠들기 어려운 분들에게 도움이 될 수 있는",
+            emph: ["잠들기 어려운"] },
+          { text: "음식과 성분, 생활 습관도 함께 이야기해 보겠습니다.",
+            emph: ["음식", "성분", "생활 습관"] }
+        ]},
+
+        // ---------- A2 : PART 02 ----------
+        { part: 2, at: [A2_OFFSET + 0.381, A2_OFFSET + 2.422], sub: [
+          { text: "직장인은 몇 시에 자야 할까?",
+            emph: ["몇 시", "자야 할까"], kind: "title" }
+        ]},
+        { part: 2, at: [A2_OFFSET + 2.944, A2_OFFSET + 7.163], sub: [
+          { text: "성인은 일반적으로 하루에 최소 7시간 이상의 수면이 필요합니다.",
+            emph: ["최소 7시간", "수면이 필요"] }
+        ]},
+        { part: 2, at: [A2_OFFSET + 7.780, A2_OFFSET + 9.821], sub: [
+          { text: "개인차는 있지만 대부분의 성인은",
+            emph: ["대부분의 성인"] }
+        ]},
+        { part: 2, at: [A2_OFFSET + 10.232, A2_OFFSET + 13.733], sub: [
+          { text: "약 7시간에서 9시간 정도 잠을 자는 것이 좋습니다.",
+            emph: ["7시간", "9시간"] }
+        ]},
+        { part: 2, at: [A2_OFFSET + 14.328, A2_OFFSET + 17.599], sub: [
+          { text: "하지만 모든 사람에게 적용되는 절대적인 취침 시간이",
+            emph: ["절대적인", "취침 시간"] }
+        ]},
+        { part: 2, at: [A2_OFFSET + 18.004, A2_OFFSET + 19.695], sub: [
+          { text: "따로 정해져 있는 것은 아닙니다.",
+            emph: ["따로 정해져"] }
+        ]},
+        { part: 2, at: [A2_OFFSET + 20.483, A2_OFFSET + 23.124], sub: [
+          { text: "중요한 것은 자신이 일어나야 하는 시간에서",
+            emph: ["일어나야 하는 시간"] }
+        ]},
+        { part: 2, at: [A2_OFFSET + 23.568, A2_OFFSET + 26.248], sub: [
+          { text: "필요한 수면 시간을 거꾸로 계산하는 것입니다.",
+            emph: ["거꾸로 계산"] }
+        ]},
+        { part: 2, at: [A2_OFFSET + 26.807, A2_OFFSET + 29.666], sub: [
+          { text: "예를 들어 아침 7시에 일어나야 하는 사람이라면",
+            emph: ["아침 7시"] }
+        ]},
+        { part: 2, at: [A2_OFFSET + 30.070, A2_OFFSET + 34.230], sub: [
+          { text: "밤 10시부터 12시 사이에는 잠들 수 있도록 준비하는 것이 좋습니다.",
+            emph: ["10시", "12시"] }
+        ]},
+        { part: 2, at: [A2_OFFSET + 34.599, A2_OFFSET + 37.242], sub: [
+          { text: "7시간을 자려면 자정 전에 잠들어야 하고,",
+            emph: ["7시간", "자정 전"] }
+        ]},
+        { part: 2, at: [A2_OFFSET + 37.633, A2_OFFSET + 45.952], sub: [
+          { text: "8시간을 자려면 밤 11시,",
+            emph: ["8시간", "11시"] },
+          { text: "9시간을 자려면 밤 10시쯤 잠들어야 합니다.",
+            emph: ["9시간", "10시"] }
+        ]},
+        { part: 2, at: [A2_OFFSET + 46.359, A2_OFFSET + 56.591], sub: [
+          { text: "여기서 중요한 점은 침대에 들어가는 시간이 아니라",
+            emph: ["침대에 들어가는 시간"] },
+          { text: "실제로 잠드는 시간을 기준으로 계산해야 한다는 것입니다.",
+            emph: ["실제로 잠드는 시간"] }
+        ]},
+        { part: 2, at: [A2_OFFSET + 57.101, A2_OFFSET + 74.358], sub: [
+          { text: "평소 잠드는 데 30분 정도 걸린다면",
+            emph: ["30분"] },
+          { text: "목표 취침 시간보다 30분 정도 일찍 침대에 들어가는 것이 좋습니다.",
+            emph: ["30분", "일찍"] },
+          { text: "그리고 수면 시간만큼 중요한 것이",
+            emph: ["수면 시간만큼"] },
+          { text: "매일 비슷한 시간에 자고 일어나는 것입니다.",
+            emph: ["매일 비슷한 시간"] },
+          { text: "주말이라고 해서 평일보다 서너 시간 늦게 자고 일어나면",
+            emph: ["서너 시간", "늦게"] },
+          { text: "우리 몸은 매주 작은 시차 적응을 반복하게 됩니다.",
+            emph: ["시차 적응", "반복"] },
+          { text: "따라서 주말에도 기상 시간 차이를",
+            emph: ["기상 시간 차이"] },
+          { text: "가능하면 한두 시간 이내로 유지하는 것이 좋습니다.",
+            emph: ["한두 시간 이내"] }
+        ]}
+      ];
+
+      const TOTAL = 117.12;
       const CH2_AT = 42.76;
-      const CH2_TRANSITION_DUR = 1.2;
 
-      // Build phrase marks and index ticks and vertical bars
-      const phraseMarks = document.getElementById("phrase-marks");
-      const indexCol = document.getElementById("index-col");
-      const bars = document.getElementById("bars");
-
-      const allPhrases = [];
-      A1.phrases.forEach((p, i) => allPhrases.push({ chapter: 1, idx: i, start: p[0], end: p[1] }));
-      A2.phrases.forEach((p, i) => allPhrases.push({ chapter: 2, idx: i, start: A2.start + p[0], end: A2.start + p[1] }));
-
-      allPhrases.forEach((ph, i) => {
-        // progress bar tick
-        const m = document.createElement("div");
-        m.className = "phrase-mark";
-        m.style.left = (ph.start / TOTAL * 100) + "%";
-        m.id = "pm-" + i;
-        phraseMarks.appendChild(m);
-      });
-
-      // Right index column: one tick per phrase (spaced evenly)
-      allPhrases.forEach((_, i) => {
-        const t = document.createElement("div");
-        t.className = "tick";
-        t.id = "ix-" + i;
-        indexCol.appendChild(t);
-      });
-
-      // Vertical bars: N bars driven by per-phrase pseudo-random pattern (deterministic)
-      const BAR_COUNT = 22;
-      for (let i = 0; i < BAR_COUNT; i++) {
-        const b = document.createElement("div");
-        b.className = "bar" + (i % 3 === 0 ? " w" : "");
-        b.id = "bar-" + i;
-        bars.appendChild(b);
-      }
-      // Initial bar scale set via GSAP (owns transform) at t=0
-      gsap.set("#bars .bar", { scaleY: 0.08 });
-
-      // Deterministic pseudo-random from a seed (mulberry32)
-      function mulberry32(a) {
-        return function() {
-          a |= 0; a = a + 0x6D2B79F5 | 0;
-          let t = a; t = Math.imul(t ^ t >>> 15, t | 1);
-          t ^= t + Math.imul(t ^ t >>> 7, t | 61);
-          return ((t ^ t >>> 14) >>> 0) / 4294967296;
-        };
-      }
-
-      // ---- Timeline ----
-      window.__timelines = window.__timelines || {};
-      const tl = gsap.timeline({ paused: true, defaults: { ease: "power2.out" } });
-
-      // 0. Background + corners fade in (0–1.4s)
-      tl.to("#bg", { duration: 0.6, opacity: 1 }, 0);
-      tl.to(".bracket", { opacity: 1, duration: 1.0, stagger: 0.08 }, 0.15);
-
-      // Kicker, header, diagonal
-      tl.fromTo("#kicker", { y: -12, opacity: 0 }, { y: 0, opacity: 1, duration: 0.8 }, 0.3);
-      tl.fromTo("#header-line", { scaleX: 0 }, { scaleX: 1, duration: 1.0, ease: "expo.out" }, 0.6);
-      tl.to("#diag-path", { attr: { "stroke-dashoffset": 0 }, duration: 1.0, ease: "power3.out" }, 0.5);
-      tl.to("#diag-dot", { opacity: 1, duration: 0.3 }, 1.4);
-
-      // 1. Chapter 01 reveal (0.4–2.6s)
-      tl.to("#ch1", { opacity: 1, duration: 0.8 }, 0.4);
-      tl.fromTo("#ch1 .lead", { y: 22, opacity: 0 }, { y: 0, opacity: 1, duration: 0.8 }, 0.55);
-      tl.fromTo("#ch1 .num", { y: 60, opacity: 0 }, { y: 0, opacity: 1, duration: 1.1, ease: "expo.out" }, 0.65);
-      tl.fromTo("#ch1 .title", { y: 24, opacity: 0 }, { y: 0, opacity: 1, duration: 0.9 }, 0.95);
-      tl.fromTo("#ch1 .range", { opacity: 0 }, { opacity: 1, duration: 0.6 }, 1.25);
-
-      // 2. Bars label + baseline
-      tl.to("#bars-label", { opacity: 1, duration: 0.6 }, 0.9);
-      tl.to("#bars-baseline", { opacity: 1, duration: 0.6 }, 1.0);
-
-      // 3. Footer + progress rig
-      tl.to("#footer-meta", { opacity: 1, duration: 0.8 }, 1.3);
-      tl.to("#progress", { opacity: 1, duration: 0.8 }, 1.2);
-
-      // 4. Progress fill grows linearly across the whole thing
-      // Rail spans stage minus 240px padding (120 left + 120 right) — constant 1680px.
-      const RAIL_WIDTH = 1920 - 240;
-      tl.fromTo("#prog-fill", { width: 0 }, { width: RAIL_WIDTH, duration: TOTAL, ease: "none" }, 0);
-
-      // 5. Yellow growing underline (grow across each chapter)
-      // ch1: 0..42.76 grows from 0 to ~700px
-      tl.fromTo("#grow-line", { width: 0 }, { width: 640, duration: A1.dur, ease: "none" }, 0);
-      // reset & grow again in ch2
-      tl.set("#grow-line", { width: 0 }, CH2_AT);
-      tl.fromTo("#grow-line", { width: 0 }, { width: 780, duration: A2.dur, ease: "none" }, CH2_AT);
-
-      // 6. Per-phrase kinetic beats — highlight phrase marks + reshape bars
-      const rand = mulberry32(9137);
-      allPhrases.forEach((ph, i) => {
-        // Progress bar mark lights up when phrase starts
-        tl.to("#pm-" + i, { backgroundColor: "#ffd400", duration: 0.15 }, ph.start);
-        // Right index tick expands
-        tl.to("#ix-" + i, { width: 28, height: 2, backgroundColor: "#ffd400", duration: 0.18 }, ph.start);
-        // At start of each phrase, set new bar shape (deterministic pattern per phrase)
-        const targets = [];
-        for (let b = 0; b < BAR_COUNT; b++) {
-          const base = 0.15 + rand() * 0.85;
-          targets.push(base);
-        }
-        // Animate each bar to its target height across the phrase duration
-        const phraseDur = Math.max(0.4, ph.end - ph.start);
-        targets.forEach((t, b) => {
-          tl.to("#bar-" + b, {
-            scaleY: t,
-            duration: Math.min(0.35, phraseDur * 0.35),
-            ease: "power2.out"
-          }, ph.start);
+      // ---------- Build display "cards" (one per sub-line) ----------
+      // Each card = { start, end, text, emph, kind, part, phraseIdx }
+      const CARDS = [];
+      PHRASES.forEach((p, pi) => {
+        const [s0, s1] = p.at;
+        const dur = s1 - s0;
+        const totalSyl = p.sub.reduce((acc, x) => acc + x.text.replace(/\s/g, "").length, 0);
+        let cursor = s0;
+        p.sub.forEach((sub, si) => {
+          const syl = sub.text.replace(/\s/g, "").length;
+          const d = dur * (syl / totalSyl);
+          CARDS.push({
+            start: cursor,
+            end: cursor + d,
+            text: sub.text,
+            emph: sub.emph || [],
+            kind: sub.kind || "line",
+            part: p.part,
+            phraseIdx: pi,
+            subIdx: si
+          });
+          cursor += d;
         });
       });
 
-      // 7. Chapter transition at CH2_AT
-      // Slide ch1 out (yellow bar sweep + fade), ch2 in
-      tl.to("#ch1", { opacity: 0, x: -80, duration: CH2_TRANSITION_DUR, ease: "power2.inOut" }, CH2_AT - 0.6);
-      tl.fromTo("#ch2",
-        { opacity: 0, x: 80 },
-        { opacity: 1, x: 0, duration: CH2_TRANSITION_DUR, ease: "power2.out" },
-        CH2_AT + 0.05
-      );
-      tl.fromTo("#ch2 .num", { opacity: 0, y: 40 }, { opacity: 1, y: 0, duration: 1.0, ease: "expo.out" }, CH2_AT + 0.25);
-      tl.fromTo("#ch2 .lead", { opacity: 0, y: 16 }, { opacity: 1, y: 0, duration: 0.7 }, CH2_AT + 0.15);
-      tl.fromTo("#ch2 .title", { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.9 }, CH2_AT + 0.55);
-      tl.fromTo("#ch2 .range", { opacity: 0 }, { opacity: 1, duration: 0.6 }, CH2_AT + 0.9);
+      // ---------- DOM: render a "line" card ----------
+      // Tokenize text into words that include the emphasis phrases as single tokens.
+      // Emphasis phrases can contain spaces (e.g., "수면 시간"); we match those first.
+      function tokenize(text, emphList) {
+        const emphs = (emphList || []).slice().sort((a, b) => b.length - a.length);
+        // Build a regex that matches any emphasis phrase, else non-space runs, else spaces.
+        const escaped = emphs.map(s => s.replace(/[.*+?^${}()|[\]\\]/g, "\\$&"));
+        const parts = [];
+        if (escaped.length) parts.push(escaped.join("|"));
+        parts.push("[^\\s]+", "\\s+");
+        const re = new RegExp("(" + parts.join(")|(") + ")", "g");
+        const tokens = [];
+        let m;
+        while ((m = re.exec(text)) !== null) {
+          const matched = m[0];
+          const isEmph = emphs.includes(matched);
+          const isSpace = /^\s+$/.test(matched);
+          tokens.push({ text: matched, emph: isEmph, space: isSpace });
+        }
+        return tokens;
+      }
 
-      // 8. Kicker session label changes to Session B at chapter 2
-      tl.to("#kicker .dim", { opacity: 0, duration: 0.3 }, CH2_AT - 0.4);
+      const stage = document.getElementById("text-stage");
+
+      // Total number of A1 cards = kicker index rolls over to Part 02
+      let cardsInPart1 = 0;
+      CARDS.forEach(c => { if (c.part === 1) cardsInPart1++; });
+
+      CARDS.forEach((card, i) => {
+        const line = document.createElement("div");
+        line.className = "line" + (card.kind === "title" ? " title" : "");
+        line.id = "card-" + i;
+
+        // Kicker: PART 01 / SCENE 03
+        const partLabel = card.part === 1 ? "01" : "02";
+        const sceneNum = String((card.part === 1 ? i : i - cardsInPart1) + 1).padStart(2, "0");
+        const kicker = document.createElement("div");
+        kicker.className = "kicker";
+        kicker.innerHTML =
+          `<span>PART <span class="num">${partLabel}</span></span>` +
+          `<span class="bar"></span>` +
+          `<span>SCENE <span class="num">${sceneNum}</span></span>`;
+        line.appendChild(kicker);
+
+        // Title halo (yellow bars above/below)
+        if (card.kind === "title") {
+          const haloTop = document.createElement("div");
+          haloTop.className = "halo";
+          line.appendChild(haloTop);
+          const haloBot = document.createElement("div");
+          haloBot.className = "halo bottom";
+          line.appendChild(haloBot);
+        }
+
+        const textRow = document.createElement("div");
+        textRow.className = "text-row";
+        const tokens = tokenize(card.text, card.emph);
+        tokens.forEach(tok => {
+          if (tok.space) {
+            textRow.appendChild(document.createTextNode(" "));
+            return;
+          }
+          const w = document.createElement("span");
+          w.className = "w" + (tok.emph ? " emph" : "");
+          w.textContent = tok.text;
+          textRow.appendChild(w);
+        });
+        line.appendChild(textRow);
+
+        // Caption (only for title cards)
+        if (card.kind === "title") {
+          const cap = document.createElement("div");
+          cap.className = "caption";
+          cap.textContent = card.part === 1 ? "· INTRO ·" : "· CORE ·";
+          line.appendChild(cap);
+        }
+
+        stage.appendChild(line);
+      });
+
+      // ---------- Progress bar phrase marks (per top-level phrase, not sub-line) ----------
+      const phraseMarks = document.getElementById("phrase-marks");
+      PHRASES.forEach((p, pi) => {
+        const m = document.createElement("div");
+        m.className = "phrase-mark";
+        m.style.left = (p.at[0] / TOTAL * 100) + "%";
+        m.id = "pm-" + pi;
+        phraseMarks.appendChild(m);
+      });
+
+      // ---------- Timeline ----------
+      window.__timelines = window.__timelines || {};
+      const tl = gsap.timeline({ paused: true, defaults: { ease: "power2.out" } });
+
+      // Constant progress fill width
+      const RAIL_WIDTH = 1920 - 240;
+      tl.fromTo("#prog-fill", { width: 0 }, { width: RAIL_WIDTH, duration: TOTAL, ease: "none" }, 0);
+
+      // Per-card animation. Container opacity snaps to 1 instantly at
+      // card.start so the first frame already shows something. Each card is
+      // held visible until just before the next card starts — this fills the
+      // silence gaps between phrases and eliminates black-hole frames.
+      CARDS.forEach((card, i) => {
+        const next = CARDS[i + 1];
+        const visibleEnd = next ? next.start : Math.min(TOTAL, card.end + 0.6);
+        const dur = Math.max(0.2, card.end - card.start);
+        const outDur = card.kind === "title" ? 0.55 : Math.min(0.35, (visibleEnd - card.start) * 0.18);
+        const holdEnd = visibleEnd - outDur - 0.02;
+        const cardEl = document.getElementById("card-" + i);
+        const words = cardEl.querySelectorAll(".w");
+        const emphs = cardEl.querySelectorAll(".emph");
+        const wc = words.length || 1;
+        // Snappy word entry — broadcast-editor pace.
+        // Total entry window is capped so the sentence lands quickly, then holds.
+        const entryWindow = Math.min(dur * 0.5, 0.5);
+        const perWord = wc > 1 ? Math.min(0.05, entryWindow / wc) : 0;
+        const wordDur = 0.28;
+
+        // Container: instantly visible at card.start
+        tl.set(cardEl, { opacity: 1 }, card.start);
+
+        // Words: stagger in
+        tl.fromTo(words,
+          { opacity: 0, y: 24 },
+          { opacity: 1, y: 0, duration: wordDur, ease: "power3.out",
+            stagger: { each: perWord, from: "start" } },
+          card.start
+        );
+
+        // Emphasis underline sweep via CSS custom property
+        emphs.forEach((e, ei) => {
+          const at = card.start + Math.min(0.35, perWord * (ei + 1));
+          tl.fromTo(e, { "--underline": 0 }, { "--underline": 1, duration: 0.5, ease: "expo.out" }, at);
+        });
+
+        // Title halo reveal
+        if (card.kind === "title") {
+          const halos = cardEl.querySelectorAll(".halo");
+          const captions = cardEl.querySelectorAll(".caption");
+          tl.fromTo(halos, { opacity: 0, scaleX: 0 }, { opacity: 1, scaleX: 1, duration: 0.8, ease: "expo.out", stagger: 0.08 }, card.start);
+          tl.to(captions, { opacity: 1, duration: 0.6 }, card.start + 0.5);
+        }
+
+        // Dwell bar reset + grow across the visible window
+        const visibleDur = Math.max(0.5, visibleEnd - card.start);
+        tl.set("#dwell-inner", { scaleX: 0 }, card.start);
+        tl.to("#dwell-inner", { scaleX: 1, duration: visibleDur, ease: "none" }, card.start);
+
+        // Card fade out (overlaps into next card start)
+        tl.to(cardEl, { opacity: 0, y: -14, duration: outDur, ease: "power2.in" }, holdEnd);
+      });
+
+      // ---------- Underline sweep via CSS custom property ----------
+      // We animate --underline (0→1) and CSS uses it to drive scaleX of ::after.
+      const cssVarStyle = document.createElement("style");
+      cssVarStyle.textContent = `
+        .line .text-row .emph { --underline: 0; }
+        .line .text-row .emph::after { transform: scaleX(var(--underline)); }
+      `;
+      document.head.appendChild(cssVarStyle);
+
+      // ---------- Phrase marks light up per top-level phrase ----------
+      PHRASES.forEach((p, pi) => {
+        const el = document.getElementById("pm-" + pi);
+        tl.to(el, { backgroundColor: "#ffd400", duration: 0.15 }, p.at[0]);
+      });
+
+      // ---------- Badge label swap at PART 02 ----------
+      tl.to("#badge-num", { opacity: 0, duration: 0.25 }, CH2_AT - 0.35);
       tl.call(() => {
-        const dim = document.querySelector("#kicker .dim");
-        if (dim) dim.textContent = "Session · B";
-      }, [], CH2_AT + 0.1);
-      tl.to("#kicker .dim", { opacity: 1, duration: 0.4 }, CH2_AT + 0.15);
+        const n = document.getElementById("badge-num");
+        if (n) n.textContent = "02";
+      }, [], CH2_AT + 0.05);
+      tl.to("#badge-num", { opacity: 1, duration: 0.35 }, CH2_AT + 0.1);
 
-      // 9. Subtle overall breathing on chapter numbers (scale via transform — seek-safe)
-      tl.fromTo("#ch1 .num", { scale: 1.0 }, { scale: 1.006, duration: A1.dur, ease: "sine.inOut", transformOrigin: "left center" }, 0);
-      tl.fromTo("#ch2 .num", { scale: 1.0 }, { scale: 1.006, duration: A2.dur, ease: "sine.inOut", transformOrigin: "left center" }, CH2_AT);
+      // Small pulse of yellow bracket accents at chapter change
+      tl.fromTo(".bracket", { opacity: 1 }, { opacity: 0.35, duration: 0.25, yoyo: true, repeat: 1 }, CH2_AT - 0.15);
 
-      // 10. Outro (last 1.4s) — gentle brightness pull-down on bars
-      const OUT_AT = TOTAL - 1.2;
-      tl.to("#bars .bar", { scaleY: 0.06, duration: 1.0, ease: "power2.in" }, OUT_AT);
-      tl.to("#grow-line", { opacity: 0.4, duration: 0.8 }, OUT_AT);
-      tl.to("#stage", { opacity: 0.5, duration: 1.0 }, OUT_AT);
+      // ---------- Outro ----------
+      const OUT_AT = TOTAL - 1.0;
+      tl.to("#stage", { opacity: 0.5, duration: 0.9, ease: "power2.in" }, OUT_AT);
+      tl.to("#dwell", { opacity: 0.4, duration: 0.6 }, OUT_AT);
 
       window.__timelines["main"] = tl;
     </script>
