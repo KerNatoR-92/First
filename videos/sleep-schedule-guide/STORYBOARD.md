@@ -149,17 +149,77 @@ music: none
 왼쪽 컬럼 노란 굵은 숫자, 오른쪽 컬럼 큰 흰 시간 텍스트. 3행이 
 "타이핑 리듬"으로 시간 간격을 두고 순차 등장.
 
-## Frame 10 — 규칙성이 진짜 핵심
+## Frame 10 — 실제 잠드는 시간 기준
 
-- scene: 짧은 클로징 스테이트먼트 "매일 비슷한 시간에" 가 큰 텍스트로 페이드-인, 하단 얇은 노란 밑줄
-- duration: 32.485s
+- scene: "침대에 눕는 시간 ≠ 실제 잠드는 시간" 등식 반전, 노란 ≠ 강조
+- duration: 6.875s
 - transition_in: crossfade
 - status: animated
-- voiceover: "실제로 잠드는 시간을 기준으로 계산하는 것이 중요합니다. 그리고 수면 시간만큼 중요한 것이 매일 비슷한 시간에 자고 일어나는 것입니다."
-- src: compositions/frames/10-consistency.html
+- voiceover: "여기서 중요한 점은 침대에 들어가는 시간이 아니라 실제로 잠드는 시간을 기준으로 계산해야 한다는 것입니다."
+- src: compositions/frames/10-actual-time.html
+- blueprint: equation-reveal
+- focal: inequality-actual-vs-bed
+- roles: [lhs-text, neq-sign, rhs-text, subline]
+
+침대에 눕는 시간과 실제로 잠드는 시간을 구분해 주는 인사이트 프레임.
+방정식 형태로 대비를 만들어 시선을 붙잡는다.
+
+## Frame 11 — 30분 일찍 침대
+
+- scene: 큰 "−30분" 등식이 좌우 조립, 하단 캡션 "TARGET BEDTIME − 30M"
+- duration: 7s
+- transition_in: cut
+- status: animated
+- voiceover: "평소 잠드는 데 30분 정도 걸린다면 목표 취침 시간보다 30분 정도 일찍 침대에 들어가는 것이 좋습니다."
+- src: compositions/frames/11-early-30.html
+- blueprint: hero-stat
+- focal: minus-30-hero
+- roles: [minus-op, hero-value, caption, msg]
+
+거대한 −30분 을 화면 중앙에 배치. 노란 마이너스 + 흰색 30 대비.
+"목표 취침 시각보다 30분 일찍 침대로" 규칙을 각인시킨다.
+
+## Frame 12 — 매일 비슷한 시간에
+
+- scene: 짧은 클로징 스테이트먼트 "매일 비슷한 시간에" 가 큰 텍스트로 페이드-인, 하단 얇은 노란 밑줄
+- duration: 5.1s
+- transition_in: crossfade
+- status: animated
+- voiceover: "그리고 수면 시간만큼 중요한 것이 매일 비슷한 시간에 자고 일어나는 것입니다."
+- src: compositions/frames/12-consistency.html
 - blueprint: statement-close
 - focal: closing-statement
 - roles: [big-line, subline, underline-bar]
 
-마지막 각인. 화면 중앙에 큰 흰 텍스트 "매일 비슷한 시간에", 아래에 
-"자고 · 일어나기" 라는 서브라인. 노란 헤어라인이 좌→우로 그어지며 닫힘.
+규칙성의 핵심을 짧고 강하게 한 줄로 각인. 큰 흰 텍스트 "매일 비슷한 시간에",
+아래에 "자고 · 일어나기" 서브라인.
+
+## Frame 13 — 주말 시차
+
+- scene: 평일/주말 두 타임라인 비교, +3.5h ✈ 표시로 시차 감각 시각화
+- duration: 7.4s
+- transition_in: cut
+- status: animated
+- voiceover: "주말이라고 해서 평일보다 서너 시간 늦게 자고 일어나면 우리 몸은 매주 작은 시차 적응을 반복하게 됩니다."
+- src: compositions/frames/13-weekend-jetlag.html
+- blueprint: split-compare
+- focal: two-timeline-shift
+- roles: [row-weekday, row-weekend, shift-label, msg]
+
+평일 23:00 vs 주말 02:30 두 지점을 나란한 타임라인 위에 찍고 그 차이를
+"+3.5h ✈" 로 라벨. 매주 반복되는 미니-시차라는 은유를 시각화.
+
+## Frame 14 — ±1–2시간 이내로
+
+- scene: 최종 규칙 카드. 큰 "± 1–2 시간" 라인 + 노란 언더라인
+- duration: 6.11s
+- transition_in: crossfade
+- status: animated
+- voiceover: "따라서 주말에도 기상 시간 차이를 가능하면 한두 시간 이내로 유지하는 것이 좋습니다."
+- src: compositions/frames/14-close-rule.html
+- blueprint: statement-close
+- focal: gap-limit-rule
+- roles: [big-line, subline, tag, closing-bar]
+
+마지막 룰을 스티커처럼 한 장으로 각인. "±1–2 시간" 이 큰 흰+노란
+글리프로 등장, 하단은 "KEEP WITHIN 1–2H GAP" 라벨 + 노란 바로 마감.

@@ -1,0 +1,75 @@
+<template>
+  <style>
+    @font-face { font-family: 'NotoSansKR'; src: url('assets/fonts/NotoSansKR-Regular.woff2') format('woff2'); font-weight: 400; font-display: block; }
+    @font-face { font-family: 'NotoSansKR'; src: url('assets/fonts/NotoSansKR-Bold.woff2') format('woff2'); font-weight: 700; font-display: block; }
+    #root { position: absolute; inset: 0; overflow: hidden; font-family: 'NotoSansKR', sans-serif; color: #FFFFFF; }
+    .f13-bg { background: #0B0B0D; }
+    .f13-num   { position: absolute; top: 6%; left: 6%; font-size: 20px; letter-spacing: 0.28em; color: #FFD400; font-weight: 700; opacity: 0; }
+    .f13-num-r { position: absolute; top: 6%; right: 6%; font-size: 20px; letter-spacing: 0.28em; color: #8A8A8F; font-weight: 400; opacity: 0; }
+    .f13-topbar { position: absolute; top: 12%; left: 6%; right: 6%; height: 1px; background: #282826; opacity: 0; transform-origin: left center; }
+
+    .f13-head { position: absolute; top: 17%; left: 6%; right: 6%; text-align: center; font-size: 56px; font-weight: 700; letter-spacing: -0.02em; line-height: 1.2; color: #FFFFFF; opacity: 0; }
+    .f13-head .hi { color: #FFD400; }
+
+    /* Timeline: 평일 line and 주말 line offset by 3-4h */
+    .f13-tl { position: absolute; top: 40%; left: 6%; right: 6%; }
+    .f13-row  { position: relative; height: 100px; margin-bottom: 34px; opacity: 0; }
+    .f13-lab  { position: absolute; left: 0; top: 24px; font-size: 26px; font-weight: 700; letter-spacing: 0.16em; color: #8A8A8F; width: 120px; text-transform: uppercase; }
+    .f13-lab.hi { color: #FFD400; }
+    .f13-rule { position: absolute; left: 150px; right: 0; top: 50px; height: 1px; background: #282826; }
+    .f13-dot  { position: absolute; top: 40px; width: 20px; height: 20px; margin-left: -10px; border-radius: 50%; background: #FFD400; box-shadow: 0 0 0 6px rgba(255,212,0,0.16); }
+    .f13-dot.mute { background: #FFFFFF; box-shadow: 0 0 0 6px rgba(255,255,255,0.10); }
+    .f13-time { position: absolute; top: 8px; font-size: 22px; color: #FFFFFF; font-weight: 700; transform: translateX(-50%); }
+    .f13-shift { position: absolute; top: 78px; font-size: 20px; color: #FFD400; font-weight: 700; letter-spacing: 0.08em; transform: translateX(-50%); }
+
+    .f13-msg { position: absolute; top: 78%; left: 6%; right: 6%; text-align: center; font-size: 30px; color: #FFFFFF; letter-spacing: 0.02em; line-height: 1.4; opacity: 0; }
+    .f13-msg b { color: #FFD400; font-weight: 700; }
+
+    .f13-btm { position: absolute; bottom: 8%; left: 6%; right: 6%; height: 1px; background: #282826; opacity: 0; transform-origin: right center; }
+  </style>
+
+  <div id="root" data-composition-id="13-weekend-jetlag" data-start="0" data-duration="7.9" data-width="1920" data-height="1080">
+    <div id="f13-bg" class="clip f13-bg" data-start="0" data-duration="7.9" data-track-index="0"></div>
+    <div id="f13-stage" class="clip" data-start="0" data-duration="7.9" data-track-index="1">
+      <div class="f13-num" id="f13-num">13 · WEEKEND JETLAG</div>
+      <div class="f13-num-r" id="f13-num-r">주말 = 매주 반복되는 시차</div>
+      <div class="f13-topbar" id="f13-topbar"></div>
+
+      <div class="f13-head" id="f13-head">주말에 <span class="hi">3–4시간</span> 늦어지면,<br/>몸은 <span class="hi">매주 시차 적응</span>을 반복.</div>
+
+      <div class="f13-tl">
+        <div class="f13-row" id="f13-row1">
+          <div class="f13-lab">평일</div>
+          <div class="f13-rule"></div>
+          <div class="f13-dot mute" style="left: 24%"></div>
+          <div class="f13-time" style="left: 24%">23:00</div>
+        </div>
+        <div class="f13-row" id="f13-row2">
+          <div class="f13-lab hi">주말</div>
+          <div class="f13-rule"></div>
+          <div class="f13-dot" style="left: 55%"></div>
+          <div class="f13-time" style="left: 55%">02:30</div>
+          <div class="f13-shift" style="left: 40%">+3.5h ✈</div>
+        </div>
+      </div>
+
+      <div class="f13-msg" id="f13-msg">몸은 매주 <b>작은 시차</b>를 견디는 셈.</div>
+
+      <div class="f13-btm" id="f13-btm"></div>
+    </div>
+  </div>
+
+  <script>
+    window.__timelines = window.__timelines || {};
+    const tl = gsap.timeline({ paused: true });
+    tl.fromTo("#f13-num",    { opacity: 0, x: -12 }, { opacity: 1, x: 0, duration: 0.4, ease: "power2.out" }, 0.05);
+    tl.fromTo("#f13-num-r",  { opacity: 0, x:  12 }, { opacity: 1, x: 0, duration: 0.4, ease: "power2.out" }, 0.05);
+    tl.fromTo("#f13-topbar", { opacity: 0, scaleX: 0 }, { opacity: 1, scaleX: 1, duration: 0.5, ease: "power3.inOut" }, 0.15);
+    tl.fromTo("#f13-head",   { opacity: 0, y: 16 }, { opacity: 1, y: 0, duration: 0.55, ease: "power3.out" }, 0.40);
+    tl.fromTo("#f13-row1",   { opacity: 0, x: -30 }, { opacity: 1, x: 0, duration: 0.5, ease: "power3.out" }, 2.00);
+    tl.fromTo("#f13-row2",   { opacity: 0, x: -30 }, { opacity: 1, x: 0, duration: 0.55, ease: "power3.out" }, 3.60);
+    tl.fromTo("#f13-msg",    { opacity: 0, y: 12 }, { opacity: 1, y: 0, duration: 0.55, ease: "power2.out" }, 5.30);
+    tl.fromTo("#f13-btm",    { opacity: 0, scaleX: 0 }, { opacity: 1, scaleX: 1, duration: 0.6, ease: "power3.inOut", transformOrigin: "right center" }, 6.20);
+    window.__timelines["13-weekend-jetlag"] = tl;
+  </script>
+</template>

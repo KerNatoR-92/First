@@ -1,0 +1,52 @@
+<template>
+  <style>
+    @font-face { font-family: 'NotoSansKR'; src: url('assets/fonts/NotoSansKR-Regular.woff2') format('woff2'); font-weight: 400; font-display: block; }
+    @font-face { font-family: 'NotoSansKR'; src: url('assets/fonts/NotoSansKR-Bold.woff2') format('woff2'); font-weight: 700; font-display: block; }
+    #root { position: absolute; inset: 0; overflow: hidden; font-family: 'NotoSansKR', sans-serif; color: #FFFFFF; }
+    .f14-bg { background: #0B0B0D; }
+    .f14-num   { position: absolute; top: 6%; left: 6%; font-size: 20px; letter-spacing: 0.28em; color: #FFD400; font-weight: 700; opacity: 0; }
+    .f14-num-r { position: absolute; top: 6%; right: 6%; font-size: 20px; letter-spacing: 0.28em; color: #8A8A8F; font-weight: 400; opacity: 0; }
+    .f14-topbar { position: absolute; top: 12%; left: 6%; right: 6%; height: 1px; background: #282826; opacity: 0; transform-origin: left center; }
+
+    .f14-lead { position: absolute; top: 22%; left: 6%; right: 6%; text-align: center; font-size: 28px; color: #8A8A8F; letter-spacing: 0.28em; text-transform: uppercase; opacity: 0; font-weight: 700; }
+    .f14-line { position: absolute; top: 34%; left: 0; right: 0; text-align: center; font-size: 128px; font-weight: 900; letter-spacing: -0.04em; line-height: 1.05; opacity: 0; }
+    .f14-line .hi { color: #FFD400; }
+    .f14-under { position: absolute; top: 58%; left: 50%; transform: translateX(-50%); width: 0; height: 4px; background: #FFD400; }
+    .f14-sub  { position: absolute; top: 63%; left: 0; right: 0; text-align: center; font-size: 40px; font-weight: 400; color: #FFFFFF; letter-spacing: 0.02em; opacity: 0; }
+    .f14-sub b { color: #FFD400; font-weight: 700; }
+    .f14-tag  { position: absolute; bottom: 14%; left: 0; right: 0; text-align: center; font-size: 22px; letter-spacing: 0.28em; color: #8A8A8F; opacity: 0; font-weight: 400; }
+    .f14-btm  { position: absolute; bottom: 8%; left: 6%; right: 6%; height: 1px; background: #FFD400; opacity: 0; transform-origin: left center; }
+  </style>
+
+  <div id="root" data-composition-id="14-close-rule" data-start="0" data-duration="6.11" data-width="1920" data-height="1080">
+    <div id="f14-bg" class="clip f14-bg" data-start="0" data-duration="6.11" data-track-index="0"></div>
+    <div id="f14-stage" class="clip" data-start="0" data-duration="6.11" data-track-index="1">
+      <div class="f14-num" id="f14-num">14 · THE RULE</div>
+      <div class="f14-num-r" id="f14-num-r">주말 기상 차이 ±1–2시간</div>
+      <div class="f14-topbar" id="f14-topbar"></div>
+
+      <div class="f14-lead" id="f14-lead">주말에도 기상 시간 차이는</div>
+      <div class="f14-line" id="f14-line"><span class="hi">±&nbsp;1–2</span> 시간</div>
+      <div class="f14-under" id="f14-under"></div>
+      <div class="f14-sub"  id="f14-sub"><b>그 이내</b>로 유지하기</div>
+      <div class="f14-tag"  id="f14-tag">KEEP · WITHIN · 1–2H · GAP</div>
+
+      <div class="f14-btm" id="f14-btm"></div>
+    </div>
+  </div>
+
+  <script>
+    window.__timelines = window.__timelines || {};
+    const tl = gsap.timeline({ paused: true });
+    tl.fromTo("#f14-num",    { opacity: 0, x: -12 }, { opacity: 1, x: 0, duration: 0.4, ease: "power2.out" }, 0.05);
+    tl.fromTo("#f14-num-r",  { opacity: 0, x:  12 }, { opacity: 1, x: 0, duration: 0.4, ease: "power2.out" }, 0.05);
+    tl.fromTo("#f14-topbar", { opacity: 0, scaleX: 0 }, { opacity: 1, scaleX: 1, duration: 0.5, ease: "power3.inOut" }, 0.15);
+    tl.fromTo("#f14-lead",   { opacity: 0, y: 12 }, { opacity: 1, y: 0, duration: 0.45, ease: "power2.out" }, 0.35);
+    tl.fromTo("#f14-line",   { opacity: 0, y: 24, scale: 0.94 }, { opacity: 1, y: 0, scale: 1, duration: 0.7, ease: "back.out(1.4)" }, 1.20);
+    tl.fromTo("#f14-under",  { width: 0 }, { width: 380, duration: 0.55, ease: "power2.out" }, 2.10);
+    tl.fromTo("#f14-sub",    { opacity: 0, y: 12 }, { opacity: 1, y: 0, duration: 0.5, ease: "power2.out" }, 2.50);
+    tl.fromTo("#f14-tag",    { opacity: 0, y: 8 }, { opacity: 1, y: 0, duration: 0.5, ease: "power2.out" }, 3.20);
+    tl.fromTo("#f14-btm",    { opacity: 0, scaleX: 0 }, { opacity: 1, scaleX: 1, duration: 0.7, ease: "power3.inOut" }, 4.20);
+    window.__timelines["14-close-rule"] = tl;
+  </script>
+</template>

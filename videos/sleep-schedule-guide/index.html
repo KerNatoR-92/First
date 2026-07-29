@@ -204,19 +204,91 @@
       ></audio>
 
       <div
-        id="el-10-consistency"
+        id="el-10-actual-time"
         class="scene"
-        data-composition-id="10-consistency"
-        data-composition-src="compositions/frames/10-consistency.html"
+        data-composition-id="10-actual-time"
+        data-composition-src="compositions/frames/10-actual-time.html"
         data-start="78.025"
-        data-duration="32.485"
+        data-duration="6.875"
         data-track-index="1"
       ></div>
       <audio
-        id="el-10-consistency-voice"
+        id="el-10-actual-time-voice"
         src="assets/voice/10.wav"
         data-start="78.025"
-        data-duration="32.485"
+        data-duration="6.875"
+        data-track-index="10"
+        data-volume="1"
+      ></audio>
+
+      <div
+        id="el-11-early-30"
+        class="scene"
+        data-composition-id="11-early-30"
+        data-composition-src="compositions/frames/11-early-30.html"
+        data-start="84.9"
+        data-duration="7.5"
+        data-track-index="0"
+      ></div>
+      <audio
+        id="el-11-early-30-voice"
+        src="assets/voice/11.wav"
+        data-start="84.9"
+        data-duration="7"
+        data-track-index="10"
+        data-volume="1"
+      ></audio>
+
+      <div
+        id="el-12-consistency"
+        class="scene"
+        data-composition-id="12-consistency"
+        data-composition-src="compositions/frames/12-consistency.html"
+        data-start="91.9"
+        data-duration="5.1"
+        data-track-index="1"
+      ></div>
+      <audio
+        id="el-12-consistency-voice"
+        src="assets/voice/12.wav"
+        data-start="91.9"
+        data-duration="5.1"
+        data-track-index="10"
+        data-volume="1"
+      ></audio>
+
+      <div
+        id="el-13-weekend-jetlag"
+        class="scene"
+        data-composition-id="13-weekend-jetlag"
+        data-composition-src="compositions/frames/13-weekend-jetlag.html"
+        data-start="97"
+        data-duration="7.9"
+        data-track-index="0"
+      ></div>
+      <audio
+        id="el-13-weekend-jetlag-voice"
+        src="assets/voice/13.wav"
+        data-start="97"
+        data-duration="7.4"
+        data-track-index="10"
+        data-volume="1"
+      ></audio>
+
+      <div
+        id="el-14-close-rule"
+        class="scene"
+        data-composition-id="14-close-rule"
+        data-composition-src="compositions/frames/14-close-rule.html"
+        data-start="104.4"
+        data-duration="6.11"
+        data-track-index="1"
+      ></div>
+      <audio
+        id="el-14-close-rule-voice"
+        src="assets/voice/14.wav"
+        data-start="104.4"
+        data-duration="6.11"
         data-track-index="10"
         data-volume="1"
       ></audio>
@@ -237,7 +309,11 @@
         tl.to("#el-07-seven-hours", { opacity: 0, duration: 0.5, ease: "power2.inOut" }, 52.22);
         tl.fromTo("#el-08-reverse-calc", { opacity: 0 }, { opacity: 1, duration: 0.5, ease: "power2.inOut" }, 52.22);
         tl.to("#el-09-schedule-table", { opacity: 0, duration: 0.5, ease: "power2.inOut" }, 78.025);
-        tl.fromTo("#el-10-consistency", { opacity: 0 }, { opacity: 1, duration: 0.5, ease: "power2.inOut" }, 78.025);
+        tl.fromTo("#el-10-actual-time", { opacity: 0 }, { opacity: 1, duration: 0.5, ease: "power2.inOut" }, 78.025);
+        tl.to("#el-11-early-30", { opacity: 0, duration: 0.5, ease: "power2.inOut" }, 91.9);
+        tl.fromTo("#el-12-consistency", { opacity: 0 }, { opacity: 1, duration: 0.5, ease: "power2.inOut" }, 91.9);
+        tl.to("#el-13-weekend-jetlag", { opacity: 0, duration: 0.5, ease: "power2.inOut" }, 104.4);
+        tl.fromTo("#el-14-close-rule", { opacity: 0 }, { opacity: 1, duration: 0.5, ease: "power2.inOut" }, 104.4);
         tl.to({}, { duration: 110.51 }, 0); // full-span anchor — main.duration() == composition total (Studio master duration)
       })();
     </script>

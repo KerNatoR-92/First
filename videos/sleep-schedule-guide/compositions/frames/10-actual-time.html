@@ -1,0 +1,64 @@
+<template>
+  <style>
+    @font-face { font-family: 'NotoSansKR'; src: url('assets/fonts/NotoSansKR-Regular.woff2') format('woff2'); font-weight: 400; font-display: block; }
+    @font-face { font-family: 'NotoSansKR'; src: url('assets/fonts/NotoSansKR-Bold.woff2') format('woff2'); font-weight: 700; font-display: block; }
+    #root { position: absolute; inset: 0; overflow: hidden; font-family: 'NotoSansKR', sans-serif; color: #FFFFFF; }
+    .f10a-bg { background: #0B0B0D; }
+    .f10a-num   { position: absolute; top: 6%; left: 6%; font-size: 20px; letter-spacing: 0.28em; color: #FFD400; font-weight: 700; opacity: 0; }
+    .f10a-num-r { position: absolute; top: 6%; right: 6%; font-size: 20px; letter-spacing: 0.28em; color: #8A8A8F; font-weight: 400; opacity: 0; }
+    .f10a-topbar { position: absolute; top: 12%; left: 6%; right: 6%; height: 1px; background: #282826; opacity: 0; transform-origin: left center; }
+    .f10a-lead { position: absolute; top: 20%; left: 6%; right: 6%; text-align: center; font-size: 32px; color: #8A8A8F; letter-spacing: 0.02em; line-height: 1.4; opacity: 0; }
+    .f10a-eq   { position: absolute; top: 36%; left: 0; right: 0; text-align: center; display: flex; align-items: center; justify-content: center; gap: 40px; }
+    .f10a-side { font-size: 82px; font-weight: 700; letter-spacing: -0.03em; line-height: 1.05; opacity: 0; max-width: 34%; }
+    .f10a-side .sub { display: block; font-size: 22px; font-weight: 400; color: #8A8A8F; letter-spacing: 0.14em; margin-top: 12px; text-transform: uppercase; }
+    .f10a-neq  { font-size: 180px; font-weight: 900; color: #FFD400; letter-spacing: -0.03em; line-height: 0.9; opacity: 0; }
+    .f10a-under { position: absolute; top: 63%; left: 50%; transform: translateX(-50%); width: 0; height: 3px; background: #FFD400; }
+    .f10a-msg  { position: absolute; top: 72%; left: 6%; right: 6%; text-align: center; font-size: 40px; font-weight: 700; letter-spacing: -0.01em; color: #FFFFFF; line-height: 1.35; opacity: 0; }
+    .f10a-msg .hi { color: #FFD400; }
+    .f10a-btm { position: absolute; bottom: 8%; left: 6%; right: 6%; height: 1px; background: #282826; opacity: 0; transform-origin: right center; }
+  </style>
+
+  <div id="root" data-composition-id="10-actual-time" data-start="0" data-duration="6.875" data-width="1920" data-height="1080">
+    <div id="f10a-bg" class="clip f10a-bg" data-start="0" data-duration="6.875" data-track-index="0"></div>
+    <div id="f10a-stage" class="clip" data-start="0" data-duration="6.875" data-track-index="1">
+      <div class="f10a-num" id="f10a-num">10 · REAL SLEEP TIME</div>
+      <div class="f10a-num-r" id="f10a-num-r">실제로 잠드는 시간</div>
+      <div class="f10a-topbar" id="f10a-topbar"></div>
+
+      <div class="f10a-lead" id="f10a-lead">여기서 놓치기 쉬운 한 가지 —</div>
+
+      <div class="f10a-eq">
+        <div class="f10a-side" id="f10a-lhs">
+          침대에<br/>눕는 시간
+          <span class="sub">GO · TO · BED</span>
+        </div>
+        <div class="f10a-neq" id="f10a-neq">≠</div>
+        <div class="f10a-side" id="f10a-rhs">
+          실제로<br/>잠드는 시간
+          <span class="sub">FALL · ASLEEP</span>
+        </div>
+      </div>
+
+      <div class="f10a-under" id="f10a-under"></div>
+      <div class="f10a-msg" id="f10a-msg"><span class="hi">잠드는 시간</span>을 기준으로 역산하세요.</div>
+
+      <div class="f10a-btm" id="f10a-btm"></div>
+    </div>
+  </div>
+
+  <script>
+    window.__timelines = window.__timelines || {};
+    const tl = gsap.timeline({ paused: true });
+    tl.fromTo("#f10a-num",    { opacity: 0, x: -12 }, { opacity: 1, x: 0, duration: 0.4, ease: "power2.out" }, 0.05);
+    tl.fromTo("#f10a-num-r",  { opacity: 0, x:  12 }, { opacity: 1, x: 0, duration: 0.4, ease: "power2.out" }, 0.05);
+    tl.fromTo("#f10a-topbar", { opacity: 0, scaleX: 0 }, { opacity: 1, scaleX: 1, duration: 0.5, ease: "power3.inOut" }, 0.15);
+    tl.fromTo("#f10a-lead",   { opacity: 0, y: 12 }, { opacity: 1, y: 0, duration: 0.4, ease: "power2.out" }, 0.35);
+    tl.fromTo("#f10a-lhs",    { opacity: 0, x: -20 }, { opacity: 1, x: 0, duration: 0.55, ease: "power3.out" }, 1.20);
+    tl.fromTo("#f10a-neq",    { opacity: 0, scale: 0.5 }, { opacity: 1, scale: 1, duration: 0.45, ease: "back.out(2)" }, 2.30);
+    tl.fromTo("#f10a-rhs",    { opacity: 0, x: 20 }, { opacity: 1, x: 0, duration: 0.55, ease: "power3.out" }, 2.75);
+    tl.fromTo("#f10a-under",  { width: 0 }, { width: 340, duration: 0.5, ease: "power2.out" }, 3.90);
+    tl.fromTo("#f10a-msg",    { opacity: 0, y: 16 }, { opacity: 1, y: 0, duration: 0.55, ease: "power3.out" }, 4.35);
+    tl.fromTo("#f10a-btm",    { opacity: 0, scaleX: 0 }, { opacity: 1, scaleX: 1, duration: 0.6, ease: "power3.inOut", transformOrigin: "right center" }, 5.60);
+    window.__timelines["10-actual-time"] = tl;
+  </script>
+</template>
