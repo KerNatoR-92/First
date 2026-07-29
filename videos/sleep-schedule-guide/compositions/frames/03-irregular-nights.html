@@ -4,29 +4,61 @@
     @font-face { font-family: 'NotoSansKR'; src: url('assets/fonts/NotoSansKR-Bold.woff2') format('woff2'); font-weight: 700; font-display: block; }
     #root { position: absolute; inset: 0; overflow: hidden; font-family: 'NotoSansKR', sans-serif; color: #FFFFFF; }
     .f03-bg { background: #0B0B0D; }
-    .f03-num   { position: absolute; top: 6%; left: 6%; font-size: 20px; letter-spacing: 0.28em; color: #FFD400; font-weight: 700; opacity: 0; }
-    .f03-num-r { position: absolute; top: 6%; right: 6%; font-size: 20px; letter-spacing: 0.28em; color: #8A8A8F; font-weight: 400; opacity: 0; }
-    .f03-head  { position: absolute; top: 14%; left: 6%; right: 6%; font-size: 68px; font-weight: 700; letter-spacing: -0.02em; line-height: 1.15; opacity: 0; }
+    .f03-topbar { position: absolute; top: 8%; left: 6%; right: 6%; height: 1px; background: #282826; opacity: 0; transform-origin: left center; }
+    .f03-head  { position: absolute; top: 12%; left: 6%; right: 6%; font-size: 58px; font-weight: 700; letter-spacing: -0.02em; line-height: 1.18; opacity: 0; }
     .f03-head .hi { color: #FFD400; }
+
+    /* 3 scenario chips */
+    .f03-chips { position: absolute; top: 34%; left: 6%; right: 6%; display: flex; gap: 3%; justify-content: space-between; }
+    .f03-chip  { flex: 1; padding: 22px 26px; border: 1px solid #282826; border-left: 3px solid #FFD400; opacity: 0; background: rgba(255,255,255,0.02); }
+    .f03-chip .icon { font-size: 20px; color: #FFD400; letter-spacing: 0.24em; font-weight: 700; text-transform: uppercase; }
+    .f03-chip .name { margin-top: 10px; font-size: 44px; font-weight: 700; letter-spacing: -0.02em; color: #FFFFFF; line-height: 1.05; }
+    .f03-chip .time { margin-top: 8px; font-size: 22px; color: #8A8A8F; font-weight: 400; letter-spacing: 0.06em; }
+    .f03-chip .time b { color: #FFD400; font-weight: 700; }
+
     /* 24h timeline */
-    .f03-tl-wrap { position: absolute; top: 46%; left: 6%; right: 6%; }
+    .f03-tl-wrap { position: absolute; top: 62%; left: 6%; right: 6%; }
     .f03-tl-rule { position: relative; height: 1px; background: #FFFFFF; opacity: 0; transform-origin: left center; }
-    .f03-tl-tick { position: absolute; top: -12px; width: 1px; height: 24px; background: #282826; }
-    .f03-tl-lab  { position: absolute; top: 22px; font-size: 18px; color: #8A8A8F; letter-spacing: 0.14em; transform: translateX(-50%); }
-    .f03-dot     { position: absolute; top: -20px; width: 20px; height: 20px; margin-left: -10px; border-radius: 50%; background: #FFD400; opacity: 0; box-shadow: 0 0 0 6px rgba(255,212,0,0.16); }
-    .f03-callout { position: absolute; top: -78px; font-size: 22px; font-weight: 700; color: #FFFFFF; letter-spacing: -0.01em; transform: translateX(-50%); opacity: 0; }
-    .f03-callout::after { content: ''; position: absolute; left: 50%; bottom: -14px; width: 1px; height: 40px; background: #FFD400; opacity: 0.6; }
-    .f03-btm-tag { position: absolute; bottom: 10%; left: 6%; right: 6%; font-size: 24px; letter-spacing: 0.16em; color: #8A8A8F; opacity: 0; text-align: center; }
+    .f03-tl-tick { position: absolute; top: -8px; width: 1px; height: 16px; background: #282826; }
+    .f03-tl-lab  { position: absolute; top: 18px; font-size: 15px; color: #8A8A8F; letter-spacing: 0.14em; transform: translateX(-50%); }
+    .f03-dot     { position: absolute; top: -14px; width: 14px; height: 14px; margin-left: -7px; border-radius: 50%; background: #FFD400; opacity: 0; box-shadow: 0 0 0 5px rgba(255,212,0,0.16); }
+    .f03-callout { position: absolute; top: -46px; font-size: 16px; font-weight: 700; color: #FFFFFF; letter-spacing: 0.02em; transform: translateX(-50%); opacity: 0; white-space: nowrap; }
+
+    /* Consequence line */
+    .f03-conseq { position: absolute; top: 82%; left: 6%; right: 6%; text-align: center; font-size: 28px; color: #FFFFFF; letter-spacing: 0.02em; opacity: 0; line-height: 1.35; }
+    .f03-conseq .arrow { color: #FFD400; margin: 0 14px; font-weight: 700; }
+    .f03-conseq b { color: #FFD400; font-weight: 700; }
+
+    .f03-btm { position: absolute; bottom: 6%; left: 6%; right: 6%; height: 1px; background: #282826; opacity: 0; transform-origin: right center; }
   </style>
 
   <div id="root" data-composition-id="03-irregular-nights" data-start="0" data-duration="7.095" data-width="1920" data-height="1080">
     <div id="f03-bg" class="clip f03-bg" data-start="0" data-duration="7.095" data-track-index="0"></div>
     <div id="f03-stage" class="clip" data-start="0" data-duration="7.095" data-track-index="1">
+      <div class="f03-topbar" id="f03-topbar"></div>
+
       <div class="f03-head" id="f03-head">야근·회식엔 <span class="hi">새벽</span>에,<br/>다음 날은 <span class="hi">일찍</span>.</div>
+
+      <div class="f03-chips">
+        <div class="f03-chip" id="f03-chip1">
+          <div class="icon">CASE · 01</div>
+          <div class="name">야근</div>
+          <div class="time">취침 <b>02:00</b></div>
+        </div>
+        <div class="f03-chip" id="f03-chip2">
+          <div class="icon">CASE · 02</div>
+          <div class="name">회식</div>
+          <div class="time">취침 <b>01:30</b></div>
+        </div>
+        <div class="f03-chip" id="f03-chip3">
+          <div class="icon">CASE · 03</div>
+          <div class="name">중요 일정</div>
+          <div class="time">기상 <b>05:30</b></div>
+        </div>
+      </div>
 
       <div class="f03-tl-wrap">
         <div class="f03-tl-rule" id="f03-tl-rule">
-          <!-- ticks and labels at 0h, 6h, 12h, 18h, 24h positions -->
           <div class="f03-tl-tick" style="left: 0%"></div>
           <div class="f03-tl-tick" style="left: 25%"></div>
           <div class="f03-tl-tick" style="left: 50%"></div>
@@ -38,29 +70,35 @@
           <div class="f03-tl-lab"  style="left: 75%">18시</div>
           <div class="f03-tl-lab"  style="left: 100%">24시</div>
 
-          <!-- Dots representing late-night sleep at ~2AM (8.3%) and early wake at ~5AM (20.8%) -->
-          <div class="f03-dot" id="f03-dot-late" style="left: 8.3%"></div>
-          <div class="f03-dot" id="f03-dot-early" style="left: 20.8%"></div>
-
-          <div class="f03-callout" id="f03-c-late" style="left: 8.3%">야근·회식 · 취침</div>
-          <div class="f03-callout" id="f03-c-early" style="left: 20.8%">다음날 · 기상</div>
+          <div class="f03-dot" id="f03-dot-late"  style="left: 8.3%"></div>
+          <div class="f03-dot" id="f03-dot-early" style="left: 22.9%"></div>
+          <div class="f03-callout" id="f03-c-late"  style="left: 8.3%">늦은 취침</div>
+          <div class="f03-callout" id="f03-c-early" style="left: 22.9%">이른 기상</div>
         </div>
       </div>
 
-      <div class="f03-btm-tag" id="f03-btm">SLEEP&nbsp;·&nbsp;WAKE&nbsp;·&nbsp;SLEEP&nbsp;·&nbsp;WAKE</div>
+      <div class="f03-conseq" id="f03-conseq">매일 다른 취침·기상 <span class="arrow">→</span> <b>수면 리듬 붕괴</b></div>
+
+      <div class="f03-btm" id="f03-btm"></div>
     </div>
   </div>
 
   <script>
     window.__timelines = window.__timelines || {};
     const tl = gsap.timeline({ paused: true });
-    // Compressed to fit 6.595s window    tl.fromTo("#f03-head",  { opacity: 0, y: 24 }, { opacity: 1, y: 0, duration: 0.5, ease: "power3.out" }, 0.20);
-    tl.fromTo("#f03-tl-rule", { opacity: 0, scaleX: 0 }, { opacity: 1, scaleX: 1, duration: 0.65, ease: "power3.inOut" }, 0.80);
-    tl.fromTo("#f03-dot-late",  { opacity: 0, scale: 0 }, { opacity: 1, scale: 1, duration: 0.4, ease: "back.out(2)" }, 2.10);
-    tl.fromTo("#f03-c-late",    { opacity: 0, y: 12 }, { opacity: 1, y: 0, duration: 0.4, ease: "power2.out" }, 2.25);
-    tl.fromTo("#f03-dot-early", { opacity: 0, scale: 0 }, { opacity: 1, scale: 1, duration: 0.4, ease: "back.out(2)" }, 4.20);
-    tl.fromTo("#f03-c-early",   { opacity: 0, y: 12 }, { opacity: 1, y: 0, duration: 0.4, ease: "power2.out" }, 4.35);
-    tl.fromTo("#f03-btm",       { opacity: 0, y: 12 }, { opacity: 1, y: 0, duration: 0.5, ease: "power2.out" }, 5.55);
+    // Compressed to fit 6.595s window
+    tl.fromTo("#f03-topbar",{ opacity: 0, scaleX: 0 }, { opacity: 1, scaleX: 1, duration: 0.4, ease: "power3.inOut" }, 0.00);
+    tl.fromTo("#f03-head",  { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.45, ease: "power3.out" }, 0.10);
+    tl.fromTo("#f03-chip1", { opacity: 0, y: 24 }, { opacity: 1, y: 0, duration: 0.4, ease: "power3.out" }, 0.90);
+    tl.fromTo("#f03-chip2", { opacity: 0, y: 24 }, { opacity: 1, y: 0, duration: 0.4, ease: "power3.out" }, 1.30);
+    tl.fromTo("#f03-chip3", { opacity: 0, y: 24 }, { opacity: 1, y: 0, duration: 0.4, ease: "power3.out" }, 1.70);
+    tl.fromTo("#f03-tl-rule", { opacity: 0, scaleX: 0 }, { opacity: 1, scaleX: 1, duration: 0.55, ease: "power3.inOut" }, 2.50);
+    tl.fromTo("#f03-dot-late",  { opacity: 0, scale: 0 }, { opacity: 1, scale: 1, duration: 0.35, ease: "back.out(2)" }, 3.30);
+    tl.fromTo("#f03-c-late",    { opacity: 0, y: 8 }, { opacity: 1, y: 0, duration: 0.35, ease: "power2.out" }, 3.45);
+    tl.fromTo("#f03-dot-early", { opacity: 0, scale: 0 }, { opacity: 1, scale: 1, duration: 0.35, ease: "back.out(2)" }, 3.90);
+    tl.fromTo("#f03-c-early",   { opacity: 0, y: 8 }, { opacity: 1, y: 0, duration: 0.35, ease: "power2.out" }, 4.05);
+    tl.fromTo("#f03-conseq",{ opacity: 0, y: 12 }, { opacity: 1, y: 0, duration: 0.5, ease: "power3.out" }, 4.90);
+    tl.fromTo("#f03-btm",   { opacity: 0, scaleX: 0 }, { opacity: 1, scaleX: 1, duration: 0.5, ease: "power3.inOut", transformOrigin: "right center" }, 5.85);
     window.__timelines["03-irregular-nights"] = tl;
   </script>
 </template>
