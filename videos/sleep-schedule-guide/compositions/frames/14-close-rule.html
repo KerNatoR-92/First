@@ -20,10 +20,7 @@
 
   <div id="root" data-composition-id="14-close-rule" data-start="0" data-duration="6.11" data-width="1920" data-height="1080">
     <div id="f14-bg" class="clip f14-bg" data-start="0" data-duration="6.11" data-track-index="0"></div>
-    <div id="f14-stage" class="clip" data-start="0" data-duration="6.11" data-track-index="1">
-      <div class="f14-num" id="f14-num">14 · THE RULE</div>
-      <div class="f14-num-r" id="f14-num-r">주말 기상 차이 ±1–2시간</div>
-      <div class="f14-topbar" id="f14-topbar"></div>
+    <div id="f14-stage" class="clip" data-start="0" data-duration="6.11" data-track-index="1">      <div class="f14-topbar" id="f14-topbar"></div>
 
       <div class="f14-lead" id="f14-lead">주말에도 기상 시간 차이는</div>
       <div class="f14-line" id="f14-line"><span class="hi">±&nbsp;1–2</span> 시간</div>
@@ -37,10 +34,7 @@
 
   <script>
     window.__timelines = window.__timelines || {};
-    const tl = gsap.timeline({ paused: true });
-    tl.fromTo("#f14-num",    { opacity: 0, x: -12 }, { opacity: 1, x: 0, duration: 0.4, ease: "power2.out" }, 0.05);
-    tl.fromTo("#f14-num-r",  { opacity: 0, x:  12 }, { opacity: 1, x: 0, duration: 0.4, ease: "power2.out" }, 0.05);
-    tl.fromTo("#f14-topbar", { opacity: 0, scaleX: 0 }, { opacity: 1, scaleX: 1, duration: 0.5, ease: "power3.inOut" }, 0.15);
+    const tl = gsap.timeline({ paused: true });    tl.fromTo("#f14-topbar", { opacity: 0, scaleX: 0 }, { opacity: 1, scaleX: 1, duration: 0.5, ease: "power3.inOut" }, 0.15);
     tl.fromTo("#f14-lead",   { opacity: 0, y: 12 }, { opacity: 1, y: 0, duration: 0.45, ease: "power2.out" }, 0.35);
     tl.fromTo("#f14-line",   { opacity: 0, y: 24, scale: 0.94 }, { opacity: 1, y: 0, scale: 1, duration: 0.7, ease: "back.out(1.4)" }, 1.20);
     tl.fromTo("#f14-under",  { width: 0 }, { width: 380, duration: 0.55, ease: "power2.out" }, 2.10);

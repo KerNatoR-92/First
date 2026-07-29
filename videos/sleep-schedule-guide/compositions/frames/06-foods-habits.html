@@ -1,0 +1,64 @@
+<template>
+  <style>
+    @font-face { font-family: 'NotoSansKR'; src: url('assets/fonts/NotoSansKR-Regular.woff2') format('woff2'); font-weight: 400; font-display: block; }
+    @font-face { font-family: 'NotoSansKR'; src: url('assets/fonts/NotoSansKR-Bold.woff2') format('woff2'); font-weight: 700; font-display: block; }
+    #root { position: absolute; inset: 0; overflow: hidden; font-family: 'NotoSansKR', sans-serif; color: #FFFFFF; }
+    .f6a-bg { background: #0B0B0D; }
+    .f6a-topbar { position: absolute; top: 12%; left: 6%; right: 6%; height: 1px; background: #282826; opacity: 0; transform-origin: left center; }
+
+    .f6a-lead { position: absolute; top: 18%; left: 6%; right: 6%; text-align: center; font-size: 32px; color: #8A8A8F; letter-spacing: 0.02em; line-height: 1.5; opacity: 0; }
+
+    .f6a-cards { position: absolute; top: 34%; left: 6%; right: 6%; display: flex; justify-content: center; gap: 3%; }
+    .f6a-card  { flex: 1; max-width: 30%; padding: 40px 30px; border: 1px solid #282826; border-top: 3px solid #FFD400; opacity: 0; }
+    .f6a-card .lab { font-size: 22px; letter-spacing: 0.22em; color: #FFD400; font-weight: 700; text-transform: uppercase; }
+    .f6a-card .val { margin-top: 22px; font-size: 56px; font-weight: 700; letter-spacing: -0.02em; color: #FFFFFF; line-height: 1.1; }
+    .f6a-card .sub { margin-top: 14px; font-size: 22px; font-weight: 400; color: #8A8A8F; letter-spacing: 0.02em; }
+
+    .f6a-msg { position: absolute; top: 76%; left: 6%; right: 6%; text-align: center; font-size: 36px; font-weight: 400; color: #FFFFFF; line-height: 1.35; opacity: 0; }
+    .f6a-msg b { color: #FFD400; font-weight: 700; }
+
+    .f6a-btm { position: absolute; bottom: 8%; left: 6%; right: 6%; height: 1px; background: #282826; opacity: 0; transform-origin: right center; }
+  </style>
+
+  <div id="root" data-composition-id="06-foods-habits" data-start="0" data-duration="6.72" data-width="1920" data-height="1080">
+    <div id="f6a-bg" class="clip f6a-bg" data-start="0" data-duration="6.72" data-track-index="0"></div>
+    <div id="f6a-stage" class="clip" data-start="0" data-duration="6.72" data-track-index="1">
+      <div class="f6a-topbar" id="f6a-topbar"></div>
+      <div class="f6a-lead" id="f6a-lead">잠들기 어려운 분들에게 도움이 될 —</div>
+
+      <div class="f6a-cards">
+        <div class="f6a-card" id="f6a-c1">
+          <div class="lab">FOOD</div>
+          <div class="val">음식</div>
+          <div class="sub">잠에 도움이 되는 것</div>
+        </div>
+        <div class="f6a-card" id="f6a-c2">
+          <div class="lab">NUTRIENT</div>
+          <div class="val">성분</div>
+          <div class="sub">멜라토닌 · 마그네슘</div>
+        </div>
+        <div class="f6a-card" id="f6a-c3">
+          <div class="lab">HABIT</div>
+          <div class="val">생활 습관</div>
+          <div class="sub">환경과 루틴</div>
+        </div>
+      </div>
+
+      <div class="f6a-msg" id="f6a-msg">이것들도 <b>함께</b> 이야기해 보겠습니다.</div>
+      <div class="f6a-btm" id="f6a-btm"></div>
+    </div>
+  </div>
+
+  <script>
+    window.__timelines = window.__timelines || {};
+    const tl = gsap.timeline({ paused: true });
+    tl.fromTo("#f6a-topbar", { opacity: 0, scaleX: 0 }, { opacity: 1, scaleX: 1, duration: 0.5, ease: "power3.inOut" }, 0.00);
+    tl.fromTo("#f6a-lead",   { opacity: 0, y: 12 }, { opacity: 1, y: 0, duration: 0.4, ease: "power2.out" }, 0.15);
+    tl.fromTo("#f6a-c1",     { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.5, ease: "power3.out" }, 0.90);
+    tl.fromTo("#f6a-c2",     { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.5, ease: "power3.out" }, 1.60);
+    tl.fromTo("#f6a-c3",     { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.5, ease: "power3.out" }, 2.30);
+    tl.fromTo("#f6a-msg",    { opacity: 0, y: 16 }, { opacity: 1, y: 0, duration: 0.55, ease: "power3.out" }, 3.90);
+    tl.fromTo("#f6a-btm",    { opacity: 0, scaleX: 0 }, { opacity: 1, scaleX: 1, duration: 0.6, ease: "power3.inOut", transformOrigin: "right center" }, 5.30);
+    window.__timelines["06-foods-habits"] = tl;
+  </script>
+</template>

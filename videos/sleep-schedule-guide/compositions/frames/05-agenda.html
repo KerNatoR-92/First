@@ -19,10 +19,7 @@
 
   <div id="root" data-composition-id="05-agenda" data-start="0" data-duration="10.445" data-width="1920" data-height="1080">
     <div id="f05-bg" class="clip f05-bg" data-start="0" data-duration="10.445" data-track-index="0"></div>
-    <div id="f05-stage" class="clip" data-start="0" data-duration="10.445" data-track-index="1">
-      <div class="f05-num" id="f05-num">05 · AGENDA</div>
-      <div class="f05-num-r" id="f05-num-r">오늘 다룰 세 가지</div>
-      <div class="f05-topbar" id="f05-topbar"></div>
+    <div id="f05-stage" class="clip" data-start="0" data-duration="10.445" data-track-index="1">      <div class="f05-topbar" id="f05-topbar"></div>
       <div class="f05-head" id="f05-head">오늘, 우리가 확인할 것.</div>
 
       <div class="f05-list">
@@ -46,10 +43,7 @@
 
   <script>
     window.__timelines = window.__timelines || {};
-    const tl = gsap.timeline({ paused: true });
-    tl.fromTo("#f05-num",    { opacity: 0, x: -12 }, { opacity: 1, x: 0, duration: 0.5, ease: "power2.out" }, 0.05);
-    tl.fromTo("#f05-num-r",  { opacity: 0, x:  12 }, { opacity: 1, x: 0, duration: 0.5, ease: "power2.out" }, 0.05);
-    tl.fromTo("#f05-topbar", { opacity: 0, scaleX: 0 }, { opacity: 1, scaleX: 1, duration: 0.8, ease: "power3.inOut" }, 0.20);
+    const tl = gsap.timeline({ paused: true });    tl.fromTo("#f05-topbar", { opacity: 0, scaleX: 0 }, { opacity: 1, scaleX: 1, duration: 0.8, ease: "power3.inOut" }, 0.20);
     tl.fromTo("#f05-head",   { opacity: 0, y: 18 }, { opacity: 1, y: 0, duration: 0.55, ease: "power3.out" }, 0.60);
     // "수면 시간은 몇 시간인지"
     tl.fromTo("#f05-r1", { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.55, ease: "power3.out" }, 1.60);

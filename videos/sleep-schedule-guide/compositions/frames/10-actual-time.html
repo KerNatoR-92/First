@@ -20,10 +20,7 @@
 
   <div id="root" data-composition-id="10-actual-time" data-start="0" data-duration="6.875" data-width="1920" data-height="1080">
     <div id="f10a-bg" class="clip f10a-bg" data-start="0" data-duration="6.875" data-track-index="0"></div>
-    <div id="f10a-stage" class="clip" data-start="0" data-duration="6.875" data-track-index="1">
-      <div class="f10a-num" id="f10a-num">10 · REAL SLEEP TIME</div>
-      <div class="f10a-num-r" id="f10a-num-r">실제로 잠드는 시간</div>
-      <div class="f10a-topbar" id="f10a-topbar"></div>
+    <div id="f10a-stage" class="clip" data-start="0" data-duration="6.875" data-track-index="1">      <div class="f10a-topbar" id="f10a-topbar"></div>
 
       <div class="f10a-lead" id="f10a-lead">여기서 놓치기 쉬운 한 가지 —</div>
 
@@ -48,10 +45,7 @@
 
   <script>
     window.__timelines = window.__timelines || {};
-    const tl = gsap.timeline({ paused: true });
-    tl.fromTo("#f10a-num",    { opacity: 0, x: -12 }, { opacity: 1, x: 0, duration: 0.4, ease: "power2.out" }, 0.05);
-    tl.fromTo("#f10a-num-r",  { opacity: 0, x:  12 }, { opacity: 1, x: 0, duration: 0.4, ease: "power2.out" }, 0.05);
-    tl.fromTo("#f10a-topbar", { opacity: 0, scaleX: 0 }, { opacity: 1, scaleX: 1, duration: 0.5, ease: "power3.inOut" }, 0.15);
+    const tl = gsap.timeline({ paused: true });    tl.fromTo("#f10a-topbar", { opacity: 0, scaleX: 0 }, { opacity: 1, scaleX: 1, duration: 0.5, ease: "power3.inOut" }, 0.15);
     tl.fromTo("#f10a-lead",   { opacity: 0, y: 12 }, { opacity: 1, y: 0, duration: 0.4, ease: "power2.out" }, 0.35);
     tl.fromTo("#f10a-lhs",    { opacity: 0, x: -20 }, { opacity: 1, x: 0, duration: 0.55, ease: "power3.out" }, 1.20);
     tl.fromTo("#f10a-neq",    { opacity: 0, scale: 0.5 }, { opacity: 1, scale: 1, duration: 0.45, ease: "back.out(2)" }, 2.30);

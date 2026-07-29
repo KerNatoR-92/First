@@ -30,10 +30,7 @@
 
   <div id="root" data-composition-id="13-weekend-jetlag" data-start="0" data-duration="7.9" data-width="1920" data-height="1080">
     <div id="f13-bg" class="clip f13-bg" data-start="0" data-duration="7.9" data-track-index="0"></div>
-    <div id="f13-stage" class="clip" data-start="0" data-duration="7.9" data-track-index="1">
-      <div class="f13-num" id="f13-num">13 · WEEKEND JETLAG</div>
-      <div class="f13-num-r" id="f13-num-r">주말 = 매주 반복되는 시차</div>
-      <div class="f13-topbar" id="f13-topbar"></div>
+    <div id="f13-stage" class="clip" data-start="0" data-duration="7.9" data-track-index="1">      <div class="f13-topbar" id="f13-topbar"></div>
 
       <div class="f13-head" id="f13-head">주말에 <span class="hi">3–4시간</span> 늦어지면,<br/>몸은 <span class="hi">매주 시차 적응</span>을 반복.</div>
 
@@ -61,10 +58,7 @@
 
   <script>
     window.__timelines = window.__timelines || {};
-    const tl = gsap.timeline({ paused: true });
-    tl.fromTo("#f13-num",    { opacity: 0, x: -12 }, { opacity: 1, x: 0, duration: 0.4, ease: "power2.out" }, 0.05);
-    tl.fromTo("#f13-num-r",  { opacity: 0, x:  12 }, { opacity: 1, x: 0, duration: 0.4, ease: "power2.out" }, 0.05);
-    tl.fromTo("#f13-topbar", { opacity: 0, scaleX: 0 }, { opacity: 1, scaleX: 1, duration: 0.5, ease: "power3.inOut" }, 0.15);
+    const tl = gsap.timeline({ paused: true });    tl.fromTo("#f13-topbar", { opacity: 0, scaleX: 0 }, { opacity: 1, scaleX: 1, duration: 0.5, ease: "power3.inOut" }, 0.15);
     tl.fromTo("#f13-head",   { opacity: 0, y: 16 }, { opacity: 1, y: 0, duration: 0.55, ease: "power3.out" }, 0.40);
     tl.fromTo("#f13-row1",   { opacity: 0, x: -30 }, { opacity: 1, x: 0, duration: 0.5, ease: "power3.out" }, 2.00);
     tl.fromTo("#f13-row2",   { opacity: 0, x: -30 }, { opacity: 1, x: 0, duration: 0.55, ease: "power3.out" }, 3.60);

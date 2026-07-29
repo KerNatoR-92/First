@@ -24,10 +24,7 @@
 
   <div id="root" data-composition-id="08-reverse-calc" data-start="0" data-duration="17.995" data-width="1920" data-height="1080">
     <div id="f08-bg" class="clip f08-bg" data-start="0" data-duration="17.995" data-track-index="0"></div>
-    <div id="f08-stage" class="clip" data-start="0" data-duration="17.995" data-track-index="1">
-      <div class="f08-num" id="f08-num">08 · REVERSE CALC</div>
-      <div class="f08-num-r" id="f08-num-r">기상 시간에서 역산</div>
-      <div class="f08-topbar" id="f08-topbar"></div>
+    <div id="f08-stage" class="clip" data-start="0" data-duration="17.995" data-track-index="1">      <div class="f08-topbar" id="f08-topbar"></div>
 
       <div class="f08-lead" id="f08-lead">중요한 건 <span class="hi">일어나야 하는 시간</span>에서 <span class="hi">거꾸로 계산</span>하는 것.</div>
 
@@ -56,10 +53,7 @@
 
   <script>
     window.__timelines = window.__timelines || {};
-    const tl = gsap.timeline({ paused: true });
-    tl.fromTo("#f08-num",    { opacity: 0, x: -12 }, { opacity: 1, x: 0, duration: 0.5, ease: "power2.out" }, 0.05);
-    tl.fromTo("#f08-num-r",  { opacity: 0, x:  12 }, { opacity: 1, x: 0, duration: 0.5, ease: "power2.out" }, 0.05);
-    tl.fromTo("#f08-topbar", { opacity: 0, scaleX: 0 }, { opacity: 1, scaleX: 1, duration: 0.8, ease: "power3.inOut" }, 0.20);
+    const tl = gsap.timeline({ paused: true });    tl.fromTo("#f08-topbar", { opacity: 0, scaleX: 0 }, { opacity: 1, scaleX: 1, duration: 0.8, ease: "power3.inOut" }, 0.20);
     tl.fromTo("#f08-lead",   { opacity: 0, y: 12 }, { opacity: 1, y: 0, duration: 0.6, ease: "power2.out" }, 0.60);
     // "예를 들어 아침 7시에 일어나야 하는 사람이라면"
     tl.fromTo("#f08-c1",  { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.55, ease: "power3.out" }, 4.20);

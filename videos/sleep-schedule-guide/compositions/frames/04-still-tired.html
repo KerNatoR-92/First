@@ -21,10 +21,7 @@
   <div id="root" data-composition-id="04-still-tired" data-start="0" data-duration="5.74" data-width="1920" data-height="1080">
     <div id="f04-bg" class="clip f04-bg" data-start="0" data-duration="5.74" data-track-index="0"></div>
 
-    <div id="f04-stage" class="clip" data-start="0" data-duration="5.74" data-track-index="1">
-      <div class="f04-num" id="f04-num">04 · THE PROBLEM</div>
-      <div class="f04-num-r" id="f04-num-r">피곤함의 진짜 이유</div>
-      <div class="f04-topbar" id="f04-topbar"></div>
+    <div id="f04-stage" class="clip" data-start="0" data-duration="5.74" data-track-index="1">      <div class="f04-topbar" id="f04-topbar"></div>
 
       <div class="f04-lead" id="f04-lead">하루하루 잠드는 시간이 달라지면 —</div>
 
@@ -51,16 +48,14 @@
   <script>
     window.__timelines = window.__timelines || {};
     const tl = gsap.timeline({ paused: true });
-    tl.fromTo("#f04-num",    { opacity: 0, x: -12 }, { opacity: 1, x: 0, duration: 0.5, ease: "power2.out" }, 0.05);
-    tl.fromTo("#f04-num-r",  { opacity: 0, x:  12 }, { opacity: 1, x: 0, duration: 0.5, ease: "power2.out" }, 0.05);
-    tl.fromTo("#f04-topbar", { opacity: 0, scaleX: 0 }, { opacity: 1, scaleX: 1, duration: 0.8, ease: "power3.inOut" }, 0.20);
-    tl.fromTo("#f04-lead",   { opacity: 0, y: 12 }, { opacity: 1, y: 0, duration: 0.55, ease: "power2.out" }, 0.70);
-    tl.fromTo("#f04-lhs",    { opacity: 0, x: -30 }, { opacity: 1, x: 0, duration: 0.7, ease: "power3.out" }, 3.20);
-    tl.fromTo("#f04-neq",    { opacity: 0, scale: 0.5 }, { opacity: 1, scale: 1, duration: 0.55, ease: "back.out(2)" }, 4.80);
-    tl.fromTo("#f04-rhs",    { opacity: 0, x: 30 }, { opacity: 1, x: 0, duration: 0.7, ease: "power3.out" }, 5.40);
-    tl.fromTo("#f04-under",  { width: 0 }, { width: 420, duration: 0.7, ease: "power2.out" }, 6.90);
-    tl.fromTo("#f04-msg",    { opacity: 0, y: 18 }, { opacity: 1, y: 0, duration: 0.7, ease: "power3.out" }, 7.60);
-    tl.fromTo("#f04-btm",    { opacity: 0, scaleX: 0 }, { opacity: 1, scaleX: 1, duration: 0.9, ease: "power3.inOut", transformOrigin: "right center" }, 9.60);
+    // Compressed to fit 5.74s window    tl.fromTo("#f04-topbar", { opacity: 0, scaleX: 0 }, { opacity: 1, scaleX: 1, duration: 0.45, ease: "power3.inOut" }, 0.10);
+    tl.fromTo("#f04-lead",   { opacity: 0, y: 12 }, { opacity: 1, y: 0, duration: 0.4, ease: "power2.out" }, 0.30);
+    tl.fromTo("#f04-lhs",    { opacity: 0, x: -30 }, { opacity: 1, x: 0, duration: 0.45, ease: "power3.out" }, 1.30);
+    tl.fromTo("#f04-neq",    { opacity: 0, scale: 0.5 }, { opacity: 1, scale: 1, duration: 0.4, ease: "back.out(2)" }, 1.85);
+    tl.fromTo("#f04-rhs",    { opacity: 0, x: 30 }, { opacity: 1, x: 0, duration: 0.45, ease: "power3.out" }, 2.15);
+    tl.fromTo("#f04-under",  { width: 0 }, { width: 420, duration: 0.5, ease: "power2.out" }, 2.95);
+    tl.fromTo("#f04-msg",    { opacity: 0, y: 18 }, { opacity: 1, y: 0, duration: 0.5, ease: "power3.out" }, 3.30);
+    tl.fromTo("#f04-btm",    { opacity: 0, scaleX: 0 }, { opacity: 1, scaleX: 1, duration: 0.6, ease: "power3.inOut", transformOrigin: "right center" }, 4.65);
     window.__timelines["04-still-tired"] = tl;
   </script>
 </template>

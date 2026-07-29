@@ -24,10 +24,7 @@
 
   <div id="root" data-composition-id="09-schedule-table" data-start="0" data-duration="8.31" data-width="1920" data-height="1080">
     <div id="f09-bg" class="clip f09-bg" data-start="0" data-duration="8.31" data-track-index="0"></div>
-    <div id="f09-stage" class="clip" data-start="0" data-duration="8.31" data-track-index="1">
-      <div class="f09-num" id="f09-num">09 · SCHEDULE</div>
-      <div class="f09-num-r" id="f09-num-r">아침 7시 기상 기준</div>
-      <div class="f09-topbar" id="f09-topbar"></div>
+    <div id="f09-stage" class="clip" data-start="0" data-duration="8.31" data-track-index="1">      <div class="f09-topbar" id="f09-topbar"></div>
       <div class="f09-head" id="f09-head"><span class="hi">잠들어야 할 시간</span> — 한눈에.</div>
 
       <div class="f09-table">
@@ -54,10 +51,7 @@
 
   <script>
     window.__timelines = window.__timelines || {};
-    const tl = gsap.timeline({ paused: true });
-    tl.fromTo("#f09-num",    { opacity: 0, x: -12 }, { opacity: 1, x: 0, duration: 0.4, ease: "power2.out" }, 0.05);
-    tl.fromTo("#f09-num-r",  { opacity: 0, x:  12 }, { opacity: 1, x: 0, duration: 0.4, ease: "power2.out" }, 0.05);
-    tl.fromTo("#f09-topbar", { opacity: 0, scaleX: 0 }, { opacity: 1, scaleX: 1, duration: 0.6, ease: "power3.inOut" }, 0.15);
+    const tl = gsap.timeline({ paused: true });    tl.fromTo("#f09-topbar", { opacity: 0, scaleX: 0 }, { opacity: 1, scaleX: 1, duration: 0.6, ease: "power3.inOut" }, 0.15);
     tl.fromTo("#f09-head",   { opacity: 0, y: 12 }, { opacity: 1, y: 0, duration: 0.5, ease: "power2.out" }, 0.35);
     // Three rows land on their spoken beats
     tl.fromTo("#f09-r1", { opacity: 0, x: -30 }, { opacity: 1, x: 0, duration: 0.5, ease: "power3.out" }, 0.90);

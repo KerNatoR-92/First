@@ -24,10 +24,7 @@
 
   <div id="root" data-composition-id="11-early-30" data-start="0" data-duration="7.5" data-width="1920" data-height="1080">
     <div id="f11-bg" class="clip f11-bg" data-start="0" data-duration="7.5" data-track-index="0"></div>
-    <div id="f11-stage" class="clip" data-start="0" data-duration="7.5" data-track-index="1">
-      <div class="f11-num" id="f11-num">11 · GO EARLY</div>
-      <div class="f11-num-r" id="f11-num-r">30분 일찍 침대로</div>
-      <div class="f11-topbar" id="f11-topbar"></div>
+    <div id="f11-stage" class="clip" data-start="0" data-duration="7.5" data-track-index="1">      <div class="f11-topbar" id="f11-topbar"></div>
 
       <div class="f11-lead" id="f11-lead">잠들기까지 <span class="hi">평균 30분</span> — 그만큼 침대 진입도 앞당기세요.</div>
 
@@ -44,10 +41,7 @@
 
   <script>
     window.__timelines = window.__timelines || {};
-    const tl = gsap.timeline({ paused: true });
-    tl.fromTo("#f11-num",    { opacity: 0, x: -12 }, { opacity: 1, x: 0, duration: 0.4, ease: "power2.out" }, 0.05);
-    tl.fromTo("#f11-num-r",  { opacity: 0, x:  12 }, { opacity: 1, x: 0, duration: 0.4, ease: "power2.out" }, 0.05);
-    tl.fromTo("#f11-topbar", { opacity: 0, scaleX: 0 }, { opacity: 1, scaleX: 1, duration: 0.5, ease: "power3.inOut" }, 0.15);
+    const tl = gsap.timeline({ paused: true });    tl.fromTo("#f11-topbar", { opacity: 0, scaleX: 0 }, { opacity: 1, scaleX: 1, duration: 0.5, ease: "power3.inOut" }, 0.15);
     tl.fromTo("#f11-lead",   { opacity: 0, y: 12 }, { opacity: 1, y: 0, duration: 0.5, ease: "power2.out" }, 0.40);
     tl.fromTo("#f11-minus",  { opacity: 0, x: -60, scale: 0.7 }, { opacity: 1, x: 0, scale: 1, duration: 0.7, ease: "back.out(1.6)" }, 2.00);
     tl.fromTo("#f11-val",    { opacity: 0, x:  60, scale: 0.85 }, { opacity: 1, x: 0, scale: 1, duration: 0.7, ease: "back.out(1.6)" }, 2.35);

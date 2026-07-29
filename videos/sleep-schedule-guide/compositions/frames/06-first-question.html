@@ -4,28 +4,21 @@
     @font-face { font-family: 'NotoSansKR'; src: url('assets/fonts/NotoSansKR-Bold.woff2') format('woff2'); font-weight: 700; font-display: block; }
     #root { position: absolute; inset: 0; overflow: hidden; font-family: 'NotoSansKR', sans-serif; color: #FFFFFF; }
     .f06-bg { background: #0B0B0D; }
-    .f06-num   { position: absolute; top: 6%; left: 6%; font-size: 20px; letter-spacing: 0.28em; color: #FFD400; font-weight: 700; opacity: 0; }
-    .f06-num-r { position: absolute; top: 6%; right: 6%; font-size: 20px; letter-spacing: 0.28em; color: #8A8A8F; font-weight: 400; opacity: 0; }
     .f06-topbar { position: absolute; top: 12%; left: 6%; right: 6%; height: 1px; background: #282826; opacity: 0; transform-origin: left center; }
     .f06-chapter { position: absolute; top: 22%; left: 0; right: 0; text-align: center; font-size: 24px; letter-spacing: 0.36em; color: #FFD400; opacity: 0; font-weight: 700; }
-    .f06-preview { position: absolute; top: 30%; left: 6%; right: 6%; text-align: center; font-size: 30px; color: #8A8A8F; letter-spacing: 0.02em; line-height: 1.45; opacity: 0; }
-    .f06-line1-wrap { position: absolute; top: 42%; left: 0; right: 0; text-align: center; font-size: 112px; font-weight: 700; letter-spacing: -0.03em; line-height: 1.1; height: 132px; }
-    .f06-line2-wrap { position: absolute; top: 55%; left: 0; right: 0; text-align: center; font-size: 112px; font-weight: 700; letter-spacing: -0.03em; line-height: 1.1; height: 132px; }
+    .f06-line1-wrap { position: absolute; top: 38%; left: 0; right: 0; text-align: center; font-size: 112px; font-weight: 700; letter-spacing: -0.03em; line-height: 1.1; height: 132px; }
+    .f06-line2-wrap { position: absolute; top: 51%; left: 0; right: 0; text-align: center; font-size: 112px; font-weight: 700; letter-spacing: -0.03em; line-height: 1.1; height: 132px; }
     .f06-w { display: inline-block; opacity: 0; }
     .f06-hi { color: #FFD400; }
-    .f06-under { position: absolute; top: 74%; left: 50%; transform: translateX(-50%); width: 0; height: 4px; background: #FFD400; }
+    .f06-under { position: absolute; top: 72%; left: 50%; transform: translateX(-50%); width: 0; height: 4px; background: #FFD400; }
     .f06-btm { position: absolute; bottom: 8%; left: 6%; right: 6%; height: 1px; background: #282826; opacity: 0; transform-origin: right center; }
   </style>
 
-  <div id="root" data-composition-id="06-first-question" data-start="0" data-duration="9.055" data-width="1920" data-height="1080">
-    <div id="f06-bg" class="clip f06-bg" data-start="0" data-duration="9.055" data-track-index="0"></div>
-    <div id="f06-stage" class="clip" data-start="0" data-duration="9.055" data-track-index="1">
-      <div class="f06-num" id="f06-num">06 · CHAPTER PIVOT</div>
-      <div class="f06-num-r" id="f06-num-r">SECTION 01</div>
+  <div id="root" data-composition-id="06-first-question" data-start="0" data-duration="2.835" data-width="1920" data-height="1080">
+    <div id="f06-bg" class="clip f06-bg" data-start="0" data-duration="2.835" data-track-index="0"></div>
+    <div id="f06-stage" class="clip" data-start="0" data-duration="2.835" data-track-index="1">
       <div class="f06-topbar" id="f06-topbar"></div>
-
-      <div class="f06-chapter" id="f06-chapter">SECTION · 01 · SLEEP · TIMING</div>
-      <div class="f06-preview" id="f06-preview">— 음식과 성분, 생활 습관은 이어서. 우선, 시간부터.</div>
+      <div class="f06-chapter" id="f06-chapter">SLEEP · TIMING</div>
 
       <div class="f06-line1-wrap" id="f06-line1"><span class="f06-w" id="f06-q1">우선,</span>&nbsp;<span class="f06-w" id="f06-q2">우리는</span>&nbsp;<span class="f06-w f06-hi" id="f06-q3">몇 시</span><span class="f06-w" id="f06-q4">에</span></div>
       <div class="f06-line2-wrap" id="f06-line2"><span class="f06-w" id="f06-q5">자야 할까요?</span></div>
@@ -38,20 +31,16 @@
   <script>
     window.__timelines = window.__timelines || {};
     const tl = gsap.timeline({ paused: true });
-    tl.fromTo("#f06-num",    { opacity: 0, x: -12 }, { opacity: 1, x: 0, duration: 0.5, ease: "power2.out" }, 0.05);
-    tl.fromTo("#f06-num-r",  { opacity: 0, x:  12 }, { opacity: 1, x: 0, duration: 0.5, ease: "power2.out" }, 0.05);
-    tl.fromTo("#f06-topbar", { opacity: 0, scaleX: 0 }, { opacity: 1, scaleX: 1, duration: 0.8, ease: "power3.inOut" }, 0.20);
-    // First half is bridging content about foods/habits preview
-    tl.fromTo("#f06-preview",{ opacity: 0, y: 12 }, { opacity: 1, y: 0, duration: 0.6, ease: "power2.out" }, 0.70);
-    tl.fromTo("#f06-chapter",{ opacity: 0, y: 12 }, { opacity: 1, y: 0, duration: 0.55, ease: "power2.out" }, 4.20);
-    // "우선, 우리는 몇 시에 자야 할까요?" starts around ~7s (near end of frame)
-    tl.fromTo("#f06-q1", { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.5, ease: "power3.out" }, 6.80);
-    tl.fromTo("#f06-q2", { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.5, ease: "power3.out" }, 7.20);
-    tl.fromTo("#f06-q3", { opacity: 0, y: 30, scale: 0.9 }, { opacity: 1, y: 0, scale: 1, duration: 0.6, ease: "back.out(1.6)" }, 7.60);
-    tl.fromTo("#f06-under", { width: 0 }, { width: 360, duration: 0.55, ease: "power2.out" }, 7.90);
-    tl.fromTo("#f06-q4", { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.5, ease: "power3.out" }, 8.20);
-    tl.fromTo("#f06-q5", { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.55, ease: "power3.out" }, 8.60);
-    tl.fromTo("#f06-btm", { opacity: 0, scaleX: 0 }, { opacity: 1, scaleX: 1, duration: 0.9, ease: "power3.inOut", transformOrigin: "right center" }, 10.40);
+    // Compressed to fit 2.835s window
+    tl.fromTo("#f06-topbar", { opacity: 0, scaleX: 0 }, { opacity: 1, scaleX: 1, duration: 0.35, ease: "power3.inOut" }, 0.00);
+    tl.fromTo("#f06-chapter",{ opacity: 0, y: 10 }, { opacity: 1, y: 0, duration: 0.3, ease: "power2.out" }, 0.10);
+    tl.fromTo("#f06-q1", { opacity: 0, y: 24 }, { opacity: 1, y: 0, duration: 0.3, ease: "power3.out" }, 0.30);
+    tl.fromTo("#f06-q2", { opacity: 0, y: 24 }, { opacity: 1, y: 0, duration: 0.3, ease: "power3.out" }, 0.55);
+    tl.fromTo("#f06-q3", { opacity: 0, y: 24, scale: 0.9 }, { opacity: 1, y: 0, scale: 1, duration: 0.4, ease: "back.out(1.6)" }, 0.80);
+    tl.fromTo("#f06-under", { width: 0 }, { width: 340, duration: 0.35, ease: "power2.out" }, 1.00);
+    tl.fromTo("#f06-q4", { opacity: 0, y: 24 }, { opacity: 1, y: 0, duration: 0.3, ease: "power3.out" }, 1.20);
+    tl.fromTo("#f06-q5", { opacity: 0, y: 24 }, { opacity: 1, y: 0, duration: 0.35, ease: "power3.out" }, 1.45);
+    tl.fromTo("#f06-btm", { opacity: 0, scaleX: 0 }, { opacity: 1, scaleX: 1, duration: 0.5, ease: "power3.inOut", transformOrigin: "right center" }, 2.00);
     window.__timelines["06-first-question"] = tl;
   </script>
 </template>
