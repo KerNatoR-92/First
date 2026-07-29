@@ -1,0 +1,87 @@
+<template>
+  <style>
+    @font-face { font-family: 'NotoSansKR'; src: url('assets/fonts/NotoSansKR-Regular.woff2') format('woff2'); font-weight: 400; font-display: block; }
+    @font-face { font-family: 'NotoSansKR'; src: url('assets/fonts/NotoSansKR-Bold.woff2') format('woff2'); font-weight: 700; font-display: block; }
+    #root { position: absolute; inset: 0; overflow: hidden; font-family: 'NotoSansKR', sans-serif; color: #FFFFFF; }
+    .f07-bg { background: #0B0B0D; }
+    .f07-num   { position: absolute; top: 6%; left: 6%; font-size: 20px; letter-spacing: 0.28em; color: #FFD400; font-weight: 700; opacity: 0; }
+    .f07-num-r { position: absolute; top: 6%; right: 6%; font-size: 20px; letter-spacing: 0.28em; color: #8A8A8F; font-weight: 400; opacity: 0; }
+    .f07-topbar { position: absolute; top: 12%; left: 6%; right: 6%; height: 1px; background: #282826; opacity: 0; transform-origin: left center; }
+    .f07-lead  { position: absolute; top: 16%; left: 6%; right: 6%; font-size: 34px; color: #8A8A8F; letter-spacing: 0.02em; line-height: 1.45; opacity: 0; }
+
+    /* Hero split: big "7" left, meta right */
+    .f07-hero   { position: absolute; top: 26%; left: 4%; width: 44%; height: 46%; display: flex; align-items: center; justify-content: center; overflow: hidden; }
+    .f07-seven  { font-size: 460px; font-weight: 900; line-height: 0.85; letter-spacing: -0.06em; color: #FFD400; opacity: 0; }
+    .f07-meta   { position: absolute; top: 28%; right: 6%; width: 44%; }
+    .f07-tag    { font-size: 22px; letter-spacing: 0.28em; color: #FFFFFF; opacity: 0; }
+    .f07-h1     { margin-top: 24px; font-size: 96px; font-weight: 700; letter-spacing: -0.03em; line-height: 1.02; color: #FFFFFF; opacity: 0; }
+    .f07-h1 .hi { color: #FFD400; }
+    .f07-sub    { margin-top: 30px; font-size: 30px; font-weight: 400; color: #FFFFFF; line-height: 1.4; opacity: 0; }
+
+    /* Range bar 7 ● ━━━━ ● 9 */
+    .f07-range { position: absolute; bottom: 10%; left: 6%; right: 6%; }
+    .f07-r-tag { font-size: 22px; letter-spacing: 0.24em; color: #8A8A8F; opacity: 0; margin-bottom: 14px; }
+    .f07-r-line { position: relative; height: 4px; background: #282826; opacity: 0; }
+    .f07-r-fill { position: absolute; top: 0; left: 0; height: 100%; width: 0; background: #FFD400; }
+    .f07-r-dot { position: absolute; top: 50%; width: 24px; height: 24px; border-radius: 50%; background: #FFD400; transform: translate(-50%, -50%); opacity: 0; }
+    .f07-r-lab { position: absolute; top: 22px; font-size: 30px; font-weight: 700; color: #FFFFFF; letter-spacing: -0.01em; transform: translateX(-50%); opacity: 0; }
+
+    .f07-btm { position: absolute; bottom: 5%; left: 6%; right: 6%; height: 1px; background: #282826; opacity: 0; transform-origin: right center; }
+  </style>
+
+  <div id="root" data-composition-id="07-seven-hours" data-start="0" data-duration="15.79" data-width="1920" data-height="1080">
+    <div id="f07-bg" class="clip f07-bg" data-start="0" data-duration="15.79" data-track-index="0"></div>
+    <div id="f07-stage" class="clip" data-start="0" data-duration="15.79" data-track-index="1">
+      <div class="f07-num" id="f07-num">07 · THE ANSWER</div>
+      <div class="f07-num-r" id="f07-num-r">필요한 수면 시간</div>
+      <div class="f07-topbar" id="f07-topbar"></div>
+      <div class="f07-lead" id="f07-lead">성인이 하루에 필요한 수면 —</div>
+
+      <div class="f07-hero">
+        <div class="f07-seven" id="f07-seven">7</div>
+      </div>
+      <div class="f07-meta">
+        <div class="f07-tag" id="f07-tag">HOURS · MINIMUM · PER · DAY</div>
+        <div class="f07-h1" id="f07-h1">최소 <span class="hi">7시간</span><br/>이상의 수면</div>
+        <div class="f07-sub" id="f07-sub">개인차는 있지만, 대부분의 성인은<br/>약 <b>7시간에서 9시간</b> 정도가 적정합니다.</div>
+      </div>
+
+      <div class="f07-range">
+        <div class="f07-r-tag" id="f07-r-tag">RECOMMENDED · RANGE (성인 기준)</div>
+        <div class="f07-r-line" id="f07-r-line">
+          <div class="f07-r-fill" id="f07-r-fill"></div>
+          <div class="f07-r-dot" id="f07-r-dot-7" style="left: 0%"></div>
+          <div class="f07-r-dot" id="f07-r-dot-9" style="left: 100%"></div>
+          <div class="f07-r-lab" id="f07-r-lab-7" style="left: 0%">7h</div>
+          <div class="f07-r-lab" id="f07-r-lab-9" style="left: 100%">9h</div>
+        </div>
+      </div>
+
+      <div class="f07-btm" id="f07-btm"></div>
+    </div>
+  </div>
+
+  <script>
+    window.__timelines = window.__timelines || {};
+    const tl = gsap.timeline({ paused: true });
+    tl.fromTo("#f07-num",    { opacity: 0, x: -12 }, { opacity: 1, x: 0, duration: 0.5, ease: "power2.out" }, 0.05);
+    tl.fromTo("#f07-num-r",  { opacity: 0, x:  12 }, { opacity: 1, x: 0, duration: 0.5, ease: "power2.out" }, 0.05);
+    tl.fromTo("#f07-topbar", { opacity: 0, scaleX: 0 }, { opacity: 1, scaleX: 1, duration: 0.8, ease: "power3.inOut" }, 0.20);
+    tl.fromTo("#f07-lead",   { opacity: 0, y: 12 }, { opacity: 1, y: 0, duration: 0.55, ease: "power2.out" }, 0.60);
+    // Big 7 punches in on "최소 7시간"
+    tl.fromTo("#f07-seven",  { opacity: 0, y: 60, scale: 0.86 }, { opacity: 1, y: 0, scale: 1, duration: 0.9, ease: "back.out(1.4)" }, 2.10);
+    tl.fromTo("#f07-tag",    { opacity: 0, y: 12 }, { opacity: 1, y: 0, duration: 0.45, ease: "power2.out" }, 2.60);
+    tl.fromTo("#f07-h1",     { opacity: 0, y: 24 }, { opacity: 1, y: 0, duration: 0.7, ease: "power3.out" }, 3.00);
+    tl.fromTo("#f07-sub",    { opacity: 0, y: 12 }, { opacity: 1, y: 0, duration: 0.55, ease: "power2.out" }, 5.80);
+    // Range bar for "7시간에서 9시간"
+    tl.fromTo("#f07-r-tag",  { opacity: 0, y: 8 }, { opacity: 1, y: 0, duration: 0.4, ease: "power2.out" }, 8.20);
+    tl.fromTo("#f07-r-line", { opacity: 0 }, { opacity: 1, duration: 0.3, ease: "power2.out" }, 8.60);
+    tl.fromTo("#f07-r-dot-7", { opacity: 0, scale: 0 }, { opacity: 1, scale: 1, duration: 0.4, ease: "back.out(2)" }, 9.10);
+    tl.fromTo("#f07-r-lab-7", { opacity: 0, y: 8 }, { opacity: 1, y: 0, duration: 0.4, ease: "power2.out" }, 9.30);
+    tl.fromTo("#f07-r-fill", { width: "0%" }, { width: "100%", duration: 1.1, ease: "power2.inOut" }, 9.60);
+    tl.fromTo("#f07-r-dot-9", { opacity: 0, scale: 0 }, { opacity: 1, scale: 1, duration: 0.4, ease: "back.out(2)" }, 10.60);
+    tl.fromTo("#f07-r-lab-9", { opacity: 0, y: 8 }, { opacity: 1, y: 0, duration: 0.4, ease: "power2.out" }, 10.75);
+    tl.fromTo("#f07-btm", { opacity: 0, scaleX: 0 }, { opacity: 1, scaleX: 1, duration: 0.9, ease: "power3.inOut", transformOrigin: "right center" }, 12.30);
+    window.__timelines["07-seven-hours"] = tl;
+  </script>
+</template>

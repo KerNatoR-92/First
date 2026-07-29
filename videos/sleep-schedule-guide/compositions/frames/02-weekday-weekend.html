@@ -1,0 +1,71 @@
+<template>
+  <style>
+    @font-face { font-family: 'NotoSansKR'; src: url('assets/fonts/NotoSansKR-Regular.woff2') format('woff2'); font-weight: 400; font-display: block; }
+    @font-face { font-family: 'NotoSansKR'; src: url('assets/fonts/NotoSansKR-Bold.woff2') format('woff2'); font-weight: 700; font-display: block; }
+    #root { position: absolute; inset: 0; overflow: hidden; font-family: 'NotoSansKR', sans-serif; color: #FFFFFF; }
+    .f02-bg { background: #0B0B0D; }
+    .f02-num   { position: absolute; top: 6%; left: 6%; font-size: 20px; letter-spacing: 0.28em; color: #FFD400; font-weight: 700; opacity: 0; }
+    .f02-num-r { position: absolute; top: 6%; right: 6%; font-size: 20px; letter-spacing: 0.28em; color: #8A8A8F; font-weight: 400; opacity: 0; }
+    .f02-topbar { position: absolute; top: 12%; left: 6%; right: 6%; height: 1px; background: #282826; opacity: 0; transform-origin: left center; }
+    .f02-vrule { position: absolute; top: 22%; bottom: 18%; left: 50%; width: 1px; background: #FFD400; opacity: 0; transform-origin: top center; }
+    .f02-col   { position: absolute; top: 22%; bottom: 18%; width: 44%; display: flex; flex-direction: column; justify-content: center; }
+    .f02-left  { left: 6%; align-items: flex-start; }
+    .f02-right { right: 6%; align-items: flex-end; text-align: right; }
+    .f02-tag   { font-size: 22px; letter-spacing: 0.28em; color: #8A8A8F; margin-bottom: 24px; opacity: 0; }
+    .f02-title { font-size: 96px; font-weight: 700; letter-spacing: -0.03em; line-height: 1.0; opacity: 0; }
+    .f02-title .hi { color: #FFD400; }
+    .f02-lead  { margin-top: 26px; font-size: 32px; font-weight: 400; color: #FFFFFF; line-height: 1.35; opacity: 0; max-width: 92%; }
+    .f02-lead-r{ margin-top: 26px; font-size: 32px; font-weight: 400; color: #FFFFFF; line-height: 1.35; opacity: 0; max-width: 92%; text-align: right; }
+    .f02-time  { margin-top: 38px; font-size: 128px; font-weight: 900; letter-spacing: -0.04em; line-height: 1.0; color: #FFFFFF; opacity: 0; }
+    .f02-time  .u { font-size: 40px; letter-spacing: 0.06em; color: #8A8A8F; font-weight: 400; margin-left: 12px; }
+    .f02-btm   { position: absolute; bottom: 8%; left: 6%; right: 6%; height: 1px; background: #282826; opacity: 0; transform-origin: right center; }
+  </style>
+
+  <div id="root" data-composition-id="02-weekday-weekend" data-start="0" data-duration="12.325" data-width="1920" data-height="1080">
+    <div id="f02-bg" class="clip f02-bg" data-start="0" data-duration="12.325" data-track-index="0"></div>
+
+    <div id="f02-stage" class="clip" data-start="0" data-duration="12.325" data-track-index="1">
+      <div class="f02-num" id="f02-num">02 · WEEKDAY vs WEEKEND</div>
+      <div class="f02-num-r" id="f02-num-r">평일 · 주말</div>
+      <div class="f02-topbar" id="f02-topbar"></div>
+      <div class="f02-vrule" id="f02-vrule"></div>
+
+      <div class="f02-col f02-left">
+        <div class="f02-tag" id="f02-tag-l">평일 · WEEKDAY</div>
+        <div class="f02-title" id="f02-title-l">억지로 <span class="hi">일찍</span></div>
+        <div class="f02-lead" id="f02-lead-l">출근 때문에 억지로 일찍 일어나야 하는 아침.</div>
+        <div class="f02-time" id="f02-time-l">06:30<span class="u">기상</span></div>
+      </div>
+
+      <div class="f02-col f02-right">
+        <div class="f02-tag" id="f02-tag-r">주말 · WEEKEND</div>
+        <div class="f02-title" id="f02-title-r"><span class="hi">점심때</span>까지</div>
+        <div class="f02-lead-r" id="f02-lead-r">밀린 잠을 보충하느라 늦게까지 자게 되는 하루.</div>
+        <div class="f02-time" id="f02-time-r">12:00<span class="u">기상</span></div>
+      </div>
+
+      <div class="f02-btm" id="f02-btm"></div>
+    </div>
+  </div>
+
+  <script>
+    window.__timelines = window.__timelines || {};
+    const tl = gsap.timeline({ paused: true });
+    tl.fromTo("#f02-num",    { opacity: 0, x: -12 }, { opacity: 1, x: 0, duration: 0.5, ease: "power2.out" }, 0.05);
+    tl.fromTo("#f02-num-r",  { opacity: 0, x:  12 }, { opacity: 1, x: 0, duration: 0.5, ease: "power2.out" }, 0.05);
+    tl.fromTo("#f02-topbar", { opacity: 0, scaleX: 0 }, { opacity: 1, scaleX: 1, duration: 0.7, ease: "power3.inOut" }, 0.20);
+    tl.fromTo("#f02-vrule",  { opacity: 0, scaleY: 0 }, { opacity: 1, scaleY: 1, duration: 0.8, ease: "power3.inOut" }, 0.55);
+    // Left column reveals during "평일에는 출근 때문에 억지로 일찍 일어나고"
+    tl.fromTo("#f02-tag-l",  { opacity: 0, y: 12 }, { opacity: 1, y: 0, duration: 0.45, ease: "power2.out" }, 1.10);
+    tl.fromTo("#f02-title-l",{ opacity: 0, y: 24 }, { opacity: 1, y: 0, duration: 0.55, ease: "power3.out" }, 1.55);
+    tl.fromTo("#f02-lead-l", { opacity: 0, y: 12 }, { opacity: 1, y: 0, duration: 0.55, ease: "power2.out" }, 2.30);
+    tl.fromTo("#f02-time-l", { opacity: 0, y: 24 }, { opacity: 1, y: 0, duration: 0.55, ease: "power3.out" }, 3.10);
+    // Right column reveals during "주말에는 밀린 잠을 보충하느라 점심때까지..."
+    tl.fromTo("#f02-tag-r",  { opacity: 0, y: 12 }, { opacity: 1, y: 0, duration: 0.45, ease: "power2.out" }, 5.20);
+    tl.fromTo("#f02-title-r",{ opacity: 0, y: 24 }, { opacity: 1, y: 0, duration: 0.55, ease: "power3.out" }, 5.70);
+    tl.fromTo("#f02-lead-r", { opacity: 0, y: 12 }, { opacity: 1, y: 0, duration: 0.55, ease: "power2.out" }, 6.50);
+    tl.fromTo("#f02-time-r", { opacity: 0, y: 24 }, { opacity: 1, y: 0, duration: 0.55, ease: "power3.out" }, 7.40);
+    tl.fromTo("#f02-btm",    { opacity: 0, scaleX: 0 }, { opacity: 1, scaleX: 1, duration: 0.9, ease: "power3.inOut", transformOrigin: "right center" }, 8.60);
+    window.__timelines["02-weekday-weekend"] = tl;
+  </script>
+</template>

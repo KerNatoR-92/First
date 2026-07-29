@@ -1,0 +1,66 @@
+<template>
+  <style>
+    @font-face { font-family: 'NotoSansKR'; src: url('assets/fonts/NotoSansKR-Regular.woff2') format('woff2'); font-weight: 400; font-display: block; }
+    @font-face { font-family: 'NotoSansKR'; src: url('assets/fonts/NotoSansKR-Bold.woff2') format('woff2'); font-weight: 700; font-display: block; }
+    #root { position: absolute; inset: 0; overflow: hidden; font-family: 'NotoSansKR', sans-serif; color: #FFFFFF; }
+    .f04-bg { background: #0B0B0D; }
+    .f04-num   { position: absolute; top: 6%; left: 6%; font-size: 20px; letter-spacing: 0.28em; color: #FFD400; font-weight: 700; opacity: 0; }
+    .f04-num-r { position: absolute; top: 6%; right: 6%; font-size: 20px; letter-spacing: 0.28em; color: #8A8A8F; font-weight: 400; opacity: 0; }
+    .f04-topbar { position: absolute; top: 12%; left: 6%; right: 6%; height: 1px; background: #282826; opacity: 0; transform-origin: left center; }
+    .f04-lead { position: absolute; top: 18%; left: 6%; right: 6%; font-size: 30px; color: #8A8A8F; letter-spacing: 0.02em; line-height: 1.4; opacity: 0; }
+    .f04-eq   { position: absolute; top: 36%; left: 0; right: 0; text-align: center; display: flex; align-items: center; justify-content: center; gap: 40px; }
+    .f04-side { font-size: 108px; font-weight: 700; letter-spacing: -0.03em; line-height: 1.0; opacity: 0; }
+    .f04-side .sub { display: block; font-size: 28px; font-weight: 400; color: #8A8A8F; letter-spacing: 0.12em; margin-top: 12px; }
+    .f04-neq  { font-size: 200px; font-weight: 900; color: #FFD400; letter-spacing: -0.03em; line-height: 0.9; opacity: 0; }
+    .f04-under { position: absolute; top: 63%; left: 50%; transform: translateX(-50%); width: 0; height: 3px; background: #FFD400; }
+    .f04-msg  { position: absolute; top: 70%; left: 6%; right: 6%; text-align: center; font-size: 42px; font-weight: 700; letter-spacing: -0.01em; color: #FFFFFF; line-height: 1.35; opacity: 0; }
+    .f04-msg .hi { color: #FFD400; }
+    .f04-btm { position: absolute; bottom: 8%; left: 6%; right: 6%; height: 1px; background: #282826; opacity: 0; transform-origin: right center; }
+  </style>
+
+  <div id="root" data-composition-id="04-still-tired" data-start="0" data-duration="12.84" data-width="1920" data-height="1080">
+    <div id="f04-bg" class="clip f04-bg" data-start="0" data-duration="12.84" data-track-index="0"></div>
+
+    <div id="f04-stage" class="clip" data-start="0" data-duration="12.84" data-track-index="1">
+      <div class="f04-num" id="f04-num">04 · THE PROBLEM</div>
+      <div class="f04-num-r" id="f04-num-r">피곤함의 진짜 이유</div>
+      <div class="f04-topbar" id="f04-topbar"></div>
+
+      <div class="f04-lead" id="f04-lead">하루하루 잠드는 시간이 달라지면 —</div>
+
+      <div class="f04-eq">
+        <div class="f04-side" id="f04-lhs">
+          충분히 잤다
+          <span class="sub">FEELS · ENOUGH</span>
+        </div>
+        <div class="f04-neq" id="f04-neq">≠</div>
+        <div class="f04-side" id="f04-rhs">
+          피곤하지 않다
+          <span class="sub">ACTUALLY · RESTED</span>
+        </div>
+      </div>
+
+      <div class="f04-under" id="f04-under"></div>
+
+      <div class="f04-msg" id="f04-msg">잔 시간이 총량은 같아도 <span class="hi">불규칙한 리듬</span>은 피로를 남긴다.</div>
+
+      <div class="f04-btm" id="f04-btm"></div>
+    </div>
+  </div>
+
+  <script>
+    window.__timelines = window.__timelines || {};
+    const tl = gsap.timeline({ paused: true });
+    tl.fromTo("#f04-num",    { opacity: 0, x: -12 }, { opacity: 1, x: 0, duration: 0.5, ease: "power2.out" }, 0.05);
+    tl.fromTo("#f04-num-r",  { opacity: 0, x:  12 }, { opacity: 1, x: 0, duration: 0.5, ease: "power2.out" }, 0.05);
+    tl.fromTo("#f04-topbar", { opacity: 0, scaleX: 0 }, { opacity: 1, scaleX: 1, duration: 0.8, ease: "power3.inOut" }, 0.20);
+    tl.fromTo("#f04-lead",   { opacity: 0, y: 12 }, { opacity: 1, y: 0, duration: 0.55, ease: "power2.out" }, 0.70);
+    tl.fromTo("#f04-lhs",    { opacity: 0, x: -30 }, { opacity: 1, x: 0, duration: 0.7, ease: "power3.out" }, 3.20);
+    tl.fromTo("#f04-neq",    { opacity: 0, scale: 0.5 }, { opacity: 1, scale: 1, duration: 0.55, ease: "back.out(2)" }, 4.80);
+    tl.fromTo("#f04-rhs",    { opacity: 0, x: 30 }, { opacity: 1, x: 0, duration: 0.7, ease: "power3.out" }, 5.40);
+    tl.fromTo("#f04-under",  { width: 0 }, { width: 420, duration: 0.7, ease: "power2.out" }, 6.90);
+    tl.fromTo("#f04-msg",    { opacity: 0, y: 18 }, { opacity: 1, y: 0, duration: 0.7, ease: "power3.out" }, 7.60);
+    tl.fromTo("#f04-btm",    { opacity: 0, scaleX: 0 }, { opacity: 1, scaleX: 1, duration: 0.9, ease: "power3.inOut", transformOrigin: "right center" }, 9.60);
+    window.__timelines["04-still-tired"] = tl;
+  </script>
+</template>

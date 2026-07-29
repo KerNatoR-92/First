@@ -1,0 +1,65 @@
+<template>
+  <style>
+    @font-face { font-family: 'NotoSansKR'; src: url('assets/fonts/NotoSansKR-Regular.woff2') format('woff2'); font-weight: 400; font-display: block; }
+    @font-face { font-family: 'NotoSansKR'; src: url('assets/fonts/NotoSansKR-Bold.woff2') format('woff2'); font-weight: 700; font-display: block; }
+    #root { position: absolute; inset: 0; overflow: hidden; font-family: 'NotoSansKR', sans-serif; color: #FFFFFF; container-type: size; }
+    .f01-bg { background: #0B0B0D; }
+    .f01-stage { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; flex-direction: column; }
+    .f01-rule { position: absolute; left: 8%; right: 8%; height: 1px; background: #FFFFFF; opacity: 0; transform-origin: left center; }
+    .f01-rule-top { top: 16%; }
+    .f01-rule-bot { bottom: 16%; }
+    .f01-label { position: absolute; top: 12%; left: 8%; font-size: 20px; letter-spacing: 0.24em; color: #FFD400; font-weight: 700; opacity: 0; }
+    .f01-num   { position: absolute; top: 12%; right: 8%; font-size: 20px; letter-spacing: 0.24em; color: #8A8A8F; font-weight: 400; opacity: 0; }
+    .f01-line1 { font-size: 96px; font-weight: 700; letter-spacing: -0.03em; line-height: 1.15; text-align: center; }
+    .f01-line2 { font-size: 112px; font-weight: 700; letter-spacing: -0.03em; line-height: 1.05; text-align: center; margin-top: 24px; }
+    .f01-word  { display: inline-block; opacity: 0; }
+    .f01-hi    { color: #FFD400; }
+    .f01-caret { display: inline-block; width: 6px; height: 96px; background: #FFD400; margin-left: 12px; vertical-align: -18px; opacity: 0; }
+    .f01-under { position: absolute; left: 50%; bottom: 22%; width: 0; height: 3px; background: #FFD400; transform: translateX(-50%); }
+    .f01-tag   { position: absolute; bottom: 12%; left: 50%; transform: translateX(-50%); font-size: 18px; letter-spacing: 0.28em; color: #8A8A8F; opacity: 0; }
+  </style>
+
+  <div id="root" data-composition-id="01-hook" data-start="0" data-duration="11.51" data-width="1920" data-height="1080">
+    <div id="f01-bg" class="clip f01-bg" data-start="0" data-duration="11.51" data-track-index="0"></div>
+
+    <div id="f01-stage" class="clip f01-stage" data-start="0" data-duration="11.51" data-track-index="1">
+      <div class="f01-label" id="f01-label">SLEEP · 수면 이야기</div>
+      <div class="f01-num" id="f01-num">01 · HOOK</div>
+
+      <div class="f01-rule f01-rule-top" id="f01-r1"></div>
+
+      <div class="f01-line1">
+        <span class="f01-word" id="f01-w1">여러분은,</span>
+      </div>
+      <div class="f01-line2">
+        <span class="f01-word" id="f01-w2">평일과 주말에</span>
+      </div>
+      <div class="f01-line2">
+        <span class="f01-word" id="f01-w3">각각&nbsp;</span><span class="f01-word f01-hi" id="f01-w4">몇 시</span><span class="f01-word" id="f01-w5">에 잠드시나요?</span><span class="f01-caret" id="f01-caret"></span>
+      </div>
+
+      <div class="f01-under" id="f01-under"></div>
+      <div class="f01-rule f01-rule-bot" id="f01-r2"></div>
+
+      <div class="f01-tag" id="f01-tag">HOW · DO · YOU · SLEEP ?</div>
+    </div>
+  </div>
+
+  <script>
+    window.__timelines = window.__timelines || {};
+    const tl = gsap.timeline({ paused: true });
+    tl.fromTo("#f01-label", { opacity: 0, x: -20 }, { opacity: 1, x: 0, duration: 0.6, ease: "power2.out" }, 0.10);
+    tl.fromTo("#f01-num",   { opacity: 0, x:  20 }, { opacity: 1, x: 0, duration: 0.6, ease: "power2.out" }, 0.10);
+    tl.fromTo("#f01-r1",    { opacity: 0, scaleX: 0 }, { opacity: 1, scaleX: 1, duration: 0.8, ease: "power3.inOut" }, 0.30);
+    tl.fromTo("#f01-w1", { opacity: 0, y: 24 }, { opacity: 1, y: 0, duration: 0.55, ease: "power2.out" }, 0.90);
+    tl.fromTo("#f01-w2", { opacity: 0, y: 24 }, { opacity: 1, y: 0, duration: 0.55, ease: "power2.out" }, 1.90);
+    tl.fromTo("#f01-w3", { opacity: 0, y: 24 }, { opacity: 1, y: 0, duration: 0.45, ease: "power2.out" }, 3.60);
+    tl.fromTo("#f01-w4", { opacity: 0, y: 24, scale: 0.9 }, { opacity: 1, y: 0, scale: 1.0, duration: 0.65, ease: "back.out(1.6)" }, 4.10);
+    tl.fromTo("#f01-under", { width: 0 }, { width: 280, duration: 0.55, ease: "power2.out" }, 4.35);
+    tl.fromTo("#f01-w5", { opacity: 0, y: 24 }, { opacity: 1, y: 0, duration: 0.45, ease: "power2.out" }, 4.85);
+    tl.fromTo("#f01-caret", { opacity: 0 }, { opacity: 1, duration: 0.15 }, 5.60);
+    tl.fromTo("#f01-r2", { opacity: 0, scaleX: 0 }, { opacity: 1, scaleX: 1, duration: 0.9, ease: "power3.inOut", transformOrigin: "right center" }, 6.20);
+    tl.fromTo("#f01-tag", { opacity: 0, y: 12 }, { opacity: 1, y: 0, duration: 0.6, ease: "power2.out" }, 7.20);
+    window.__timelines["01-hook"] = tl;
+  </script>
+</template>

@@ -1,0 +1,71 @@
+<template>
+  <style>
+    @font-face { font-family: 'NotoSansKR'; src: url('assets/fonts/NotoSansKR-Regular.woff2') format('woff2'); font-weight: 400; font-display: block; }
+    @font-face { font-family: 'NotoSansKR'; src: url('assets/fonts/NotoSansKR-Bold.woff2') format('woff2'); font-weight: 700; font-display: block; }
+    #root { position: absolute; inset: 0; overflow: hidden; font-family: 'NotoSansKR', sans-serif; color: #FFFFFF; }
+    .f03-bg { background: #0B0B0D; }
+    .f03-num   { position: absolute; top: 6%; left: 6%; font-size: 20px; letter-spacing: 0.28em; color: #FFD400; font-weight: 700; opacity: 0; }
+    .f03-num-r { position: absolute; top: 6%; right: 6%; font-size: 20px; letter-spacing: 0.28em; color: #8A8A8F; font-weight: 400; opacity: 0; }
+    .f03-head  { position: absolute; top: 14%; left: 6%; right: 6%; font-size: 68px; font-weight: 700; letter-spacing: -0.02em; line-height: 1.15; opacity: 0; }
+    .f03-head .hi { color: #FFD400; }
+    /* 24h timeline */
+    .f03-tl-wrap { position: absolute; top: 46%; left: 6%; right: 6%; }
+    .f03-tl-rule { position: relative; height: 1px; background: #FFFFFF; opacity: 0; transform-origin: left center; }
+    .f03-tl-tick { position: absolute; top: -12px; width: 1px; height: 24px; background: #282826; }
+    .f03-tl-lab  { position: absolute; top: 22px; font-size: 18px; color: #8A8A8F; letter-spacing: 0.14em; transform: translateX(-50%); }
+    .f03-dot     { position: absolute; top: -20px; width: 20px; height: 20px; margin-left: -10px; border-radius: 50%; background: #FFD400; opacity: 0; box-shadow: 0 0 0 6px rgba(255,212,0,0.16); }
+    .f03-callout { position: absolute; top: -78px; font-size: 22px; font-weight: 700; color: #FFFFFF; letter-spacing: -0.01em; transform: translateX(-50%); opacity: 0; }
+    .f03-callout::after { content: ''; position: absolute; left: 50%; bottom: -14px; width: 1px; height: 40px; background: #FFD400; opacity: 0.6; }
+    .f03-btm-tag { position: absolute; bottom: 10%; left: 6%; right: 6%; font-size: 24px; letter-spacing: 0.16em; color: #8A8A8F; opacity: 0; text-align: center; }
+  </style>
+
+  <div id="root" data-composition-id="03-irregular-nights" data-start="0" data-duration="10.46" data-width="1920" data-height="1080">
+    <div id="f03-bg" class="clip f03-bg" data-start="0" data-duration="10.46" data-track-index="0"></div>
+    <div id="f03-stage" class="clip" data-start="0" data-duration="10.46" data-track-index="1">
+      <div class="f03-num" id="f03-num">03 · IRREGULAR NIGHTS</div>
+      <div class="f03-num-r" id="f03-num-r">불규칙한 하루</div>
+
+      <div class="f03-head" id="f03-head">야근·회식엔 <span class="hi">새벽</span>에,<br/>다음 날은 <span class="hi">일찍</span>.</div>
+
+      <div class="f03-tl-wrap">
+        <div class="f03-tl-rule" id="f03-tl-rule">
+          <!-- ticks and labels at 0h, 6h, 12h, 18h, 24h positions -->
+          <div class="f03-tl-tick" style="left: 0%"></div>
+          <div class="f03-tl-tick" style="left: 25%"></div>
+          <div class="f03-tl-tick" style="left: 50%"></div>
+          <div class="f03-tl-tick" style="left: 75%"></div>
+          <div class="f03-tl-tick" style="left: 100%"></div>
+          <div class="f03-tl-lab"  style="left: 0%">00시</div>
+          <div class="f03-tl-lab"  style="left: 25%">06시</div>
+          <div class="f03-tl-lab"  style="left: 50%">12시</div>
+          <div class="f03-tl-lab"  style="left: 75%">18시</div>
+          <div class="f03-tl-lab"  style="left: 100%">24시</div>
+
+          <!-- Dots representing late-night sleep at ~2AM (8.3%) and early wake at ~5AM (20.8%) -->
+          <div class="f03-dot" id="f03-dot-late" style="left: 8.3%"></div>
+          <div class="f03-dot" id="f03-dot-early" style="left: 20.8%"></div>
+
+          <div class="f03-callout" id="f03-c-late" style="left: 8.3%">야근·회식 · 취침</div>
+          <div class="f03-callout" id="f03-c-early" style="left: 20.8%">다음날 · 기상</div>
+        </div>
+      </div>
+
+      <div class="f03-btm-tag" id="f03-btm">SLEEP&nbsp;·&nbsp;WAKE&nbsp;·&nbsp;SLEEP&nbsp;·&nbsp;WAKE</div>
+    </div>
+  </div>
+
+  <script>
+    window.__timelines = window.__timelines || {};
+    const tl = gsap.timeline({ paused: true });
+    tl.fromTo("#f03-num",   { opacity: 0, x: -12 }, { opacity: 1, x: 0, duration: 0.5, ease: "power2.out" }, 0.05);
+    tl.fromTo("#f03-num-r", { opacity: 0, x:  12 }, { opacity: 1, x: 0, duration: 0.5, ease: "power2.out" }, 0.05);
+    tl.fromTo("#f03-head",  { opacity: 0, y: 24 }, { opacity: 1, y: 0, duration: 0.7, ease: "power3.out" }, 0.30);
+    tl.fromTo("#f03-tl-rule", { opacity: 0, scaleX: 0 }, { opacity: 1, scaleX: 1, duration: 0.9, ease: "power3.inOut" }, 1.20);
+    tl.fromTo("#f03-dot-late",  { opacity: 0, scale: 0 }, { opacity: 1, scale: 1, duration: 0.5, ease: "back.out(2)" }, 3.20);
+    tl.fromTo("#f03-c-late",    { opacity: 0, y: 12 }, { opacity: 1, y: 0, duration: 0.5, ease: "power2.out" }, 3.40);
+    tl.fromTo("#f03-dot-early", { opacity: 0, scale: 0 }, { opacity: 1, scale: 1, duration: 0.5, ease: "back.out(2)" }, 6.00);
+    tl.fromTo("#f03-c-early",   { opacity: 0, y: 12 }, { opacity: 1, y: 0, duration: 0.5, ease: "power2.out" }, 6.20);
+    tl.fromTo("#f03-btm",       { opacity: 0, y: 12 }, { opacity: 1, y: 0, duration: 0.6, ease: "power2.out" }, 7.60);
+    window.__timelines["03-irregular-nights"] = tl;
+  </script>
+</template>
