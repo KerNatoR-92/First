@@ -4,67 +4,62 @@
     @font-face { font-family: 'NotoSansKR'; src: url('assets/fonts/NotoSansKR-Bold.woff2') format('woff2'); font-weight: 700; font-display: block; }
     #root { position: absolute; inset: 0; overflow: hidden; font-family: 'NotoSansKR', sans-serif; color: #FFFFFF; }
     .f08-bg { background: #0B0B0D; }
-    .f08-num   { position: absolute; top: 6%; left: 6%; font-size: 20px; letter-spacing: 0.28em; color: #FFD400; font-weight: 700; opacity: 0; }
-    .f08-num-r { position: absolute; top: 6%; right: 6%; font-size: 20px; letter-spacing: 0.28em; color: #8A8A8F; font-weight: 400; opacity: 0; }
-    .f08-topbar { position: absolute; top: 12%; left: 6%; right: 6%; height: 1px; background: #282826; opacity: 0; transform-origin: left center; }
-    .f08-lead { position: absolute; top: 18%; left: 6%; right: 6%; font-size: 34px; color: #FFFFFF; letter-spacing: -0.01em; line-height: 1.4; opacity: 0; }
-    .f08-lead .hi { color: #FFD400; font-weight: 700; }
-    .f08-eq { position: absolute; top: 40%; left: 0; right: 0; text-align: center; display: flex; align-items: center; justify-content: center; gap: 34px; flex-wrap: wrap; }
+    .f08-topbar { position: absolute; top: 10%; left: 6%; right: 6%; height: 1px; background: #282826; opacity: 0; transform-origin: left center; }
+    .f08-lead { position: absolute; top: 18%; left: 6%; right: 6%; text-align: center; font-size: 34px; color: #8A8A8F; letter-spacing: 0.02em; line-height: 1.4; opacity: 0; }
+
+    /* Big principle: WAKE 시간 ← 역산 */
+    .f08-flow { position: absolute; top: 36%; left: 0; right: 0; text-align: center; display: flex; justify-content: center; align-items: center; gap: 44px; }
     .f08-cell { display: flex; flex-direction: column; align-items: center; opacity: 0; }
-    .f08-cell .val { font-size: 128px; font-weight: 900; letter-spacing: -0.04em; line-height: 1.0; color: #FFFFFF; }
-    .f08-cell .val .u { font-size: 36px; color: #8A8A8F; font-weight: 400; letter-spacing: 0.06em; margin-left: 6px; }
-    .f08-cell .lab { margin-top: 14px; font-size: 20px; letter-spacing: 0.22em; color: #8A8A8F; }
-    .f08-op { font-size: 128px; font-weight: 700; color: #FFD400; letter-spacing: -0.03em; opacity: 0; line-height: 1.0; }
-    .f08-result { color: #FFD400 !important; }
-    .f08-line { position: absolute; top: 68%; left: 6%; right: 6%; height: 1px; background: #282826; opacity: 0; transform-origin: left center; }
-    .f08-note { position: absolute; top: 72%; left: 6%; right: 6%; text-align: center; font-size: 30px; color: #8A8A8F; letter-spacing: 0.02em; line-height: 1.4; opacity: 0; }
-    .f08-note b { color: #FFFFFF; font-weight: 700; }
-    .f08-btm { position: absolute; bottom: 8%; left: 6%; right: 6%; height: 1px; background: #282826; opacity: 0; transform-origin: right center; }
+    .f08-cell .val { font-size: 108px; font-weight: 900; letter-spacing: -0.03em; line-height: 0.95; color: #FFFFFF; }
+    .f08-cell.hi .val { color: #FFD400; }
+    .f08-cell .lab { margin-top: 14px; font-size: 22px; letter-spacing: 0.22em; color: #8A8A8F; text-transform: uppercase; }
+
+    .f08-arrow { font-size: 120px; font-weight: 900; color: #FFD400; letter-spacing: -0.03em; opacity: 0; line-height: 0.9; }
+
+    /* Big statement */
+    .f08-msg { position: absolute; top: 68%; left: 6%; right: 6%; text-align: center; font-size: 56px; font-weight: 700; letter-spacing: -0.02em; color: #FFFFFF; line-height: 1.15; opacity: 0; }
+    .f08-msg .hi { color: #FFD400; }
+
+    .f08-tag { position: absolute; bottom: 12%; left: 0; right: 0; text-align: center; font-size: 22px; letter-spacing: 0.28em; color: #8A8A8F; opacity: 0; font-weight: 400; }
+    .f08-btm { position: absolute; bottom: 6%; left: 6%; right: 6%; height: 1px; background: #282826; opacity: 0; transform-origin: right center; }
   </style>
 
-  <div id="root" data-composition-id="08-reverse-calc" data-start="0" data-duration="17.995" data-width="1920" data-height="1080">
-    <div id="f08-bg" class="clip f08-bg" data-start="0" data-duration="17.995" data-track-index="0"></div>
-    <div id="f08-stage" class="clip" data-start="0" data-duration="17.995" data-track-index="1">      <div class="f08-topbar" id="f08-topbar"></div>
+  <div id="root" data-composition-id="08-reverse-calc" data-start="0" data-duration="5.97" data-width="1920" data-height="1080">
+    <div id="f08-bg" class="clip f08-bg" data-start="0" data-duration="5.97" data-track-index="0"></div>
+    <div id="f08-stage" class="clip" data-start="0" data-duration="5.97" data-track-index="1">
+      <div class="f08-topbar" id="f08-topbar"></div>
+      <div class="f08-lead" id="f08-lead">그렇다면 —</div>
 
-      <div class="f08-lead" id="f08-lead">중요한 건 <span class="hi">일어나야 하는 시간</span>에서 <span class="hi">거꾸로 계산</span>하는 것.</div>
-
-      <div class="f08-eq">
-        <div class="f08-cell" id="f08-c1">
-          <div class="val">07<span class="u">:00</span></div>
-          <div class="lab">WAKE · 기상</div>
+      <div class="f08-flow">
+        <div class="f08-cell hi" id="f08-c1">
+          <div class="val">기상</div>
+          <div class="lab">WAKE · TIME</div>
         </div>
-        <div class="f08-op" id="f08-op1">−</div>
+        <div class="f08-arrow" id="f08-arrow">←</div>
         <div class="f08-cell" id="f08-c2">
-          <div class="val">7–9<span class="u">h</span></div>
-          <div class="lab">SLEEP · 수면</div>
-        </div>
-        <div class="f08-op" id="f08-op2">=</div>
-        <div class="f08-cell" id="f08-c3">
-          <div class="val f08-result">22–00<span class="u">시</span></div>
-          <div class="lab">BEDTIME · 취침</div>
+          <div class="val">필요 수면</div>
+          <div class="lab">HOURS · NEEDED</div>
         </div>
       </div>
 
-      <div class="f08-line" id="f08-line"></div>
-      <div class="f08-note" id="f08-note">예를 들어 아침 <b>07시</b>에 일어나려면, <b>밤 10시 ~ 자정 사이</b>에 잠들 준비.</div>
+      <div class="f08-msg" id="f08-msg"><span class="hi">거꾸로 계산</span>하세요.</div>
+      <div class="f08-tag" id="f08-tag">REVERSE · CALC · FROM · WAKE · TIME</div>
       <div class="f08-btm" id="f08-btm"></div>
     </div>
   </div>
 
   <script>
     window.__timelines = window.__timelines || {};
-    const tl = gsap.timeline({ paused: true });    tl.fromTo("#f08-topbar", { opacity: 0, scaleX: 0 }, { opacity: 1, scaleX: 1, duration: 0.8, ease: "power3.inOut" }, 0.20);
-    tl.fromTo("#f08-lead",   { opacity: 0, y: 12 }, { opacity: 1, y: 0, duration: 0.6, ease: "power2.out" }, 0.60);
-    // "예를 들어 아침 7시에 일어나야 하는 사람이라면"
-    tl.fromTo("#f08-c1",  { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.55, ease: "power3.out" }, 4.20);
-    tl.fromTo("#f08-op1", { opacity: 0, scale: 0.6 }, { opacity: 1, scale: 1, duration: 0.4, ease: "back.out(2)" }, 4.90);
-    tl.fromTo("#f08-c2",  { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.55, ease: "power3.out" }, 5.30);
-    tl.fromTo("#f08-op2", { opacity: 0, scale: 0.6 }, { opacity: 1, scale: 1, duration: 0.4, ease: "back.out(2)" }, 6.00);
-    // "밤 10시부터 12시 사이에는 잠들 수 있도록..."
-    tl.fromTo("#f08-c3",  { opacity: 0, y: 30, scale: 0.94 }, { opacity: 1, y: 0, scale: 1, duration: 0.7, ease: "back.out(1.4)" }, 6.40);
-    tl.fromTo("#f08-line",{ opacity: 0, scaleX: 0 }, { opacity: 1, scaleX: 1, duration: 0.7, ease: "power3.inOut" }, 8.00);
-    tl.fromTo("#f08-note",{ opacity: 0, y: 12 }, { opacity: 1, y: 0, duration: 0.55, ease: "power2.out" }, 8.40);
-    tl.fromTo("#f08-btm", { opacity: 0, scaleX: 0 }, { opacity: 1, scaleX: 1, duration: 0.9, ease: "power3.inOut", transformOrigin: "right center" }, 10.60);
+    const tl = gsap.timeline({ paused: true });
+    // Fits 5.47s window
+    tl.fromTo("#f08-topbar",{ opacity: 0, scaleX: 0 }, { opacity: 1, scaleX: 1, duration: 0.35, ease: "power3.inOut" }, 0.00);
+    tl.fromTo("#f08-lead",  { opacity: 0, y: 10 }, { opacity: 1, y: 0, duration: 0.35, ease: "power2.out" }, 0.15);
+    tl.fromTo("#f08-c2",    { opacity: 0, x: 30 }, { opacity: 1, x: 0, duration: 0.55, ease: "power3.out" }, 0.60);
+    tl.fromTo("#f08-arrow", { opacity: 0, scale: 0.6 }, { opacity: 1, scale: 1, duration: 0.45, ease: "back.out(2)" }, 1.20);
+    tl.fromTo("#f08-c1",    { opacity: 0, x: -30 }, { opacity: 1, x: 0, duration: 0.6, ease: "back.out(1.4)" }, 1.60);
+    tl.fromTo("#f08-msg",   { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.55, ease: "power3.out" }, 2.70);
+    tl.fromTo("#f08-tag",   { opacity: 0, y: 8 }, { opacity: 1, y: 0, duration: 0.4, ease: "power2.out" }, 3.80);
+    tl.fromTo("#f08-btm",   { opacity: 0, scaleX: 0 }, { opacity: 1, scaleX: 1, duration: 0.5, ease: "power3.inOut", transformOrigin: "right center" }, 4.60);
     window.__timelines["08-reverse-calc"] = tl;
   </script>
 </template>

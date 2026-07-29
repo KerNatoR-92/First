@@ -186,19 +186,55 @@
       ></audio>
 
       <div
+        id="el-08-no-absolute"
+        class="scene"
+        data-composition-id="08-no-absolute"
+        data-composition-src="compositions/frames/08-no-absolute.html"
+        data-start="52.22"
+        data-duration="5.23"
+        data-track-index="0"
+      ></div>
+      <audio
+        id="el-08-no-absolute-voice"
+        src="assets/voice/09.wav"
+        data-start="52.22"
+        data-duration="5.23"
+        data-track-index="10"
+        data-volume="1"
+      ></audio>
+
+      <div
         id="el-08-reverse-calc"
         class="scene"
         data-composition-id="08-reverse-calc"
         data-composition-src="compositions/frames/08-reverse-calc.html"
-        data-start="52.22"
-        data-duration="17.995"
-        data-track-index="0"
+        data-start="57.45"
+        data-duration="5.97"
+        data-track-index="1"
       ></div>
       <audio
         id="el-08-reverse-calc-voice"
-        src="assets/voice/09.wav"
-        data-start="52.22"
-        data-duration="17.995"
+        src="assets/voice/10.wav"
+        data-start="57.45"
+        data-duration="5.47"
+        data-track-index="10"
+        data-volume="1"
+      ></audio>
+
+      <div
+        id="el-08-example-7am"
+        class="scene"
+        data-composition-id="08-example-7am"
+        data-composition-src="compositions/frames/08-example-7am.html"
+        data-start="62.92"
+        data-duration="7.295"
+        data-track-index="0"
+      ></div>
+      <audio
+        id="el-08-example-7am-voice"
+        src="assets/voice/11.wav"
+        data-start="62.92"
+        data-duration="7.295"
         data-track-index="10"
         data-volume="1"
       ></audio>
@@ -214,7 +250,7 @@
       ></div>
       <audio
         id="el-09-schedule-table-voice"
-        src="assets/voice/10.wav"
+        src="assets/voice/12.wav"
         data-start="70.215"
         data-duration="7.81"
         data-track-index="10"
@@ -232,7 +268,7 @@
       ></div>
       <audio
         id="el-10-actual-time-voice"
-        src="assets/voice/11.wav"
+        src="assets/voice/13.wav"
         data-start="78.025"
         data-duration="6.875"
         data-track-index="10"
@@ -250,7 +286,7 @@
       ></div>
       <audio
         id="el-11-early-30-voice"
-        src="assets/voice/12.wav"
+        src="assets/voice/14.wav"
         data-start="84.9"
         data-duration="7"
         data-track-index="10"
@@ -268,7 +304,7 @@
       ></div>
       <audio
         id="el-12-consistency-voice"
-        src="assets/voice/13.wav"
+        src="assets/voice/15.wav"
         data-start="91.9"
         data-duration="5.1"
         data-track-index="10"
@@ -286,7 +322,7 @@
       ></div>
       <audio
         id="el-13-weekend-jetlag-voice"
-        src="assets/voice/14.wav"
+        src="assets/voice/16.wav"
         data-start="97"
         data-duration="7.4"
         data-track-index="10"
@@ -304,7 +340,7 @@
       ></div>
       <audio
         id="el-14-close-rule-voice"
-        src="assets/voice/15.wav"
+        src="assets/voice/17.wav"
         data-start="104.4"
         data-duration="6.11"
         data-track-index="10"
@@ -327,7 +363,9 @@
         tl.to("#el-06-foods-habits", { opacity: 0, duration: 0.5, ease: "power2.inOut" }, 39.5);
         tl.fromTo("#el-06-first-question", { opacity: 0 }, { opacity: 1, duration: 0.5, ease: "power2.inOut" }, 39.5);
         tl.to("#el-07-seven-hours", { opacity: 0, duration: 0.5, ease: "power2.inOut" }, 52.22);
-        tl.fromTo("#el-08-reverse-calc", { opacity: 0 }, { opacity: 1, duration: 0.5, ease: "power2.inOut" }, 52.22);
+        tl.fromTo("#el-08-no-absolute", { opacity: 0 }, { opacity: 1, duration: 0.5, ease: "power2.inOut" }, 52.22);
+        tl.to("#el-08-reverse-calc", { opacity: 0, duration: 0.5, ease: "power2.inOut" }, 62.92);
+        tl.fromTo("#el-08-example-7am", { opacity: 0 }, { opacity: 1, duration: 0.5, ease: "power2.inOut" }, 62.92);
         tl.to("#el-09-schedule-table", { opacity: 0, duration: 0.5, ease: "power2.inOut" }, 78.025);
         tl.fromTo("#el-10-actual-time", { opacity: 0 }, { opacity: 1, duration: 0.5, ease: "power2.inOut" }, 78.025);
         tl.to("#el-11-early-30", { opacity: 0, duration: 0.5, ease: "power2.inOut" }, 91.9);

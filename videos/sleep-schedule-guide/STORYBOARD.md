@@ -133,22 +133,53 @@ music: none
 핵심 스탯 프레임. 좌측에 거대한 노란색 "7", 우측에는 세로로 쌓인
 "HOURS · MINIMUM / 최소 7시간 이상". 하단에는 7—9 범위 바 (7 ●━━━━━● 9).
 
-## Frame 9 — 역산 (기상 시간부터)
+## Frame 9 — 절대적 시간은 없음
 
-- scene: 큰 등식 "기상 7시 − 수면 = 취침 시간" 이 좌→우로 조립됨
-- duration: 17.995s
+- scene: 큰 Q + 크로스된 시계 아이콘 + "없다" 강조
+- duration: 5.23s
 - transition_in: crossfade
 - status: animated
-- voiceover: "중요한 것은 자신이 일어나야 하는 시간에서 필요한 수면 시간을 거꾸로 계산하는 것입니다. 예를 들어 아침 7시에 일어나야 하는 사람이라면 밤 10시부터 12시 사이에는 잠들 수 있도록 준비하는 것이 좋습니다."
+- voiceover: "하지만 모든 사람에게 적용되는 절대적인 취침 시간이 따로 정해져 있는 것은 아닙니다."
+- src: compositions/frames/08-no-absolute.html
+- blueprint: reveal-question
+- focal: no-single-rule
+- roles: [q-text, crossed-clock, answer, msg]
+
+'모두에게 맞는 절대적 시간?' 이라는 질문에 크로스된 시계 아이콘과 큰 "없다"
+라벨로 답한다. 하단에 "정해진 정답은 없음" 마무리.
+
+## Frame 10 — 역산 원리
+
+- scene: "기상 시간 ← 필요 수면" 화살표 흐름 + "거꾸로 계산하세요" 큰 스테이트먼트
+- duration: 5.47s
+- transition_in: cut
+- status: animated
+- voiceover: "중요한 것은 자신이 일어나야 하는 시간에서 필요한 수면 시간을 거꾸로 계산하는 것입니다."
 - src: compositions/frames/08-reverse-calc.html
+- blueprint: statement-close
+- focal: reverse-arrow
+- roles: [wake-cell, arrow, needed-cell, msg]
+
+역산의 원리를 한 화면으로. 우측 "필요 수면" 등장 → 노란 화살표 ← → 좌측
+"기상 시간" 강조. 하단에 "거꾸로 계산하세요" 를 큰 텍스트로 각인.
+
+## Frame 11 — 예시 (아침 7시)
+
+- scene: "07:00 − 7-9h = 22-00시" 공식 좌→우 조립 + "밤 10시~자정" 노트
+- duration: 7.295s
+- transition_in: crossfade
+- status: animated
+- voiceover: "예를 들어 아침 7시에 일어나야 하는 사람이라면 밤 10시부터 12시 사이에는 잠들 수 있도록 준비하는 것이 좋습니다."
+- src: compositions/frames/08-example-7am.html
 - blueprint: equation-reveal
 - focal: formula-line
-- roles: [wake-time, minus-op, sleep-duration, equals, bedtime-range, subline]
+- roles: [scenario, wake-time, minus-op, sleep-duration, equals, bedtime-range, note]
 
-핵심 계산 원리. "07:00 − 7-9h = 22:00 ~ 24:00" 을 큰 단일 라인으로 조립.
-숫자는 흰색 대문자 mono, 연산자 (−, =) 는 노란색 얇은 대체.
+예시로 개념을 못박음. 상단 시나리오 "아침 7시에 일어난다면" 뒤에 큰 등식
+"07:00 − 7-9h = 22-00시" 를 좌→우로 조립, 하단에 "밤 10시 ~ 자정 사이 잠들 준비"
+마무리 문구.
 
-## Frame 10 — 7 / 8 / 9시간 취침표
+## Frame 12 — 7 / 8 / 9시간 취침표
 
 - scene: 3행 표가 순차 등장 — [7시간 → 자정 전] [8시간 → 11시] [9시간 → 10시]
 - duration: 7.81s
@@ -164,7 +195,7 @@ music: none
 왼쪽 컬럼 노란 굵은 숫자, 오른쪽 컬럼 큰 흰 시간 텍스트. 3행이 
 "타이핑 리듬"으로 시간 간격을 두고 순차 등장.
 
-## Frame 11 — 실제 잠드는 시간 기준
+## Frame 13 — 실제 잠드는 시간 기준
 
 - scene: "침대에 눕는 시간 ≠ 실제 잠드는 시간" 등식 반전, 노란 ≠ 강조
 - duration: 6.875s
@@ -179,7 +210,7 @@ music: none
 침대에 눕는 시간과 실제로 잠드는 시간을 구분해 주는 인사이트 프레임.
 방정식 형태로 대비를 만들어 시선을 붙잡는다.
 
-## Frame 12 — 30분 일찍 침대
+## Frame 14 — 30분 일찍 침대
 
 - scene: 큰 "−30분" 등식이 좌우 조립, 하단 캡션 "TARGET BEDTIME − 30M"
 - duration: 7s
@@ -194,7 +225,7 @@ music: none
 거대한 −30분 을 화면 중앙에 배치. 노란 마이너스 + 흰색 30 대비.
 "목표 취침 시각보다 30분 일찍 침대로" 규칙을 각인시킨다.
 
-## Frame 13 — 매일 비슷한 시간에
+## Frame 15 — 매일 비슷한 시간에
 
 - scene: 짧은 클로징 스테이트먼트 "매일 비슷한 시간에" 가 큰 텍스트로 페이드-인, 하단 얇은 노란 밑줄
 - duration: 5.1s
@@ -209,7 +240,7 @@ music: none
 규칙성의 핵심을 짧고 강하게 한 줄로 각인. 큰 흰 텍스트 "매일 비슷한 시간에",
 아래에 "자고 · 일어나기" 서브라인.
 
-## Frame 14 — 주말 시차
+## Frame 16 — 주말 시차
 
 - scene: 평일/주말 두 타임라인 비교, +3.5h ✈ 표시로 시차 감각 시각화
 - duration: 7.4s
@@ -224,7 +255,7 @@ music: none
 평일 23:00 vs 주말 02:30 두 지점을 나란한 타임라인 위에 찍고 그 차이를
 "+3.5h ✈" 로 라벨. 매주 반복되는 미니-시차라는 은유를 시각화.
 
-## Frame 15 — ±1–2시간 이내로
+## Frame 17 — ±1–2시간 이내로
 
 - scene: 최종 규칙 카드. 큰 "± 1–2 시간" 라인 + 노란 언더라인
 - duration: 6.11s

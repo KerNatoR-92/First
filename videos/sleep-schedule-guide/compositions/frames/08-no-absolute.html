@@ -1,0 +1,63 @@
+<template>
+  <style>
+    @font-face { font-family: 'NotoSansKR'; src: url('assets/fonts/NotoSansKR-Regular.woff2') format('woff2'); font-weight: 400; font-display: block; }
+    @font-face { font-family: 'NotoSansKR'; src: url('assets/fonts/NotoSansKR-Bold.woff2') format('woff2'); font-weight: 700; font-display: block; }
+    #root { position: absolute; inset: 0; overflow: hidden; font-family: 'NotoSansKR', sans-serif; color: #FFFFFF; }
+    .f8a-bg { background: #0B0B0D; }
+    .f8a-topbar { position: absolute; top: 10%; left: 6%; right: 6%; height: 1px; background: #282826; opacity: 0; transform-origin: left center; }
+
+    .f8a-lead { position: absolute; top: 18%; left: 6%; right: 6%; text-align: center; font-size: 34px; color: #8A8A8F; letter-spacing: 0.02em; line-height: 1.35; opacity: 0; }
+
+    /* Big Q + crossed clock */
+    .f8a-stage { position: absolute; top: 30%; left: 0; right: 0; text-align: center; }
+    .f8a-q     { font-size: 90px; font-weight: 700; letter-spacing: -0.03em; line-height: 1.12; color: #FFFFFF; opacity: 0; }
+    .f8a-q .hi { color: #FFD400; }
+
+    .f8a-mark  { position: absolute; top: 56%; left: 50%; transform: translateX(-50%); display: flex; align-items: center; gap: 42px; opacity: 0; }
+    .f8a-clock { position: relative; width: 132px; height: 132px; border: 3px solid #FFFFFF; border-radius: 50%; }
+    .f8a-clock::before { content: ''; position: absolute; top: 50%; left: 50%; width: 3px; height: 40px; background: #FFFFFF; transform: translate(-50%, -100%); transform-origin: bottom center; }
+    .f8a-clock::after  { content: ''; position: absolute; top: 50%; left: 50%; width: 3px; height: 32px; background: #FFFFFF; transform: translate(-50%, -100%) rotate(90deg); transform-origin: bottom center; }
+    .f8a-slash { position: absolute; top: 50%; left: 50%; width: 168px; height: 6px; background: #FFD400; transform: translate(-50%, -50%) rotate(-30deg); border-radius: 3px; }
+
+    .f8a-ans   { font-size: 96px; font-weight: 900; letter-spacing: -0.04em; line-height: 0.95; color: #FFD400; }
+    .f8a-ans .sub { display: block; font-size: 22px; font-weight: 400; color: #8A8A8F; letter-spacing: 0.22em; margin-top: 14px; text-transform: uppercase; }
+
+    .f8a-msg { position: absolute; top: 80%; left: 6%; right: 6%; text-align: center; font-size: 30px; color: #FFFFFF; line-height: 1.4; opacity: 0; }
+    .f8a-msg b { color: #FFD400; font-weight: 700; }
+
+    .f8a-btm { position: absolute; bottom: 6%; left: 6%; right: 6%; height: 1px; background: #282826; opacity: 0; transform-origin: right center; }
+  </style>
+
+  <div id="root" data-composition-id="08-no-absolute" data-start="0" data-duration="5.23" data-width="1920" data-height="1080">
+    <div id="f8a-bg" class="clip f8a-bg" data-start="0" data-duration="5.23" data-track-index="0"></div>
+    <div id="f8a-stage-clip" class="clip" data-start="0" data-duration="5.23" data-track-index="1">
+      <div class="f8a-topbar" id="f8a-topbar"></div>
+      <div class="f8a-lead" id="f8a-lead">단, 모든 사람에게 —</div>
+
+      <div class="f8a-stage">
+        <div class="f8a-q" id="f8a-q">적용되는 <span class="hi">절대적인 취침 시간</span>은?</div>
+      </div>
+
+      <div class="f8a-mark" id="f8a-mark">
+        <div class="f8a-clock"><div class="f8a-slash"></div></div>
+        <div class="f8a-ans">없다<span class="sub">NO · SINGLE · RULE</span></div>
+      </div>
+
+      <div class="f8a-msg" id="f8a-msg">따로 정해진 <b>정답</b>은 없습니다.</div>
+      <div class="f8a-btm" id="f8a-btm"></div>
+    </div>
+  </div>
+
+  <script>
+    window.__timelines = window.__timelines || {};
+    const tl = gsap.timeline({ paused: true });
+    // Fits 5.23s window
+    tl.fromTo("#f8a-topbar", { opacity: 0, scaleX: 0 }, { opacity: 1, scaleX: 1, duration: 0.35, ease: "power3.inOut" }, 0.00);
+    tl.fromTo("#f8a-lead",   { opacity: 0, y: 10 }, { opacity: 1, y: 0, duration: 0.35, ease: "power2.out" }, 0.15);
+    tl.fromTo("#f8a-q",      { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.5, ease: "power3.out" }, 0.55);
+    tl.fromTo("#f8a-mark",   { opacity: 0, y: 24, scale: 0.9 }, { opacity: 1, y: 0, scale: 1, duration: 0.55, ease: "back.out(1.6)" }, 2.10);
+    tl.fromTo("#f8a-msg",    { opacity: 0, y: 12 }, { opacity: 1, y: 0, duration: 0.45, ease: "power3.out" }, 3.30);
+    tl.fromTo("#f8a-btm",    { opacity: 0, scaleX: 0 }, { opacity: 1, scaleX: 1, duration: 0.5, ease: "power3.inOut", transformOrigin: "right center" }, 4.40);
+    window.__timelines["08-no-absolute"] = tl;
+  </script>
+</template>

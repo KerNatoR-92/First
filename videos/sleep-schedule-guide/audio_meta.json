@@ -52,42 +52,54 @@
     {
       "frame": 9,
       "path": "assets/voice/09.wav",
-      "duration_s": 17.995,
+      "duration_s": 5.23,
       "words": []
     },
     {
       "frame": 10,
       "path": "assets/voice/10.wav",
-      "duration_s": 7.81,
+      "duration_s": 5.47,
       "words": []
     },
     {
       "frame": 11,
       "path": "assets/voice/11.wav",
-      "duration_s": 6.875,
+      "duration_s": 7.295,
       "words": []
     },
     {
       "frame": 12,
       "path": "assets/voice/12.wav",
-      "duration_s": 7,
+      "duration_s": 7.81,
       "words": []
     },
     {
       "frame": 13,
       "path": "assets/voice/13.wav",
-      "duration_s": 5.1,
+      "duration_s": 6.875,
       "words": []
     },
     {
       "frame": 14,
       "path": "assets/voice/14.wav",
-      "duration_s": 7.4,
+      "duration_s": 7,
       "words": []
     },
     {
       "frame": 15,
       "path": "assets/voice/15.wav",
+      "duration_s": 5.1,
+      "words": []
+    },
+    {
+      "frame": 16,
+      "path": "assets/voice/16.wav",
+      "duration_s": 7.4,
+      "words": []
+    },
+    {
+      "frame": 17,
+      "path": "assets/voice/17.wav",
       "duration_s": 6.11,
       "words": []
     }
