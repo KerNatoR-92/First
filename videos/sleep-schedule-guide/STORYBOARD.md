@@ -11,7 +11,7 @@ music: none
 ## Frame 1 — Hook Q
 
 - scene: 정중앙에서 굵은 질문이 한 자씩 등장. 강조 단어 "몇 시"는 노란색.
-- duration: 11.01s
+- duration: 3.21s
 - transition_in: cut
 - status: animated
 - voiceover: "여러분은 평일과 주말에 각각 몇 시에 잠드시나요?"
@@ -28,7 +28,7 @@ music: none
 
 - scene: 좌 "평일" 우 "주말" 2단 분할, 각 아래에 다른 취침·기상 시간이
   숫자 카운터로 낙차 있게 나타남.
-- duration: 12.32s
+- duration: 7.79s
 - transition_in: crossfade
 - status: animated
 - voiceover: "평일에는 출근 때문에 억지로 일찍 일어나고, 주말에는 밀린 잠을 보충하느라 점심때까지 자는 분들이 많습니다."
@@ -44,7 +44,7 @@ music: none
 ## Frame 3 — 새벽에 잠들고, 일찍 일어나고
 
 - scene: 24시간 하이라인 위에 두 개의 점이 흩어져 나타나며 불규칙 리듬을 시각화
-- duration: 9.96s
+- duration: 6.595s
 - transition_in: cut
 - status: animated
 - voiceover: "야근이나 회식이 있는 날에는 새벽에 잠들고, 다음 날 중요한 일정이 있으면 평소보다 일찍 일어나기도 합니다."
@@ -60,7 +60,7 @@ music: none
 ## Frame 4 — 충분히 잤다고 생각해도 피곤
 
 - scene: 큰 등식 "충분히 잤다? ≠ 피곤하지 않다" 가 텍스트로 조립되며 등장
-- duration: 12.84s
+- duration: 5.74s
 - transition_in: crossfade
 - status: animated
 - voiceover: "이렇게 하루하루 자는 시간이 달라지면 우리는 충분히 잤다고 생각해도 계속 피곤할 수 있습니다."
@@ -75,7 +75,7 @@ music: none
 ## Frame 5 — 오늘 다룰 3가지
 
 - scene: 세로로 넘버링된 3개의 헤드라인이 위에서 아래로 순차 등장 (01 / 02 / 03)
-- duration: 10.75s
+- duration: 9.945s
 - transition_in: cut
 - status: animated
 - voiceover: "오늘은 직장인에게 필요한 수면 시간은 몇 시간인지, 규칙적으로 잠을 자면 무엇이 좋아지는지, 반대로 수면 시간이 불규칙하면 어떤 문제가 생기는지 알아보겠습니다."
@@ -91,7 +91,7 @@ music: none
 ## Frame 6 — 우선, 우리는 몇 시에?
 
 - scene: 큰 질문 텍스트 "우선, 우리는 몇 시에 자야 할까요?" — 화면 중앙 정렬
-- duration: 12.85s
+- duration: 9.055s
 - transition_in: crossfade
 - status: animated
 - voiceover: "그리고 잠들기 어려운 분들에게 도움이 될 수 있는 음식과 성분, 생활 습관도 함께 이야기해 보겠습니다. 우선, 우리는 몇 시에 자야 할까요?"
@@ -106,7 +106,7 @@ music: none
 ## Frame 7 — 최소 7시간
 
 - scene: "7" 이라는 거대 숫자가 화면을 가르며 등장, 옆에 "시간 이상" 서브
-- duration: 15.29s
+- duration: 9.885s
 - transition_in: cut
 - status: animated
 - voiceover: "성인은 일반적으로 하루에 최소 7시간 이상의 수면이 필요합니다. 개인차는 있지만 대부분의 성인은 약 7시간에서 9시간 정도 잠을 자는 것이 좋습니다."
@@ -121,7 +121,7 @@ music: none
 ## Frame 8 — 역산 (기상 시간부터)
 
 - scene: 큰 등식 "기상 7시 − 수면 = 취침 시간" 이 좌→우로 조립됨
-- duration: 12.69s
+- duration: 17.995s
 - transition_in: crossfade
 - status: animated
 - voiceover: "중요한 것은 자신이 일어나야 하는 시간에서 필요한 수면 시간을 거꾸로 계산하는 것입니다. 예를 들어 아침 7시에 일어나야 하는 사람이라면 밤 10시부터 12시 사이에는 잠들 수 있도록 준비하는 것이 좋습니다."
@@ -136,7 +136,7 @@ music: none
 ## Frame 9 — 7 / 8 / 9시간 취침표
 
 - scene: 3행 표가 순차 등장 — [7시간 → 자정 전] [8시간 → 11시] [9시간 → 10시]
-- duration: 7.31s
+- duration: 7.81s
 - transition_in: cut
 - status: animated
 - voiceover: "7시간을 자려면 자정 전에 잠들어야 하고, 8시간을 자려면 밤 11시, 9시간을 자려면 밤 10시쯤 잠들어야 합니다."
@@ -152,7 +152,7 @@ music: none
 ## Frame 10 — 규칙성이 진짜 핵심
 
 - scene: 짧은 클로징 스테이트먼트 "매일 비슷한 시간에" 가 큰 텍스트로 페이드-인, 하단 얇은 노란 밑줄
-- duration: 5.49s
+- duration: 32.485s
 - transition_in: crossfade
 - status: animated
 - voiceover: "실제로 잠드는 시간을 기준으로 계산하는 것이 중요합니다. 그리고 수면 시간만큼 중요한 것이 매일 비슷한 시간에 자고 일어나는 것입니다."
