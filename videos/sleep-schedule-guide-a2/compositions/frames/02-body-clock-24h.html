@@ -1,0 +1,65 @@
+<template>
+  <style>
+@font-face { font-family: 'NotoSansKR'; src: url('assets/fonts/NotoSansKR-Regular.woff2') format('woff2'); font-weight: 400; font-display: block; }
+@font-face { font-family: 'NotoSansKR'; src: url('assets/fonts/NotoSansKR-Bold.woff2') format('woff2'); font-weight: 700; font-display: block; }
+#root { position: absolute; inset: 0; overflow: hidden; font-family: 'NotoSansKR', sans-serif; color: #FFFFFF; }
+.bg { background: #0B0B0D; }
+.topbar { position: absolute; top: 10%; left: 6%; right: 6%; height: 1px; background: #282826; opacity: 0; transform-origin: left center; }
+.btm    { position: absolute; bottom: 6%; left: 6%; right: 6%; height: 1px; background: #282826; opacity: 0; transform-origin: right center; }
+.lead   { position: absolute; top: 15%; left: 6%; right: 6%; text-align: center; font-size: 28px; color: #8A8A8F; letter-spacing: 0.24em; text-transform: uppercase; font-weight: 700; opacity: 0; }
+.q      { position: absolute; top: 34%; left: 6%; right: 6%; text-align: center; font-size: 96px; font-weight: 700; letter-spacing: -0.03em; line-height: 1.12; opacity: 0; }
+.q .hi  { color: #FFD400; }
+.under  { position: absolute; top: 60%; left: 50%; transform: translateX(-50%); width: 0; height: 4px; background: #FFD400; }
+.msg    { position: absolute; top: 64%; left: 6%; right: 6%; text-align: center; font-size: 34px; font-weight: 400; color: #FFFFFF; line-height: 1.4; opacity: 0; }
+.msg b  { color: #FFD400; font-weight: 700; }
+.hero-num  { position: absolute; top: 26%; left: 0; right: 0; text-align: center; font-size: 320px; font-weight: 900; letter-spacing: -0.05em; line-height: 0.9; color: #FFD400; opacity: 0; }
+.hero-sub  { position: absolute; top: 66%; left: 6%; right: 6%; text-align: center; font-size: 40px; font-weight: 700; letter-spacing: -0.02em; color: #FFFFFF; opacity: 0; }
+.hero-tag  { position: absolute; top: 78%; left: 0; right: 0; text-align: center; font-size: 22px; letter-spacing: 0.28em; color: #8A8A8F; opacity: 0; font-weight: 400; }
+.head-big  { position: absolute; top: 16%; left: 6%; right: 6%; text-align: center; font-size: 60px; font-weight: 700; letter-spacing: -0.02em; line-height: 1.2; opacity: 0; }
+.head-big .hi { color: #FFD400; }
+.list-4-grid { position: absolute; top: 30%; left: 6%; right: 6%; display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+.list-4-grid .item { padding: 26px 28px; border: 1px solid #282826; border-left: 3px solid #FFD400; background: rgba(255,255,255,0.02); opacity: 0; }
+.list-4-grid .item .idx { font-size: 20px; color: #FFD400; letter-spacing: 0.28em; font-weight: 700; text-transform: uppercase; }
+.list-4-grid .item .nm  { margin-top: 8px; font-size: 40px; font-weight: 700; letter-spacing: -0.02em; color: #FFFFFF; }
+.list-3-cards { position: absolute; top: 34%; left: 6%; right: 6%; display: flex; gap: 3%; }
+.list-3-cards .card { flex: 1; padding: 26px 24px; border: 1px solid #282826; border-top: 3px solid #FFD400; background: rgba(255,255,255,0.02); opacity: 0; }
+.list-3-cards .card .idx { font-size: 20px; color: #FFD400; letter-spacing: 0.24em; font-weight: 700; text-transform: uppercase; }
+.list-3-cards .card .nm  { margin-top: 10px; font-size: 44px; font-weight: 700; letter-spacing: -0.02em; color: #FFFFFF; }
+.list-3-cards .card .desc{ margin-top: 8px; font-size: 20px; color: #8A8A8F; line-height: 1.35; }
+.split-2 { position: absolute; top: 30%; left: 6%; right: 6%; display: flex; gap: 4%; }
+.split-2 .side { flex: 1; padding: 30px 28px; border: 1px solid #282826; opacity: 0; }
+.split-2 .side.left { border-top: 3px solid #FFFFFF; }
+.split-2 .side.right { border-top: 3px solid #FFD400; }
+.split-2 .side .tag { font-size: 20px; letter-spacing: 0.24em; color: #8A8A8F; font-weight: 700; text-transform: uppercase; }
+.split-2 .side .val { margin-top: 14px; font-size: 60px; font-weight: 700; letter-spacing: -0.02em; line-height: 1.1; color: #FFFFFF; }
+.split-2 .side.right .val { color: #FFD400; }
+.split-2 .side .sub { margin-top: 14px; font-size: 22px; color: #FFFFFF; line-height: 1.4; }
+.stmt-big { position: absolute; top: 32%; left: 6%; right: 6%; text-align: center; font-size: 88px; font-weight: 900; letter-spacing: -0.04em; line-height: 1.1; opacity: 0; }
+.stmt-big .hi { color: #FFD400; }
+.stmt-sub { position: absolute; top: 62%; left: 6%; right: 6%; text-align: center; font-size: 34px; font-weight: 400; color: #8A8A8F; line-height: 1.5; opacity: 0; }
+.stmt-sub b { color: #FFFFFF; font-weight: 700; }
+
+  </style>
+
+  <div id="root" data-composition-id="02-body-clock-24h" data-start="0" data-duration="4.89" data-width="1920" data-height="1080">
+    <div id="02-body-clock-24h-bg" class="clip bg" data-start="0" data-duration="4.89" data-track-index="0"></div>
+    <div id="02-body-clock-24h-stage" class="clip" data-start="0" data-duration="4.89" data-track-index="1">
+      <div class="topbar" id="02-body-clock-24h-topbar"></div>
+      <div class="lead" id="02-body-clock-24h-lead">BODY · CLOCK</div>
+      <div class="hero-num" id="02-body-clock-24h-num">24</div><div class="hero-sub" id="02-body-clock-24h-sub">시간 주기의 생체시계</div><div class="hero-tag" id="02-body-clock-24h-tag">CIRCADIAN · RHYTHM</div>
+      <div class="btm" id="02-body-clock-24h-btm"></div>
+    </div>
+  </div>
+
+  <script>
+    window.__timelines = window.__timelines || {};
+    const tl = gsap.timeline({ paused: true });
+    tl.fromTo("#02-body-clock-24h-topbar", { opacity: 0, scaleX: 0 }, { opacity: 1, scaleX: 1, duration: 0.35, ease: "power3.inOut" }, 0.00);
+    tl.fromTo("#02-body-clock-24h-lead", { opacity: 0, y: 10 }, { opacity: 1, y: 0, duration: 0.35, ease: "power2.out" }, 0.10);
+    tl.fromTo("#02-body-clock-24h-num", { opacity: 0, y: 40, scale: 0.85 }, { opacity: 1, y: 0, scale: 1, duration: 0.7, ease: "back.out(1.4)" }, 0.50);
+    tl.fromTo("#02-body-clock-24h-sub", { opacity: 0, y: 16 }, { opacity: 1, y: 0, duration: 0.5, ease: "power3.out" }, 1.35);
+    tl.fromTo("#02-body-clock-24h-tag", { opacity: 0, y: 8 }, { opacity: 1, y: 0, duration: 0.4, ease: "power2.out" }, 1.90);
+    tl.fromTo("#02-body-clock-24h-btm", { opacity: 0, scaleX: 0 }, { opacity: 1, scaleX: 1, duration: 0.5, ease: "power3.inOut", transformOrigin: "right center" }, 3.690);
+    window.__timelines["02-body-clock-24h"] = tl;
+  </script>
+</template>

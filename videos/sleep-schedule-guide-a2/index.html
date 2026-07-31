@@ -1,0 +1,413 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1920, height=1080" />
+    <script src="vendor/gsap.min.js"></script>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      html,
+      body {
+        width: 1920px;
+        height: 1080px;
+        overflow: hidden;
+        background: #000;
+      }
+      #root {
+        position: relative;
+        width: 1920px;
+        height: 1080px;
+        overflow: hidden;
+        background: #0B0B0D;
+      }
+      .scene {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+      }
+    </style>
+  </head>
+  <body>
+    <div
+      id="root"
+      data-composition-id="main"
+      data-start="0"
+      data-duration="158.43"
+      data-width="1920"
+      data-height="1080"
+    >
+      <div
+        id="el-01-why-regular"
+        class="scene"
+        data-composition-id="01-why-regular"
+        data-composition-src="compositions/frames/01-why-regular.html"
+        data-start="0"
+        data-duration="3.29"
+        data-track-index="0"
+      ></div>
+      <audio
+        id="el-01-why-regular-voice"
+        src="assets/voice/01.wav"
+        data-start="0"
+        data-duration="2.79"
+        data-track-index="10"
+        data-volume="1"
+      ></audio>
+
+      <div
+        id="el-02-body-clock-24h"
+        class="scene"
+        data-composition-id="02-body-clock-24h"
+        data-composition-src="compositions/frames/02-body-clock-24h.html"
+        data-start="2.79"
+        data-duration="4.89"
+        data-track-index="1"
+      ></div>
+      <audio
+        id="el-02-body-clock-24h-voice"
+        src="assets/voice/02.wav"
+        data-start="2.79"
+        data-duration="4.39"
+        data-track-index="10"
+        data-volume="1"
+      ></audio>
+
+      <div
+        id="el-03-four-influences"
+        class="scene"
+        data-composition-id="03-four-influences"
+        data-composition-src="compositions/frames/03-four-influences.html"
+        data-start="7.18"
+        data-duration="7.55"
+        data-track-index="0"
+      ></div>
+      <audio
+        id="el-03-four-influences-voice"
+        src="assets/voice/03.wav"
+        data-start="7.18"
+        data-duration="7.05"
+        data-track-index="10"
+        data-volume="1"
+      ></audio>
+
+      <div
+        id="el-04-predict-rhythm"
+        class="scene"
+        data-composition-id="04-predict-rhythm"
+        data-composition-src="compositions/frames/04-predict-rhythm.html"
+        data-start="14.23"
+        data-duration="13.27"
+        data-track-index="1"
+      ></div>
+      <audio
+        id="el-04-predict-rhythm-voice"
+        src="assets/voice/04.wav"
+        data-start="14.23"
+        data-duration="12.77"
+        data-track-index="10"
+        data-volume="1"
+      ></audio>
+
+      <div
+        id="el-05-focus-work"
+        class="scene"
+        data-composition-id="05-focus-work"
+        data-composition-src="compositions/frames/05-focus-work.html"
+        data-start="27"
+        data-duration="11.68"
+        data-track-index="0"
+      ></div>
+      <audio
+        id="el-05-focus-work-voice"
+        src="assets/voice/05.wav"
+        data-start="27"
+        data-duration="11.18"
+        data-track-index="10"
+        data-volume="1"
+      ></audio>
+
+      <div
+        id="el-06-memory-learn"
+        class="scene"
+        data-composition-id="06-memory-learn"
+        data-composition-src="compositions/frames/06-memory-learn.html"
+        data-start="38.18"
+        data-duration="6.75"
+        data-track-index="1"
+      ></div>
+      <audio
+        id="el-06-memory-learn-voice"
+        src="assets/voice/06.wav"
+        data-start="38.18"
+        data-duration="6.25"
+        data-track-index="10"
+        data-volume="1"
+      ></audio>
+
+      <div
+        id="el-07-emotion"
+        class="scene"
+        data-composition-id="07-emotion"
+        data-composition-src="compositions/frames/07-emotion.html"
+        data-start="44.43"
+        data-duration="13.27"
+        data-track-index="0"
+      ></div>
+      <audio
+        id="el-07-emotion-voice"
+        src="assets/voice/07.wav"
+        data-start="44.43"
+        data-duration="12.77"
+        data-track-index="10"
+        data-volume="1"
+      ></audio>
+
+      <div
+        id="el-08-body-recovery"
+        class="scene"
+        data-composition-id="08-body-recovery"
+        data-composition-src="compositions/frames/08-body-recovery.html"
+        data-start="57.2"
+        data-duration="8.08"
+        data-track-index="1"
+      ></div>
+      <audio
+        id="el-08-body-recovery-voice"
+        src="assets/voice/08.wav"
+        data-start="57.2"
+        data-duration="7.58"
+        data-track-index="10"
+        data-volume="1"
+      ></audio>
+
+      <div
+        id="el-09-summary-prep"
+        class="scene"
+        data-composition-id="09-summary-prep"
+        data-composition-src="compositions/frames/09-summary-prep.html"
+        data-start="64.78"
+        data-duration="10.34"
+        data-track-index="0"
+      ></div>
+      <audio
+        id="el-09-summary-prep-voice"
+        src="assets/voice/09.wav"
+        data-start="64.78"
+        data-duration="9.84"
+        data-track-index="10"
+        data-volume="1"
+      ></audio>
+
+      <div
+        id="el-10-what-if-irregular"
+        class="scene"
+        data-composition-id="10-what-if-irregular"
+        data-composition-src="compositions/frames/10-what-if-irregular.html"
+        data-start="74.62"
+        data-duration="4.49"
+        data-track-index="1"
+      ></div>
+      <audio
+        id="el-10-what-if-irregular-voice"
+        src="assets/voice/10.wav"
+        data-start="74.62"
+        data-duration="3.99"
+        data-track-index="10"
+        data-volume="1"
+      ></audio>
+
+      <div
+        id="el-11-clock-monday"
+        class="scene"
+        data-composition-id="11-clock-monday"
+        data-composition-src="compositions/frames/11-clock-monday.html"
+        data-start="78.61"
+        data-duration="15.26"
+        data-track-index="0"
+      ></div>
+      <audio
+        id="el-11-clock-monday-voice"
+        src="assets/voice/11.wav"
+        data-start="78.61"
+        data-duration="14.76"
+        data-track-index="10"
+        data-volume="1"
+      ></audio>
+
+      <div
+        id="el-12-focus-decline"
+        class="scene"
+        data-composition-id="12-focus-decline"
+        data-composition-src="compositions/frames/12-focus-decline.html"
+        data-start="93.37"
+        data-duration="12.47"
+        data-track-index="1"
+      ></div>
+      <audio
+        id="el-12-focus-decline-voice"
+        src="assets/voice/12.wav"
+        data-start="93.37"
+        data-duration="11.97"
+        data-track-index="10"
+        data-volume="1"
+      ></audio>
+
+      <div
+        id="el-13-reaction-risk"
+        class="scene"
+        data-composition-id="13-reaction-risk"
+        data-composition-src="compositions/frames/13-reaction-risk.html"
+        data-start="105.34"
+        data-duration="7.81"
+        data-track-index="0"
+      ></div>
+      <audio
+        id="el-13-reaction-risk-voice"
+        src="assets/voice/13.wav"
+        data-start="105.34"
+        data-duration="7.31"
+        data-track-index="10"
+        data-volume="1"
+      ></audio>
+
+      <div
+        id="el-14-emotion-stress"
+        class="scene"
+        data-composition-id="14-emotion-stress"
+        data-composition-src="compositions/frames/14-emotion-stress.html"
+        data-start="112.65"
+        data-duration="6.62"
+        data-track-index="1"
+      ></div>
+      <audio
+        id="el-14-emotion-stress-voice"
+        src="assets/voice/14.wav"
+        data-start="112.65"
+        data-duration="6.12"
+        data-track-index="10"
+        data-volume="1"
+      ></audio>
+
+      <div
+        id="el-15-appetite-craving"
+        class="scene"
+        data-composition-id="15-appetite-craving"
+        data-composition-src="compositions/frames/15-appetite-craving.html"
+        data-start="118.77000000000001"
+        data-duration="12.73"
+        data-track-index="0"
+      ></div>
+      <audio
+        id="el-15-appetite-craving-voice"
+        src="assets/voice/15.wav"
+        data-start="118.77000000000001"
+        data-duration="12.23"
+        data-track-index="10"
+        data-volume="1"
+      ></audio>
+
+      <div
+        id="el-16-longterm-health"
+        class="scene"
+        data-composition-id="16-longterm-health"
+        data-composition-src="compositions/frames/16-longterm-health.html"
+        data-start="131"
+        data-duration="10.34"
+        data-track-index="1"
+      ></div>
+      <audio
+        id="el-16-longterm-health-voice"
+        src="assets/voice/16.wav"
+        data-start="131"
+        data-duration="9.84"
+        data-track-index="10"
+        data-volume="1"
+      ></audio>
+
+      <div
+        id="el-17-weekend-limit"
+        class="scene"
+        data-composition-id="17-weekend-limit"
+        data-composition-src="compositions/frames/17-weekend-limit.html"
+        data-start="140.84"
+        data-duration="9.28"
+        data-track-index="0"
+      ></div>
+      <audio
+        id="el-17-weekend-limit-voice"
+        src="assets/voice/17.wav"
+        data-start="140.84"
+        data-duration="8.78"
+        data-track-index="10"
+        data-volume="1"
+      ></audio>
+
+      <div
+        id="el-18-conclusion"
+        class="scene"
+        data-composition-id="18-conclusion"
+        data-composition-src="compositions/frames/18-conclusion.html"
+        data-start="149.62"
+        data-duration="8.81"
+        data-track-index="1"
+      ></div>
+      <audio
+        id="el-18-conclusion-voice"
+        src="assets/voice/18.wav"
+        data-start="149.62"
+        data-duration="8.81"
+        data-track-index="10"
+        data-volume="1"
+      ></audio>
+
+    </div>
+
+    <script>
+      window.__timelines = window.__timelines || {};
+      window.__timelines["main"] = gsap.timeline({ paused: true });
+      // ── frame transitions (injected by transitions.mjs) ──
+      (function () { var tl = window.__timelines["main"];
+        tl.to("#el-01-why-regular", { opacity: 0, duration: 0.5, ease: "power2.inOut" }, 2.79);
+        tl.fromTo("#el-02-body-clock-24h", { opacity: 0 }, { opacity: 1, duration: 0.5, ease: "power2.inOut" }, 2.79);
+        tl.to("#el-02-body-clock-24h", { opacity: 0, duration: 0.5, ease: "power2.inOut" }, 7.18);
+        tl.fromTo("#el-03-four-influences", { opacity: 0 }, { opacity: 1, duration: 0.5, ease: "power2.inOut" }, 7.18);
+        tl.to("#el-03-four-influences", { opacity: 0, duration: 0.5, ease: "power2.inOut" }, 14.23);
+        tl.fromTo("#el-04-predict-rhythm", { opacity: 0 }, { opacity: 1, duration: 0.5, ease: "power2.inOut" }, 14.23);
+        tl.to("#el-04-predict-rhythm", { opacity: 0, duration: 0.5, ease: "power2.inOut" }, 27);
+        tl.fromTo("#el-05-focus-work", { opacity: 0 }, { opacity: 1, duration: 0.5, ease: "power2.inOut" }, 27);
+        tl.to("#el-05-focus-work", { opacity: 0, duration: 0.5, ease: "power2.inOut" }, 38.18);
+        tl.fromTo("#el-06-memory-learn", { opacity: 0 }, { opacity: 1, duration: 0.5, ease: "power2.inOut" }, 38.18);
+        tl.to("#el-06-memory-learn", { opacity: 0, duration: 0.5, ease: "power2.inOut" }, 44.43);
+        tl.fromTo("#el-07-emotion", { opacity: 0 }, { opacity: 1, duration: 0.5, ease: "power2.inOut" }, 44.43);
+        tl.to("#el-07-emotion", { opacity: 0, duration: 0.5, ease: "power2.inOut" }, 57.2);
+        tl.fromTo("#el-08-body-recovery", { opacity: 0 }, { opacity: 1, duration: 0.5, ease: "power2.inOut" }, 57.2);
+        tl.to("#el-08-body-recovery", { opacity: 0, duration: 0.5, ease: "power2.inOut" }, 64.78);
+        tl.fromTo("#el-09-summary-prep", { opacity: 0 }, { opacity: 1, duration: 0.5, ease: "power2.inOut" }, 64.78);
+        tl.to("#el-09-summary-prep", { opacity: 0, duration: 0.5, ease: "power2.inOut" }, 74.62);
+        tl.fromTo("#el-10-what-if-irregular", { opacity: 0 }, { opacity: 1, duration: 0.5, ease: "power2.inOut" }, 74.62);
+        tl.to("#el-10-what-if-irregular", { opacity: 0, duration: 0.5, ease: "power2.inOut" }, 78.61);
+        tl.fromTo("#el-11-clock-monday", { opacity: 0 }, { opacity: 1, duration: 0.5, ease: "power2.inOut" }, 78.61);
+        tl.to("#el-11-clock-monday", { opacity: 0, duration: 0.5, ease: "power2.inOut" }, 93.37);
+        tl.fromTo("#el-12-focus-decline", { opacity: 0 }, { opacity: 1, duration: 0.5, ease: "power2.inOut" }, 93.37);
+        tl.to("#el-12-focus-decline", { opacity: 0, duration: 0.5, ease: "power2.inOut" }, 105.34);
+        tl.fromTo("#el-13-reaction-risk", { opacity: 0 }, { opacity: 1, duration: 0.5, ease: "power2.inOut" }, 105.34);
+        tl.to("#el-13-reaction-risk", { opacity: 0, duration: 0.5, ease: "power2.inOut" }, 112.65);
+        tl.fromTo("#el-14-emotion-stress", { opacity: 0 }, { opacity: 1, duration: 0.5, ease: "power2.inOut" }, 112.65);
+        tl.to("#el-14-emotion-stress", { opacity: 0, duration: 0.5, ease: "power2.inOut" }, 118.77);
+        tl.fromTo("#el-15-appetite-craving", { opacity: 0 }, { opacity: 1, duration: 0.5, ease: "power2.inOut" }, 118.77);
+        tl.to("#el-15-appetite-craving", { opacity: 0, duration: 0.5, ease: "power2.inOut" }, 131);
+        tl.fromTo("#el-16-longterm-health", { opacity: 0 }, { opacity: 1, duration: 0.5, ease: "power2.inOut" }, 131);
+        tl.to("#el-16-longterm-health", { opacity: 0, duration: 0.5, ease: "power2.inOut" }, 140.84);
+        tl.fromTo("#el-17-weekend-limit", { opacity: 0 }, { opacity: 1, duration: 0.5, ease: "power2.inOut" }, 140.84);
+        tl.to("#el-17-weekend-limit", { opacity: 0, duration: 0.5, ease: "power2.inOut" }, 149.62);
+        tl.fromTo("#el-18-conclusion", { opacity: 0 }, { opacity: 1, duration: 0.5, ease: "power2.inOut" }, 149.62);
+        tl.to({}, { duration: 158.43 }, 0); // full-span anchor — main.duration() == composition total (Studio master duration)
+      })();
+    </script>
+  </body>
+</html>
