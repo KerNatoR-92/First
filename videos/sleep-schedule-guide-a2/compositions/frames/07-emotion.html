@@ -42,34 +42,34 @@
   </style>
 
   <div id="root" data-composition-id="07-emotion" data-start="0" data-duration="13.27" data-width="1920" data-height="1080">
-    <div id="07-emotion-bg" class="clip bg" data-start="0" data-duration="13.27" data-track-index="0"></div>
-    <div id="07-emotion-stage" class="clip" data-start="0" data-duration="13.27" data-track-index="1">
-      <div class="topbar" id="07-emotion-topbar"></div>
-      <div class="head-big" id="07-emotion-head"><span class="hi">감정 조절</span>의 차이</div>
+    <div id="s07-emotion-bg" class="clip bg" data-start="0" data-duration="13.27" data-track-index="0"></div>
+    <div id="s07-emotion-stage" class="clip" data-start="0" data-duration="13.27" data-track-index="1">
+      <div class="topbar" id="s07-emotion-topbar"></div>
+      <div class="head-big" id="s07-emotion-head"><span class="hi">감정 조절</span>의 차이</div>
       <div class="split-2">
-        <div class="side left" id="07-emotion-L">
+        <div class="side left" id="s07-emotion-L">
           <div class="tag">잘 잔 날</div>
           <div class="val">차분</div>
           <div class="sub">사소한 일에도 담담</div>
         </div>
-        <div class="side right" id="07-emotion-R">
+        <div class="side right" id="s07-emotion-R">
           <div class="tag">잠 부족</div>
           <div class="val">예민 · 짜증</div>
           <div class="sub">평소면 넘길 일에도 반응</div>
         </div>
       </div>
-      <div class="btm" id="07-emotion-btm"></div>
+      <div class="btm" id="s07-emotion-btm"></div>
     </div>
   </div>
 
   <script>
     window.__timelines = window.__timelines || {};
     const tl = gsap.timeline({ paused: true });
-    tl.fromTo("#07-emotion-topbar", { opacity: 0, scaleX: 0 }, { opacity: 1, scaleX: 1, duration: 0.35, ease: "power3.inOut" }, 0.00);
-    tl.fromTo("#07-emotion-head", { opacity: 0, y: 16 }, { opacity: 1, y: 0, duration: 0.5, ease: "power3.out" }, 0.15);
-    tl.fromTo("#07-emotion-L", { opacity: 0, x: -20 }, { opacity: 1, x: 0, duration: 0.55, ease: "power3.out" }, 3.192);
-    tl.fromTo("#07-emotion-R", { opacity: 0, x: 20 }, { opacity: 1, x: 0, duration: 0.55, ease: "power3.out" }, 6.385);
-    tl.fromTo("#07-emotion-btm", { opacity: 0, scaleX: 0 }, { opacity: 1, scaleX: 1, duration: 0.5, ease: "power3.inOut", transformOrigin: "right center" }, 12.070);
+    tl.fromTo("#s07-emotion-topbar", { opacity: 0, scaleX: 0 }, { opacity: 1, scaleX: 1, duration: 0.35, ease: "power3.inOut" }, 0.00);
+    tl.fromTo("#s07-emotion-head", { opacity: 0, y: 16 }, { opacity: 1, y: 0, duration: 0.5, ease: "power3.out" }, 0.15);
+    tl.fromTo("#s07-emotion-L", { opacity: 0, x: -20 }, { opacity: 1, x: 0, duration: 0.55, ease: "power3.out" }, 3.192);
+    tl.fromTo("#s07-emotion-R", { opacity: 0, x: 20 }, { opacity: 1, x: 0, duration: 0.55, ease: "power3.out" }, 6.385);
+    tl.fromTo("#s07-emotion-btm", { opacity: 0, scaleX: 0 }, { opacity: 1, scaleX: 1, duration: 0.5, ease: "power3.inOut", transformOrigin: "right center" }, 12.070);
     window.__timelines["07-emotion"] = tl;
   </script>
 </template>

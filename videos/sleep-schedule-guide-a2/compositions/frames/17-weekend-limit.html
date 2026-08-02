@@ -42,35 +42,35 @@
   </style>
 
   <div id="root" data-composition-id="17-weekend-limit" data-start="0" data-duration="9.28" data-width="1920" data-height="1080">
-    <div id="17-weekend-limit-bg" class="clip bg" data-start="0" data-duration="9.28" data-track-index="0"></div>
-    <div id="17-weekend-limit-stage" class="clip" data-start="0" data-duration="9.28" data-track-index="1">
-      <div class="topbar" id="17-weekend-limit-topbar"></div>
-      <div class="head-big" id="17-weekend-limit-head"><span class="hi">주말 몰아자기</span>의 한계</div>
+    <div id="s17-weekend-limit-bg" class="clip bg" data-start="0" data-duration="9.28" data-track-index="0"></div>
+    <div id="s17-weekend-limit-stage" class="clip" data-start="0" data-duration="9.28" data-track-index="1">
+      <div class="topbar" id="s17-weekend-limit-topbar"></div>
+      <div class="head-big" id="s17-weekend-limit-head"><span class="hi">주말 몰아자기</span>의 한계</div>
       <div class="split-2">
-        <div class="side left" id="17-weekend-limit-L">
+        <div class="side left" id="s17-weekend-limit-L">
           <div class="tag">HELP</div>
           <div class="val">일시적</div>
           <div class="sub">피로 감소는 됨</div>
         </div>
-        <div class="side right" id="17-weekend-limit-R">
+        <div class="side right" id="s17-weekend-limit-R">
           <div class="tag">LIMIT</div>
           <div class="val">부족분</div>
           <div class="sub">완전 회복은 불가</div>
         </div>
-      </div><div class="msg" id="17-weekend-limit-msg">평일 부족은 <b>없었던 일</b>이 되지 않습니다.</div>
-      <div class="btm" id="17-weekend-limit-btm"></div>
+      </div><div class="msg" id="s17-weekend-limit-msg">평일 부족은 <b>없었던 일</b>이 되지 않습니다.</div>
+      <div class="btm" id="s17-weekend-limit-btm"></div>
     </div>
   </div>
 
   <script>
     window.__timelines = window.__timelines || {};
     const tl = gsap.timeline({ paused: true });
-    tl.fromTo("#17-weekend-limit-topbar", { opacity: 0, scaleX: 0 }, { opacity: 1, scaleX: 1, duration: 0.35, ease: "power3.inOut" }, 0.00);
-    tl.fromTo("#17-weekend-limit-head", { opacity: 0, y: 16 }, { opacity: 1, y: 0, duration: 0.5, ease: "power3.out" }, 0.15);
-    tl.fromTo("#17-weekend-limit-L", { opacity: 0, x: -20 }, { opacity: 1, x: 0, duration: 0.55, ease: "power3.out" }, 2.195);
-    tl.fromTo("#17-weekend-limit-R", { opacity: 0, x: 20 }, { opacity: 1, x: 0, duration: 0.55, ease: "power3.out" }, 4.390);
-    tl.fromTo("#17-weekend-limit-msg", { opacity: 0, y: 12 }, { opacity: 1, y: 0, duration: 0.5, ease: "power3.out" }, 6.585);
-    tl.fromTo("#17-weekend-limit-btm", { opacity: 0, scaleX: 0 }, { opacity: 1, scaleX: 1, duration: 0.5, ease: "power3.inOut", transformOrigin: "right center" }, 8.080);
+    tl.fromTo("#s17-weekend-limit-topbar", { opacity: 0, scaleX: 0 }, { opacity: 1, scaleX: 1, duration: 0.35, ease: "power3.inOut" }, 0.00);
+    tl.fromTo("#s17-weekend-limit-head", { opacity: 0, y: 16 }, { opacity: 1, y: 0, duration: 0.5, ease: "power3.out" }, 0.15);
+    tl.fromTo("#s17-weekend-limit-L", { opacity: 0, x: -20 }, { opacity: 1, x: 0, duration: 0.55, ease: "power3.out" }, 2.195);
+    tl.fromTo("#s17-weekend-limit-R", { opacity: 0, x: 20 }, { opacity: 1, x: 0, duration: 0.55, ease: "power3.out" }, 4.390);
+    tl.fromTo("#s17-weekend-limit-msg", { opacity: 0, y: 12 }, { opacity: 1, y: 0, duration: 0.5, ease: "power3.out" }, 6.585);
+    tl.fromTo("#s17-weekend-limit-btm", { opacity: 0, scaleX: 0 }, { opacity: 1, scaleX: 1, duration: 0.5, ease: "power3.inOut", transformOrigin: "right center" }, 8.080);
     window.__timelines["17-weekend-limit"] = tl;
   </script>
 </template>

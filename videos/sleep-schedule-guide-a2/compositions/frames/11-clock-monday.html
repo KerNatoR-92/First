@@ -42,35 +42,35 @@
   </style>
 
   <div id="root" data-composition-id="11-clock-monday" data-start="0" data-duration="15.26" data-width="1920" data-height="1080">
-    <div id="11-clock-monday-bg" class="clip bg" data-start="0" data-duration="15.26" data-track-index="0"></div>
-    <div id="11-clock-monday-stage" class="clip" data-start="0" data-duration="15.26" data-track-index="1">
-      <div class="topbar" id="11-clock-monday-topbar"></div>
-      <div class="head-big" id="11-clock-monday-head">매일 <span class="hi">시간 어긋남</span> → 시차 반복</div>
+    <div id="s11-clock-monday-bg" class="clip bg" data-start="0" data-duration="15.26" data-track-index="0"></div>
+    <div id="s11-clock-monday-stage" class="clip" data-start="0" data-duration="15.26" data-track-index="1">
+      <div class="topbar" id="s11-clock-monday-topbar"></div>
+      <div class="head-big" id="s11-clock-monday-head">매일 <span class="hi">시간 어긋남</span> → 시차 반복</div>
       <div class="split-2">
-        <div class="side left" id="11-clock-monday-L">
+        <div class="side left" id="s11-clock-monday-L">
           <div class="tag">생체시계</div>
           <div class="val">혼란</div>
           <div class="sub">잠들·기상 시간 계속 변동</div>
         </div>
-        <div class="side right" id="11-clock-monday-R">
+        <div class="side right" id="s11-clock-monday-R">
           <div class="tag">월요병</div>
           <div class="val">미니 시차</div>
           <div class="sub">평일 이른 기상 + 주말 늦잠</div>
         </div>
-      </div><div class="msg" id="11-clock-monday-msg">몸은 매주 작은 <b>시차 적응</b>을 반복.</div>
-      <div class="btm" id="11-clock-monday-btm"></div>
+      </div><div class="msg" id="s11-clock-monday-msg">몸은 매주 작은 <b>시차 적응</b>을 반복.</div>
+      <div class="btm" id="s11-clock-monday-btm"></div>
     </div>
   </div>
 
   <script>
     window.__timelines = window.__timelines || {};
     const tl = gsap.timeline({ paused: true });
-    tl.fromTo("#11-clock-monday-topbar", { opacity: 0, scaleX: 0 }, { opacity: 1, scaleX: 1, duration: 0.35, ease: "power3.inOut" }, 0.00);
-    tl.fromTo("#11-clock-monday-head", { opacity: 0, y: 16 }, { opacity: 1, y: 0, duration: 0.5, ease: "power3.out" }, 0.15);
-    tl.fromTo("#11-clock-monday-L", { opacity: 0, x: -20 }, { opacity: 1, x: 0, duration: 0.55, ease: "power3.out" }, 3.690);
-    tl.fromTo("#11-clock-monday-R", { opacity: 0, x: 20 }, { opacity: 1, x: 0, duration: 0.55, ease: "power3.out" }, 7.380);
-    tl.fromTo("#11-clock-monday-msg", { opacity: 0, y: 12 }, { opacity: 1, y: 0, duration: 0.5, ease: "power3.out" }, 11.070);
-    tl.fromTo("#11-clock-monday-btm", { opacity: 0, scaleX: 0 }, { opacity: 1, scaleX: 1, duration: 0.5, ease: "power3.inOut", transformOrigin: "right center" }, 14.060);
+    tl.fromTo("#s11-clock-monday-topbar", { opacity: 0, scaleX: 0 }, { opacity: 1, scaleX: 1, duration: 0.35, ease: "power3.inOut" }, 0.00);
+    tl.fromTo("#s11-clock-monday-head", { opacity: 0, y: 16 }, { opacity: 1, y: 0, duration: 0.5, ease: "power3.out" }, 0.15);
+    tl.fromTo("#s11-clock-monday-L", { opacity: 0, x: -20 }, { opacity: 1, x: 0, duration: 0.55, ease: "power3.out" }, 3.690);
+    tl.fromTo("#s11-clock-monday-R", { opacity: 0, x: 20 }, { opacity: 1, x: 0, duration: 0.55, ease: "power3.out" }, 7.380);
+    tl.fromTo("#s11-clock-monday-msg", { opacity: 0, y: 12 }, { opacity: 1, y: 0, duration: 0.5, ease: "power3.out" }, 11.070);
+    tl.fromTo("#s11-clock-monday-btm", { opacity: 0, scaleX: 0 }, { opacity: 1, scaleX: 1, duration: 0.5, ease: "power3.inOut", transformOrigin: "right center" }, 14.060);
     window.__timelines["11-clock-monday"] = tl;
   </script>
 </template>

@@ -42,34 +42,34 @@
   </style>
 
   <div id="root" data-composition-id="06-memory-learn" data-start="0" data-duration="6.75" data-width="1920" data-height="1080">
-    <div id="06-memory-learn-bg" class="clip bg" data-start="0" data-duration="6.75" data-track-index="0"></div>
-    <div id="06-memory-learn-stage" class="clip" data-start="0" data-duration="6.75" data-track-index="1">
-      <div class="topbar" id="06-memory-learn-topbar"></div>
-      <div class="head-big" id="06-memory-learn-head">기억 · <span class="hi">학습</span>에도 유리</div>
+    <div id="s06-memory-learn-bg" class="clip bg" data-start="0" data-duration="6.75" data-track-index="0"></div>
+    <div id="s06-memory-learn-stage" class="clip" data-start="0" data-duration="6.75" data-track-index="1">
+      <div class="topbar" id="s06-memory-learn-topbar"></div>
+      <div class="head-big" id="s06-memory-learn-head">기억 · <span class="hi">학습</span>에도 유리</div>
       <div class="split-2">
-        <div class="side left" id="06-memory-learn-L">
+        <div class="side left" id="s06-memory-learn-L">
           <div class="tag">MEMORY</div>
           <div class="val">기억</div>
           <div class="sub">업무 내용 기억</div>
         </div>
-        <div class="side right" id="06-memory-learn-R">
+        <div class="side right" id="s06-memory-learn-R">
           <div class="tag">LEARN</div>
           <div class="val">학습</div>
           <div class="sub">새 정보 습득</div>
         </div>
       </div>
-      <div class="btm" id="06-memory-learn-btm"></div>
+      <div class="btm" id="s06-memory-learn-btm"></div>
     </div>
   </div>
 
   <script>
     window.__timelines = window.__timelines || {};
     const tl = gsap.timeline({ paused: true });
-    tl.fromTo("#06-memory-learn-topbar", { opacity: 0, scaleX: 0 }, { opacity: 1, scaleX: 1, duration: 0.35, ease: "power3.inOut" }, 0.00);
-    tl.fromTo("#06-memory-learn-head", { opacity: 0, y: 16 }, { opacity: 1, y: 0, duration: 0.5, ease: "power3.out" }, 0.15);
-    tl.fromTo("#06-memory-learn-L", { opacity: 0, x: -20 }, { opacity: 1, x: 0, duration: 0.55, ease: "power3.out" }, 1.562);
-    tl.fromTo("#06-memory-learn-R", { opacity: 0, x: 20 }, { opacity: 1, x: 0, duration: 0.55, ease: "power3.out" }, 3.125);
-    tl.fromTo("#06-memory-learn-btm", { opacity: 0, scaleX: 0 }, { opacity: 1, scaleX: 1, duration: 0.5, ease: "power3.inOut", transformOrigin: "right center" }, 5.550);
+    tl.fromTo("#s06-memory-learn-topbar", { opacity: 0, scaleX: 0 }, { opacity: 1, scaleX: 1, duration: 0.35, ease: "power3.inOut" }, 0.00);
+    tl.fromTo("#s06-memory-learn-head", { opacity: 0, y: 16 }, { opacity: 1, y: 0, duration: 0.5, ease: "power3.out" }, 0.15);
+    tl.fromTo("#s06-memory-learn-L", { opacity: 0, x: -20 }, { opacity: 1, x: 0, duration: 0.55, ease: "power3.out" }, 1.562);
+    tl.fromTo("#s06-memory-learn-R", { opacity: 0, x: 20 }, { opacity: 1, x: 0, duration: 0.55, ease: "power3.out" }, 3.125);
+    tl.fromTo("#s06-memory-learn-btm", { opacity: 0, scaleX: 0 }, { opacity: 1, scaleX: 1, duration: 0.5, ease: "power3.inOut", transformOrigin: "right center" }, 5.550);
     window.__timelines["06-memory-learn"] = tl;
   </script>
 </template>

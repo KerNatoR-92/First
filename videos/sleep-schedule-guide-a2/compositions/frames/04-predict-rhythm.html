@@ -42,34 +42,34 @@
   </style>
 
   <div id="root" data-composition-id="04-predict-rhythm" data-start="0" data-duration="13.27" data-width="1920" data-height="1080">
-    <div id="04-predict-rhythm-bg" class="clip bg" data-start="0" data-duration="13.27" data-track-index="0"></div>
-    <div id="04-predict-rhythm-stage" class="clip" data-start="0" data-duration="13.27" data-track-index="1">
-      <div class="topbar" id="04-predict-rhythm-topbar"></div>
-      <div class="head-big" id="04-predict-rhythm-head">매일 <span class="hi">비슷한 시간</span> → 몸이 예측</div>
+    <div id="s04-predict-rhythm-bg" class="clip bg" data-start="0" data-duration="13.27" data-track-index="0"></div>
+    <div id="s04-predict-rhythm-stage" class="clip" data-start="0" data-duration="13.27" data-track-index="1">
+      <div class="topbar" id="s04-predict-rhythm-topbar"></div>
+      <div class="head-big" id="s04-predict-rhythm-head">매일 <span class="hi">비슷한 시간</span> → 몸이 예측</div>
       <div class="split-2">
-        <div class="side left" id="04-predict-rhythm-L">
+        <div class="side left" id="s04-predict-rhythm-L">
           <div class="tag">MIND</div>
           <div class="val">규칙적</div>
           <div class="sub">몸이 언제 깨어나고 쉴지 예측</div>
         </div>
-        <div class="side right" id="04-predict-rhythm-R">
+        <div class="side right" id="s04-predict-rhythm-R">
           <div class="tag">BODY</div>
           <div class="val">자연스러운 리듬</div>
           <div class="sub">밤엔 졸음 · 아침엔 수월한 기상</div>
         </div>
       </div>
-      <div class="btm" id="04-predict-rhythm-btm"></div>
+      <div class="btm" id="s04-predict-rhythm-btm"></div>
     </div>
   </div>
 
   <script>
     window.__timelines = window.__timelines || {};
     const tl = gsap.timeline({ paused: true });
-    tl.fromTo("#04-predict-rhythm-topbar", { opacity: 0, scaleX: 0 }, { opacity: 1, scaleX: 1, duration: 0.35, ease: "power3.inOut" }, 0.00);
-    tl.fromTo("#04-predict-rhythm-head", { opacity: 0, y: 16 }, { opacity: 1, y: 0, duration: 0.5, ease: "power3.out" }, 0.15);
-    tl.fromTo("#04-predict-rhythm-L", { opacity: 0, x: -20 }, { opacity: 1, x: 0, duration: 0.55, ease: "power3.out" }, 3.192);
-    tl.fromTo("#04-predict-rhythm-R", { opacity: 0, x: 20 }, { opacity: 1, x: 0, duration: 0.55, ease: "power3.out" }, 6.385);
-    tl.fromTo("#04-predict-rhythm-btm", { opacity: 0, scaleX: 0 }, { opacity: 1, scaleX: 1, duration: 0.5, ease: "power3.inOut", transformOrigin: "right center" }, 12.070);
+    tl.fromTo("#s04-predict-rhythm-topbar", { opacity: 0, scaleX: 0 }, { opacity: 1, scaleX: 1, duration: 0.35, ease: "power3.inOut" }, 0.00);
+    tl.fromTo("#s04-predict-rhythm-head", { opacity: 0, y: 16 }, { opacity: 1, y: 0, duration: 0.5, ease: "power3.out" }, 0.15);
+    tl.fromTo("#s04-predict-rhythm-L", { opacity: 0, x: -20 }, { opacity: 1, x: 0, duration: 0.55, ease: "power3.out" }, 3.192);
+    tl.fromTo("#s04-predict-rhythm-R", { opacity: 0, x: 20 }, { opacity: 1, x: 0, duration: 0.55, ease: "power3.out" }, 6.385);
+    tl.fromTo("#s04-predict-rhythm-btm", { opacity: 0, scaleX: 0 }, { opacity: 1, scaleX: 1, duration: 0.5, ease: "power3.inOut", transformOrigin: "right center" }, 12.070);
     window.__timelines["04-predict-rhythm"] = tl;
   </script>
 </template>

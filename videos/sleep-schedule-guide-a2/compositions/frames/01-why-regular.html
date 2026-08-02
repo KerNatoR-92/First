@@ -42,23 +42,23 @@
   </style>
 
   <div id="root" data-composition-id="01-why-regular" data-start="0" data-duration="3.29" data-width="1920" data-height="1080">
-    <div id="01-why-regular-bg" class="clip bg" data-start="0" data-duration="3.29" data-track-index="0"></div>
-    <div id="01-why-regular-stage" class="clip" data-start="0" data-duration="3.29" data-track-index="1">
-      <div class="topbar" id="01-why-regular-topbar"></div>
-      <div class="lead" id="01-why-regular-lead">SECTION · 02</div>
-      <div class="q" id="01-why-regular-q"><span class="hi">규칙적 수면</span>이<br/>왜 중요할까요?</div><div class="under" id="01-why-regular-under"></div>
-      <div class="btm" id="01-why-regular-btm"></div>
+    <div id="s01-why-regular-bg" class="clip bg" data-start="0" data-duration="3.29" data-track-index="0"></div>
+    <div id="s01-why-regular-stage" class="clip" data-start="0" data-duration="3.29" data-track-index="1">
+      <div class="topbar" id="s01-why-regular-topbar"></div>
+      <div class="lead" id="s01-why-regular-lead">SECTION · 02</div>
+      <div class="q" id="s01-why-regular-q"><span class="hi">규칙적 수면</span>이<br/>왜 중요할까요?</div><div class="under" id="s01-why-regular-under"></div>
+      <div class="btm" id="s01-why-regular-btm"></div>
     </div>
   </div>
 
   <script>
     window.__timelines = window.__timelines || {};
     const tl = gsap.timeline({ paused: true });
-    tl.fromTo("#01-why-regular-topbar", { opacity: 0, scaleX: 0 }, { opacity: 1, scaleX: 1, duration: 0.35, ease: "power3.inOut" }, 0.00);
-    tl.fromTo("#01-why-regular-lead", { opacity: 0, y: 10 }, { opacity: 1, y: 0, duration: 0.35, ease: "power2.out" }, 0.10);
-    tl.fromTo("#01-why-regular-q", { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.55, ease: "power3.out" }, 0.40);
-    tl.fromTo("#01-why-regular-under", { width: 0 }, { width: 340, duration: 0.5, ease: "power2.out" }, 0.95);
-    tl.fromTo("#01-why-regular-btm", { opacity: 0, scaleX: 0 }, { opacity: 1, scaleX: 1, duration: 0.5, ease: "power3.inOut", transformOrigin: "right center" }, 2.090);
+    tl.fromTo("#s01-why-regular-topbar", { opacity: 0, scaleX: 0 }, { opacity: 1, scaleX: 1, duration: 0.35, ease: "power3.inOut" }, 0.00);
+    tl.fromTo("#s01-why-regular-lead", { opacity: 0, y: 10 }, { opacity: 1, y: 0, duration: 0.35, ease: "power2.out" }, 0.10);
+    tl.fromTo("#s01-why-regular-q", { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.55, ease: "power3.out" }, 0.40);
+    tl.fromTo("#s01-why-regular-under", { width: 0 }, { width: 340, duration: 0.5, ease: "power2.out" }, 0.95);
+    tl.fromTo("#s01-why-regular-btm", { opacity: 0, scaleX: 0 }, { opacity: 1, scaleX: 1, duration: 0.5, ease: "power3.inOut", transformOrigin: "right center" }, 2.090);
     window.__timelines["01-why-regular"] = tl;
   </script>
 </template>

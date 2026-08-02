@@ -42,24 +42,24 @@
   </style>
 
   <div id="root" data-composition-id="08-body-recovery" data-start="0" data-duration="8.08" data-width="1920" data-height="1080">
-    <div id="08-body-recovery-bg" class="clip bg" data-start="0" data-duration="8.08" data-track-index="0"></div>
-    <div id="08-body-recovery-stage" class="clip" data-start="0" data-duration="8.08" data-track-index="1">
-      <div class="topbar" id="08-body-recovery-topbar"></div>
-      <div class="head-big" id="08-body-recovery-head">자는 동안 몸은 <span class="hi">회복</span> 중</div>
-      <div class="list-3-cards"><div class="card" id="08-body-recovery-c1"><div class="idx">ENERGY</div><div class="nm">에너지</div><div class="desc">체력 회복</div></div><div class="card" id="08-body-recovery-c2"><div class="idx">IMMUNE</div><div class="nm">면역</div><div class="desc">저항력 유지</div></div><div class="card" id="08-body-recovery-c3"><div class="idx">METABOL</div><div class="nm">대사</div><div class="desc">몸 기능 조절</div></div></div>
-      <div class="btm" id="08-body-recovery-btm"></div>
+    <div id="s08-body-recovery-bg" class="clip bg" data-start="0" data-duration="8.08" data-track-index="0"></div>
+    <div id="s08-body-recovery-stage" class="clip" data-start="0" data-duration="8.08" data-track-index="1">
+      <div class="topbar" id="s08-body-recovery-topbar"></div>
+      <div class="head-big" id="s08-body-recovery-head">자는 동안 몸은 <span class="hi">회복</span> 중</div>
+      <div class="list-3-cards"><div class="card" id="s08-body-recovery-c1"><div class="idx">ENERGY</div><div class="nm">에너지</div><div class="desc">체력 회복</div></div><div class="card" id="s08-body-recovery-c2"><div class="idx">IMMUNE</div><div class="nm">면역</div><div class="desc">저항력 유지</div></div><div class="card" id="s08-body-recovery-c3"><div class="idx">METABOL</div><div class="nm">대사</div><div class="desc">몸 기능 조절</div></div></div>
+      <div class="btm" id="s08-body-recovery-btm"></div>
     </div>
   </div>
 
   <script>
     window.__timelines = window.__timelines || {};
     const tl = gsap.timeline({ paused: true });
-    tl.fromTo("#08-body-recovery-topbar", { opacity: 0, scaleX: 0 }, { opacity: 1, scaleX: 1, duration: 0.35, ease: "power3.inOut" }, 0.00);
-    tl.fromTo("#08-body-recovery-head", { opacity: 0, y: 16 }, { opacity: 1, y: 0, duration: 0.5, ease: "power3.out" }, 0.15);
-    tl.fromTo("#08-body-recovery-c1", { opacity: 0, y: 24 }, { opacity: 1, y: 0, duration: 0.45, ease: "power3.out" }, 1.516);
-    tl.fromTo("#08-body-recovery-c2", { opacity: 0, y: 24 }, { opacity: 1, y: 0, duration: 0.45, ease: "power3.out" }, 3.032);
-    tl.fromTo("#08-body-recovery-c3", { opacity: 0, y: 24 }, { opacity: 1, y: 0, duration: 0.45, ease: "power3.out" }, 4.548);
-    tl.fromTo("#08-body-recovery-btm", { opacity: 0, scaleX: 0 }, { opacity: 1, scaleX: 1, duration: 0.5, ease: "power3.inOut", transformOrigin: "right center" }, 6.880);
+    tl.fromTo("#s08-body-recovery-topbar", { opacity: 0, scaleX: 0 }, { opacity: 1, scaleX: 1, duration: 0.35, ease: "power3.inOut" }, 0.00);
+    tl.fromTo("#s08-body-recovery-head", { opacity: 0, y: 16 }, { opacity: 1, y: 0, duration: 0.5, ease: "power3.out" }, 0.15);
+    tl.fromTo("#s08-body-recovery-c1", { opacity: 0, y: 24 }, { opacity: 1, y: 0, duration: 0.45, ease: "power3.out" }, 1.516);
+    tl.fromTo("#s08-body-recovery-c2", { opacity: 0, y: 24 }, { opacity: 1, y: 0, duration: 0.45, ease: "power3.out" }, 3.032);
+    tl.fromTo("#s08-body-recovery-c3", { opacity: 0, y: 24 }, { opacity: 1, y: 0, duration: 0.45, ease: "power3.out" }, 4.548);
+    tl.fromTo("#s08-body-recovery-btm", { opacity: 0, scaleX: 0 }, { opacity: 1, scaleX: 1, duration: 0.5, ease: "power3.inOut", transformOrigin: "right center" }, 6.880);
     window.__timelines["08-body-recovery"] = tl;
   </script>
 </template>
