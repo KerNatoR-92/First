@@ -1,10 +1,28 @@
 <!doctype html>
-<html lang="en">
+<html lang="ko">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=1920, height=1080" />
     <script src="assets/vendor/gsap.min.js"></script>
     <style>
+      @font-face {
+        font-family: "Noto Sans KR";
+        font-style: normal;
+        font-weight: 400;
+        src: url("assets/fonts/notosans-kr-400.ttf") format("truetype");
+      }
+      @font-face {
+        font-family: "Noto Sans KR";
+        font-style: normal;
+        font-weight: 500;
+        src: url("assets/fonts/notosans-kr-500.ttf") format("truetype");
+      }
+      @font-face {
+        font-family: "Noto Sans KR";
+        font-style: normal;
+        font-weight: 700;
+        src: url("assets/fonts/notosans-kr-700.ttf") format("truetype");
+      }
       * {
         margin: 0;
         padding: 0;
@@ -19,7 +37,7 @@
         background: #000;
       }
       body {
-        font-family: "Inter", sans-serif;
+        font-family: "Noto Sans KR", "Inter", sans-serif;
       }
       .beat {
         position: absolute;
@@ -35,11 +53,37 @@
         object-fit: cover;
         will-change: opacity;
       }
+      .caption {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        bottom: 84px;
+        width: 1600px;
+        display: flex;
+        justify-content: center;
+      }
+      .caption-text {
+        display: inline-block;
+        max-width: 100%;
+        padding: 18px 28px;
+        background: rgba(0, 0, 0, 0.72);
+        color: #ffffff;
+        font-family: "Noto Sans KR", "Inter", sans-serif;
+        font-weight: 500;
+        font-size: 34px;
+        line-height: 1.45;
+        letter-spacing: -0.01em;
+        text-align: center;
+        border-radius: 6px;
+        word-break: keep-all;
+        overflow-wrap: break-word;
+      }
       .credit {
         position: absolute;
         right: 24px;
         bottom: 20px;
         color: #ffffff;
+        font-family: "Inter", sans-serif;
         font-size: 14px;
         letter-spacing: 0.02em;
         padding: 6px 12px;
@@ -305,230 +349,356 @@
       </div>
 
       <div
+        id="caption-01-question"
+        class="clip caption"
+        data-start="0.0"
+        data-duration="2.24"
+        data-track-index="2"
+      ><span class="caption-text">여러분은 평일과 주말에 각각 몇 시에 잠드시나요?</span></div>
+      <div
+        id="caption-02-weekday-weekend"
+        class="clip caption"
+        data-start="2.24"
+        data-duration="7.48"
+        data-track-index="2"
+      ><span class="caption-text">평일에는 억지로 일찍 일어나고, 주말에는 밀린 잠을 보충하느라 점심때까지 자는 분들이 많습니다.</span></div>
+      <div
+        id="caption-03-late-work"
+        class="clip caption"
+        data-start="9.72"
+        data-duration="7.48"
+        data-track-index="2"
+      ><span class="caption-text">야근이나 회식이 있는 날에는 새벽에 잠들고, 다음 날 중요한 일정이 있으면 평소보다 일찍 일어나기도 합니다.</span></div>
+      <div
+        id="caption-04-constant-fatigue"
+        class="clip caption"
+        data-start="17.2"
+        data-duration="6.23"
+        data-track-index="2"
+      ><span class="caption-text">이렇게 자는 시간이 달라지면 충분히 잤다고 생각해도 계속 피곤할 수 있습니다.</span></div>
+      <div
+        id="caption-05-todays-topics"
+        class="clip caption"
+        data-start="23.43"
+        data-duration="18.69"
+        data-track-index="2"
+      ><span class="caption-text">오늘은 직장인에게 필요한 수면 시간, 규칙적 수면의 장점, 불규칙할 때의 문제, 그리고 도움되는 음식·습관을 알아보겠습니다.</span></div>
+      <div
+        id="caption-06-how-many-hours"
+        class="clip caption"
+        data-start="42.12"
+        data-duration="6.6"
+        data-track-index="2"
+      ><span class="caption-text">우선, 우리는 몇 시에 자야 할까요? 성인은 하루에 최소 7시간 이상의 수면이 필요합니다.</span></div>
+      <div
+        id="caption-07-seven-to-nine"
+        class="clip caption"
+        data-start="48.72"
+        data-duration="12.46"
+        data-track-index="2"
+      ><span class="caption-text">개인차는 있지만 대부분의 성인은 약 7~9시간 정도 잠을 자는 것이 좋고, 절대적인 취침 시간이 정해져 있지는 않습니다.</span></div>
+      <div
+        id="caption-08-reverse-calc"
+        class="clip caption"
+        data-start="61.18"
+        data-duration="18.32"
+        data-track-index="2"
+      ><span class="caption-text">중요한 건 기상 시간에서 필요한 수면 시간을 거꾸로 계산하는 것입니다. 7시간이면 자정 전, 8시간이면 11시, 9시간이면 10시.</span></div>
+      <div
+        id="caption-09-real-sleep-time"
+        class="clip caption"
+        data-start="79.5"
+        data-duration="14.08"
+        data-track-index="2"
+      ><span class="caption-text">침대에 들어가는 시간이 아니라 실제로 잠드는 시간이 기준이며, 잠들기까지 30분 걸린다면 그만큼 일찍 눕는 게 좋습니다.</span></div>
+      <div
+        id="caption-10-consistency"
+        class="clip caption"
+        data-start="93.58"
+        data-duration="4.98"
+        data-track-index="2"
+      ><span class="caption-text">수면 시간만큼 중요한 건 매일 비슷한 시간에 자고 일어나는 것입니다.</span></div>
+      <div
+        id="caption-11-weekend-shift"
+        class="clip caption"
+        data-start="98.56"
+        data-duration="7.23"
+        data-track-index="2"
+      ><span class="caption-text">주말이라고 서너 시간 늦게 자고 일어나면 몸은 매주 작은 시차 적응을 반복하게 됩니다.</span></div>
+      <div
+        id="caption-12-keep-within-hours"
+        class="clip caption"
+        data-start="105.79"
+        data-duration="5.61"
+        data-track-index="2"
+      ><span class="caption-text">주말에도 기상 시간 차이는 한두 시간 이내로 유지하는 것이 좋습니다.</span></div>
+      <div
+        id="caption-13-circadian-clock"
+        class="clip caption"
+        data-start="111.4"
+        data-duration="14.58"
+        data-track-index="2"
+      ><span class="caption-text">우리 몸에는 24시간 주기의 생체시계가 있고, 빛·어둠·식사·활동·수면 시간의 영향을 받습니다.</span></div>
+      <div
+        id="caption-14-predictable-cycle"
+        class="clip caption"
+        data-start="125.98"
+        data-duration="12.96"
+        data-track-index="2"
+      ><span class="caption-text">매일 비슷하게 자고 일어나면 몸이 리듬을 예측해 밤엔 자연스럽게 졸리고 아침엔 수월하게 깨어납니다.</span></div>
+      <div
+        id="caption-15-focus-judgment"
+        class="clip caption"
+        data-start="138.94"
+        data-duration="19.31"
+        data-track-index="2"
+      ><span class="caption-text">규칙적인 수면은 낮 동안의 집중력·판단력·기억력·학습에 도움이 됩니다. 실수를 줄이고 빠르게 판단하는 능력이 중요합니다.</span></div>
+      <div
+        id="caption-16-emotion-regulation"
+        class="clip caption"
+        data-start="158.25"
+        data-duration="12.34"
+        data-track-index="2"
+      ><span class="caption-text">감정 조절에도 도움이 됩니다. 잘 잔 날은 차분하지만 부족한 날은 사소한 일에도 예민해지기 쉽습니다.</span></div>
+      <div
+        id="caption-17-physical-recovery"
+        class="clip caption"
+        data-start="170.59"
+        data-duration="18.07"
+        data-track-index="2"
+      ><span class="caption-text">수면은 신체 회복의 시간이며, 에너지·면역·대사를 조절해 다음 날의 몸과 뇌를 준비시킵니다.</span></div>
+      <div
+        id="caption-18-monday-jetlag"
+        class="clip caption"
+        data-start="188.66"
+        data-duration="17.2"
+        data-track-index="2"
+      ><span class="caption-text">수면이 불규칙하면 생체시계가 혼란스러워지고, 특히 월요일 아침마다 시차가 발생한 것처럼 피곤할 수 있습니다.</span></div>
+      <div
+        id="caption-19-focus-loss"
+        class="clip caption"
+        data-start="205.86"
+        data-duration="11.34"
+        data-track-index="2"
+      ><span class="caption-text">가장 먼저 나타나는 문제는 집중력 저하로, 회의 내용을 놓치거나 단순 업무에서도 실수가 늘어납니다.</span></div>
+      <div
+        id="caption-20-driving-danger"
+        class="clip caption"
+        data-start="217.2"
+        data-duration="7.1"
+        data-track-index="2"
+      ><span class="caption-text">반응 속도와 판단력이 떨어지므로 운전하거나 기계를 다루는 사람에게는 특히 위험합니다.</span></div>
+      <div
+        id="caption-21-emotional-stress"
+        class="clip caption"
+        data-start="224.3"
+        data-duration="5.98"
+        data-track-index="2"
+      ><span class="caption-text">감정적으로도 불안·예민해지고 업무 스트레스를 실제보다 크게 느낄 수 있습니다.</span></div>
+      <div
+        id="caption-22-late-night-cravings"
+        class="clip caption"
+        data-start="230.28"
+        data-duration="11.71"
+        data-track-index="2"
+      ><span class="caption-text">잠이 부족하면 식욕 조절에도 영향을 줘 늦은 밤 자극적·단 음식을 찾고 운동 의욕도 떨어집니다.</span></div>
+      <div
+        id="caption-23-long-term-health"
+        class="clip caption"
+        data-start="241.99"
+        data-duration="9.1"
+        data-track-index="2"
+      ><span class="caption-text">장기간 반복되면 체중 관리가 어려워지고 우울감·심혈관계 질환 위험과도 연관됩니다.</span></div>
+      <div
+        id="caption-24-weekend-catchup"
+        class="clip caption"
+        data-start="251.09"
+        data-duration="8.1"
+        data-track-index="2"
+      ><span class="caption-text">주말 몰아 자기는 일시적 도움일 뿐, 평일 부족을 완전히 되돌리진 못합니다.</span></div>
+      <div
+        id="caption-25-daily-consistency"
+        class="clip caption"
+        data-start="259.19"
+        data-duration="9.75"
+        data-track-index="2"
+      ><span class="caption-text">가장 좋은 방법은 보충이 아니라 매일 필요한 수면 시간을 확보하는 것입니다.</span></div>
+
+      <div
         id="credit-01-question"
         class="clip credit"
         data-start="0.0"
         data-duration="2.24"
-        data-track-index="2"
-      >
-        Photo: engin akyurt / Unsplash
-      </div>
+        data-track-index="3"
+      >Photo: engin akyurt / Unsplash</div>
       <div
         id="credit-02-weekday-weekend"
         class="clip credit"
         data-start="2.24"
         data-duration="7.48"
-        data-track-index="2"
-      >
-        Photo: iam_os / Unsplash
-      </div>
+        data-track-index="3"
+      >Photo: iam_os / Unsplash</div>
       <div
         id="credit-03-late-work"
         class="clip credit"
         data-start="9.72"
         data-duration="7.48"
-        data-track-index="2"
-      >
-        Photo: Faraaz Zuberi / Unsplash
-      </div>
+        data-track-index="3"
+      >Photo: Faraaz Zuberi / Unsplash</div>
       <div
         id="credit-04-constant-fatigue"
         class="clip credit"
         data-start="17.2"
         data-duration="6.23"
-        data-track-index="2"
-      >
-        Photo: Vitaly Gariev / Unsplash
-      </div>
+        data-track-index="3"
+      >Photo: Vitaly Gariev / Unsplash</div>
       <div
         id="credit-05-todays-topics"
         class="clip credit"
         data-start="23.43"
         data-duration="18.69"
-        data-track-index="2"
-      >
-        Photo: Jan Kahánek / Unsplash
-      </div>
+        data-track-index="3"
+      >Photo: Jan Kahánek / Unsplash</div>
       <div
         id="credit-06-how-many-hours"
         class="clip credit"
         data-start="42.12"
         data-duration="6.6"
-        data-track-index="2"
-      >
-        Photo: Suhas Hanjar / Unsplash
-      </div>
+        data-track-index="3"
+      >Photo: Suhas Hanjar / Unsplash</div>
       <div
         id="credit-07-seven-to-nine"
         class="clip credit"
         data-start="48.72"
         data-duration="12.46"
-        data-track-index="2"
-      >
-        Photo: Shane / Unsplash
-      </div>
+        data-track-index="3"
+      >Photo: Shane / Unsplash</div>
       <div
         id="credit-08-reverse-calc"
         class="clip credit"
         data-start="61.18"
         data-duration="18.32"
-        data-track-index="2"
-      >
-        Photo: Árpád Czapp / Unsplash
-      </div>
+        data-track-index="3"
+      >Photo: Árpád Czapp / Unsplash</div>
       <div
         id="credit-09-real-sleep-time"
         class="clip credit"
         data-start="79.5"
         data-duration="14.08"
-        data-track-index="2"
-      >
-        Photo: Lisa Marie Theck / Unsplash
-      </div>
+        data-track-index="3"
+      >Photo: Lisa Marie Theck / Unsplash</div>
       <div
         id="credit-10-consistency"
         class="clip credit"
         data-start="93.58"
         data-duration="4.98"
-        data-track-index="2"
-      >
-        Photo: Ruben Mavarez / Unsplash
-      </div>
+        data-track-index="3"
+      >Photo: Ruben Mavarez / Unsplash</div>
       <div
         id="credit-11-weekend-shift"
         class="clip credit"
         data-start="98.56"
         data-duration="7.23"
-        data-track-index="2"
-      >
-        Photo: JESHOOTS.COM / Unsplash
-      </div>
+        data-track-index="3"
+      >Photo: JESHOOTS.COM / Unsplash</div>
       <div
         id="credit-12-keep-within-hours"
         class="clip credit"
         data-start="105.79"
         data-duration="5.61"
-        data-track-index="2"
-      >
-        Photo: Eric Rothermel / Unsplash
-      </div>
+        data-track-index="3"
+      >Photo: Eric Rothermel / Unsplash</div>
       <div
         id="credit-13-circadian-clock"
         class="clip credit"
         data-start="111.4"
         data-duration="14.58"
-        data-track-index="2"
-      >
-        Photo: Leonie Zettl / Unsplash
-      </div>
+        data-track-index="3"
+      >Photo: Leonie Zettl / Unsplash</div>
       <div
         id="credit-14-predictable-cycle"
         class="clip credit"
         data-start="125.98"
         data-duration="12.96"
-        data-track-index="2"
-      >
-        Photo: Bobby / Unsplash
-      </div>
+        data-track-index="3"
+      >Photo: Bobby / Unsplash</div>
       <div
         id="credit-15-focus-judgment"
         class="clip credit"
         data-start="138.94"
         data-duration="19.31"
-        data-track-index="2"
-      >
-        Photo: Icons8 Team / Unsplash
-      </div>
+        data-track-index="3"
+      >Photo: Icons8 Team / Unsplash</div>
       <div
         id="credit-16-emotion-regulation"
         class="clip credit"
         data-start="158.25"
         data-duration="12.34"
-        data-track-index="2"
-      >
-        Photo: Candice Picard / Unsplash
-      </div>
+        data-track-index="3"
+      >Photo: Candice Picard / Unsplash</div>
       <div
         id="credit-17-physical-recovery"
         class="clip credit"
         data-start="170.59"
         data-duration="18.07"
-        data-track-index="2"
-      >
-        Photo: bruce mars / Unsplash
-      </div>
+        data-track-index="3"
+      >Photo: bruce mars / Unsplash</div>
       <div
         id="credit-18-monday-jetlag"
         class="clip credit"
         data-start="188.66"
         data-duration="17.2"
-        data-track-index="2"
-      >
-        Photo: Nic Y-C / Unsplash
-      </div>
+        data-track-index="3"
+      >Photo: Nic Y-C / Unsplash</div>
       <div
         id="credit-19-focus-loss"
         class="clip credit"
         data-start="205.86"
         data-duration="11.34"
-        data-track-index="2"
-      >
-        Photo: Christian Velitchkov / Unsplash
-      </div>
+        data-track-index="3"
+      >Photo: Christian Velitchkov / Unsplash</div>
       <div
         id="credit-20-driving-danger"
         class="clip credit"
         data-start="217.2"
         data-duration="7.1"
-        data-track-index="2"
-      >
-        Photo: Charles Postiaux / Unsplash
-      </div>
+        data-track-index="3"
+      >Photo: Charles Postiaux / Unsplash</div>
       <div
         id="credit-21-emotional-stress"
         class="clip credit"
         data-start="224.3"
         data-duration="5.98"
-        data-track-index="2"
-      >
-        Photo: Elisa Ventur / Unsplash
-      </div>
+        data-track-index="3"
+      >Photo: Elisa Ventur / Unsplash</div>
       <div
         id="credit-22-late-night-cravings"
         class="clip credit"
         data-start="230.28"
         data-duration="11.71"
-        data-track-index="2"
-      >
-        Photo: nrd / Unsplash
-      </div>
+        data-track-index="3"
+      >Photo: nrd / Unsplash</div>
       <div
         id="credit-23-long-term-health"
         class="clip credit"
         data-start="241.99"
         data-duration="9.1"
-        data-track-index="2"
-      >
-        Photo: Hush Naidoo Jade Photography / Unsplash
-      </div>
+        data-track-index="3"
+      >Photo: Hush Naidoo Jade Photography / Unsplash</div>
       <div
         id="credit-24-weekend-catchup"
         class="clip credit"
         data-start="251.09"
         data-duration="8.1"
-        data-track-index="2"
-      >
-        Photo: Greg Pappas / Unsplash
-      </div>
+        data-track-index="3"
+      >Photo: Greg Pappas / Unsplash</div>
       <div
         id="credit-25-daily-consistency"
         class="clip credit"
         data-start="259.19"
         data-duration="9.75"
-        data-track-index="2"
-      >
-        Photo: bruce mars / Unsplash
-      </div>
+        data-track-index="3"
+      >Photo: bruce mars / Unsplash</div>
     </div>
 
     <script>
