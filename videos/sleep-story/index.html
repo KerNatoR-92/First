@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1920, height=1080" />
+    <script src="assets/vendor/gsap.min.js"></script>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      html,
+      body {
+        margin: 0;
+        width: 1920px;
+        height: 1080px;
+        overflow: hidden;
+        background: #000;
+      }
+      body {
+        font-family: "Inter", sans-serif;
+      }
+      .beat {
+        position: absolute;
+        inset: 0;
+        width: 1920px;
+        height: 1080px;
+      }
+      .beat img {
+        position: absolute;
+        inset: 0;
+        width: 1920px;
+        height: 1080px;
+        object-fit: cover;
+        will-change: opacity;
+      }
+      .credit {
+        position: absolute;
+        right: 24px;
+        bottom: 20px;
+        color: rgba(255, 255, 255, 0.72);
+        font-size: 14px;
+        letter-spacing: 0.02em;
+        text-shadow: 0 1px 2px rgba(0, 0, 0, 0.65);
+      }
+    </style>
+  </head>
+  <body>
+    <div
+      id="root"
+      data-composition-id="main"
+      data-start="0"
+      data-duration="268.94"
+      data-width="1920"
+      data-height="1080"
+    >
+      <!-- Narration: A1 then A2, back-to-back. Track 0 = audio bed. -->
+      <audio
+        id="narration-a1"
+        class="clip"
+        src="assets/audio/A1.wav"
+        data-start="0"
+        data-duration="110.51"
+        data-track-index="0"
+        data-volume="1"
+        preload="metadata"
+      ></audio>
+      <audio
+        id="narration-a2"
+        class="clip"
+        src="assets/audio/A2.wav"
+        data-start="110.51"
+        data-duration="158.43"
+        data-track-index="0"
+        data-volume="1"
+        preload="metadata"
+      ></audio>
+
+      <!-- Beat backgrounds. Track 1 = full-bleed photo. Wrapper is the clip so
+           the framework owns visibility; the inner <img> receives the fade tween. -->
+      <div
+        id="beat-sleeping"
+        class="clip beat"
+        data-start="0"
+        data-duration="5"
+        data-track-index="1"
+      >
+        <img class="bg-img" src="assets/frames/01-sleeping.jpg" alt="Person sleeping" />
+      </div>
+      <div
+        id="beat-yawning"
+        class="clip beat"
+        data-start="5"
+        data-duration="105.51"
+        data-track-index="1"
+      >
+        <img class="bg-img" src="assets/frames/02-yawning.jpg" alt="Person yawning" />
+      </div>
+      <div
+        id="beat-late-night"
+        class="clip beat"
+        data-start="110.51"
+        data-duration="158.43"
+        data-track-index="1"
+      >
+        <img class="bg-img" src="assets/frames/03-late-night.jpg" alt="Person awake late at night" />
+      </div>
+
+      <!-- Per-beat Unsplash photographer credit. Track 2 = overlay. -->
+      <div
+        id="credit-sleeping"
+        class="clip credit"
+        data-start="0"
+        data-duration="5"
+        data-track-index="2"
+      >
+        Photo: Greg Pappas / Unsplash
+      </div>
+      <div
+        id="credit-yawning"
+        class="clip credit"
+        data-start="5"
+        data-duration="105.51"
+        data-track-index="2"
+      >
+        Photo: Adrian Swancar / Unsplash
+      </div>
+      <div
+        id="credit-late-night"
+        class="clip credit"
+        data-start="110.51"
+        data-duration="158.43"
+        data-track-index="2"
+      >
+        Photo: Clint Patterson / Unsplash
+      </div>
+    </div>
+
+    <script>
+      window.__timelines = window.__timelines || {};
+      const tl = gsap.timeline({ paused: true });
+
+      // Short cross-fades on the inner <img> so the beat boundaries feel less like
+      // hard cuts. Framework owns clip visibility via the wrapper's class="clip"
+      // + data-* timing; opacity tweens are safe on the non-clip child.
+      tl.fromTo("#beat-sleeping .bg-img",   { opacity: 0 }, { opacity: 1, duration: 0.5 }, 0);
+      tl.set  ("#beat-sleeping .bg-img",    { opacity: 0 }, 5);
+
+      tl.fromTo("#beat-yawning .bg-img",    { opacity: 0 }, { opacity: 1, duration: 0.5 }, 5);
+      tl.set  ("#beat-yawning .bg-img",     { opacity: 0 }, 110.51);
+
+      tl.fromTo("#beat-late-night .bg-img", { opacity: 0 }, { opacity: 1, duration: 0.75 }, 110.51);
+
+      window.__timelines["main"] = tl;
+    </script>
+  </body>
+</html>
