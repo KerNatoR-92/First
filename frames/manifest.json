@@ -1,0 +1,43 @@
+{
+  "frames": [
+    {
+      "id": "01-sleeping",
+      "audio": "A1.wav",
+      "start": 0.0,
+      "end": 5.0,
+      "narration": "사람들이 자는 영상",
+      "query": "person sleeping in bed peaceful night",
+      "image": "frames/01-sleeping.jpg",
+      "photographer": "Greg Pappas",
+      "photographer_url": "https://unsplash.com/@vagabondage",
+      "photo_url": "https://unsplash.com/photos/woman-sleeping-on-bed-under-blankets-rUc9hVE-L-E",
+      "unsplash_id": "rUc9hVE-L-E"
+    },
+    {
+      "id": "02-yawning",
+      "audio": "A1.wav",
+      "start": 5.0,
+      "end": 10.0,
+      "narration": "사람들이 하품하는 영상",
+      "query": "tired person yawning morning",
+      "image": "frames/02-yawning.jpg",
+      "photographer": "Adrian Swancar",
+      "photographer_url": "https://unsplash.com/@a_d_s_w",
+      "photo_url": "https://unsplash.com/photos/man-wearing-black-crew-neck-top-roCfgvkBLVY",
+      "unsplash_id": "roCfgvkBLVY"
+    },
+    {
+      "id": "03-late-night",
+      "audio": "A2.wav",
+      "start": 0.0,
+      "end": 6.0,
+      "narration": "사람들이 늦게까지 깨어있는 영상",
+      "query": "person awake late night laptop dark room",
+      "image": "frames/03-late-night.jpg",
+      "photographer": "Clint Patterson",
+      "photographer_url": "https://unsplash.com/@cbpsc1",
+      "photo_url": "https://unsplash.com/photos/a-desk-with-a-lamp-and-a-laptop-on-it-ulftbH1sA0k",
+      "unsplash_id": "ulftbH1sA0k"
+    }
+  ]
+}
