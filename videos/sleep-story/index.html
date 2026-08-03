@@ -5,995 +5,197 @@
     <meta name="viewport" content="width=1920, height=1080" />
     <script src="assets/vendor/gsap.min.js"></script>
     <style>
-      @font-face {
-        font-family: "Noto Sans KR";
-        font-style: normal;
-        font-weight: 400;
-        src: url("assets/fonts/notosans-kr-400.ttf") format("truetype");
-      }
-      @font-face {
-        font-family: "Noto Sans KR";
-        font-style: normal;
-        font-weight: 500;
-        src: url("assets/fonts/notosans-kr-500.ttf") format("truetype");
-      }
-      @font-face {
-        font-family: "Noto Sans KR";
-        font-style: normal;
-        font-weight: 700;
-        src: url("assets/fonts/notosans-kr-700.ttf") format("truetype");
-      }
-      * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-      }
-      html,
-      body {
-        margin: 0;
-        width: 1920px;
-        height: 1080px;
-        overflow: hidden;
-        background: #000;
-      }
-      body {
-        font-family: "Noto Sans KR", "Inter", sans-serif;
-      }
-      .beat {
-        position: absolute;
-        inset: 0;
-        width: 1920px;
-        height: 1080px;
-        overflow: hidden;
-      }
-      .beat img {
-        position: absolute;
-        inset: 0;
-        width: 1920px;
-        height: 1080px;
-        object-fit: cover;
-        transform-origin: 50% 50%;
-        will-change: opacity, transform;
-      }
-      .caption {
-        position: absolute;
-        left: 50%;
-        transform: translateX(-50%);
-        bottom: 84px;
-        width: 1600px;
-        display: flex;
-        justify-content: center;
-      }
-      .caption-text {
-        display: inline-block;
-        max-width: 100%;
-        padding: 18px 28px;
-        background: rgba(0, 0, 0, 0.72);
-        color: #ffffff;
-        font-family: "Noto Sans KR", "Inter", sans-serif;
-        font-weight: 500;
-        font-size: 34px;
-        line-height: 1.45;
-        letter-spacing: -0.01em;
-        text-align: center;
-        border-radius: 6px;
-        word-break: keep-all;
-        overflow-wrap: break-word;
-      }
-      .credit {
-        position: absolute;
-        right: 24px;
-        bottom: 20px;
-        color: #ffffff;
-        font-family: "Inter", sans-serif;
-        font-size: 14px;
-        letter-spacing: 0.02em;
-        padding: 6px 12px;
-        border-radius: 4px;
-        background: rgba(0, 0, 0, 0.55);
-      }
+      @font-face { font-family: "Noto Sans KR"; font-style: normal; font-weight: 400; src: url("assets/fonts/notosans-kr-400.ttf") format("truetype"); }
+      @font-face { font-family: "Noto Sans KR"; font-style: normal; font-weight: 500; src: url("assets/fonts/notosans-kr-500.ttf") format("truetype"); }
+      @font-face { font-family: "Noto Sans KR"; font-style: normal; font-weight: 700; src: url("assets/fonts/notosans-kr-700.ttf") format("truetype"); }
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      html, body { margin: 0; width: 1920px; height: 1080px; overflow: hidden; background: #000; }
+      body { font-family: "Noto Sans KR", "Inter", sans-serif; }
+      .beat { position: absolute; inset: 0; width: 1920px; height: 1080px; overflow: hidden; }
+      .beat img { position: absolute; inset: 0; width: 1920px; height: 1080px; object-fit: cover; transform-origin: 50% 50%; will-change: opacity, transform; }
+      .caption { position: absolute; left: 50%; transform: translateX(-50%); bottom: 84px; width: 1600px; display: flex; justify-content: center; }
+      .caption-text { display: inline-block; max-width: 100%; padding: 18px 28px; background: rgba(0, 0, 0, 0.72); color: #fff; font-family: "Noto Sans KR", "Inter", sans-serif; font-weight: 500; font-size: 34px; line-height: 1.45; letter-spacing: -0.01em; text-align: center; border-radius: 6px; word-break: keep-all; overflow-wrap: break-word; }
+      .credit { position: absolute; right: 24px; bottom: 20px; color: #fff; font-family: "Inter", sans-serif; font-size: 14px; letter-spacing: 0.02em; padding: 6px 12px; border-radius: 4px; background: rgba(0, 0, 0, 0.55); }
     </style>
   </head>
   <body>
-    <div
-      id="root"
-      data-composition-id="main"
-      data-start="0"
-      data-duration="268.94"
-      data-width="1920"
-      data-height="1080"
-    >
-      <audio
-        id="narration-a1"
-        class="clip"
-        src="assets/audio/A1.wav"
-        data-start="0"
-        data-duration="110.51"
-        data-track-index="0"
-        data-volume="1"
-        preload="metadata"
-      ></audio>
-      <audio
-        id="narration-a2"
-        class="clip"
-        src="assets/audio/A2.wav"
-        data-start="110.51"
-        data-duration="158.43"
-        data-track-index="0"
-        data-volume="1"
-        preload="metadata"
-      ></audio>
+    <div id="root" data-composition-id="main" data-start="0" data-duration="268.94" data-width="1920" data-height="1080">
+      <audio id="narration-a1" class="clip" src="assets/audio/A1.wav" data-start="0" data-duration="110.51" data-track-index="0" data-volume="1" preload="metadata"></audio>
+      <audio id="narration-a2" class="clip" src="assets/audio/A2.wav" data-start="110.51" data-duration="158.43" data-track-index="0" data-volume="1" preload="metadata"></audio>
 
-      <div
-        id="beat-01-question"
-        class="clip beat"
-        data-start="0.0"
-        data-duration="2.24"
-        data-track-index="1"
-      >
+      <div id="beat-01-question" class="clip beat" data-start="0.0" data-duration="2.24" data-track-index="1">
         <img class="bg-img" src="assets/frames/01-question.jpg" alt="01-question" />
       </div>
-      <div
-        id="beat-02-weekday-weekend"
-        class="clip beat"
-        data-start="2.24"
-        data-duration="7.48"
-        data-track-index="1"
-      >
+      <div id="beat-02-weekday-weekend" class="clip beat" data-start="2.24" data-duration="7.48" data-track-index="1">
         <img class="bg-img" src="assets/frames/02-weekday-weekend.jpg" alt="02-weekday-weekend" />
       </div>
-      <div
-        id="beat-03-late-work"
-        class="clip beat"
-        data-start="9.72"
-        data-duration="7.48"
-        data-track-index="1"
-      >
+      <div id="beat-03-late-work" class="clip beat" data-start="9.72" data-duration="7.48" data-track-index="1">
         <img class="bg-img" src="assets/frames/03-late-work.jpg" alt="03-late-work" />
       </div>
-      <div
-        id="beat-04-constant-fatigue"
-        class="clip beat"
-        data-start="17.2"
-        data-duration="6.23"
-        data-track-index="1"
-      >
+      <div id="beat-04-constant-fatigue" class="clip beat" data-start="17.2" data-duration="6.23" data-track-index="1">
         <img class="bg-img" src="assets/frames/04-constant-fatigue.jpg" alt="04-constant-fatigue" />
       </div>
-      <div
-        id="beat-05-todays-topics"
-        class="clip beat"
-        data-start="23.43"
-        data-duration="18.69"
-        data-track-index="1"
-      >
+      <div id="beat-05-todays-topics" class="clip beat" data-start="23.43" data-duration="18.69" data-track-index="1">
         <img class="bg-img" src="assets/frames/05-todays-topics.jpg" alt="05-todays-topics" />
       </div>
-      <div
-        id="beat-06-how-many-hours"
-        class="clip beat"
-        data-start="42.12"
-        data-duration="6.6"
-        data-track-index="1"
-      >
+      <div id="beat-06-how-many-hours" class="clip beat" data-start="42.12" data-duration="6.6" data-track-index="1">
         <img class="bg-img" src="assets/frames/06-how-many-hours.jpg" alt="06-how-many-hours" />
       </div>
-      <div
-        id="beat-07-seven-to-nine"
-        class="clip beat"
-        data-start="48.72"
-        data-duration="12.46"
-        data-track-index="1"
-      >
+      <div id="beat-07-seven-to-nine" class="clip beat" data-start="48.72" data-duration="12.46" data-track-index="1">
         <img class="bg-img" src="assets/frames/07-seven-to-nine.jpg" alt="07-seven-to-nine" />
       </div>
-      <div
-        id="beat-08-reverse-calc"
-        class="clip beat"
-        data-start="61.18"
-        data-duration="18.32"
-        data-track-index="1"
-      >
+      <div id="beat-08-reverse-calc" class="clip beat" data-start="61.18" data-duration="18.32" data-track-index="1">
         <img class="bg-img" src="assets/frames/08-reverse-calc.jpg" alt="08-reverse-calc" />
       </div>
-      <div
-        id="beat-09-real-sleep-time"
-        class="clip beat"
-        data-start="79.5"
-        data-duration="14.08"
-        data-track-index="1"
-      >
+      <div id="beat-09-real-sleep-time" class="clip beat" data-start="79.5" data-duration="14.08" data-track-index="1">
         <img class="bg-img" src="assets/frames/09-real-sleep-time.jpg" alt="09-real-sleep-time" />
       </div>
-      <div
-        id="beat-10-consistency"
-        class="clip beat"
-        data-start="93.58"
-        data-duration="4.98"
-        data-track-index="1"
-      >
+      <div id="beat-10-consistency" class="clip beat" data-start="93.58" data-duration="4.98" data-track-index="1">
         <img class="bg-img" src="assets/frames/10-consistency.jpg" alt="10-consistency" />
       </div>
-      <div
-        id="beat-11-weekend-shift"
-        class="clip beat"
-        data-start="98.56"
-        data-duration="7.23"
-        data-track-index="1"
-      >
+      <div id="beat-11-weekend-shift" class="clip beat" data-start="98.56" data-duration="7.23" data-track-index="1">
         <img class="bg-img" src="assets/frames/11-weekend-shift.jpg" alt="11-weekend-shift" />
       </div>
-      <div
-        id="beat-12-keep-within-hours"
-        class="clip beat"
-        data-start="105.79"
-        data-duration="5.61"
-        data-track-index="1"
-      >
+      <div id="beat-12-keep-within-hours" class="clip beat" data-start="105.79" data-duration="5.61" data-track-index="1">
         <img class="bg-img" src="assets/frames/12-keep-within-hours.jpg" alt="12-keep-within-hours" />
       </div>
-      <div
-        id="beat-13-circadian-clock"
-        class="clip beat"
-        data-start="111.4"
-        data-duration="14.58"
-        data-track-index="1"
-      >
+      <div id="beat-13-circadian-clock" class="clip beat" data-start="111.4" data-duration="14.58" data-track-index="1">
         <img class="bg-img" src="assets/frames/13-circadian-clock.jpg" alt="13-circadian-clock" />
       </div>
-      <div
-        id="beat-14-predictable-cycle"
-        class="clip beat"
-        data-start="125.98"
-        data-duration="12.96"
-        data-track-index="1"
-      >
+      <div id="beat-14-predictable-cycle" class="clip beat" data-start="125.98" data-duration="12.96" data-track-index="1">
         <img class="bg-img" src="assets/frames/14-predictable-cycle.jpg" alt="14-predictable-cycle" />
       </div>
-      <div
-        id="beat-15-focus-judgment"
-        class="clip beat"
-        data-start="138.94"
-        data-duration="19.31"
-        data-track-index="1"
-      >
+      <div id="beat-15-focus-judgment" class="clip beat" data-start="138.94" data-duration="19.31" data-track-index="1">
         <img class="bg-img" src="assets/frames/15-focus-judgment.jpg" alt="15-focus-judgment" />
       </div>
-      <div
-        id="beat-16-emotion-regulation"
-        class="clip beat"
-        data-start="158.25"
-        data-duration="12.34"
-        data-track-index="1"
-      >
+      <div id="beat-16-emotion-regulation" class="clip beat" data-start="158.25" data-duration="12.34" data-track-index="1">
         <img class="bg-img" src="assets/frames/16-emotion-regulation.jpg" alt="16-emotion-regulation" />
       </div>
-      <div
-        id="beat-17-physical-recovery"
-        class="clip beat"
-        data-start="170.59"
-        data-duration="18.07"
-        data-track-index="1"
-      >
+      <div id="beat-17-physical-recovery" class="clip beat" data-start="170.59" data-duration="18.07" data-track-index="1">
         <img class="bg-img" src="assets/frames/17-physical-recovery.jpg" alt="17-physical-recovery" />
       </div>
-      <div
-        id="beat-18-monday-jetlag"
-        class="clip beat"
-        data-start="188.66"
-        data-duration="17.2"
-        data-track-index="1"
-      >
+      <div id="beat-18-monday-jetlag" class="clip beat" data-start="188.66" data-duration="17.2" data-track-index="1">
         <img class="bg-img" src="assets/frames/18-monday-jetlag.jpg" alt="18-monday-jetlag" />
       </div>
-      <div
-        id="beat-19-focus-loss"
-        class="clip beat"
-        data-start="205.86"
-        data-duration="11.34"
-        data-track-index="1"
-      >
+      <div id="beat-19-focus-loss" class="clip beat" data-start="205.86" data-duration="11.34" data-track-index="1">
         <img class="bg-img" src="assets/frames/19-focus-loss.jpg" alt="19-focus-loss" />
       </div>
-      <div
-        id="beat-20-driving-danger"
-        class="clip beat"
-        data-start="217.2"
-        data-duration="7.1"
-        data-track-index="1"
-      >
+      <div id="beat-20-driving-danger" class="clip beat" data-start="217.2" data-duration="7.1" data-track-index="1">
         <img class="bg-img" src="assets/frames/20-driving-danger.jpg" alt="20-driving-danger" />
       </div>
-      <div
-        id="beat-21-emotional-stress"
-        class="clip beat"
-        data-start="224.3"
-        data-duration="5.98"
-        data-track-index="1"
-      >
+      <div id="beat-21-emotional-stress" class="clip beat" data-start="224.3" data-duration="5.98" data-track-index="1">
         <img class="bg-img" src="assets/frames/21-emotional-stress.jpg" alt="21-emotional-stress" />
       </div>
-      <div
-        id="beat-22-late-night-cravings"
-        class="clip beat"
-        data-start="230.28"
-        data-duration="11.71"
-        data-track-index="1"
-      >
+      <div id="beat-22-late-night-cravings" class="clip beat" data-start="230.28" data-duration="11.71" data-track-index="1">
         <img class="bg-img" src="assets/frames/22-late-night-cravings.jpg" alt="22-late-night-cravings" />
       </div>
-      <div
-        id="beat-23-long-term-health"
-        class="clip beat"
-        data-start="241.99"
-        data-duration="9.1"
-        data-track-index="1"
-      >
+      <div id="beat-23-long-term-health" class="clip beat" data-start="241.99" data-duration="9.1" data-track-index="1">
         <img class="bg-img" src="assets/frames/23-long-term-health.jpg" alt="23-long-term-health" />
       </div>
-      <div
-        id="beat-24-weekend-catchup"
-        class="clip beat"
-        data-start="251.09"
-        data-duration="8.1"
-        data-track-index="1"
-      >
+      <div id="beat-24-weekend-catchup" class="clip beat" data-start="251.09" data-duration="8.1" data-track-index="1">
         <img class="bg-img" src="assets/frames/24-weekend-catchup.jpg" alt="24-weekend-catchup" />
       </div>
-      <div
-        id="beat-25-daily-consistency"
-        class="clip beat"
-        data-start="259.19"
-        data-duration="9.75"
-        data-track-index="1"
-      >
+      <div id="beat-25-daily-consistency" class="clip beat" data-start="259.19" data-duration="9.75" data-track-index="1">
         <img class="bg-img" src="assets/frames/25-daily-consistency.jpg" alt="25-daily-consistency" />
       </div>
 
-      <div
-        id="caption-000"
-        class="clip caption"
-        data-start="0.0"
-        data-duration="4.17"
-        data-track-index="2"
-      ><span class="caption-text">여러분은 평일과 주말에 각각 몇 시에 잠드시나요?</span></div>
-      <div
-        id="caption-001"
-        class="clip caption"
-        data-start="4.17"
-        data-duration="6.99"
-        data-track-index="2"
-      ><span class="caption-text">평일에는 출근 때문에 억지로 일찍 일어나고,<br />주말에는 밀린 잠을 보충하느라 점심때까지 자는 분들이 많습니다.</span></div>
-      <div
-        id="caption-002"
-        class="clip caption"
-        data-start="11.16"
-        data-duration="6.44"
-        data-track-index="2"
-      ><span class="caption-text">야근이나 회식이 있는 날에는 새벽에 잠들고,<br />다음 날 중요한 일정이 있으면 평소보다 일찍 일어나기도 합니다.</span></div>
-      <div
-        id="caption-003"
-        class="clip caption"
-        data-start="17.6"
-        data-duration="5.28"
-        data-track-index="2"
-      ><span class="caption-text">이렇게 하루하루 자는 시간이 달라지면<br />우리는 충분히 잤다고 생각해도 계속 피곤할 수 있습니다.</span></div>
-      <div
-        id="caption-004"
-        class="clip caption"
-        data-start="22.88"
-        data-duration="3.3"
-        data-track-index="2"
-      ><span class="caption-text">오늘은 직장인에게 필요한 수면 시간은 몇 시간인지,</span></div>
-      <div
-        id="caption-005"
-        class="clip caption"
-        data-start="26.18"
-        data-duration="2.47"
-        data-track-index="2"
-      ><span class="caption-text">규칙적으로 잠을 자면 무엇이 좋아지는지,</span></div>
-      <div
-        id="caption-006"
-        class="clip caption"
-        data-start="28.65"
-        data-duration="3.73"
-        data-track-index="2"
-      ><span class="caption-text">반대로 수면 시간이 불규칙하면 어떤 문제가 생기는지 알아보겠습니다.</span></div>
-      <div
-        id="caption-007"
-        class="clip caption"
-        data-start="32.38"
-        data-duration="3.75"
-        data-track-index="2"
-      ><span class="caption-text">그리고 잠들기 어려운 분들에게 도움이 될 수 있는</span></div>
-      <div
-        id="caption-008"
-        class="clip caption"
-        data-start="36.13"
-        data-duration="2.59"
-        data-track-index="2"
-      ><span class="caption-text">음식과 성분, 생활 습관도 함께 이야기해 보겠습니다.</span></div>
-      <div
-        id="caption-009"
-        class="clip caption"
-        data-start="38.72"
-        data-duration="3.4"
-        data-track-index="2"
-      ><span class="caption-text">우선, 우리는 몇 시에 자야 할까요?</span></div>
-      <div
-        id="caption-010"
-        class="clip caption"
-        data-start="42.12"
-        data-duration="4.16"
-        data-track-index="2"
-      ><span class="caption-text">성인은 일반적으로 하루에 최소 7시간 이상의 수면이 필요합니다.</span></div>
-      <div
-        id="caption-011"
-        class="clip caption"
-        data-start="46.28"
-        data-duration="5.68"
-        data-track-index="2"
-      ><span class="caption-text">개인차는 있지만 대부분의 성인은<br />약 7시간에서 9시간 정도 잠을 자는 것이 좋습니다.</span></div>
-      <div
-        id="caption-012"
-        class="clip caption"
-        data-start="51.96"
-        data-duration="4.28"
-        data-track-index="2"
-      ><span class="caption-text">하지만 모든 사람에게 적용되는 절대적인 취침 시간이<br />따로 정해져 있는 것은 아닙니다.</span></div>
-      <div
-        id="caption-013"
-        class="clip caption"
-        data-start="56.24"
-        data-duration="5.19"
-        data-track-index="2"
-      ><span class="caption-text">중요한 것은 자신이 일어나야 하는 시간에서<br />필요한 수면 시간을 거꾸로 계산하는 것입니다.</span></div>
-      <div
-        id="caption-014"
-        class="clip caption"
-        data-start="61.43"
-        data-duration="7.75"
-        data-track-index="2"
-      ><span class="caption-text">예를 들어 아침 7시에 일어나야 하는 사람이라면<br />밤 10시부터 12시 사이에는 잠들 수 있도록 준비하는 것이 좋습니다.</span></div>
-      <div
-        id="caption-015"
-        class="clip caption"
-        data-start="69.18"
-        data-duration="3.62"
-        data-track-index="2"
-      ><span class="caption-text">7시간을 자려면 자정 전에 잠들어야 하고,</span></div>
-      <div
-        id="caption-016"
-        class="clip caption"
-        data-start="72.8"
-        data-duration="2.44"
-        data-track-index="2"
-      ><span class="caption-text">8시간을 자려면 밤 11시,</span></div>
-      <div
-        id="caption-017"
-        class="clip caption"
-        data-start="75.24"
-        data-duration="2.69"
-        data-track-index="2"
-      ><span class="caption-text">9시간을 자려면 밤 10시쯤 잠들어야 합니다.</span></div>
-      <div
-        id="caption-018"
-        class="clip caption"
-        data-start="77.93"
-        data-duration="3.27"
-        data-track-index="2"
-      ><span class="caption-text">여기서 중요한 점은 침대에 들어가는 시간이 아니라</span></div>
-      <div
-        id="caption-019"
-        class="clip caption"
-        data-start="81.2"
-        data-duration="3.05"
-        data-track-index="2"
-      ><span class="caption-text">실제로 잠드는 시간을 기준으로 계산해야 한다는 것입니다.</span></div>
-      <div
-        id="caption-020"
-        class="clip caption"
-        data-start="84.25"
-        data-duration="3.15"
-        data-track-index="2"
-      ><span class="caption-text">평소 잠드는 데 30분 정도 걸린다면</span></div>
-      <div
-        id="caption-021"
-        class="clip caption"
-        data-start="87.4"
-        data-duration="5.48"
-        data-track-index="2"
-      ><span class="caption-text">목표 취침 시간보다 30분 정도 일찍 침대에 들어가는 것이 좋습니다.</span></div>
-      <div
-        id="caption-022"
-        class="clip caption"
-        data-start="92.88"
-        data-duration="2.16"
-        data-track-index="2"
-      ><span class="caption-text">그리고 수면 시간만큼 중요한 것이</span></div>
-      <div
-        id="caption-023"
-        class="clip caption"
-        data-start="95.04"
-        data-duration="2.96"
-        data-track-index="2"
-      ><span class="caption-text">매일 비슷한 시간에 자고 일어나는 것입니다.</span></div>
-      <div
-        id="caption-024"
-        class="clip caption"
-        data-start="98.0"
-        data-duration="2.73"
-        data-track-index="2"
-      ><span class="caption-text">주말이라고 해서 평일보다 서너 시간 늦게 자고 일어나면</span></div>
-      <div
-        id="caption-025"
-        class="clip caption"
-        data-start="100.73"
-        data-duration="3.98"
-        data-track-index="2"
-      ><span class="caption-text">우리 몸은 매주 작은 시차 적응을 반복하게 됩니다.</span></div>
-      <div
-        id="caption-026"
-        class="clip caption"
-        data-start="104.71"
-        data-duration="2.81"
-        data-track-index="2"
-      ><span class="caption-text">따라서 주말에도 기상 시간 차이를</span></div>
-      <div
-        id="caption-027"
-        class="clip caption"
-        data-start="107.52"
-        data-duration="2.99"
-        data-track-index="2"
-      ><span class="caption-text">가능하면 한두 시간 이내로 유지하는 것이 좋습니다.</span></div>
-      <div
-        id="caption-028"
-        class="clip caption"
-        data-start="110.51"
-        data-duration="3.42"
-        data-track-index="2"
-      ><span class="caption-text">규칙적으로 잠을 자는 것이 왜 중요할까요?</span></div>
-      <div
-        id="caption-029"
-        class="clip caption"
-        data-start="113.93"
-        data-duration="3.45"
-        data-track-index="2"
-      ><span class="caption-text">우리 몸에는 하루 약 24시간을 주기로 움직이는 생체시계가 있습니다.</span></div>
-      <div
-        id="caption-030"
-        class="clip caption"
-        data-start="117.38"
-        data-duration="7.89"
-        data-track-index="2"
-      ><span class="caption-text">이 생체시계는 빛과 어둠, 식사 시간, 활동 시간,<br />그리고 잠들고 일어나는 시간의 영향을 받습니다.</span></div>
-      <div
-        id="caption-031"
-        class="clip caption"
-        data-start="125.27"
-        data-duration="2.89"
-        data-track-index="2"
-      ><span class="caption-text">매일 비슷한 시간에 잠자리에 들고 일어나면</span></div>
-      <div
-        id="caption-032"
-        class="clip caption"
-        data-start="128.16"
-        data-duration="3.38"
-        data-track-index="2"
-      ><span class="caption-text">몸은 언제 깨어나고 언제 쉬어야 하는지를 예측할 수 있게 됩니다.</span></div>
-      <div
-        id="caption-033"
-        class="clip caption"
-        data-start="131.54"
-        data-duration="3.47"
-        data-track-index="2"
-      ><span class="caption-text">그 결과 밤이 되면 자연스럽게 졸음이 오고,</span></div>
-      <div
-        id="caption-034"
-        class="clip caption"
-        data-start="135.01"
-        data-duration="2.45"
-        data-track-index="2"
-      ><span class="caption-text">아침에는 조금 더 수월하게 깨어날 수 있습니다.</span></div>
-      <div
-        id="caption-035"
-        class="clip caption"
-        data-start="137.46"
-        data-duration="6.24"
-        data-track-index="2"
-      ><span class="caption-text">규칙적인 수면은 낮 동안의 집중력과 판단력을 유지하는 데도 도움이 됩니다.</span></div>
-      <div
-        id="caption-036"
-        class="clip caption"
-        data-start="143.7"
-        data-duration="5.89"
-        data-track-index="2"
-      ><span class="caption-text">직장에서는 단순히 오래 깨어 있는 것보다 실수를 줄이고 빠르게 판단하는 능력이 더 중요합니다.</span></div>
-      <div
-        id="caption-037"
-        class="clip caption"
-        data-start="149.59"
-        data-duration="6.88"
-        data-track-index="2"
-      ><span class="caption-text">잠을 충분하고 규칙적으로 자면 업무 내용을 기억하거나 새로운 정보를 학습하는 데도 유리합니다.</span></div>
-      <div
-        id="caption-038"
-        class="clip caption"
-        data-start="156.47"
-        data-duration="1.94"
-        data-track-index="2"
-      ><span class="caption-text">감정 조절에도 도움이 됩니다.</span></div>
-      <div
-        id="caption-039"
-        class="clip caption"
-        data-start="158.41"
-        data-duration="4.05"
-        data-track-index="2"
-      ><span class="caption-text">잠을 제대로 잔 날에는 사소한 일에도 비교적 차분하게 대응하지만,</span></div>
-      <div
-        id="caption-040"
-        class="clip caption"
-        data-start="162.46"
-        data-duration="5.95"
-        data-track-index="2"
-      ><span class="caption-text">잠이 부족한 날에는 평소라면 넘길 수 있는 일에도 예민하거나 짜증스럽게 반응하기 쉽습니다.</span></div>
-      <div
-        id="caption-041"
-        class="clip caption"
-        data-start="168.41"
-        data-duration="2.26"
-        data-track-index="2"
-      ><span class="caption-text">신체적으로도 수면은 회복의 시간입니다.</span></div>
-      <div
-        id="caption-042"
-        class="clip caption"
-        data-start="170.67"
-        data-duration="4.95"
-        data-track-index="2"
-      ><span class="caption-text">자는 동안 신체는 에너지를 회복하고, 면역 기능과 대사 기능을 조절합니다.</span></div>
-      <div
-        id="caption-043"
-        class="clip caption"
-        data-start="175.62"
-        data-duration="3.77"
-        data-track-index="2"
-      ><span class="caption-text">따라서 규칙적인 수면은 단순히 덜 피곤하게 만드는 것이 아니라</span></div>
-      <div
-        id="caption-044"
-        class="clip caption"
-        data-start="179.39"
-        data-duration="4.93"
-        data-track-index="2"
-      ><span class="caption-text">다음 날의 몸과 뇌가 정상적으로 작동하도록 준비하는 과정이라고 볼 수 있습니다.</span></div>
-      <div
-        id="caption-045"
-        class="clip caption"
-        data-start="184.32"
-        data-duration="4.35"
-        data-track-index="2"
-      ><span class="caption-text">그럼 수면이 불규칙하면 생기는 문제는 어떤 것들이 있을까요?</span></div>
-      <div
-        id="caption-046"
-        class="clip caption"
-        data-start="188.67"
-        data-duration="2.29"
-        data-track-index="2"
-      ><span class="caption-text">잠드는 시간과 일어나는 시간이 계속 달라지면</span></div>
-      <div
-        id="caption-047"
-        class="clip caption"
-        data-start="190.96"
-        data-duration="2.95"
-        data-track-index="2"
-      ><span class="caption-text">몸의 생체시계가 혼란스러워질 수 있습니다.</span></div>
-      <div
-        id="caption-048"
-        class="clip caption"
-        data-start="193.91"
-        data-duration="10.1"
-        data-track-index="2"
-      ><span class="caption-text">특히 평일에는 일찍 일어나고 주말에는 늦게까지 자는 생활이 반복되면<br />월요일 아침마다 시차가 발생한 것처럼 피곤할 수 있습니다.</span></div>
-      <div
-        id="caption-049"
-        class="clip caption"
-        data-start="204.01"
-        data-duration="2.34"
-        data-track-index="2"
-      ><span class="caption-text">수면이 부족하거나 불규칙하면</span></div>
-      <div
-        id="caption-050"
-        class="clip caption"
-        data-start="206.35"
-        data-duration="2.31"
-        data-track-index="2"
-      ><span class="caption-text">가장 먼저 나타나는 문제는 집중력 저하입니다.</span></div>
-      <div
-        id="caption-051"
-        class="clip caption"
-        data-start="208.66"
-        data-duration="4.62"
-        data-track-index="2"
-      ><span class="caption-text">회의 내용을 놓치거나, 방금 확인한 내용을 다시 확인하고,</span></div>
-      <div
-        id="caption-052"
-        class="clip caption"
-        data-start="213.28"
-        data-duration="2.92"
-        data-track-index="2"
-      ><span class="caption-text">단순한 업무에서도 실수가 늘어날 수 있습니다.</span></div>
-      <div
-        id="caption-053"
-        class="clip caption"
-        data-start="216.2"
-        data-duration="3.56"
-        data-track-index="2"
-      ><span class="caption-text">반응 속도와 판단력도 떨어질 수 있기 때문에</span></div>
-      <div
-        id="caption-054"
-        class="clip caption"
-        data-start="219.76"
-        data-duration="5.4"
-        data-track-index="2"
-      ><span class="caption-text">운전하거나 기계를 다루는 사람에게는 특히 위험할 수 있습니다.</span></div>
-      <div
-        id="caption-055"
-        class="clip caption"
-        data-start="225.16"
-        data-duration="2.9"
-        data-track-index="2"
-      ><span class="caption-text">감정적으로도 불안하거나 예민해지기 쉽고,</span></div>
-      <div
-        id="caption-056"
-        class="clip caption"
-        data-start="228.06"
-        data-duration="3.11"
-        data-track-index="2"
-      ><span class="caption-text">업무 스트레스를 실제보다 더 크게 느낄 수 있습니다.</span></div>
-      <div
-        id="caption-057"
-        class="clip caption"
-        data-start="231.17"
-        data-duration="4.46"
-        data-track-index="2"
-      ><span class="caption-text">또한 잠이 부족하면 식욕과 포만감을 조절하는 과정에도 영향을 줍니다.</span></div>
-      <div
-        id="caption-058"
-        class="clip caption"
-        data-start="235.63"
-        data-duration="4.52"
-        data-track-index="2"
-      ><span class="caption-text">그래서 늦은 밤 자극적인 음식이나 단 음식을 찾게 되고,</span></div>
-      <div
-        id="caption-059"
-        class="clip caption"
-        data-start="240.15"
-        data-duration="2.61"
-        data-track-index="2"
-      ><span class="caption-text">다음 날에는 운동할 의욕도 줄어들 수 있습니다.</span></div>
-      <div
-        id="caption-060"
-        class="clip caption"
-        data-start="242.76"
-        data-duration="4.24"
-        data-track-index="2"
-      ><span class="caption-text">이런 생활이 장기간 반복되면 체중 관리가 어려워지고,</span></div>
-      <div
-        id="caption-061"
-        class="clip caption"
-        data-start="247.0"
-        data-duration="5.37"
-        data-track-index="2"
-      ><span class="caption-text">우울감이나 심혈관계 질환을 비롯한 여러 건강 문제의 위험과도 연관될 수 있습니다.</span></div>
-      <div
-        id="caption-062"
-        class="clip caption"
-        data-start="252.37"
-        data-duration="4.44"
-        data-track-index="2"
-      ><span class="caption-text">주말에 몰아서 자는 것이 일시적으로 피로를 줄여줄 수는 있지만,</span></div>
-      <div
-        id="caption-063"
-        class="clip caption"
-        data-start="256.81"
-        data-duration="4.44"
-        data-track-index="2"
-      ><span class="caption-text">평일의 수면 부족을 완전히 없었던 일로 만들지는 못합니다.</span></div>
-      <div
-        id="caption-064"
-        class="clip caption"
-        data-start="261.25"
-        data-duration="4.92"
-        data-track-index="2"
-      ><span class="caption-text">결국 가장 좋은 방법은 평일에 부족하게 자고 주말에 보충하는 것이 아니라,</span></div>
-      <div
-        id="caption-065"
-        class="clip caption"
-        data-start="266.17"
-        data-duration="2.77"
-        data-track-index="2"
-      ><span class="caption-text">매일 필요한 수면 시간을 확보하는 것입니다.</span></div>
+      <div id="caption-000" class="clip caption" data-start="0.04" data-duration="3.64" data-track-index="2"><span class="caption-text">여러분은 평일과 주말에 각각 몇 시에 잠드시나요?</span></div>
+      <div id="caption-001" class="clip caption" data-start="3.68" data-duration="7.48" data-track-index="2"><span class="caption-text">평일에는 출근 때문에 억지로 일찍 일어나고,<br />주말에는 밀린 잠을 보충하느라 점심때까지 자는 분들이 많습니다.</span></div>
+      <div id="caption-002" class="clip caption" data-start="11.16" data-duration="6.56" data-track-index="2"><span class="caption-text">야근이나 회식이 있는 날에는 새벽에 잠들고,<br />다음 날 중요한 일정이 있으면 평소보다 일찍 일어나기도 합니다.</span></div>
+      <div id="caption-003" class="clip caption" data-start="17.72" data-duration="5.84" data-track-index="2"><span class="caption-text">이렇게 하루하루 자는 시간이 달라지면<br />우리는 충분히 잤다고 생각해도 계속 피곤할 수 있습니다.</span></div>
+      <div id="caption-004" class="clip caption" data-start="23.56" data-duration="3.28" data-track-index="2"><span class="caption-text">오늘은 직장인에게 필요한 수면 시간은 몇 시간인지,</span></div>
+      <div id="caption-005" class="clip caption" data-start="26.84" data-duration="2.4" data-track-index="2"><span class="caption-text">규칙적으로 잠을 자면 무엇이 좋아지는지,</span></div>
+      <div id="caption-006" class="clip caption" data-start="29.24" data-duration="4.24" data-track-index="2"><span class="caption-text">반대로 수면 시간이 불규칙하면 어떤 문제가 생기는지 알아보겠습니다.</span></div>
+      <div id="caption-007" class="clip caption" data-start="33.48" data-duration="3.12" data-track-index="2"><span class="caption-text">그리고 잠들기 어려운 분들에게 도움이 될 수 있는</span></div>
+      <div id="caption-008" class="clip caption" data-start="36.6" data-duration="3.56" data-track-index="2"><span class="caption-text">음식과 성분, 생활 습관도 함께 이야기해 보겠습니다.</span></div>
+      <div id="caption-009" class="clip caption" data-start="40.16" data-duration="1.96" data-track-index="2"><span class="caption-text">우선, 우리는 몇 시에 자야 할까요?</span></div>
+      <div id="caption-010" class="clip caption" data-start="42.12" data-duration="4.16" data-track-index="2"><span class="caption-text">성인은 일반적으로 하루에 최소 7시간 이상의 수면이 필요합니다.</span></div>
+      <div id="caption-011" class="clip caption" data-start="46.28" data-duration="5.68" data-track-index="2"><span class="caption-text">개인차는 있지만 대부분의 성인은<br />약 7시간에서 9시간 정도 잠을 자는 것이 좋습니다.</span></div>
+      <div id="caption-012" class="clip caption" data-start="51.96" data-duration="5.04" data-track-index="2"><span class="caption-text">하지만 모든 사람에게 적용되는 절대적인 취침 시간이<br />따로 정해져 있는 것은 아닙니다.</span></div>
+      <div id="caption-013" class="clip caption" data-start="57.0" data-duration="5.32" data-track-index="2"><span class="caption-text">중요한 것은 자신이 일어나야 하는 시간에서<br />필요한 수면 시간을 거꾸로 계산하는 것입니다.</span></div>
+      <div id="caption-014" class="clip caption" data-start="62.32" data-duration="7.56" data-track-index="2"><span class="caption-text">예를 들어 아침 7시에 일어나야 하는 사람이라면<br />밤 10시부터 12시 사이에는 잠들 수 있도록 준비하는 것이 좋습니다.</span></div>
+      <div id="caption-015" class="clip caption" data-start="69.88" data-duration="2.92" data-track-index="2"><span class="caption-text">7시간을 자려면 자정 전에 잠들어야 하고,</span></div>
+      <div id="caption-016" class="clip caption" data-start="72.8" data-duration="2.44" data-track-index="2"><span class="caption-text">8시간을 자려면 밤 11시,</span></div>
+      <div id="caption-017" class="clip caption" data-start="75.24" data-duration="3.36" data-track-index="2"><span class="caption-text">9시간을 자려면 밤 10시쯤 잠들어야 합니다.</span></div>
+      <div id="caption-018" class="clip caption" data-start="78.6" data-duration="3.04" data-track-index="2"><span class="caption-text">여기서 중요한 점은 침대에 들어가는 시간이 아니라</span></div>
+      <div id="caption-019" class="clip caption" data-start="81.64" data-duration="3.52" data-track-index="2"><span class="caption-text">실제로 잠드는 시간을 기준으로 계산해야 한다는 것입니다.</span></div>
+      <div id="caption-020" class="clip caption" data-start="85.16" data-duration="3.86" data-track-index="2"><span class="caption-text">평소 잠드는 데 30분 정도 걸린다면</span></div>
+      <div id="caption-021" class="clip caption" data-start="89.02" data-duration="3.86" data-track-index="2"><span class="caption-text">목표 취침 시간보다 30분 정도 일찍 침대에 들어가는 것이 좋습니다.</span></div>
+      <div id="caption-022" class="clip caption" data-start="92.88" data-duration="2.16" data-track-index="2"><span class="caption-text">그리고 수면 시간만큼 중요한 것이</span></div>
+      <div id="caption-023" class="clip caption" data-start="95.04" data-duration="2.96" data-track-index="2"><span class="caption-text">매일 비슷한 시간에 자고 일어나는 것입니다.</span></div>
+      <div id="caption-024" class="clip caption" data-start="98.0" data-duration="3.68" data-track-index="2"><span class="caption-text">주말이라고 해서 평일보다 서너 시간 늦게 자고 일어나면</span></div>
+      <div id="caption-025" class="clip caption" data-start="101.68" data-duration="3.64" data-track-index="2"><span class="caption-text">우리 몸은 매주 작은 시차 적응을 반복하게 됩니다.</span></div>
+      <div id="caption-026" class="clip caption" data-start="105.32" data-duration="2.2" data-track-index="2"><span class="caption-text">따라서 주말에도 기상 시간 차이를</span></div>
+      <div id="caption-027" class="clip caption" data-start="107.52" data-duration="3.19" data-track-index="2"><span class="caption-text">가능하면 한두 시간 이내로 유지하는 것이 좋습니다.</span></div>
+      <div id="caption-028" class="clip caption" data-start="110.71" data-duration="3.22" data-track-index="2"><span class="caption-text">규칙적으로 잠을 자는 것이 왜 중요할까요?</span></div>
+      <div id="caption-029" class="clip caption" data-start="113.93" data-duration="4.41" data-track-index="2"><span class="caption-text">우리 몸에는 하루 약 24시간을 주기로 움직이는 생체시계가 있습니다.</span></div>
+      <div id="caption-030" class="clip caption" data-start="118.34" data-duration="6.93" data-track-index="2"><span class="caption-text">이 생체시계는 빛과 어둠, 식사 시간, 활동 시간,<br />그리고 잠들고 일어나는 시간의 영향을 받습니다.</span></div>
+      <div id="caption-031" class="clip caption" data-start="125.27" data-duration="2.89" data-track-index="2"><span class="caption-text">매일 비슷한 시간에 잠자리에 들고 일어나면</span></div>
+      <div id="caption-032" class="clip caption" data-start="128.16" data-duration="4.24" data-track-index="2"><span class="caption-text">몸은 언제 깨어나고 언제 쉬어야 하는지를 예측할 수 있게 됩니다.</span></div>
+      <div id="caption-033" class="clip caption" data-start="132.4" data-duration="2.96" data-track-index="2"><span class="caption-text">그 결과 밤이 되면 자연스럽게 졸음이 오고,</span></div>
+      <div id="caption-034" class="clip caption" data-start="135.36" data-duration="3.19" data-track-index="2"><span class="caption-text">아침에는 조금 더 수월하게 깨어날 수 있습니다.</span></div>
+      <div id="caption-035" class="clip caption" data-start="138.55" data-duration="5.15" data-track-index="2"><span class="caption-text">규칙적인 수면은 낮 동안의 집중력과 판단력을 유지하는 데도 도움이 됩니다.</span></div>
+      <div id="caption-036" class="clip caption" data-start="143.7" data-duration="5.76" data-track-index="2"><span class="caption-text">직장에서는 단순히 오래 깨어 있는 것보다 실수를 줄이고 빠르게 판단하는 능력이 더 중요합니다.</span></div>
+      <div id="caption-037" class="clip caption" data-start="149.46" data-duration="6.44" data-track-index="2"><span class="caption-text">잠을 충분하고 규칙적으로 자면 업무 내용을 기억하거나 새로운 정보를 학습하는 데도 유리합니다.</span></div>
+      <div id="caption-038" class="clip caption" data-start="155.9" data-duration="2.0" data-track-index="2"><span class="caption-text">감정 조절에도 도움이 됩니다.</span></div>
+      <div id="caption-039" class="clip caption" data-start="157.9" data-duration="4.04" data-track-index="2"><span class="caption-text">잠을 제대로 잔 날에는 사소한 일에도 비교적 차분하게 대응하지만,</span></div>
+      <div id="caption-040" class="clip caption" data-start="161.94" data-duration="5.97" data-track-index="2"><span class="caption-text">잠이 부족한 날에는 평소라면 넘길 수 있는 일에도 예민하거나 짜증스럽게 반응하기 쉽습니다.</span></div>
+      <div id="caption-041" class="clip caption" data-start="167.91" data-duration="2.65" data-track-index="2"><span class="caption-text">신체적으로도 수면은 회복의 시간입니다.</span></div>
+      <div id="caption-042" class="clip caption" data-start="170.56" data-duration="4.89" data-track-index="2"><span class="caption-text">자는 동안 신체는 에너지를 회복하고, 면역 기능과 대사 기능을 조절합니다.</span></div>
+      <div id="caption-043" class="clip caption" data-start="175.45" data-duration="3.88" data-track-index="2"><span class="caption-text">따라서 규칙적인 수면은 단순히 덜 피곤하게 만드는 것이 아니라</span></div>
+      <div id="caption-044" class="clip caption" data-start="179.33" data-duration="4.94" data-track-index="2"><span class="caption-text">다음 날의 몸과 뇌가 정상적으로 작동하도록 준비하는 과정이라고 볼 수 있습니다.</span></div>
+      <div id="caption-045" class="clip caption" data-start="184.27" data-duration="3.72" data-track-index="2"><span class="caption-text">그럼 수면이 불규칙하면 생기는 문제는 어떤 것들이 있을까요?</span></div>
+      <div id="caption-046" class="clip caption" data-start="187.99" data-duration="2.75" data-track-index="2"><span class="caption-text">잠드는 시간과 일어나는 시간이 계속 달라지면</span></div>
+      <div id="caption-047" class="clip caption" data-start="190.74" data-duration="3.17" data-track-index="2"><span class="caption-text">몸의 생체시계가 혼란스러워질 수 있습니다.</span></div>
+      <div id="caption-048" class="clip caption" data-start="193.91" data-duration="10.1" data-track-index="2"><span class="caption-text">특히 평일에는 일찍 일어나고 주말에는 늦게까지 자는 생활이 반복되면<br />월요일 아침마다 시차가 발생한 것처럼 피곤할 수 있습니다.</span></div>
+      <div id="caption-049" class="clip caption" data-start="204.01" data-duration="2.34" data-track-index="2"><span class="caption-text">수면이 부족하거나 불규칙하면</span></div>
+      <div id="caption-050" class="clip caption" data-start="206.35" data-duration="3.71" data-track-index="2"><span class="caption-text">가장 먼저 나타나는 문제는 집중력 저하입니다.</span></div>
+      <div id="caption-051" class="clip caption" data-start="210.06" data-duration="3.87" data-track-index="2"><span class="caption-text">회의 내용을 놓치거나, 방금 확인한 내용을 다시 확인하고,</span></div>
+      <div id="caption-052" class="clip caption" data-start="213.93" data-duration="3.34" data-track-index="2"><span class="caption-text">단순한 업무에서도 실수가 늘어날 수 있습니다.</span></div>
+      <div id="caption-053" class="clip caption" data-start="217.27" data-duration="3.23" data-track-index="2"><span class="caption-text">반응 속도와 판단력도 떨어질 수 있기 때문에</span></div>
+      <div id="caption-054" class="clip caption" data-start="220.5" data-duration="5.08" data-track-index="2"><span class="caption-text">운전하거나 기계를 다루는 사람에게는 특히 위험할 수 있습니다.</span></div>
+      <div id="caption-055" class="clip caption" data-start="225.58" data-duration="2.83" data-track-index="2"><span class="caption-text">감정적으로도 불안하거나 예민해지기 쉽고,</span></div>
+      <div id="caption-056" class="clip caption" data-start="228.41" data-duration="3.5" data-track-index="2"><span class="caption-text">업무 스트레스를 실제보다 더 크게 느낄 수 있습니다.</span></div>
+      <div id="caption-057" class="clip caption" data-start="231.91" data-duration="5.0" data-track-index="2"><span class="caption-text">또한 잠이 부족하면 식욕과 포만감을 조절하는 과정에도 영향을 줍니다.</span></div>
+      <div id="caption-058" class="clip caption" data-start="236.91" data-duration="3.84" data-track-index="2"><span class="caption-text">그래서 늦은 밤 자극적인 음식이나 단 음식을 찾게 되고,</span></div>
+      <div id="caption-059" class="clip caption" data-start="240.75" data-duration="3.16" data-track-index="2"><span class="caption-text">다음 날에는 운동할 의욕도 줄어들 수 있습니다.</span></div>
+      <div id="caption-060" class="clip caption" data-start="243.91" data-duration="3.66" data-track-index="2"><span class="caption-text">이런 생활이 장기간 반복되면 체중 관리가 어려워지고,</span></div>
+      <div id="caption-061" class="clip caption" data-start="247.57" data-duration="6.08" data-track-index="2"><span class="caption-text">우울감이나 심혈관계 질환을 비롯한 여러 건강 문제의 위험과도 연관될 수 있습니다.</span></div>
+      <div id="caption-062" class="clip caption" data-start="253.65" data-duration="4.25" data-track-index="2"><span class="caption-text">주말에 몰아서 자는 것이 일시적으로 피로를 줄여줄 수는 있지만,</span></div>
+      <div id="caption-063" class="clip caption" data-start="257.9" data-duration="4.25" data-track-index="2"><span class="caption-text">평일의 수면 부족을 완전히 없었던 일로 만들지는 못합니다.</span></div>
+      <div id="caption-064" class="clip caption" data-start="262.15" data-duration="4.5" data-track-index="2"><span class="caption-text">결국 가장 좋은 방법은 평일에 부족하게 자고 주말에 보충하는 것이 아니라,</span></div>
+      <div id="caption-065" class="clip caption" data-start="266.65" data-duration="2.29" data-track-index="2"><span class="caption-text">매일 필요한 수면 시간을 확보하는 것입니다.</span></div>
 
-      <div
-        id="credit-01-question"
-        class="clip credit"
-        data-start="0.0"
-        data-duration="2.24"
-        data-track-index="3"
-      >Photo: engin akyurt / Unsplash</div>
-      <div
-        id="credit-02-weekday-weekend"
-        class="clip credit"
-        data-start="2.24"
-        data-duration="7.48"
-        data-track-index="3"
-      >Photo: iam_os / Unsplash</div>
-      <div
-        id="credit-03-late-work"
-        class="clip credit"
-        data-start="9.72"
-        data-duration="7.48"
-        data-track-index="3"
-      >Photo: Faraaz Zuberi / Unsplash</div>
-      <div
-        id="credit-04-constant-fatigue"
-        class="clip credit"
-        data-start="17.2"
-        data-duration="6.23"
-        data-track-index="3"
-      >Photo: Vitaly Gariev / Unsplash</div>
-      <div
-        id="credit-05-todays-topics"
-        class="clip credit"
-        data-start="23.43"
-        data-duration="18.69"
-        data-track-index="3"
-      >Photo: Jan Kahánek / Unsplash</div>
-      <div
-        id="credit-06-how-many-hours"
-        class="clip credit"
-        data-start="42.12"
-        data-duration="6.6"
-        data-track-index="3"
-      >Photo: Suhas Hanjar / Unsplash</div>
-      <div
-        id="credit-07-seven-to-nine"
-        class="clip credit"
-        data-start="48.72"
-        data-duration="12.46"
-        data-track-index="3"
-      >Photo: Shane / Unsplash</div>
-      <div
-        id="credit-08-reverse-calc"
-        class="clip credit"
-        data-start="61.18"
-        data-duration="18.32"
-        data-track-index="3"
-      >Photo: Árpád Czapp / Unsplash</div>
-      <div
-        id="credit-09-real-sleep-time"
-        class="clip credit"
-        data-start="79.5"
-        data-duration="14.08"
-        data-track-index="3"
-      >Photo: Lisa Marie Theck / Unsplash</div>
-      <div
-        id="credit-10-consistency"
-        class="clip credit"
-        data-start="93.58"
-        data-duration="4.98"
-        data-track-index="3"
-      >Photo: Ruben Mavarez / Unsplash</div>
-      <div
-        id="credit-11-weekend-shift"
-        class="clip credit"
-        data-start="98.56"
-        data-duration="7.23"
-        data-track-index="3"
-      >Photo: JESHOOTS.COM / Unsplash</div>
-      <div
-        id="credit-12-keep-within-hours"
-        class="clip credit"
-        data-start="105.79"
-        data-duration="5.61"
-        data-track-index="3"
-      >Photo: Eric Rothermel / Unsplash</div>
-      <div
-        id="credit-13-circadian-clock"
-        class="clip credit"
-        data-start="111.4"
-        data-duration="14.58"
-        data-track-index="3"
-      >Photo: Leonie Zettl / Unsplash</div>
-      <div
-        id="credit-14-predictable-cycle"
-        class="clip credit"
-        data-start="125.98"
-        data-duration="12.96"
-        data-track-index="3"
-      >Photo: Bobby / Unsplash</div>
-      <div
-        id="credit-15-focus-judgment"
-        class="clip credit"
-        data-start="138.94"
-        data-duration="19.31"
-        data-track-index="3"
-      >Photo: Icons8 Team / Unsplash</div>
-      <div
-        id="credit-16-emotion-regulation"
-        class="clip credit"
-        data-start="158.25"
-        data-duration="12.34"
-        data-track-index="3"
-      >Photo: Candice Picard / Unsplash</div>
-      <div
-        id="credit-17-physical-recovery"
-        class="clip credit"
-        data-start="170.59"
-        data-duration="18.07"
-        data-track-index="3"
-      >Photo: bruce mars / Unsplash</div>
-      <div
-        id="credit-18-monday-jetlag"
-        class="clip credit"
-        data-start="188.66"
-        data-duration="17.2"
-        data-track-index="3"
-      >Photo: Nic Y-C / Unsplash</div>
-      <div
-        id="credit-19-focus-loss"
-        class="clip credit"
-        data-start="205.86"
-        data-duration="11.34"
-        data-track-index="3"
-      >Photo: Christian Velitchkov / Unsplash</div>
-      <div
-        id="credit-20-driving-danger"
-        class="clip credit"
-        data-start="217.2"
-        data-duration="7.1"
-        data-track-index="3"
-      >Photo: Charles Postiaux / Unsplash</div>
-      <div
-        id="credit-21-emotional-stress"
-        class="clip credit"
-        data-start="224.3"
-        data-duration="5.98"
-        data-track-index="3"
-      >Photo: Elisa Ventur / Unsplash</div>
-      <div
-        id="credit-22-late-night-cravings"
-        class="clip credit"
-        data-start="230.28"
-        data-duration="11.71"
-        data-track-index="3"
-      >Photo: nrd / Unsplash</div>
-      <div
-        id="credit-23-long-term-health"
-        class="clip credit"
-        data-start="241.99"
-        data-duration="9.1"
-        data-track-index="3"
-      >Photo: Hush Naidoo Jade Photography / Unsplash</div>
-      <div
-        id="credit-24-weekend-catchup"
-        class="clip credit"
-        data-start="251.09"
-        data-duration="8.1"
-        data-track-index="3"
-      >Photo: Greg Pappas / Unsplash</div>
-      <div
-        id="credit-25-daily-consistency"
-        class="clip credit"
-        data-start="259.19"
-        data-duration="9.75"
-        data-track-index="3"
-      >Photo: bruce mars / Unsplash</div>
+      <div id="credit-01-question" class="clip credit" data-start="0.0" data-duration="2.24" data-track-index="3">Photo: engin akyurt / Unsplash</div>
+      <div id="credit-02-weekday-weekend" class="clip credit" data-start="2.24" data-duration="7.48" data-track-index="3">Photo: iam_os / Unsplash</div>
+      <div id="credit-03-late-work" class="clip credit" data-start="9.72" data-duration="7.48" data-track-index="3">Photo: Faraaz Zuberi / Unsplash</div>
+      <div id="credit-04-constant-fatigue" class="clip credit" data-start="17.2" data-duration="6.23" data-track-index="3">Photo: Vitaly Gariev / Unsplash</div>
+      <div id="credit-05-todays-topics" class="clip credit" data-start="23.43" data-duration="18.69" data-track-index="3">Photo: Jan Kahánek / Unsplash</div>
+      <div id="credit-06-how-many-hours" class="clip credit" data-start="42.12" data-duration="6.6" data-track-index="3">Photo: Suhas Hanjar / Unsplash</div>
+      <div id="credit-07-seven-to-nine" class="clip credit" data-start="48.72" data-duration="12.46" data-track-index="3">Photo: Shane / Unsplash</div>
+      <div id="credit-08-reverse-calc" class="clip credit" data-start="61.18" data-duration="18.32" data-track-index="3">Photo: Árpád Czapp / Unsplash</div>
+      <div id="credit-09-real-sleep-time" class="clip credit" data-start="79.5" data-duration="14.08" data-track-index="3">Photo: Lisa Marie Theck / Unsplash</div>
+      <div id="credit-10-consistency" class="clip credit" data-start="93.58" data-duration="4.98" data-track-index="3">Photo: Ruben Mavarez / Unsplash</div>
+      <div id="credit-11-weekend-shift" class="clip credit" data-start="98.56" data-duration="7.23" data-track-index="3">Photo: JESHOOTS.COM / Unsplash</div>
+      <div id="credit-12-keep-within-hours" class="clip credit" data-start="105.79" data-duration="5.61" data-track-index="3">Photo: Eric Rothermel / Unsplash</div>
+      <div id="credit-13-circadian-clock" class="clip credit" data-start="111.4" data-duration="14.58" data-track-index="3">Photo: Leonie Zettl / Unsplash</div>
+      <div id="credit-14-predictable-cycle" class="clip credit" data-start="125.98" data-duration="12.96" data-track-index="3">Photo: Bobby / Unsplash</div>
+      <div id="credit-15-focus-judgment" class="clip credit" data-start="138.94" data-duration="19.31" data-track-index="3">Photo: Icons8 Team / Unsplash</div>
+      <div id="credit-16-emotion-regulation" class="clip credit" data-start="158.25" data-duration="12.34" data-track-index="3">Photo: Candice Picard / Unsplash</div>
+      <div id="credit-17-physical-recovery" class="clip credit" data-start="170.59" data-duration="18.07" data-track-index="3">Photo: bruce mars / Unsplash</div>
+      <div id="credit-18-monday-jetlag" class="clip credit" data-start="188.66" data-duration="17.2" data-track-index="3">Photo: Nic Y-C / Unsplash</div>
+      <div id="credit-19-focus-loss" class="clip credit" data-start="205.86" data-duration="11.34" data-track-index="3">Photo: Christian Velitchkov / Unsplash</div>
+      <div id="credit-20-driving-danger" class="clip credit" data-start="217.2" data-duration="7.1" data-track-index="3">Photo: Charles Postiaux / Unsplash</div>
+      <div id="credit-21-emotional-stress" class="clip credit" data-start="224.3" data-duration="5.98" data-track-index="3">Photo: Elisa Ventur / Unsplash</div>
+      <div id="credit-22-late-night-cravings" class="clip credit" data-start="230.28" data-duration="11.71" data-track-index="3">Photo: nrd / Unsplash</div>
+      <div id="credit-23-long-term-health" class="clip credit" data-start="241.99" data-duration="9.1" data-track-index="3">Photo: Hush Naidoo Jade Photography / Unsplash</div>
+      <div id="credit-24-weekend-catchup" class="clip credit" data-start="251.09" data-duration="8.1" data-track-index="3">Photo: Greg Pappas / Unsplash</div>
+      <div id="credit-25-daily-consistency" class="clip credit" data-start="259.19" data-duration="9.75" data-track-index="3">Photo: bruce mars / Unsplash</div>
     </div>
 
     <script>
       window.__timelines = window.__timelines || {};
       const tl = gsap.timeline({ paused: true });
-
       tl.fromTo("#beat-01-question .bg-img", {opacity: 0}, {opacity: 1, duration: 0.35, ease: "none"}, 0.0);
       tl.fromTo("#beat-01-question .bg-img", {scale: 1.0}, {scale: 1.1, duration: 2.24, ease: "none"}, 0.0);
       tl.set   ("#beat-01-question .bg-img", {opacity: 0, scale: 1.0}, 2.24);
@@ -1069,7 +271,6 @@
       tl.fromTo("#beat-25-daily-consistency .bg-img", {opacity: 0}, {opacity: 1, duration: 0.35, ease: "none"}, 259.19);
       tl.fromTo("#beat-25-daily-consistency .bg-img", {scale: 1.0}, {scale: 1.1, duration: 9.75, ease: "none"}, 259.19);
       tl.set   ("#beat-25-daily-consistency .bg-img", {opacity: 0, scale: 1.0}, 268.94);
-
       window.__timelines["main"] = tl;
     </script>
   </body>
