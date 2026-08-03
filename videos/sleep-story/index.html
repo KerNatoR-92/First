@@ -39,10 +39,12 @@
         position: absolute;
         right: 24px;
         bottom: 20px;
-        color: rgba(255, 255, 255, 0.72);
+        color: #ffffff;
         font-size: 14px;
         letter-spacing: 0.02em;
-        text-shadow: 0 1px 2px rgba(0, 0, 0, 0.65);
+        padding: 6px 12px;
+        border-radius: 4px;
+        background: rgba(0, 0, 0, 0.55);
       }
     </style>
   </head>
@@ -55,7 +57,6 @@
       data-width="1920"
       data-height="1080"
     >
-      <!-- Narration: A1 then A2, back-to-back. Track 0 = audio bed. -->
       <audio
         id="narration-a1"
         class="clip"
@@ -77,63 +78,456 @@
         preload="metadata"
       ></audio>
 
-      <!-- Beat backgrounds. Track 1 = full-bleed photo. Wrapper is the clip so
-           the framework owns visibility; the inner <img> receives the fade tween. -->
       <div
-        id="beat-sleeping"
+        id="beat-01-question"
         class="clip beat"
-        data-start="0"
-        data-duration="5"
+        data-start="0.0"
+        data-duration="2.24"
         data-track-index="1"
       >
-        <img class="bg-img" src="assets/frames/01-sleeping.jpg" alt="Person sleeping" />
+        <img class="bg-img" src="assets/frames/01-question.jpg" alt="01-question" />
       </div>
       <div
-        id="beat-yawning"
+        id="beat-02-weekday-weekend"
         class="clip beat"
-        data-start="5"
-        data-duration="105.51"
+        data-start="2.24"
+        data-duration="7.48"
         data-track-index="1"
       >
-        <img class="bg-img" src="assets/frames/02-yawning.jpg" alt="Person yawning" />
+        <img class="bg-img" src="assets/frames/02-weekday-weekend.jpg" alt="02-weekday-weekend" />
       </div>
       <div
-        id="beat-late-night"
+        id="beat-03-late-work"
         class="clip beat"
-        data-start="110.51"
-        data-duration="158.43"
+        data-start="9.72"
+        data-duration="7.48"
         data-track-index="1"
       >
-        <img class="bg-img" src="assets/frames/03-late-night.jpg" alt="Person awake late at night" />
+        <img class="bg-img" src="assets/frames/03-late-work.jpg" alt="03-late-work" />
+      </div>
+      <div
+        id="beat-04-constant-fatigue"
+        class="clip beat"
+        data-start="17.2"
+        data-duration="6.23"
+        data-track-index="1"
+      >
+        <img class="bg-img" src="assets/frames/04-constant-fatigue.jpg" alt="04-constant-fatigue" />
+      </div>
+      <div
+        id="beat-05-todays-topics"
+        class="clip beat"
+        data-start="23.43"
+        data-duration="18.69"
+        data-track-index="1"
+      >
+        <img class="bg-img" src="assets/frames/05-todays-topics.jpg" alt="05-todays-topics" />
+      </div>
+      <div
+        id="beat-06-how-many-hours"
+        class="clip beat"
+        data-start="42.12"
+        data-duration="6.6"
+        data-track-index="1"
+      >
+        <img class="bg-img" src="assets/frames/06-how-many-hours.jpg" alt="06-how-many-hours" />
+      </div>
+      <div
+        id="beat-07-seven-to-nine"
+        class="clip beat"
+        data-start="48.72"
+        data-duration="12.46"
+        data-track-index="1"
+      >
+        <img class="bg-img" src="assets/frames/07-seven-to-nine.jpg" alt="07-seven-to-nine" />
+      </div>
+      <div
+        id="beat-08-reverse-calc"
+        class="clip beat"
+        data-start="61.18"
+        data-duration="18.32"
+        data-track-index="1"
+      >
+        <img class="bg-img" src="assets/frames/08-reverse-calc.jpg" alt="08-reverse-calc" />
+      </div>
+      <div
+        id="beat-09-real-sleep-time"
+        class="clip beat"
+        data-start="79.5"
+        data-duration="14.08"
+        data-track-index="1"
+      >
+        <img class="bg-img" src="assets/frames/09-real-sleep-time.jpg" alt="09-real-sleep-time" />
+      </div>
+      <div
+        id="beat-10-consistency"
+        class="clip beat"
+        data-start="93.58"
+        data-duration="4.98"
+        data-track-index="1"
+      >
+        <img class="bg-img" src="assets/frames/10-consistency.jpg" alt="10-consistency" />
+      </div>
+      <div
+        id="beat-11-weekend-shift"
+        class="clip beat"
+        data-start="98.56"
+        data-duration="7.23"
+        data-track-index="1"
+      >
+        <img class="bg-img" src="assets/frames/11-weekend-shift.jpg" alt="11-weekend-shift" />
+      </div>
+      <div
+        id="beat-12-keep-within-hours"
+        class="clip beat"
+        data-start="105.79"
+        data-duration="5.61"
+        data-track-index="1"
+      >
+        <img class="bg-img" src="assets/frames/12-keep-within-hours.jpg" alt="12-keep-within-hours" />
+      </div>
+      <div
+        id="beat-13-circadian-clock"
+        class="clip beat"
+        data-start="111.4"
+        data-duration="14.58"
+        data-track-index="1"
+      >
+        <img class="bg-img" src="assets/frames/13-circadian-clock.jpg" alt="13-circadian-clock" />
+      </div>
+      <div
+        id="beat-14-predictable-cycle"
+        class="clip beat"
+        data-start="125.98"
+        data-duration="12.96"
+        data-track-index="1"
+      >
+        <img class="bg-img" src="assets/frames/14-predictable-cycle.jpg" alt="14-predictable-cycle" />
+      </div>
+      <div
+        id="beat-15-focus-judgment"
+        class="clip beat"
+        data-start="138.94"
+        data-duration="19.31"
+        data-track-index="1"
+      >
+        <img class="bg-img" src="assets/frames/15-focus-judgment.jpg" alt="15-focus-judgment" />
+      </div>
+      <div
+        id="beat-16-emotion-regulation"
+        class="clip beat"
+        data-start="158.25"
+        data-duration="12.34"
+        data-track-index="1"
+      >
+        <img class="bg-img" src="assets/frames/16-emotion-regulation.jpg" alt="16-emotion-regulation" />
+      </div>
+      <div
+        id="beat-17-physical-recovery"
+        class="clip beat"
+        data-start="170.59"
+        data-duration="18.07"
+        data-track-index="1"
+      >
+        <img class="bg-img" src="assets/frames/17-physical-recovery.jpg" alt="17-physical-recovery" />
+      </div>
+      <div
+        id="beat-18-monday-jetlag"
+        class="clip beat"
+        data-start="188.66"
+        data-duration="17.2"
+        data-track-index="1"
+      >
+        <img class="bg-img" src="assets/frames/18-monday-jetlag.jpg" alt="18-monday-jetlag" />
+      </div>
+      <div
+        id="beat-19-focus-loss"
+        class="clip beat"
+        data-start="205.86"
+        data-duration="11.34"
+        data-track-index="1"
+      >
+        <img class="bg-img" src="assets/frames/19-focus-loss.jpg" alt="19-focus-loss" />
+      </div>
+      <div
+        id="beat-20-driving-danger"
+        class="clip beat"
+        data-start="217.2"
+        data-duration="7.1"
+        data-track-index="1"
+      >
+        <img class="bg-img" src="assets/frames/20-driving-danger.jpg" alt="20-driving-danger" />
+      </div>
+      <div
+        id="beat-21-emotional-stress"
+        class="clip beat"
+        data-start="224.3"
+        data-duration="5.98"
+        data-track-index="1"
+      >
+        <img class="bg-img" src="assets/frames/21-emotional-stress.jpg" alt="21-emotional-stress" />
+      </div>
+      <div
+        id="beat-22-late-night-cravings"
+        class="clip beat"
+        data-start="230.28"
+        data-duration="11.71"
+        data-track-index="1"
+      >
+        <img class="bg-img" src="assets/frames/22-late-night-cravings.jpg" alt="22-late-night-cravings" />
+      </div>
+      <div
+        id="beat-23-long-term-health"
+        class="clip beat"
+        data-start="241.99"
+        data-duration="9.1"
+        data-track-index="1"
+      >
+        <img class="bg-img" src="assets/frames/23-long-term-health.jpg" alt="23-long-term-health" />
+      </div>
+      <div
+        id="beat-24-weekend-catchup"
+        class="clip beat"
+        data-start="251.09"
+        data-duration="8.1"
+        data-track-index="1"
+      >
+        <img class="bg-img" src="assets/frames/24-weekend-catchup.jpg" alt="24-weekend-catchup" />
+      </div>
+      <div
+        id="beat-25-daily-consistency"
+        class="clip beat"
+        data-start="259.19"
+        data-duration="9.75"
+        data-track-index="1"
+      >
+        <img class="bg-img" src="assets/frames/25-daily-consistency.jpg" alt="25-daily-consistency" />
       </div>
 
-      <!-- Per-beat Unsplash photographer credit. Track 2 = overlay. -->
       <div
-        id="credit-sleeping"
+        id="credit-01-question"
         class="clip credit"
-        data-start="0"
-        data-duration="5"
+        data-start="0.0"
+        data-duration="2.24"
+        data-track-index="2"
+      >
+        Photo: engin akyurt / Unsplash
+      </div>
+      <div
+        id="credit-02-weekday-weekend"
+        class="clip credit"
+        data-start="2.24"
+        data-duration="7.48"
+        data-track-index="2"
+      >
+        Photo: iam_os / Unsplash
+      </div>
+      <div
+        id="credit-03-late-work"
+        class="clip credit"
+        data-start="9.72"
+        data-duration="7.48"
+        data-track-index="2"
+      >
+        Photo: Faraaz Zuberi / Unsplash
+      </div>
+      <div
+        id="credit-04-constant-fatigue"
+        class="clip credit"
+        data-start="17.2"
+        data-duration="6.23"
+        data-track-index="2"
+      >
+        Photo: Vitaly Gariev / Unsplash
+      </div>
+      <div
+        id="credit-05-todays-topics"
+        class="clip credit"
+        data-start="23.43"
+        data-duration="18.69"
+        data-track-index="2"
+      >
+        Photo: Jan Kahánek / Unsplash
+      </div>
+      <div
+        id="credit-06-how-many-hours"
+        class="clip credit"
+        data-start="42.12"
+        data-duration="6.6"
+        data-track-index="2"
+      >
+        Photo: Suhas Hanjar / Unsplash
+      </div>
+      <div
+        id="credit-07-seven-to-nine"
+        class="clip credit"
+        data-start="48.72"
+        data-duration="12.46"
+        data-track-index="2"
+      >
+        Photo: Shane / Unsplash
+      </div>
+      <div
+        id="credit-08-reverse-calc"
+        class="clip credit"
+        data-start="61.18"
+        data-duration="18.32"
+        data-track-index="2"
+      >
+        Photo: Árpád Czapp / Unsplash
+      </div>
+      <div
+        id="credit-09-real-sleep-time"
+        class="clip credit"
+        data-start="79.5"
+        data-duration="14.08"
+        data-track-index="2"
+      >
+        Photo: Lisa Marie Theck / Unsplash
+      </div>
+      <div
+        id="credit-10-consistency"
+        class="clip credit"
+        data-start="93.58"
+        data-duration="4.98"
+        data-track-index="2"
+      >
+        Photo: Ruben Mavarez / Unsplash
+      </div>
+      <div
+        id="credit-11-weekend-shift"
+        class="clip credit"
+        data-start="98.56"
+        data-duration="7.23"
+        data-track-index="2"
+      >
+        Photo: JESHOOTS.COM / Unsplash
+      </div>
+      <div
+        id="credit-12-keep-within-hours"
+        class="clip credit"
+        data-start="105.79"
+        data-duration="5.61"
+        data-track-index="2"
+      >
+        Photo: Eric Rothermel / Unsplash
+      </div>
+      <div
+        id="credit-13-circadian-clock"
+        class="clip credit"
+        data-start="111.4"
+        data-duration="14.58"
+        data-track-index="2"
+      >
+        Photo: Leonie Zettl / Unsplash
+      </div>
+      <div
+        id="credit-14-predictable-cycle"
+        class="clip credit"
+        data-start="125.98"
+        data-duration="12.96"
+        data-track-index="2"
+      >
+        Photo: Bobby / Unsplash
+      </div>
+      <div
+        id="credit-15-focus-judgment"
+        class="clip credit"
+        data-start="138.94"
+        data-duration="19.31"
+        data-track-index="2"
+      >
+        Photo: Icons8 Team / Unsplash
+      </div>
+      <div
+        id="credit-16-emotion-regulation"
+        class="clip credit"
+        data-start="158.25"
+        data-duration="12.34"
+        data-track-index="2"
+      >
+        Photo: Candice Picard / Unsplash
+      </div>
+      <div
+        id="credit-17-physical-recovery"
+        class="clip credit"
+        data-start="170.59"
+        data-duration="18.07"
+        data-track-index="2"
+      >
+        Photo: bruce mars / Unsplash
+      </div>
+      <div
+        id="credit-18-monday-jetlag"
+        class="clip credit"
+        data-start="188.66"
+        data-duration="17.2"
+        data-track-index="2"
+      >
+        Photo: Nic Y-C / Unsplash
+      </div>
+      <div
+        id="credit-19-focus-loss"
+        class="clip credit"
+        data-start="205.86"
+        data-duration="11.34"
+        data-track-index="2"
+      >
+        Photo: Christian Velitchkov / Unsplash
+      </div>
+      <div
+        id="credit-20-driving-danger"
+        class="clip credit"
+        data-start="217.2"
+        data-duration="7.1"
+        data-track-index="2"
+      >
+        Photo: Charles Postiaux / Unsplash
+      </div>
+      <div
+        id="credit-21-emotional-stress"
+        class="clip credit"
+        data-start="224.3"
+        data-duration="5.98"
+        data-track-index="2"
+      >
+        Photo: Elisa Ventur / Unsplash
+      </div>
+      <div
+        id="credit-22-late-night-cravings"
+        class="clip credit"
+        data-start="230.28"
+        data-duration="11.71"
+        data-track-index="2"
+      >
+        Photo: nrd / Unsplash
+      </div>
+      <div
+        id="credit-23-long-term-health"
+        class="clip credit"
+        data-start="241.99"
+        data-duration="9.1"
+        data-track-index="2"
+      >
+        Photo: Hush Naidoo Jade Photography / Unsplash
+      </div>
+      <div
+        id="credit-24-weekend-catchup"
+        class="clip credit"
+        data-start="251.09"
+        data-duration="8.1"
         data-track-index="2"
       >
         Photo: Greg Pappas / Unsplash
       </div>
       <div
-        id="credit-yawning"
+        id="credit-25-daily-consistency"
         class="clip credit"
-        data-start="5"
-        data-duration="105.51"
+        data-start="259.19"
+        data-duration="9.75"
         data-track-index="2"
       >
-        Photo: Adrian Swancar / Unsplash
-      </div>
-      <div
-        id="credit-late-night"
-        class="clip credit"
-        data-start="110.51"
-        data-duration="158.43"
-        data-track-index="2"
-      >
-        Photo: Clint Patterson / Unsplash
+        Photo: bruce mars / Unsplash
       </div>
     </div>
 
@@ -141,16 +535,56 @@
       window.__timelines = window.__timelines || {};
       const tl = gsap.timeline({ paused: true });
 
-      // Short cross-fades on the inner <img> so the beat boundaries feel less like
-      // hard cuts. Framework owns clip visibility via the wrapper's class="clip"
-      // + data-* timing; opacity tweens are safe on the non-clip child.
-      tl.fromTo("#beat-sleeping .bg-img",   { opacity: 0 }, { opacity: 1, duration: 0.5 }, 0);
-      tl.set  ("#beat-sleeping .bg-img",    { opacity: 0 }, 5);
-
-      tl.fromTo("#beat-yawning .bg-img",    { opacity: 0 }, { opacity: 1, duration: 0.5 }, 5);
-      tl.set  ("#beat-yawning .bg-img",     { opacity: 0 }, 110.51);
-
-      tl.fromTo("#beat-late-night .bg-img", { opacity: 0 }, { opacity: 1, duration: 0.75 }, 110.51);
+      tl.fromTo("#beat-01-question .bg-img", {opacity: 0}, {opacity: 1, duration: 0.35}, 0.0);
+      tl.set   ("#beat-01-question .bg-img", {opacity: 0}, 2.24);
+      tl.fromTo("#beat-02-weekday-weekend .bg-img", {opacity: 0}, {opacity: 1, duration: 0.35}, 2.24);
+      tl.set   ("#beat-02-weekday-weekend .bg-img", {opacity: 0}, 9.72);
+      tl.fromTo("#beat-03-late-work .bg-img", {opacity: 0}, {opacity: 1, duration: 0.35}, 9.72);
+      tl.set   ("#beat-03-late-work .bg-img", {opacity: 0}, 17.2);
+      tl.fromTo("#beat-04-constant-fatigue .bg-img", {opacity: 0}, {opacity: 1, duration: 0.35}, 17.2);
+      tl.set   ("#beat-04-constant-fatigue .bg-img", {opacity: 0}, 23.43);
+      tl.fromTo("#beat-05-todays-topics .bg-img", {opacity: 0}, {opacity: 1, duration: 0.35}, 23.43);
+      tl.set   ("#beat-05-todays-topics .bg-img", {opacity: 0}, 42.12);
+      tl.fromTo("#beat-06-how-many-hours .bg-img", {opacity: 0}, {opacity: 1, duration: 0.35}, 42.12);
+      tl.set   ("#beat-06-how-many-hours .bg-img", {opacity: 0}, 48.72);
+      tl.fromTo("#beat-07-seven-to-nine .bg-img", {opacity: 0}, {opacity: 1, duration: 0.35}, 48.72);
+      tl.set   ("#beat-07-seven-to-nine .bg-img", {opacity: 0}, 61.18);
+      tl.fromTo("#beat-08-reverse-calc .bg-img", {opacity: 0}, {opacity: 1, duration: 0.35}, 61.18);
+      tl.set   ("#beat-08-reverse-calc .bg-img", {opacity: 0}, 79.5);
+      tl.fromTo("#beat-09-real-sleep-time .bg-img", {opacity: 0}, {opacity: 1, duration: 0.35}, 79.5);
+      tl.set   ("#beat-09-real-sleep-time .bg-img", {opacity: 0}, 93.58);
+      tl.fromTo("#beat-10-consistency .bg-img", {opacity: 0}, {opacity: 1, duration: 0.35}, 93.58);
+      tl.set   ("#beat-10-consistency .bg-img", {opacity: 0}, 98.56);
+      tl.fromTo("#beat-11-weekend-shift .bg-img", {opacity: 0}, {opacity: 1, duration: 0.35}, 98.56);
+      tl.set   ("#beat-11-weekend-shift .bg-img", {opacity: 0}, 105.79);
+      tl.fromTo("#beat-12-keep-within-hours .bg-img", {opacity: 0}, {opacity: 1, duration: 0.35}, 105.79);
+      tl.set   ("#beat-12-keep-within-hours .bg-img", {opacity: 0}, 111.4);
+      tl.fromTo("#beat-13-circadian-clock .bg-img", {opacity: 0}, {opacity: 1, duration: 0.35}, 111.4);
+      tl.set   ("#beat-13-circadian-clock .bg-img", {opacity: 0}, 125.98);
+      tl.fromTo("#beat-14-predictable-cycle .bg-img", {opacity: 0}, {opacity: 1, duration: 0.35}, 125.98);
+      tl.set   ("#beat-14-predictable-cycle .bg-img", {opacity: 0}, 138.94);
+      tl.fromTo("#beat-15-focus-judgment .bg-img", {opacity: 0}, {opacity: 1, duration: 0.35}, 138.94);
+      tl.set   ("#beat-15-focus-judgment .bg-img", {opacity: 0}, 158.25);
+      tl.fromTo("#beat-16-emotion-regulation .bg-img", {opacity: 0}, {opacity: 1, duration: 0.35}, 158.25);
+      tl.set   ("#beat-16-emotion-regulation .bg-img", {opacity: 0}, 170.59);
+      tl.fromTo("#beat-17-physical-recovery .bg-img", {opacity: 0}, {opacity: 1, duration: 0.35}, 170.59);
+      tl.set   ("#beat-17-physical-recovery .bg-img", {opacity: 0}, 188.66);
+      tl.fromTo("#beat-18-monday-jetlag .bg-img", {opacity: 0}, {opacity: 1, duration: 0.35}, 188.66);
+      tl.set   ("#beat-18-monday-jetlag .bg-img", {opacity: 0}, 205.86);
+      tl.fromTo("#beat-19-focus-loss .bg-img", {opacity: 0}, {opacity: 1, duration: 0.35}, 205.86);
+      tl.set   ("#beat-19-focus-loss .bg-img", {opacity: 0}, 217.2);
+      tl.fromTo("#beat-20-driving-danger .bg-img", {opacity: 0}, {opacity: 1, duration: 0.35}, 217.2);
+      tl.set   ("#beat-20-driving-danger .bg-img", {opacity: 0}, 224.3);
+      tl.fromTo("#beat-21-emotional-stress .bg-img", {opacity: 0}, {opacity: 1, duration: 0.35}, 224.3);
+      tl.set   ("#beat-21-emotional-stress .bg-img", {opacity: 0}, 230.28);
+      tl.fromTo("#beat-22-late-night-cravings .bg-img", {opacity: 0}, {opacity: 1, duration: 0.35}, 230.28);
+      tl.set   ("#beat-22-late-night-cravings .bg-img", {opacity: 0}, 241.99);
+      tl.fromTo("#beat-23-long-term-health .bg-img", {opacity: 0}, {opacity: 1, duration: 0.35}, 241.99);
+      tl.set   ("#beat-23-long-term-health .bg-img", {opacity: 0}, 251.09);
+      tl.fromTo("#beat-24-weekend-catchup .bg-img", {opacity: 0}, {opacity: 1, duration: 0.35}, 251.09);
+      tl.set   ("#beat-24-weekend-catchup .bg-img", {opacity: 0}, 259.19);
+      tl.fromTo("#beat-25-daily-consistency .bg-img", {opacity: 0}, {opacity: 1, duration: 0.35}, 259.19);
+      tl.set   ("#beat-25-daily-consistency .bg-img", {opacity: 0}, 268.94);
 
       window.__timelines["main"] = tl;
     </script>
