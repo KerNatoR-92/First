@@ -1,0 +1,305 @@
+{
+  "frames": [
+    {
+      "id": "01-question",
+      "paragraphs": [
+        1
+      ],
+      "query": "alarm clock nightstand bedroom night",
+      "image": "videos/office-sleep/assets/frames/01-question.jpg",
+      "photographer": "engin akyurt",
+      "photographer_url": "https://unsplash.com/@enginakyurt",
+      "photo_url": "https://unsplash.com/photos/a-red-and-black-alarm-clock-on-a-black-background-Lr7kDZmFq3U",
+      "unsplash_id": "Lr7kDZmFq3U"
+    },
+    {
+      "id": "02-weekday-alarm",
+      "paragraphs": [
+        2
+      ],
+      "query": "tired woman turning off alarm bed morning",
+      "image": "videos/office-sleep/assets/frames/02-weekday-alarm.jpg",
+      "photographer": "Maddi Bazzocco",
+      "photographer_url": "https://unsplash.com/@maddibazzocco",
+      "photo_url": "https://unsplash.com/photos/naked-woman-lying-on-bed-during-daytime-519z6xuiMxc",
+      "unsplash_id": "519z6xuiMxc"
+    },
+    {
+      "id": "03-overtime-night",
+      "paragraphs": [
+        3
+      ],
+      "query": "late night office worker overtime computer glow",
+      "image": "videos/office-sleep/assets/frames/03-overtime-night.jpg",
+      "photographer": "Faraaz Zuberi",
+      "photographer_url": "https://unsplash.com/@ffz_20",
+      "photo_url": "https://unsplash.com/photos/a-laptop-sits-on-a-desk-YoIq2GyYcAU",
+      "unsplash_id": "YoIq2GyYcAU"
+    },
+    {
+      "id": "04-fatigue",
+      "paragraphs": [
+        4
+      ],
+      "query": "exhausted man rubbing eyes office desk",
+      "image": "videos/office-sleep/assets/frames/04-fatigue.jpg",
+      "photographer": "Vitaly Gariev",
+      "photographer_url": "https://unsplash.com/@silverkblack",
+      "photo_url": "https://unsplash.com/photos/man-rubbing-his-face-in-front-of-laptop-bl7h_R-PKpU",
+      "unsplash_id": "bl7h_R-PKpU"
+    },
+    {
+      "id": "05-question-hours",
+      "paragraphs": [
+        5
+      ],
+      "query": "sleep schedule notebook clock planner",
+      "image": "videos/office-sleep/assets/frames/05-question-hours.jpg",
+      "photographer": "2H Media",
+      "photographer_url": "https://unsplash.com/@2hmedia",
+      "photo_url": "https://unsplash.com/photos/a-planner-with-two-pens-sitting-on-top-of-it-cdDDWLezAJ0",
+      "unsplash_id": "cdDDWLezAJ0"
+    },
+    {
+      "id": "06-seven-nine",
+      "paragraphs": [
+        6
+      ],
+      "query": "adult peaceful sleep bedroom pillow",
+      "image": "videos/office-sleep/assets/frames/06-seven-nine.jpg",
+      "photographer": "Slaapwijsheid.nl",
+      "photographer_url": "https://unsplash.com/@slaapwijsheid",
+      "photo_url": "https://unsplash.com/photos/a-woman-sleeping-on-a-bed-with-a-blue-blanket-6qxUg4jTWdE",
+      "unsplash_id": "6qxUg4jTWdE"
+    },
+    {
+      "id": "07-wake-time",
+      "paragraphs": [
+        7
+      ],
+      "query": "morning alarm clock bedside sunlight",
+      "image": "videos/office-sleep/assets/frames/07-wake-time.jpg",
+      "photographer": "Efe Kekikciler",
+      "photographer_url": "https://unsplash.com/@mutanzom",
+      "photo_url": "https://unsplash.com/photos/warm-sunlight-casts-shadows-on-a-wall-suXAfsvehOE",
+      "unsplash_id": "suXAfsvehOE"
+    },
+    {
+      "id": "08-bedtime-vs-sleep",
+      "paragraphs": [
+        8
+      ],
+      "query": "woman lying awake dark bedroom staring ceiling",
+      "image": "videos/office-sleep/assets/frames/08-bedtime-vs-sleep.jpg",
+      "photographer": "Lisa Marie Theck",
+      "photographer_url": "https://unsplash.com/@lisa_marie_theck",
+      "photo_url": "https://unsplash.com/photos/a-woman-laying-on-a-bed-with-her-eyes-closed-WAChxeKLxuw",
+      "unsplash_id": "WAChxeKLxuw"
+    },
+    {
+      "id": "09-fall-asleep-30",
+      "paragraphs": [
+        9
+      ],
+      "query": "person reading book bed dim lamp evening",
+      "image": "videos/office-sleep/assets/frames/09-fall-asleep-30.jpg",
+      "photographer": "Nong",
+      "photographer_url": "https://unsplash.com/@californong",
+      "photo_url": "https://unsplash.com/photos/person-holding-string-lights-on-opened-book-9pw4TKvT3po",
+      "unsplash_id": "9pw4TKvT3po"
+    },
+    {
+      "id": "10-one-more-thing",
+      "paragraphs": [
+        10,
+        11
+      ],
+      "query": "morning routine sunrise bedroom wake",
+      "image": "videos/office-sleep/assets/frames/10-one-more-thing.jpg",
+      "photographer": "Mike Von",
+      "photographer_url": "https://unsplash.com/@thevoncomplex",
+      "photo_url": "https://unsplash.com/photos/woman-in-orange-tank-top-and-black-skirt-sitting-on-bed-MTt-nnLFxsM",
+      "unsplash_id": "MTt-nnLFxsM"
+    },
+    {
+      "id": "11-circadian",
+      "paragraphs": [
+        12
+      ],
+      "query": "sunset horizon nature day cycle sky",
+      "image": "videos/office-sleep/assets/frames/11-circadian.jpg",
+      "photographer": "Gennady Zakharin",
+      "photographer_url": "https://unsplash.com/@gennady107",
+      "photo_url": "https://unsplash.com/photos/calm-lake-reflecting-sunset-with-reeds-in-foreground-o7IXg5Frh3I",
+      "unsplash_id": "o7IXg5Frh3I"
+    },
+    {
+      "id": "12-rhythm-learned",
+      "paragraphs": [
+        13
+      ],
+      "query": "morning stretch waking refreshed bedroom",
+      "image": "videos/office-sleep/assets/frames/12-rhythm-learned.jpg",
+      "photographer": "bruce mars",
+      "photographer_url": "https://unsplash.com/@brucemars",
+      "photo_url": "https://unsplash.com/photos/woman-sitting-on-white-bed-while-stretching-wBuPCQiweuA",
+      "unsplash_id": "wBuPCQiweuA"
+    },
+    {
+      "id": "13-weekend-shift",
+      "paragraphs": [
+        14
+      ],
+      "query": "jet lag airport traveler tired luggage",
+      "image": "videos/office-sleep/assets/frames/13-weekend-shift.jpg",
+      "photographer": "JESHOOTS.COM",
+      "photographer_url": "https://unsplash.com/@jeshoots",
+      "photo_url": "https://unsplash.com/photos/man-sitting-on-gang-chair-with-feet-on-luggage-looking-at-airplane-mSESwdMZr-A",
+      "unsplash_id": "mSESwdMZr-A"
+    },
+    {
+      "id": "14-keep-1-2-hours",
+      "paragraphs": [
+        15
+      ],
+      "query": "weekly planner calendar consistent routine",
+      "image": "videos/office-sleep/assets/frames/14-keep-1-2-hours.jpg",
+      "photographer": "Eric Rothermel",
+      "photographer_url": "https://unsplash.com/@erothermel",
+      "photo_url": "https://unsplash.com/photos/open-monthly-planner-on-wooden-desk-FoKO4DpXamQ",
+      "unsplash_id": "FoKO4DpXamQ"
+    },
+    {
+      "id": "15-changes-question",
+      "paragraphs": [
+        16
+      ],
+      "query": "confused tired eyes closeup fatigue",
+      "image": "videos/office-sleep/assets/frames/15-changes-question.jpg",
+      "photographer": "Amanda Dalbjörn",
+      "photographer_url": "https://unsplash.com/@amandadalbjorn",
+      "photo_url": "https://unsplash.com/photos/close-up-photo-of-persons-eye-fvInY-Gh7sc",
+      "unsplash_id": "fvInY-Gh7sc"
+    },
+    {
+      "id": "16-focus-loss",
+      "paragraphs": [
+        17
+      ],
+      "query": "distracted office worker meeting computer",
+      "image": "videos/office-sleep/assets/frames/16-focus-loss.jpg",
+      "photographer": "Tim van der Kuip",
+      "photographer_url": "https://unsplash.com/@timmykp",
+      "photo_url": "https://unsplash.com/photos/man-sitting-on-chair-wearing-gray-crew-neck-long-sleeved-shirt-using-apple-magic-keyboard-CPs2X8JYmS8",
+      "unsplash_id": "CPs2X8JYmS8"
+    },
+    {
+      "id": "17-mistakes-work",
+      "paragraphs": [
+        18
+      ],
+      "query": "office worker paper documents mistake",
+      "image": "videos/office-sleep/assets/frames/17-mistakes-work.jpg",
+      "photographer": "Anastassia Anufrieva",
+      "photographer_url": "https://unsplash.com/@antoie",
+      "photo_url": "https://unsplash.com/photos/a-woman-sitting-at-a-table-reading-a-paper-ecHGTPfjNfA",
+      "unsplash_id": "ecHGTPfjNfA"
+    },
+    {
+      "id": "18-driving-danger",
+      "paragraphs": [
+        19
+      ],
+      "query": "drowsy driver steering wheel road night",
+      "image": "videos/office-sleep/assets/frames/18-driving-danger.jpg",
+      "photographer": "Charles Postiaux",
+      "photographer_url": "https://unsplash.com/@charlespostiaux",
+      "photo_url": "https://unsplash.com/photos/a-blurry-photo-of-a-person-in-a-car-at-night-R_Umtq1j6gA",
+      "unsplash_id": "R_Umtq1j6gA"
+    },
+    {
+      "id": "19-emotion-impact",
+      "paragraphs": [
+        20
+      ],
+      "query": "sad person window silhouette",
+      "image": "videos/office-sleep/assets/frames/19-emotion-impact.jpg",
+      "photographer": "Noah Silliman",
+      "photographer_url": "https://unsplash.com/@noahsilliman",
+      "photo_url": "https://unsplash.com/photos/person-looking-out-through-window-gzhyKEo_cbU",
+      "unsplash_id": "gzhyKEo_cbU"
+    },
+    {
+      "id": "20-stress-irritable",
+      "paragraphs": [
+        21
+      ],
+      "query": "stressed man office head hands frustrated",
+      "image": "videos/office-sleep/assets/frames/20-stress-irritable.jpg",
+      "photographer": "Sebastian Herrmann",
+      "photographer_url": "https://unsplash.com/@officestock",
+      "photo_url": "https://unsplash.com/photos/a-man-sitting-in-front-of-a-laptop-computer-Ili1gmB9Jes",
+      "unsplash_id": "Ili1gmB9Jes"
+    },
+    {
+      "id": "21-appetite",
+      "paragraphs": [
+        22
+      ],
+      "query": "hungry late night refrigerator kitchen",
+      "image": "videos/office-sleep/assets/frames/21-appetite.jpg",
+      "photographer": "Ernest Brillo",
+      "photographer_url": "https://unsplash.com/@ernest_brillo",
+      "photo_url": "https://unsplash.com/photos/opened-refrigerator-filled-with-bottles-02ldN7R6shw",
+      "unsplash_id": "02ldN7R6shw"
+    },
+    {
+      "id": "22-cravings",
+      "paragraphs": [
+        23
+      ],
+      "query": "sweet dessert late night snack",
+      "image": "videos/office-sleep/assets/frames/22-cravings.jpg",
+      "photographer": "Faqih Abdul",
+      "photographer_url": "https://unsplash.com/@faqihabdul_",
+      "photo_url": "https://unsplash.com/photos/man-working-at-neon-lit-ice-cream-bar-at-night-wwKvyrkRK8g",
+      "unsplash_id": "wwKvyrkRK8g"
+    },
+    {
+      "id": "23-long-term-health",
+      "paragraphs": [
+        24
+      ],
+      "query": "medical checkup doctor stethoscope heart",
+      "image": "videos/office-sleep/assets/frames/23-long-term-health.jpg",
+      "photographer": "Hush Naidoo Jade Photography",
+      "photographer_url": "https://unsplash.com/@hush52",
+      "photo_url": "https://unsplash.com/photos/black-and-gray-stethoscope-yo01Z-9HQAw",
+      "unsplash_id": "yo01Z-9HQAw"
+    },
+    {
+      "id": "24-catchup-question",
+      "paragraphs": [
+        25
+      ],
+      "query": "weekend afternoon sleeping messy bed",
+      "image": "videos/office-sleep/assets/frames/24-catchup-question.jpg",
+      "photographer": "Krišjānis Kazaks",
+      "photographer_url": "https://unsplash.com/@kazaks",
+      "photo_url": "https://unsplash.com/photos/a-bedroom-with-a-bed-and-desk-in-a-room-MB4CeaxOw88",
+      "unsplash_id": "MB4CeaxOw88"
+    },
+    {
+      "id": "25-weekend-relief",
+      "paragraphs": [
+        26
+      ],
+      "query": "peaceful sleep weekend morning cozy",
+      "image": "videos/office-sleep/assets/frames/25-weekend-relief.jpg",
+      "photographer": "Polina Kuzovkova",
+      "photographer_url": "https://unsplash.com/@p_kuzovkova",
+      "photo_url": "https://unsplash.com/photos/a-bed-sitting-under-a-window-next-to-a-night-stand-mq8FusIZ-ac",
+      "unsplash_id": "mq8FusIZ-ac"
+    }
+  ]
+}

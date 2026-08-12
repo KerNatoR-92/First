@@ -1,0 +1,580 @@
+{
+  "output_dir": "videos/office-sleep/assets/frames",
+  "image_size": [
+    1920,
+    1080
+  ],
+  "total_duration": 493.6,
+  "frames": [
+    {
+      "id": "01-question",
+      "paragraphs": [
+        1
+      ],
+      "query": "alarm clock nightstand bedroom night",
+      "orientation": "landscape"
+    },
+    {
+      "id": "02-weekday-alarm",
+      "paragraphs": [
+        2
+      ],
+      "query": "tired woman turning off alarm bed morning",
+      "orientation": "landscape"
+    },
+    {
+      "id": "03-overtime-night",
+      "paragraphs": [
+        3
+      ],
+      "query": "late night office worker overtime computer glow",
+      "orientation": "landscape"
+    },
+    {
+      "id": "04-fatigue",
+      "paragraphs": [
+        4
+      ],
+      "query": "exhausted man rubbing eyes office desk",
+      "orientation": "landscape"
+    },
+    {
+      "id": "05-question-hours",
+      "paragraphs": [
+        5
+      ],
+      "query": "sleep schedule notebook clock planner",
+      "orientation": "landscape"
+    },
+    {
+      "id": "06-seven-nine",
+      "paragraphs": [
+        6
+      ],
+      "query": "adult peaceful sleep bedroom pillow",
+      "orientation": "landscape"
+    },
+    {
+      "id": "07-wake-time",
+      "paragraphs": [
+        7
+      ],
+      "query": "morning alarm clock bedside sunlight",
+      "orientation": "landscape"
+    },
+    {
+      "id": "08-bedtime-vs-sleep",
+      "paragraphs": [
+        8
+      ],
+      "query": "woman lying awake dark bedroom staring ceiling",
+      "orientation": "landscape"
+    },
+    {
+      "id": "09-fall-asleep-30",
+      "paragraphs": [
+        9
+      ],
+      "query": "person reading book bed dim lamp evening",
+      "orientation": "landscape"
+    },
+    {
+      "id": "10-one-more-thing",
+      "paragraphs": [
+        10,
+        11
+      ],
+      "query": "morning routine sunrise bedroom wake",
+      "orientation": "landscape"
+    },
+    {
+      "id": "11-circadian",
+      "paragraphs": [
+        12
+      ],
+      "query": "sunset horizon nature day cycle sky",
+      "orientation": "landscape"
+    },
+    {
+      "id": "12-rhythm-learned",
+      "paragraphs": [
+        13
+      ],
+      "query": "morning stretch waking refreshed bedroom",
+      "orientation": "landscape"
+    },
+    {
+      "id": "13-weekend-shift",
+      "paragraphs": [
+        14
+      ],
+      "query": "jet lag airport traveler tired luggage",
+      "orientation": "landscape"
+    },
+    {
+      "id": "14-keep-1-2-hours",
+      "paragraphs": [
+        15
+      ],
+      "query": "weekly planner calendar consistent routine",
+      "orientation": "landscape"
+    },
+    {
+      "id": "15-changes-question",
+      "paragraphs": [
+        16
+      ],
+      "query": "confused tired eyes closeup fatigue",
+      "orientation": "landscape"
+    },
+    {
+      "id": "16-focus-loss",
+      "paragraphs": [
+        17
+      ],
+      "query": "distracted office worker meeting computer",
+      "orientation": "landscape"
+    },
+    {
+      "id": "17-mistakes-work",
+      "paragraphs": [
+        18
+      ],
+      "query": "office worker paper documents mistake",
+      "orientation": "landscape"
+    },
+    {
+      "id": "18-driving-danger",
+      "paragraphs": [
+        19
+      ],
+      "query": "drowsy driver steering wheel road night",
+      "orientation": "landscape"
+    },
+    {
+      "id": "19-emotion-impact",
+      "paragraphs": [
+        20
+      ],
+      "query": "sad person window silhouette",
+      "orientation": "landscape"
+    },
+    {
+      "id": "20-stress-irritable",
+      "paragraphs": [
+        21
+      ],
+      "query": "stressed man office head hands frustrated",
+      "orientation": "landscape"
+    },
+    {
+      "id": "21-appetite",
+      "paragraphs": [
+        22
+      ],
+      "query": "hungry late night refrigerator kitchen",
+      "orientation": "landscape"
+    },
+    {
+      "id": "22-cravings",
+      "paragraphs": [
+        23
+      ],
+      "query": "sweet dessert late night snack",
+      "orientation": "landscape"
+    },
+    {
+      "id": "23-long-term-health",
+      "paragraphs": [
+        24
+      ],
+      "query": "medical checkup doctor stethoscope heart",
+      "orientation": "landscape"
+    },
+    {
+      "id": "24-catchup-question",
+      "paragraphs": [
+        25
+      ],
+      "query": "weekend afternoon sleeping messy bed",
+      "orientation": "landscape"
+    },
+    {
+      "id": "25-weekend-relief",
+      "paragraphs": [
+        26
+      ],
+      "query": "peaceful sleep weekend morning cozy",
+      "orientation": "landscape"
+    },
+    {
+      "id": "26-not-enough",
+      "paragraphs": [
+        27
+      ],
+      "query": "tired monday morning coffee mug",
+      "orientation": "landscape"
+    },
+    {
+      "id": "27-daily-consistent",
+      "paragraphs": [
+        28
+      ],
+      "query": "clean morning routine breakfast healthy",
+      "orientation": "landscape"
+    },
+    {
+      "id": "28-real-problem",
+      "paragraphs": [
+        29
+      ],
+      "query": "worried person bed insomnia night",
+      "orientation": "landscape"
+    },
+    {
+      "id": "29-cant-sleep",
+      "paragraphs": [
+        30
+      ],
+      "query": "person turning bed sheets insomnia dark room",
+      "orientation": "landscape"
+    },
+    {
+      "id": "30-melatonin-mag",
+      "paragraphs": [
+        31
+      ],
+      "query": "supplement pills vitamins wooden table",
+      "orientation": "landscape"
+    },
+    {
+      "id": "31-not-medicine",
+      "paragraphs": [
+        32
+      ],
+      "query": "prescription bottle pharmacy medicine",
+      "orientation": "landscape"
+    },
+    {
+      "id": "32-melatonin-hormone",
+      "paragraphs": [
+        33
+      ],
+      "query": "night sky moon stars dark",
+      "orientation": "landscape"
+    },
+    {
+      "id": "33-signal-not-force",
+      "paragraphs": [
+        34
+      ],
+      "query": "circadian brain neurons illustration night",
+      "orientation": "landscape"
+    },
+    {
+      "id": "34-consult-doctor",
+      "paragraphs": [
+        35
+      ],
+      "query": "pharmacist consultation prescription",
+      "orientation": "landscape"
+    },
+    {
+      "id": "35-magnesium",
+      "paragraphs": [
+        36
+      ],
+      "query": "magnesium pills supplement bottle",
+      "orientation": "landscape"
+    },
+    {
+      "id": "36-food-sources",
+      "paragraphs": [
+        37
+      ],
+      "query": "nuts seeds leafy greens whole grains food",
+      "orientation": "landscape"
+    },
+    {
+      "id": "37-not-cure",
+      "paragraphs": [
+        38
+      ],
+      "query": "healthy meal balanced plate nutrition",
+      "orientation": "landscape"
+    },
+    {
+      "id": "38-food-first",
+      "paragraphs": [
+        39
+      ],
+      "query": "home cooked meal vegetables plate",
+      "orientation": "landscape"
+    },
+    {
+      "id": "39-light-snacks",
+      "paragraphs": [
+        40
+      ],
+      "query": "warm milk banana nuts bedtime snack",
+      "orientation": "landscape"
+    },
+    {
+      "id": "40-tart-cherry",
+      "paragraphs": [
+        41
+      ],
+      "query": "kiwi tart cherry yogurt healthy snack",
+      "orientation": "landscape"
+    },
+    {
+      "id": "41-avoid-fatty",
+      "paragraphs": [
+        42
+      ],
+      "query": "greasy fried food unhealthy dinner",
+      "orientation": "landscape"
+    },
+    {
+      "id": "42-heartburn",
+      "paragraphs": [
+        43
+      ],
+      "query": "person stomach ache indigestion night",
+      "orientation": "landscape"
+    },
+    {
+      "id": "43-alcohol",
+      "paragraphs": [
+        44
+      ],
+      "query": "glass wine dim room evening",
+      "orientation": "landscape"
+    },
+    {
+      "id": "44-alcohol-detail",
+      "paragraphs": [
+        45
+      ],
+      "query": "waking up middle of night bed dark",
+      "orientation": "landscape"
+    },
+    {
+      "id": "45-habits-first",
+      "paragraphs": [
+        46,
+        47
+      ],
+      "query": "morning routine open curtains sunlight",
+      "orientation": "landscape"
+    },
+    {
+      "id": "46-wake-consistent",
+      "paragraphs": [
+        48
+      ],
+      "query": "sunrise open curtains window morning",
+      "orientation": "landscape"
+    },
+    {
+      "id": "47-slept-poorly",
+      "paragraphs": [
+        49
+      ],
+      "query": "tired morning coffee messy bed hair",
+      "orientation": "landscape"
+    },
+    {
+      "id": "48-fix-wake-time",
+      "paragraphs": [
+        50
+      ],
+      "query": "morning alarm phone bedside 7am",
+      "orientation": "landscape"
+    },
+    {
+      "id": "49-morning-light",
+      "paragraphs": [
+        51
+      ],
+      "query": "sunrise bright morning window open bedroom",
+      "orientation": "landscape"
+    },
+    {
+      "id": "50-outdoor-walk",
+      "paragraphs": [
+        52
+      ],
+      "query": "person walking morning park sunlight",
+      "orientation": "landscape"
+    },
+    {
+      "id": "51-dim-evening",
+      "paragraphs": [
+        53
+      ],
+      "query": "dim bedroom warm lamp phone at night",
+      "orientation": "landscape"
+    },
+    {
+      "id": "52-caffeine",
+      "paragraphs": [
+        54
+      ],
+      "query": "coffee cup hand office desk afternoon",
+      "orientation": "landscape"
+    },
+    {
+      "id": "53-caffeine-lasts",
+      "paragraphs": [
+        55
+      ],
+      "query": "coffee cup steam morning table",
+      "orientation": "landscape"
+    },
+    {
+      "id": "54-shallow-sleep",
+      "paragraphs": [
+        56
+      ],
+      "query": "restless sleep tossing bed night",
+      "orientation": "landscape"
+    },
+    {
+      "id": "55-cutoff-8h",
+      "paragraphs": [
+        57
+      ],
+      "query": "clock 3pm afternoon coffee office",
+      "orientation": "landscape"
+    },
+    {
+      "id": "56-3pm-cutoff",
+      "paragraphs": [
+        58
+      ],
+      "query": "afternoon coffee cup office worker",
+      "orientation": "landscape"
+    },
+    {
+      "id": "57-daily-exercise",
+      "paragraphs": [
+        59
+      ],
+      "query": "person jogging morning park exercise",
+      "orientation": "landscape"
+    },
+    {
+      "id": "58-not-late-workout",
+      "paragraphs": [
+        60
+      ],
+      "query": "gym evening workout intense exercise",
+      "orientation": "landscape"
+    },
+    {
+      "id": "59-naps-late",
+      "paragraphs": [
+        61
+      ],
+      "query": "person napping couch afternoon rest",
+      "orientation": "landscape"
+    },
+    {
+      "id": "60-nap-short",
+      "paragraphs": [
+        62
+      ],
+      "query": "short nap sofa afternoon 20 min",
+      "orientation": "landscape"
+    },
+    {
+      "id": "61-bed-usage",
+      "paragraphs": [
+        63
+      ],
+      "query": "person laptop in bed working",
+      "orientation": "landscape"
+    },
+    {
+      "id": "62-brain-confused",
+      "paragraphs": [
+        64
+      ],
+      "query": "person watching video phone bed",
+      "orientation": "landscape"
+    },
+    {
+      "id": "63-get-up-if-not-sleepy",
+      "paragraphs": [
+        65
+      ],
+      "query": "reading book chair dim lamp night",
+      "orientation": "landscape"
+    },
+    {
+      "id": "64-when-to-see-doc",
+      "paragraphs": [
+        66
+      ],
+      "query": "clinic appointment doctor consultation",
+      "orientation": "landscape"
+    },
+    {
+      "id": "65-sleep-clinic",
+      "paragraphs": [
+        67
+      ],
+      "query": "sleep clinic medical equipment doctor",
+      "orientation": "landscape"
+    },
+    {
+      "id": "66-work-cuts-sleep",
+      "paragraphs": [
+        68
+      ],
+      "query": "office worker late deadline stressed computer",
+      "orientation": "landscape"
+    },
+    {
+      "id": "67-sleep-is-part",
+      "paragraphs": [
+        69
+      ],
+      "query": "morning breakfast healthy start day",
+      "orientation": "landscape"
+    },
+    {
+      "id": "68-not-just-early",
+      "paragraphs": [
+        70
+      ],
+      "query": "night sleep bedroom peaceful",
+      "orientation": "landscape"
+    },
+    {
+      "id": "69-enough-consistent",
+      "paragraphs": [
+        71
+      ],
+      "query": "morning wake refreshed happy sunrise",
+      "orientation": "landscape"
+    },
+    {
+      "id": "70-start-today",
+      "paragraphs": [
+        72
+      ],
+      "query": "morning routine notebook planning clock",
+      "orientation": "landscape"
+    },
+    {
+      "id": "71-outro",
+      "paragraphs": [
+        73
+      ],
+      "query": "peaceful dark bedroom good night sleep",
+      "orientation": "landscape"
+    }
+  ]
+}
