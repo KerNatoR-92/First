@@ -19,8 +19,8 @@
     </style>
   </head>
   <body>
-    <div id="root" data-composition-id="main" data-start="0" data-duration="493.6" data-width="1920" data-height="1080">
-      <audio id="narration" class="clip" src="assets/audio/narration-with-bgm.mp3" data-start="0" data-duration="493.6" data-track-index="0" data-volume="1" preload="metadata"></audio>
+    <div id="root" data-composition-id="main" data-start="0" data-duration="501.6" data-width="1920" data-height="1080">
+      <audio id="narration" class="clip" src="assets/audio/narration-with-bgm.mp3" data-start="0" data-duration="501.6" data-track-index="0" data-volume="1" preload="metadata"></audio>
 
       <div id="beat-01-question" class="clip beat" data-start="0.0" data-duration="3.78" data-track-index="1">
         <img class="bg-img" src="assets/frames/01-question.jpg" alt="01-question" />
@@ -232,7 +232,7 @@
       <div id="beat-70-start-today" class="clip beat" data-start="473.86" data-duration="10.96" data-track-index="1">
         <img class="bg-img" src="assets/frames/70-start-today.jpg" alt="70-start-today" />
       </div>
-      <div id="beat-71-outro" class="clip beat" data-start="484.82" data-duration="8.78" data-track-index="1">
+      <div id="beat-71-outro" class="clip beat" data-start="484.82" data-duration="12.78" data-track-index="1">
         <img class="bg-img" src="assets/frames/71-outro.jpg" alt="71-outro" />
       </div>
 
@@ -415,7 +415,7 @@
       <div id="credit-68-not-just-early" class="clip credit" data-start="465.66" data-duration="3.92" data-track-index="3">Photo: Jay Lo / Unsplash</div>
       <div id="credit-69-enough-consistent" class="clip credit" data-start="469.58" data-duration="4.28" data-track-index="3">Photo: Dawid Zawiła / Unsplash</div>
       <div id="credit-70-start-today" class="clip credit" data-start="473.86" data-duration="10.96" data-track-index="3">Photo: Ngo Ngoc Khai Huyen / Unsplash</div>
-      <div id="credit-71-outro" class="clip credit" data-start="484.82" data-duration="8.78" data-track-index="3">Photo: the blowup / Unsplash</div>
+      <div id="credit-71-outro" class="clip credit" data-start="484.82" data-duration="12.78" data-track-index="3">Photo: the blowup / Unsplash</div>
     </div>
 
     <script>
@@ -632,8 +632,8 @@
       tl.fromTo("#beat-70-start-today .bg-img", {scale:1.1}, {scale:1.0, duration:10.96, ease:"none"}, 473.86);
       tl.set   ("#beat-70-start-today .bg-img", {opacity:0, scale:1.1}, 484.82);
       tl.fromTo("#beat-71-outro .bg-img", {opacity:0}, {opacity:1, duration:0.35, ease:"none"}, 484.82);
-      tl.fromTo("#beat-71-outro .bg-img", {scale:1.0}, {scale:1.1, duration:8.78, ease:"none"}, 484.82);
-      tl.set   ("#beat-71-outro .bg-img", {opacity:0, scale:1.0}, 493.6);
+      tl.fromTo("#beat-71-outro .bg-img", {scale:1.0}, {scale:1.1, duration:12.78, ease:"none"}, 484.82);
+      tl.to    ("#beat-71-outro .bg-img", {opacity: 0, duration: 4, ease: "none"}, 493.6);
       window.__timelines["main"] = tl;
     </script>
   </body>
