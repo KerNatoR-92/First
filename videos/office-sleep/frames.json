@@ -413,7 +413,7 @@
       "paragraphs": [
         53
       ],
-      "query": "dim bedroom warm lamp phone at night",
+      "query": "warm bedside lamp cozy corner",
       "orientation": "landscape"
     },
     {
@@ -485,7 +485,7 @@
       "paragraphs": [
         62
       ],
-      "query": "short nap sofa afternoon 20 min",
+      "query": "brief afternoon rest chair calm",
       "orientation": "landscape"
     },
     {
@@ -525,7 +525,7 @@
       "paragraphs": [
         67
       ],
-      "query": "sleep clinic medical equipment doctor",
+      "query": "hospital ward quiet monitoring equipment",
       "orientation": "landscape"
     },
     {
@@ -549,7 +549,7 @@
       "paragraphs": [
         70
       ],
-      "query": "night sleep bedroom peaceful",
+      "query": "moonlight bedroom window calm",
       "orientation": "landscape"
     },
     {
@@ -573,7 +573,7 @@
       "paragraphs": [
         73
       ],
-      "query": "peaceful dark bedroom good night sleep",
+      "query": "cozy bed pillow blanket calm",
       "orientation": "landscape"
     }
   ]
