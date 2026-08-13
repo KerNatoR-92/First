@@ -14,7 +14,7 @@
       .beat { position: absolute; inset: 0; width: 1920px; height: 1080px; overflow: hidden; }
       .beat img { position: absolute; inset: 0; width: 1920px; height: 1080px; object-fit: cover; transform-origin: 50% 50%; will-change: opacity, transform; }
       .caption { position: absolute; left: 50%; transform: translateX(-50%); bottom: 84px; width: 1600px; display: flex; justify-content: center; }
-      .caption-text { display: inline-block; max-width: 100%; padding: 18px 28px; background: rgba(0, 0, 0, 0.72); color: #fff; font-family: "Noto Sans KR", "Inter", sans-serif; font-weight: 500; font-size: 34px; line-height: 1.45; letter-spacing: -0.01em; text-align: center; border-radius: 6px; word-break: keep-all; overflow-wrap: break-word; }
+      .caption-text { display: inline-block; max-width: 100%; padding: 18px 28px; background: rgba(0, 0, 0, 0.72); color: #fff; font-family: "Noto Sans KR", "Inter", sans-serif; font-weight: 500; font-size: 34px; line-height: 1.45; letter-spacing: -0.01em; text-align: center; border-radius: 6px; word-break: keep-all; overflow-wrap: break-word; white-space: nowrap; }
       .credit { position: absolute; right: 24px; bottom: 20px; color: #fff; font-family: "Inter", sans-serif; font-size: 14px; letter-spacing: 0.02em; padding: 6px 12px; border-radius: 4px; background: rgba(0, 0, 0, 0.55); }
     </style>
   </head>
@@ -112,10 +112,10 @@
       <div id="beat-30-melatonin-mag" class="clip beat" data-start="198.26" data-duration="6.52" data-track-index="1">
         <img class="bg-img" src="assets/frames/30-melatonin-mag.jpg" alt="30-melatonin-mag" />
       </div>
-      <div id="beat-31-not-medicine" class="clip beat" data-start="204.78" data-duration="6.23" data-track-index="1">
+      <div id="beat-31-not-medicine" class="clip beat" data-start="204.78" data-duration="7.74" data-track-index="1">
         <img class="bg-img" src="assets/frames/31-not-medicine.jpg" alt="31-not-medicine" />
       </div>
-      <div id="beat-32-melatonin-hormone" class="clip beat" data-start="211.01" data-duration="6.23" data-track-index="1">
+      <div id="beat-32-melatonin-hormone" class="clip beat" data-start="212.52" data-duration="4.72" data-track-index="1">
         <img class="bg-img" src="assets/frames/32-melatonin-hormone.jpg" alt="32-melatonin-hormone" />
       </div>
       <div id="beat-33-signal-not-force" class="clip beat" data-start="217.24" data-duration="9.02" data-track-index="1">
@@ -124,10 +124,10 @@
       <div id="beat-34-consult-doctor" class="clip beat" data-start="226.26" data-duration="11.76" data-track-index="1">
         <img class="bg-img" src="assets/frames/34-consult-doctor.jpg" alt="34-consult-doctor" />
       </div>
-      <div id="beat-35-magnesium" class="clip beat" data-start="238.02" data-duration="3.14" data-track-index="1">
+      <div id="beat-35-magnesium" class="clip beat" data-start="238.02" data-duration="6.28" data-track-index="1">
         <img class="bg-img" src="assets/frames/35-magnesium.jpg" alt="35-magnesium" />
       </div>
-      <div id="beat-36-food-sources" class="clip beat" data-start="241.16" data-duration="8.58" data-track-index="1">
+      <div id="beat-36-food-sources" class="clip beat" data-start="244.3" data-duration="5.44" data-track-index="1">
         <img class="bg-img" src="assets/frames/36-food-sources.jpg" alt="36-food-sources" />
       </div>
       <div id="beat-37-not-cure" class="clip beat" data-start="249.74" data-duration="7.0" data-track-index="1">
@@ -184,10 +184,10 @@
       <div id="beat-54-shallow-sleep" class="clip beat" data-start="362.76" data-duration="7.02" data-track-index="1">
         <img class="bg-img" src="assets/frames/54-shallow-sleep.jpg" alt="54-shallow-sleep" />
       </div>
-      <div id="beat-55-cutoff-8h" class="clip beat" data-start="369.78" data-duration="7.23" data-track-index="1">
+      <div id="beat-55-cutoff-8h" class="clip beat" data-start="369.78" data-duration="10.22" data-track-index="1">
         <img class="bg-img" src="assets/frames/55-cutoff-8h.jpg" alt="55-cutoff-8h" />
       </div>
-      <div id="beat-56-3pm-cutoff" class="clip beat" data-start="377.01" data-duration="7.23" data-track-index="1">
+      <div id="beat-56-3pm-cutoff" class="clip beat" data-start="380.0" data-duration="4.24" data-track-index="1">
         <img class="bg-img" src="assets/frames/56-3pm-cutoff.jpg" alt="56-3pm-cutoff" />
       </div>
       <div id="beat-57-daily-exercise" class="clip beat" data-start="384.24" data-duration="4.3" data-track-index="1">
@@ -237,78 +237,113 @@
       </div>
 
       <div id="caption-000" class="clip caption" data-start="0.0" data-duration="3.78" data-track-index="2"><span class="caption-text">여러분은 평일과 주말에 각각 몇 시에 잠드시나요.</span></div>
-      <div id="caption-001" class="clip caption" data-start="3.78" data-duration="7.52" data-track-index="2"><span class="caption-text">평일에는 출근 때문에 억지로 일찍 일어나고, 주말에는 밀린 잠을 보충하느라 늦게까지 자는 분들이 많으시죠?</span></div>
-      <div id="caption-002" class="clip caption" data-start="11.3" data-duration="8.0" data-track-index="2"><span class="caption-text">야근이나 회식이 있는 날에는 새벽에 잠들기도 하고, 다음 날 중요한 일정이 있으면 평소보다 일찍 일어나기도 하죠.</span></div>
-      <div id="caption-003" class="clip caption" data-start="19.3" data-duration="7.36" data-track-index="2"><span class="caption-text">이렇게 자는 시간과 일어나는 시간이 매일 달라지면, 분명 충분히 잔 것 같은데도 계속 피곤할 수 있습니다.</span></div>
-      <div id="caption-004" class="clip caption" data-start="26.66" data-duration="6.46" data-track-index="2"><span class="caption-text">그렇다면 직장인에게 필요한 수면 시간은 어느 정도이고, 규칙적인 수면은 왜 중요할까요?</span></div>
-      <div id="caption-005" class="clip caption" data-start="33.12" data-duration="5.08" data-track-index="2"><span class="caption-text">성인은 보통 하루 일곱 시간에서 아홉 시간 정도의 수면이 필요합니다.</span></div>
-      <div id="caption-006" class="clip caption" data-start="38.2" data-duration="7.24" data-track-index="2"><span class="caption-text">중요한 건 몇 시에 자느냐보다, 자신이 일어나야 하는 시간에 맞춰 충분한 수면 시간을 확보하는 겁니다.</span></div>
-      <div id="caption-007" class="clip caption" data-start="45.44" data-duration="5.92" data-track-index="2"><span class="caption-text">당연한 이야기지만 침대에 들어가는 시간이 아니라 실제로 잠드는 시간을 기준으로 해야합니다.</span></div>
-      <div id="caption-008" class="clip caption" data-start="51.36" data-duration="7.04" data-track-index="2"><span class="caption-text">평소에 잠드는 데 삼십 분 정도 걸린다면 목표 시간보다 조금 더 일찍 침대에 들어가는 것이 좋습니다.</span></div>
-      <div id="caption-009" class="clip caption" data-start="58.4" data-duration="3.96" data-track-index="2"><span class="caption-text">그런데 수면 시간만큼 중요한 것이 하나 더 있습니다.</span></div>
-      <div id="caption-010" class="clip caption" data-start="62.36" data-duration="3.84" data-track-index="2"><span class="caption-text">바로 매일 비슷한 시간에 자고 일어나는 것입니다.</span></div>
-      <div id="caption-011" class="clip caption" data-start="66.2" data-duration="12.0" data-track-index="2"><span class="caption-text">우리 몸에는 약 스물 네시간을 주기로 움직이는 생체시계가 있는데, 이 생체시계는 빛과 어둠, 식사 시간, 활동 시간, 그리고 잠들고 일어나는 시간의 영향을 받습니다.</span></div>
-      <div id="caption-012" class="clip caption" data-start="78.2" data-duration="6.92" data-track-index="2"><span class="caption-text">매일 비슷한 시간에 생활하면 몸도 자연스럽게 언제 깨어나고 언제 쉬어야 하는지를 익히게 됩니다.</span></div>
-      <div id="caption-013" class="clip caption" data-start="85.12" data-duration="9.86" data-track-index="2"><span class="caption-text">반대로 평일에는 일찍 일어나고 주말에는 서너 시간씩 늦게 자고 늦게 일어나면, 몸은 매주 작은 시차 적응을 반복하게 됩니다.</span></div>
-      <div id="caption-014" class="clip caption" data-start="94.98" data-duration="6.48" data-track-index="2"><span class="caption-text">그래서 주말에도 평일과의 기상 시간 차이를 한두 시간 정도 안에서 유지하는 것이 좋습니다.</span></div>
-      <div id="caption-015" class="clip caption" data-start="101.46" data-duration="4.82" data-track-index="2"><span class="caption-text">그렇다면 수면 시간이 계속 불규칙하면 우리 몸에는 어떤 변화가 생길까요.</span></div>
-      <div id="caption-016" class="clip caption" data-start="106.28" data-duration="3.66" data-track-index="2"><span class="caption-text">가장 먼저 체감하기 쉬운 것은 집중력 저하입니다.</span></div>
-      <div id="caption-017" class="clip caption" data-start="109.94" data-duration="8.36" data-track-index="2"><span class="caption-text">회의 내용을 놓치거나, 방금 확인한 내용을 다시 확인하고, 평소에는 쉽게 처리하던 업무에서도 실수가 늘어날 수 있습니다.</span></div>
-      <div id="caption-018" class="clip caption" data-start="118.3" data-duration="7.76" data-track-index="2"><span class="caption-text">반응 속도와 판단력도 떨어질 수 있기 때문에 운전을 하거나 기계를 다루는 사람에게는 특히 위험할 수 있습니다.</span></div>
-      <div id="caption-019" class="clip caption" data-start="126.06" data-duration="2.46" data-track-index="2"><span class="caption-text">감정에도 영향을 줄 수 있습니다.</span></div>
-      <div id="caption-020" class="clip caption" data-start="128.52" data-duration="11.9" data-track-index="2"><span class="caption-text">평소보다 업무 스트레스도 더 크게 느끼게 될 것이며, 잠을 제대로 잔 날에는 그냥 넘길 수 있는 일도 잠이 부족한 날에는 유난히 짜증스럽거나 예민하게 느껴질 수 있습니다.</span></div>
-      <div id="caption-021" class="clip caption" data-start="140.42" data-duration="5.16" data-track-index="2"><span class="caption-text">수면 부족은 식욕과 포만감을 조절하는 과정에도 영향을 줄 수 있습니다.</span></div>
-      <div id="caption-022" class="clip caption" data-start="145.58" data-duration="10.3" data-track-index="2"><span class="caption-text">그래서 늦은 밤 자극적인 음식이나 단 음식이 더 끌리고, 다음 날에는 피곤해서 운동할 의욕이 줄어드는 식으로 생활 패턴이 더 흐트러질 수도 있습니다.</span></div>
-      <div id="caption-023" class="clip caption" data-start="155.88" data-duration="9.62" data-track-index="2"><span class="caption-text">이런 생활이 장기간 반복되면 체중 관리가 어려워질 수 있고, 우울감이나 심혈관계 질환을 비롯한 여러 건강 문제의 위험과도 연관될 수 있습니다.</span></div>
-      <div id="caption-024" class="clip caption" data-start="165.5" data-duration="4.24" data-track-index="2"><span class="caption-text">그렇다면 평일에 부족하게 자고 주말에 몰아서 자면 괜찮을까요?</span></div>
-      <div id="caption-025" class="clip caption" data-start="169.74" data-duration="4.8" data-track-index="2"><span class="caption-text">주말에 잠을 더 자는 것이 당장의 피로를 줄이는 데는 도움이 될 수 있습니다.</span></div>
-      <div id="caption-026" class="clip caption" data-start="174.54" data-duration="4.96" data-track-index="2"><span class="caption-text">하지만 평일 동안 부족했던 수면을 완전히 없었던 일로 만들 수는 없습니다.</span></div>
-      <div id="caption-027" class="clip caption" data-start="179.5" data-duration="8.4" data-track-index="2"><span class="caption-text">결국 평일에 부족하게 자고 주말에 한꺼번에 보충하기보다는, 매일 필요한 수면 시간을 어느 정도 일정하게 확보하는 것이 좋습니다.</span></div>
-      <div id="caption-028" class="clip caption" data-start="187.9" data-duration="3.74" data-track-index="2"><span class="caption-text">그런데 여기서 한 가지 현실적인 문제가 있습니다.</span></div>
-      <div id="caption-029" class="clip caption" data-start="191.64" data-duration="6.62" data-track-index="2"><span class="caption-text">일찍 자야 한다는 건 알지만, 막상 침대에 누우면 잠이 오지 않는 분들도 많다는 겁니다.</span></div>
-      <div id="caption-030" class="clip caption" data-start="198.26" data-duration="6.52" data-track-index="2"><span class="caption-text">이럴 때 흔히 찾게 되는 것이 멜라토닌이나 마그네슘, 그리고 잠에 좋다고 알려진 음식들입니다.</span></div>
-      <div id="caption-031" class="clip caption" data-start="204.78" data-duration="6.23" data-track-index="2"><span class="caption-text">다만 음식이나 영양제는 수면을 보조할 수는 있어도 불면증을 치료하는 수면제와 같은 역할을 하지는 않습니다.</span></div>
-      <div id="caption-032" class="clip caption" data-start="211.01" data-duration="6.23" data-track-index="2"><span class="caption-text">멜라토닌은 밤이 되고 주변이 어두워질 때 우리 몸에서 분비되는 호르몬입니다.</span></div>
-      <div id="caption-033" class="clip caption" data-start="217.24" data-duration="9.02" data-track-index="2"><span class="caption-text">사람을 강제로 재우는 성분이라기보다 몸에 밤이 되었다는 신호를 주고, 수면과 각성 시간을 조절하는 데 관여하는 성분에 가깝습니다.</span></div>
-      <div id="caption-034" class="clip caption" data-start="226.26" data-duration="11.76" data-track-index="2"><span class="caption-text">다만 멜라토닌 보충제는 복용 중인 약이나 건강 상태에 따라 부작용이나 상호작용이 있을 수 있으므로, 습관적으로 복용하기보다는 의사나 약사와 상담하는 것이 좋습니다.</span></div>
-      <div id="caption-035" class="clip caption" data-start="238.02" data-duration="3.14" data-track-index="2"><span class="caption-text">마그네슘도 수면과 관련해 자주 언급됩니다.</span></div>
-      <div id="caption-036" class="clip caption" data-start="241.16" data-duration="8.58" data-track-index="2"><span class="caption-text">마그네슘은 신경과 근육 기능에 필요한 영양소이고, 견과류와 씨앗류, 콩류, 통곡물, 녹색 잎채소 등에 들어 있습니다.</span></div>
-      <div id="caption-037" class="clip caption" data-start="249.74" data-duration="7.0" data-track-index="2"><span class="caption-text">하지만 마그네슘 보충제가 모든 사람의 불면증을 개선한다고 볼 만큼 근거가 충분한 것은 아닙니다.</span></div>
-      <div id="caption-038" class="clip caption" data-start="256.74" data-duration="6.44" data-track-index="2"><span class="caption-text">그래서 영양제부터 찾기보다는 평소 식사를 통해 부족하지 않게 섭취하는 것이 우선입니다.</span></div>
-      <div id="caption-039" class="clip caption" data-start="263.18" data-duration="10.32" data-track-index="2"><span class="caption-text">저녁에 배가 고파 잠들기 어렵다면 따뜻한 우유나 무가당 요구르트, 바나나, 소량의 견과류처럼 부담이 적은 음식을 선택할 수 있습니다.</span></div>
-      <div id="caption-040" class="clip caption" data-start="273.5" data-duration="11.3" data-track-index="2"><span class="caption-text">우유와 유제품, 키위, 타트체리 등이 수면에 도움이 될 가능성을 살펴본 연구도 있지만, 이런 음식 역시 치료제가 아니라 가벼운 보조 수단으로 보는 것이 적절합니다.</span></div>
-      <div id="caption-041" class="clip caption" data-start="284.8" data-duration="5.54" data-track-index="2"><span class="caption-text">반대로 잠들기 전에는 기름지고 매운 음식이나 과식은 피하는 것이 좋습니다.</span></div>
-      <div id="caption-042" class="clip caption" data-start="290.34" data-duration="7.42" data-track-index="2"><span class="caption-text">야식을 많이 먹으면 소화 때문에 잠을 방해받을 수 있고, 속쓰림이나 역류 증상으로 자다가 깰 수도 있습니다.</span></div>
-      <div id="caption-043" class="clip caption" data-start="297.76" data-duration="1.6" data-track-index="2"><span class="caption-text">술도 주의해야 합니다.</span></div>
-      <div id="caption-044" class="clip caption" data-start="299.36" data-duration="11.75" data-track-index="2"><span class="caption-text">처음에는 졸음이 올 수 있지만 수면을 얕게 만들고 새벽에 자주 깨게 할 수 있기 때문에, 잠을 자기 위해 술을 마시는 습관은 오히려 전체적인 수면의 질을 떨어뜨릴 수 있습니다.</span></div>
-      <div id="caption-045" class="clip caption" data-start="311.11" data-duration="4.53" data-track-index="2"><span class="caption-text">하지만 음식이나 영양제보다 더 먼저 점검해야 할 것이 있습니다.</span></div>
-      <div id="caption-046" class="clip caption" data-start="315.64" data-duration="3.0" data-track-index="2"><span class="caption-text">바로 매일 반복되는 생활 습관입니다.</span></div>
-      <div id="caption-047" class="clip caption" data-start="318.64" data-duration="3.94" data-track-index="2"><span class="caption-text">가장 먼저 기상 시간을 일정하게 맞춰보는 것이 좋습니다.</span></div>
-      <div id="caption-048" class="clip caption" data-start="322.58" data-duration="7.08" data-track-index="2"><span class="caption-text">전날 잠을 설쳤다고 해서 다음 날 늦게까지 자면 그날 밤에도 다시 잠이 늦게 올 가능성이 커집니다.</span></div>
-      <div id="caption-049" class="clip caption" data-start="329.66" data-duration="6.86" data-track-index="2"><span class="caption-text">취침 시간을 억지로 앞당기기보다는 일어나는 시간을 먼저 일정하게 맞추는 것이 도움이 될 수 있습니다.</span></div>
-      <div id="caption-050" class="clip caption" data-start="336.52" data-duration="3.88" data-track-index="2"><span class="caption-text">그리고 아침에는 가능한 한 밝은 빛을 보는 것이 좋습니다.</span></div>
-      <div id="caption-051" class="clip caption" data-start="340.4" data-duration="7.38" data-track-index="2"><span class="caption-text">일어난 뒤 커튼을 열고 햇빛을 보거나 잠시 밖을 걷는 행동은 생체시계에 아침이 시작됐다는 신호를 줍니다.</span></div>
-      <div id="caption-052" class="clip caption" data-start="347.78" data-duration="9.1" data-track-index="2"><span class="caption-text">반대로 밤에는 조명을 조금 어둡게 하고, 잠들기 직전까지 휴대전화나 모니터처럼 밝은 화면을 오래 보는 습관을 줄이는 것이 좋습니다.</span></div>
-      <div id="caption-053" class="clip caption" data-start="356.88" data-duration="2.34" data-track-index="2"><span class="caption-text">카페인 섭취 시간도 중요합니다.</span></div>
-      <div id="caption-054" class="clip caption" data-start="359.22" data-duration="3.54" data-track-index="2"><span class="caption-text">카페인의 영향은 생각보다 오래 지속될 수 있습니다.</span></div>
-      <div id="caption-055" class="clip caption" data-start="362.76" data-duration="7.02" data-track-index="2"><span class="caption-text">커피를 마셔도 잠은 잘 든다고 느끼더라도 수면이 얕아지거나 중간에 깨는 데 영향을 줄 수 있습니다.</span></div>
-      <div id="caption-056" class="clip caption" data-start="369.78" data-duration="7.23" data-track-index="2"><span class="caption-text">평소 잠드는 데 어려움이 있다면 목표 취침 시간 약 여덟 시간 전부터는 커피나 에너지음료, 카페인이 든 차를 줄여보는 것이 좋습니다.</span></div>
-      <div id="caption-057" class="clip caption" data-start="377.01" data-duration="7.23" data-track-index="2"><span class="caption-text">밤 열한 시에 자고 싶다면 오후 세 시 이후에는 카페인을 피하는 식입니다.</span></div>
-      <div id="caption-058" class="clip caption" data-start="384.24" data-duration="4.3" data-track-index="2"><span class="caption-text">낮 동안 규칙적으로 몸을 움직이는 것도 도움이 됩니다.</span></div>
-      <div id="caption-059" class="clip caption" data-start="388.54" data-duration="8.76" data-track-index="2"><span class="caption-text">다만 잠들기 직전에 지나치게 격렬한 운동을 하면 오히려 몸이 각성될 수 있으니 자신에게 맞는 운동 시간을 찾는 것이 좋습니다.</span></div>
-      <div id="caption-060" class="clip caption" data-start="397.3" data-duration="2.96" data-track-index="2"><span class="caption-text">낮잠도 너무 늦게 자지 않는 것이 좋습니다.</span></div>
-      <div id="caption-061" class="clip caption" data-start="400.26" data-duration="8.36" data-track-index="2"><span class="caption-text">밤에 잠들기 어렵다면 늦은 오후의 낮잠은 피하고, 꼭 필요할 때는 오후 이른 시간에 이십 분 정도로 짧게 자는 편이 좋습니다.</span></div>
-      <div id="caption-062" class="clip caption" data-start="408.62" data-duration="3.54" data-track-index="2"><span class="caption-text">또 하나 중요한 것은 침대를 어떻게 사용하는지입니다.</span></div>
-      <div id="caption-063" class="clip caption" data-start="412.16" data-duration="8.42" data-track-index="2"><span class="caption-text">침대에서 업무를 하거나 영상을 오래 보는 생활이 반복되면 뇌가 침대를 잠자는 공간보다 깨어 있는 공간으로 인식할 수 있습니다.</span></div>
-      <div id="caption-064" class="clip caption" data-start="420.58" data-duration="13.4" data-track-index="2"><span class="caption-text">그래서 잠자리에 누운 뒤에도 오랫동안 잠이 오지 않을 때는 계속 억지로 누워 있기보다는 잠시 일어나 어두운 조명 아래에서 책을 읽거나 가벼운 스트레칭을 하다가 다시 졸릴 때 침대로 돌아가는 방법도 있습니다.</span></div>
-      <div id="caption-065" class="clip caption" data-start="433.98" data-duration="10.86" data-track-index="2"><span class="caption-text">만약 잠들기 어렵거나 자주 깨는 문제가 일주일에 세 번 이상 발생하고, 이런 상태가 삼 개월 이상 지속된다면 단순한 생활 습관의 문제가 아닐 수 있습니다.</span></div>
-      <div id="caption-066" class="clip caption" data-start="444.84" data-duration="7.44" data-track-index="2"><span class="caption-text">이럴 때는 술이나 영양제에 의존하기보다 수면클리닉이나 의료기관에서 정확한 원인을 확인해보는 것이 좋습니다.</span></div>
-      <div id="caption-067" class="clip caption" data-start="452.28" data-duration="4.68" data-track-index="2"><span class="caption-text">우리는 일이 많아지면 가장 먼저 잠자는 시간을 줄이는 경우가 많습니다.</span></div>
-      <div id="caption-068" class="clip caption" data-start="456.96" data-duration="8.7" data-track-index="2"><span class="caption-text">하지만 수면은 남는 시간에 하는 휴식이 아니라, 다음 날의 집중력과 감정, 그리고 몸의 회복 상태를 결정하는 하루 일정의 한 부분입니다.</span></div>
-      <div id="caption-069" class="clip caption" data-start="465.66" data-duration="3.92" data-track-index="2"><span class="caption-text">직장인에게 필요한 수면 관리는 무조건 일찍 자는 것이 아닙니다.</span></div>
-      <div id="caption-070" class="clip caption" data-start="469.58" data-duration="4.28" data-track-index="2"><span class="caption-text">부족하지 않게 그리고 규칙적으로 자는 것이 제일 중요합니다.</span></div>
-      <div id="caption-071" class="clip caption" data-start="473.86" data-duration="10.96" data-track-index="2"><span class="caption-text">오늘부터 무조건 일찍 자려고 하기보다는 내가 몇 시에 일어나야 하는지부터 정하고, 그 시간에 맞춰 필요한 수면 시간을 조금씩 일정하게 만들어보는 것부터 시작해보세요.</span></div>
-      <div id="caption-072" class="clip caption" data-start="484.82" data-duration="8.78" data-track-index="2"><span class="caption-text">제 영상이 당신의 편안한 밤을 위해 조금이라도 도움이 되셨길 바라면서 영상 마치겠습니다. 안녕히 주무세요.</span></div>
+      <div id="caption-001" class="clip caption" data-start="3.78" data-duration="2.88" data-track-index="2"><span class="caption-text">평일에는 출근 때문에 억지로 일찍 일어나고,</span></div>
+      <div id="caption-002" class="clip caption" data-start="6.66" data-duration="4.64" data-track-index="2"><span class="caption-text">주말에는 밀린 잠을 보충하느라 늦게까지 자는 분들이 많으시죠?</span></div>
+      <div id="caption-003" class="clip caption" data-start="11.3" data-duration="2.94" data-track-index="2"><span class="caption-text">야근이나 회식이 있는 날에는 새벽에 잠들기도 하고,</span></div>
+      <div id="caption-004" class="clip caption" data-start="14.24" data-duration="5.06" data-track-index="2"><span class="caption-text">다음 날 중요한 일정이 있으면 평소보다 일찍 일어나기도 하죠.</span></div>
+      <div id="caption-005" class="clip caption" data-start="19.3" data-duration="3.0" data-track-index="2"><span class="caption-text">이렇게 자는 시간과 일어나는 시간이 매일 달라지면,</span></div>
+      <div id="caption-006" class="clip caption" data-start="22.3" data-duration="4.36" data-track-index="2"><span class="caption-text">분명 충분히 잔 것 같은데도 계속 피곤할 수 있습니다.</span></div>
+      <div id="caption-007" class="clip caption" data-start="26.66" data-duration="6.46" data-track-index="2"><span class="caption-text">그렇다면 직장인에게 필요한 수면 시간은 어느 정도이고, 규칙적인 수면은 왜 중요할까요?</span></div>
+      <div id="caption-008" class="clip caption" data-start="33.12" data-duration="5.08" data-track-index="2"><span class="caption-text">성인은 보통 하루 7시간에서 9시간 정도의 수면이 필요합니다.</span></div>
+      <div id="caption-009" class="clip caption" data-start="38.2" data-duration="2.02" data-track-index="2"><span class="caption-text">중요한 건 몇 시에 자느냐보다,</span></div>
+      <div id="caption-010" class="clip caption" data-start="40.22" data-duration="5.22" data-track-index="2"><span class="caption-text">자신이 일어나야 하는 시간에 맞춰 충분한 수면 시간을 확보하는 겁니다.</span></div>
+      <div id="caption-011" class="clip caption" data-start="45.44" data-duration="5.92" data-track-index="2"><span class="caption-text">당연한 이야기지만 침대에 들어가는 시간이 아니라 실제로 잠드는 시간을 기준으로 해야합니다.</span></div>
+      <div id="caption-012" class="clip caption" data-start="51.36" data-duration="7.04" data-track-index="2"><span class="caption-text">평소에 잠드는 데 30분 정도 걸린다면 목표 시간보다 조금 더 일찍 침대에 들어가는 것이 좋습니다.</span></div>
+      <div id="caption-013" class="clip caption" data-start="58.4" data-duration="3.96" data-track-index="2"><span class="caption-text">그런데 수면 시간만큼 중요한 것이 하나 더 있습니다.</span></div>
+      <div id="caption-014" class="clip caption" data-start="62.36" data-duration="3.84" data-track-index="2"><span class="caption-text">바로 매일 비슷한 시간에 자고 일어나는 것입니다.</span></div>
+      <div id="caption-015" class="clip caption" data-start="66.2" data-duration="6.68" data-track-index="2"><span class="caption-text">우리 몸에는 약 24시간을 주기로 움직이는 생체시계가 있는데, 이 생체시계는 빛과 어둠,</span></div>
+      <div id="caption-016" class="clip caption" data-start="72.88" data-duration="5.32" data-track-index="2"><span class="caption-text">식사 시간, 활동 시간, 그리고 잠들고 일어나는 시간의 영향을 받습니다.</span></div>
+      <div id="caption-017" class="clip caption" data-start="78.2" data-duration="6.92" data-track-index="2"><span class="caption-text">매일 비슷한 시간에 생활하면 몸도 자연스럽게 언제 깨어나고 언제 쉬어야 하는지를 익히게 됩니다.</span></div>
+      <div id="caption-018" class="clip caption" data-start="85.12" data-duration="5.68" data-track-index="2"><span class="caption-text">반대로 평일에는 일찍 일어나고 주말에는 3~4시간씩 늦게 자고 늦게 일어나면,</span></div>
+      <div id="caption-019" class="clip caption" data-start="90.8" data-duration="4.18" data-track-index="2"><span class="caption-text">몸은 매주 작은 시차 적응을 반복하게 됩니다.</span></div>
+      <div id="caption-020" class="clip caption" data-start="94.98" data-duration="6.48" data-track-index="2"><span class="caption-text">그래서 주말에도 평일과의 기상 시간 차이를 1~2시간 정도 안에서 유지하는 것이 좋습니다.</span></div>
+      <div id="caption-021" class="clip caption" data-start="101.46" data-duration="4.82" data-track-index="2"><span class="caption-text">그렇다면 수면 시간이 계속 불규칙하면 우리 몸에는 어떤 변화가 생길까요.</span></div>
+      <div id="caption-022" class="clip caption" data-start="106.28" data-duration="3.66" data-track-index="2"><span class="caption-text">가장 먼저 체감하기 쉬운 것은 집중력 저하입니다.</span></div>
+      <div id="caption-023" class="clip caption" data-start="109.94" data-duration="3.6" data-track-index="2"><span class="caption-text">회의 내용을 놓치거나, 방금 확인한 내용을 다시 확인하고,</span></div>
+      <div id="caption-024" class="clip caption" data-start="113.54" data-duration="4.76" data-track-index="2"><span class="caption-text">평소에는 쉽게 처리하던 업무에서도 실수가 늘어날 수 있습니다.</span></div>
+      <div id="caption-025" class="clip caption" data-start="118.3" data-duration="5.22" data-track-index="2"><span class="caption-text">반응 속도와 판단력도 떨어질 수 있기 때문에 운전을 하거나 기계를 다루는 사람에게는</span></div>
+      <div id="caption-026" class="clip caption" data-start="123.52" data-duration="2.54" data-track-index="2"><span class="caption-text">특히 위험할 수 있습니다.</span></div>
+      <div id="caption-027" class="clip caption" data-start="126.06" data-duration="2.46" data-track-index="2"><span class="caption-text">감정에도 영향을 줄 수 있습니다.</span></div>
+      <div id="caption-028" class="clip caption" data-start="128.52" data-duration="3.38" data-track-index="2"><span class="caption-text">평소보다 업무 스트레스도 더 크게 느끼게 될 것이며,</span></div>
+      <div id="caption-029" class="clip caption" data-start="131.9" data-duration="4.06" data-track-index="2"><span class="caption-text">잠을 제대로 잔 날에는 그냥 넘길 수 있는 일도 잠이 부족한</span></div>
+      <div id="caption-030" class="clip caption" data-start="135.96" data-duration="4.46" data-track-index="2"><span class="caption-text">날에는 유난히 짜증스럽거나 예민하게 느껴질 수 있습니다.</span></div>
+      <div id="caption-031" class="clip caption" data-start="140.42" data-duration="5.16" data-track-index="2"><span class="caption-text">수면 부족은 식욕과 포만감을 조절하는 과정에도 영향을 줄 수 있습니다.</span></div>
+      <div id="caption-032" class="clip caption" data-start="145.58" data-duration="3.3" data-track-index="2"><span class="caption-text">그래서 늦은 밤 자극적인 음식이나 단 음식이 더 끌리고,</span></div>
+      <div id="caption-033" class="clip caption" data-start="148.88" data-duration="7.0" data-track-index="2"><span class="caption-text">다음 날에는 피곤해서 운동할 의욕이 줄어드는 식으로 생활 패턴이 더 흐트러질 수도 있습니다.</span></div>
+      <div id="caption-034" class="clip caption" data-start="155.88" data-duration="3.5" data-track-index="2"><span class="caption-text">이런 생활이 장기간 반복되면 체중 관리가 어려워질 수 있고,</span></div>
+      <div id="caption-035" class="clip caption" data-start="159.38" data-duration="6.12" data-track-index="2"><span class="caption-text">우울감이나 심혈관계 질환을 비롯한 여러 건강 문제의 위험과도 연관될 수 있습니다.</span></div>
+      <div id="caption-036" class="clip caption" data-start="165.5" data-duration="4.24" data-track-index="2"><span class="caption-text">그렇다면 평일에 부족하게 자고 주말에 몰아서 자면 괜찮을까요?</span></div>
+      <div id="caption-037" class="clip caption" data-start="169.74" data-duration="4.8" data-track-index="2"><span class="caption-text">주말에 잠을 더 자는 것이 당장의 피로를 줄이는 데는 도움이 될 수 있습니다.</span></div>
+      <div id="caption-038" class="clip caption" data-start="174.54" data-duration="4.96" data-track-index="2"><span class="caption-text">하지만 평일 동안 부족했던 수면을 완전히 없었던 일로 만들 수는 없습니다.</span></div>
+      <div id="caption-039" class="clip caption" data-start="179.5" data-duration="3.52" data-track-index="2"><span class="caption-text">결국 평일에 부족하게 자고 주말에 한꺼번에 보충하기보다는,</span></div>
+      <div id="caption-040" class="clip caption" data-start="183.02" data-duration="4.88" data-track-index="2"><span class="caption-text">매일 필요한 수면 시간을 어느 정도 일정하게 확보하는 것이 좋습니다.</span></div>
+      <div id="caption-041" class="clip caption" data-start="187.9" data-duration="3.74" data-track-index="2"><span class="caption-text">그런데 여기서 한 가지 현실적인 문제가 있습니다.</span></div>
+      <div id="caption-042" class="clip caption" data-start="191.64" data-duration="6.62" data-track-index="2"><span class="caption-text">일찍 자야 한다는 건 알지만, 막상 침대에 누우면 잠이 오지 않는 분들도 많다는 겁니다.</span></div>
+      <div id="caption-043" class="clip caption" data-start="198.26" data-duration="6.52" data-track-index="2"><span class="caption-text">이럴 때 흔히 찾게 되는 것이 멜라토닌이나 마그네슘, 그리고 잠에 좋다고 알려진 음식들입니다.</span></div>
+      <div id="caption-044" class="clip caption" data-start="204.78" data-duration="3.02" data-track-index="2"><span class="caption-text">다만 음식이나 영양제는 수면을 보조할 수는 있어도</span></div>
+      <div id="caption-045" class="clip caption" data-start="207.8" data-duration="4.72" data-track-index="2"><span class="caption-text">불면증을 치료하는 수면제와 같은 역할을 하지는 않습니다.</span></div>
+      <div id="caption-046" class="clip caption" data-start="212.52" data-duration="4.72" data-track-index="2"><span class="caption-text">멜라토닌은 밤이 되고 주변이 어두워질 때 우리 몸에서 분비되는 호르몬입니다.</span></div>
+      <div id="caption-047" class="clip caption" data-start="217.24" data-duration="3.94" data-track-index="2"><span class="caption-text">사람을 강제로 재우는 성분이라기보다 몸에 밤이 되었다는 신호를 주고,</span></div>
+      <div id="caption-048" class="clip caption" data-start="221.18" data-duration="5.08" data-track-index="2"><span class="caption-text">수면과 각성 시간을 조절하는 데 관여하는 성분에 가깝습니다.</span></div>
+      <div id="caption-049" class="clip caption" data-start="226.26" data-duration="6.8" data-track-index="2"><span class="caption-text">다만 멜라토닌 보충제는 복용 중인 약이나 건강 상태에 따라 부작용이나 상호작용이 있을 수 있으므로,</span></div>
+      <div id="caption-050" class="clip caption" data-start="233.06" data-duration="4.96" data-track-index="2"><span class="caption-text">습관적으로 복용하기보다는 의사나 약사와 상담하는 것이 좋습니다.</span></div>
+      <div id="caption-051" class="clip caption" data-start="238.02" data-duration="3.14" data-track-index="2"><span class="caption-text">마그네슘도 수면과 관련해 자주 언급됩니다.</span></div>
+      <div id="caption-052" class="clip caption" data-start="241.16" data-duration="3.14" data-track-index="2"><span class="caption-text">마그네슘은 신경과 근육 기능에 필요한 영양소이고,</span></div>
+      <div id="caption-053" class="clip caption" data-start="244.3" data-duration="5.44" data-track-index="2"><span class="caption-text">견과류와 씨앗류, 콩류, 통곡물, 녹색 잎채소 등에 들어 있습니다.</span></div>
+      <div id="caption-054" class="clip caption" data-start="249.74" data-duration="7.0" data-track-index="2"><span class="caption-text">하지만 마그네슘 보충제가 모든 사람의 불면증을 개선한다고 볼 만큼 근거가 충분한 것은 아닙니다.</span></div>
+      <div id="caption-055" class="clip caption" data-start="256.74" data-duration="6.44" data-track-index="2"><span class="caption-text">그래서 영양제부터 찾기보다는 평소 식사를 통해 부족하지 않게 섭취하는 것이 우선입니다.</span></div>
+      <div id="caption-056" class="clip caption" data-start="263.18" data-duration="4.92" data-track-index="2"><span class="caption-text">저녁에 배가 고파 잠들기 어렵다면 따뜻한 우유나 무가당 요구르트,</span></div>
+      <div id="caption-057" class="clip caption" data-start="268.1" data-duration="5.4" data-track-index="2"><span class="caption-text">바나나, 소량의 견과류처럼 부담이 적은 음식을 선택할 수 있습니다.</span></div>
+      <div id="caption-058" class="clip caption" data-start="273.5" data-duration="5.5" data-track-index="2"><span class="caption-text">우유와 유제품, 키위, 타트체리 등이 수면에 도움이 될 가능성을 살펴본 연구도 있지만,</span></div>
+      <div id="caption-059" class="clip caption" data-start="279.0" data-duration="5.8" data-track-index="2"><span class="caption-text">이런 음식 역시 치료제가 아니라 가벼운 보조 수단으로 보는 것이 적절합니다.</span></div>
+      <div id="caption-060" class="clip caption" data-start="284.8" data-duration="5.54" data-track-index="2"><span class="caption-text">반대로 잠들기 전에는 기름지고 매운 음식이나 과식은 피하는 것이 좋습니다.</span></div>
+      <div id="caption-061" class="clip caption" data-start="290.34" data-duration="3.1" data-track-index="2"><span class="caption-text">야식을 많이 먹으면 소화 때문에 잠을 방해받을 수 있고,</span></div>
+      <div id="caption-062" class="clip caption" data-start="293.44" data-duration="4.32" data-track-index="2"><span class="caption-text">속쓰림이나 역류 증상으로 자다가 깰 수도 있습니다.</span></div>
+      <div id="caption-063" class="clip caption" data-start="297.76" data-duration="1.6" data-track-index="2"><span class="caption-text">술도 주의해야 합니다.</span></div>
+      <div id="caption-064" class="clip caption" data-start="299.36" data-duration="4.94" data-track-index="2"><span class="caption-text">처음에는 졸음이 올 수 있지만 수면을 얕게 만들고 새벽에 자주 깨게 할 수 있기 때문에,</span></div>
+      <div id="caption-065" class="clip caption" data-start="304.3" data-duration="6.81" data-track-index="2"><span class="caption-text">잠을 자기 위해 술을 마시는 습관은 오히려 전체적인 수면의 질을 떨어뜨릴 수 있습니다.</span></div>
+      <div id="caption-066" class="clip caption" data-start="311.11" data-duration="4.53" data-track-index="2"><span class="caption-text">하지만 음식이나 영양제보다 더 먼저 점검해야 할 것이 있습니다.</span></div>
+      <div id="caption-067" class="clip caption" data-start="315.64" data-duration="3.0" data-track-index="2"><span class="caption-text">바로 매일 반복되는 생활 습관입니다.</span></div>
+      <div id="caption-068" class="clip caption" data-start="318.64" data-duration="3.94" data-track-index="2"><span class="caption-text">가장 먼저 기상 시간을 일정하게 맞춰보는 것이 좋습니다.</span></div>
+      <div id="caption-069" class="clip caption" data-start="322.58" data-duration="7.08" data-track-index="2"><span class="caption-text">전날 잠을 설쳤다고 해서 다음 날 늦게까지 자면 그날 밤에도 다시 잠이 늦게 올 가능성이 커집니다.</span></div>
+      <div id="caption-070" class="clip caption" data-start="329.66" data-duration="2.32" data-track-index="2"><span class="caption-text">취침 시간을 억지로 앞당기기보다는</span></div>
+      <div id="caption-071" class="clip caption" data-start="331.98" data-duration="4.54" data-track-index="2"><span class="caption-text">일어나는 시간을 먼저 일정하게 맞추는 것이 도움이 될 수 있습니다.</span></div>
+      <div id="caption-072" class="clip caption" data-start="336.52" data-duration="3.88" data-track-index="2"><span class="caption-text">그리고 아침에는 가능한 한 밝은 빛을 보는 것이 좋습니다.</span></div>
+      <div id="caption-073" class="clip caption" data-start="340.4" data-duration="3.26" data-track-index="2"><span class="caption-text">일어난 뒤 커튼을 열고 햇빛을 보거나 잠시 밖을 걷는</span></div>
+      <div id="caption-074" class="clip caption" data-start="343.66" data-duration="4.12" data-track-index="2"><span class="caption-text">행동은 생체시계에 아침이 시작됐다는 신호를 줍니다.</span></div>
+      <div id="caption-075" class="clip caption" data-start="347.78" data-duration="2.28" data-track-index="2"><span class="caption-text">반대로 밤에는 조명을 조금 어둡게 하고,</span></div>
+      <div id="caption-076" class="clip caption" data-start="350.06" data-duration="6.82" data-track-index="2"><span class="caption-text">잠들기 직전까지 휴대전화나 모니터처럼 밝은 화면을 오래 보는 습관을 줄이는 것이 좋습니다.</span></div>
+      <div id="caption-077" class="clip caption" data-start="356.88" data-duration="2.34" data-track-index="2"><span class="caption-text">카페인 섭취 시간도 중요합니다.</span></div>
+      <div id="caption-078" class="clip caption" data-start="359.22" data-duration="3.54" data-track-index="2"><span class="caption-text">카페인의 영향은 생각보다 오래 지속될 수 있습니다.</span></div>
+      <div id="caption-079" class="clip caption" data-start="362.76" data-duration="7.02" data-track-index="2"><span class="caption-text">커피를 마셔도 잠은 잘 든다고 느끼더라도 수면이 얕아지거나 중간에 깨는 데 영향을 줄 수 있습니다.</span></div>
+      <div id="caption-080" class="clip caption" data-start="369.78" data-duration="5.98" data-track-index="2"><span class="caption-text">평소 잠드는 데 어려움이 있다면 목표 취침 시간 약 8시간 전부터는 커피나 에너지음료,</span></div>
+      <div id="caption-081" class="clip caption" data-start="375.76" data-duration="4.24" data-track-index="2"><span class="caption-text">카페인이 든 차를 줄여보는 것이 좋습니다.</span></div>
+      <div id="caption-082" class="clip caption" data-start="380.0" data-duration="4.24" data-track-index="2"><span class="caption-text">밤 11시에 자고 싶다면 오후 3시 이후에는 카페인을 피하는 식입니다.</span></div>
+      <div id="caption-083" class="clip caption" data-start="384.24" data-duration="4.3" data-track-index="2"><span class="caption-text">낮 동안 규칙적으로 몸을 움직이는 것도 도움이 됩니다.</span></div>
+      <div id="caption-084" class="clip caption" data-start="388.54" data-duration="4.0" data-track-index="2"><span class="caption-text">다만 잠들기 직전에 지나치게 격렬한 운동을 하면 오히려 몸이</span></div>
+      <div id="caption-085" class="clip caption" data-start="392.54" data-duration="4.76" data-track-index="2"><span class="caption-text">각성될 수 있으니 자신에게 맞는 운동 시간을 찾는 것이 좋습니다.</span></div>
+      <div id="caption-086" class="clip caption" data-start="397.3" data-duration="2.96" data-track-index="2"><span class="caption-text">낮잠도 너무 늦게 자지 않는 것이 좋습니다.</span></div>
+      <div id="caption-087" class="clip caption" data-start="400.26" data-duration="3.1" data-track-index="2"><span class="caption-text">밤에 잠들기 어렵다면 늦은 오후의 낮잠은 피하고,</span></div>
+      <div id="caption-088" class="clip caption" data-start="403.36" data-duration="5.26" data-track-index="2"><span class="caption-text">꼭 필요할 때는 오후 이른 시간에 20분 정도로 짧게 자는 편이 좋습니다.</span></div>
+      <div id="caption-089" class="clip caption" data-start="408.62" data-duration="3.54" data-track-index="2"><span class="caption-text">또 하나 중요한 것은 침대를 어떻게 사용하는지입니다.</span></div>
+      <div id="caption-090" class="clip caption" data-start="412.16" data-duration="3.46" data-track-index="2"><span class="caption-text">침대에서 업무를 하거나 영상을 오래 보는 생활이 반복되면</span></div>
+      <div id="caption-091" class="clip caption" data-start="415.62" data-duration="4.96" data-track-index="2"><span class="caption-text">뇌가 침대를 잠자는 공간보다 깨어 있는 공간으로 인식할 수 있습니다.</span></div>
+      <div id="caption-092" class="clip caption" data-start="420.58" data-duration="5.28" data-track-index="2"><span class="caption-text">그래서 잠자리에 누운 뒤에도 오랫동안 잠이 오지 않을 때는 계속 억지로 누워 있기보다는</span></div>
+      <div id="caption-093" class="clip caption" data-start="425.86" data-duration="4.48" data-track-index="2"><span class="caption-text">잠시 일어나 어두운 조명 아래에서 책을 읽거나 가벼운 스트레칭을</span></div>
+      <div id="caption-094" class="clip caption" data-start="430.34" data-duration="3.64" data-track-index="2"><span class="caption-text">하다가 다시 졸릴 때 침대로 돌아가는 방법도 있습니다.</span></div>
+      <div id="caption-095" class="clip caption" data-start="433.98" data-duration="4.74" data-track-index="2"><span class="caption-text">만약 잠들기 어렵거나 자주 깨는 문제가 일주일에 3번 이상 발생하고,</span></div>
+      <div id="caption-096" class="clip caption" data-start="438.72" data-duration="6.12" data-track-index="2"><span class="caption-text">이런 상태가 3개월 이상 지속된다면 단순한 생활 습관의 문제가 아닐 수 있습니다.</span></div>
+      <div id="caption-097" class="clip caption" data-start="444.84" data-duration="2.3" data-track-index="2"><span class="caption-text">이럴 때는 술이나 영양제에 의존하기보다</span></div>
+      <div id="caption-098" class="clip caption" data-start="447.14" data-duration="5.14" data-track-index="2"><span class="caption-text">수면클리닉이나 의료기관에서 정확한 원인을 확인해보는 것이 좋습니다.</span></div>
+      <div id="caption-099" class="clip caption" data-start="452.28" data-duration="4.68" data-track-index="2"><span class="caption-text">우리는 일이 많아지면 가장 먼저 잠자는 시간을 줄이는 경우가 많습니다.</span></div>
+      <div id="caption-100" class="clip caption" data-start="456.96" data-duration="4.4" data-track-index="2"><span class="caption-text">하지만 수면은 남는 시간에 하는 휴식이 아니라, 다음 날의 집중력과 감정,</span></div>
+      <div id="caption-101" class="clip caption" data-start="461.36" data-duration="4.3" data-track-index="2"><span class="caption-text">그리고 몸의 회복 상태를 결정하는 하루 일정의 한 부분입니다.</span></div>
+      <div id="caption-102" class="clip caption" data-start="465.66" data-duration="3.92" data-track-index="2"><span class="caption-text">직장인에게 필요한 수면 관리는 무조건 일찍 자는 것이 아닙니다.</span></div>
+      <div id="caption-103" class="clip caption" data-start="469.58" data-duration="4.28" data-track-index="2"><span class="caption-text">부족하지 않게 그리고 규칙적으로 자는 것이 제일 중요합니다.</span></div>
+      <div id="caption-104" class="clip caption" data-start="473.86" data-duration="4.98" data-track-index="2"><span class="caption-text">오늘부터 무조건 일찍 자려고 하기보다는 내가 몇 시에 일어나야 하는지부터 정하고,</span></div>
+      <div id="caption-105" class="clip caption" data-start="478.84" data-duration="5.98" data-track-index="2"><span class="caption-text">그 시간에 맞춰 필요한 수면 시간을 조금씩 일정하게 만들어보는 것부터 시작해보세요.</span></div>
+      <div id="caption-106" class="clip caption" data-start="484.82" data-duration="2.18" data-track-index="2"><span class="caption-text">제 영상이 당신의 편안한 밤을 위해</span></div>
+      <div id="caption-107" class="clip caption" data-start="487.0" data-duration="6.6" data-track-index="2"><span class="caption-text">조금이라도 도움이 되셨길 바라면서 영상 마치겠습니다. 안녕히 주무세요.</span></div>
 
       <div id="credit-01-question" class="clip credit" data-start="0.0" data-duration="3.78" data-track-index="3">Photo: engin akyurt / Unsplash</div>
       <div id="credit-02-weekday-alarm" class="clip credit" data-start="3.78" data-duration="7.52" data-track-index="3">Photo: Maddi Bazzocco / Unsplash</div>
@@ -340,12 +375,12 @@
       <div id="credit-28-real-problem" class="clip credit" data-start="187.9" data-duration="3.74" data-track-index="3">Photo: Megan te Boekhorst / Unsplash</div>
       <div id="credit-29-cant-sleep" class="clip credit" data-start="191.64" data-duration="6.62" data-track-index="3">Photo: Jp Valery / Unsplash</div>
       <div id="credit-30-melatonin-mag" class="clip credit" data-start="198.26" data-duration="6.52" data-track-index="3">Photo: Anshu A / Unsplash</div>
-      <div id="credit-31-not-medicine" class="clip credit" data-start="204.78" data-duration="6.23" data-track-index="3">Photo: Towfiqu barbhuiya / Unsplash</div>
-      <div id="credit-32-melatonin-hormone" class="clip credit" data-start="211.01" data-duration="6.23" data-track-index="3">Photo: Aral Tasher / Unsplash</div>
+      <div id="credit-31-not-medicine" class="clip credit" data-start="204.78" data-duration="7.74" data-track-index="3">Photo: Towfiqu barbhuiya / Unsplash</div>
+      <div id="credit-32-melatonin-hormone" class="clip credit" data-start="212.52" data-duration="4.72" data-track-index="3">Photo: Aral Tasher / Unsplash</div>
       <div id="credit-33-signal-not-force" class="clip credit" data-start="217.24" data-duration="9.02" data-track-index="3">Photo: Bhautik Patel / Unsplash</div>
       <div id="credit-34-consult-doctor" class="clip credit" data-start="226.26" data-duration="11.76" data-track-index="3">Photo: National Cancer Institute / Unsplash</div>
-      <div id="credit-35-magnesium" class="clip credit" data-start="238.02" data-duration="3.14" data-track-index="3">Photo: Supliful - Supplements On Demand / Unsplash</div>
-      <div id="credit-36-food-sources" class="clip credit" data-start="241.16" data-duration="8.58" data-track-index="3">Photo: Maddi Bazzocco / Unsplash</div>
+      <div id="credit-35-magnesium" class="clip credit" data-start="238.02" data-duration="6.28" data-track-index="3">Photo: Supliful - Supplements On Demand / Unsplash</div>
+      <div id="credit-36-food-sources" class="clip credit" data-start="244.3" data-duration="5.44" data-track-index="3">Photo: Maddi Bazzocco / Unsplash</div>
       <div id="credit-37-not-cure" class="clip credit" data-start="249.74" data-duration="7.0" data-track-index="3">Photo: Anna Pelzer / Unsplash</div>
       <div id="credit-38-food-first" class="clip credit" data-start="256.74" data-duration="6.44" data-track-index="3">Photo: Ella Olsson / Unsplash</div>
       <div id="credit-39-light-snacks" class="clip credit" data-start="263.18" data-duration="10.32" data-track-index="3">Photo: DACHENGZI LIANG / Unsplash</div>
@@ -364,8 +399,8 @@
       <div id="credit-52-caffeine" class="clip credit" data-start="356.88" data-duration="2.34" data-track-index="3">Photo: Tom Byrom / Unsplash</div>
       <div id="credit-53-caffeine-lasts" class="clip credit" data-start="359.22" data-duration="3.54" data-track-index="3">Photo: Julian Hochgesang / Unsplash</div>
       <div id="credit-54-shallow-sleep" class="clip credit" data-start="362.76" data-duration="7.02" data-track-index="3">Photo: Vitaly Gariev / Unsplash</div>
-      <div id="credit-55-cutoff-8h" class="clip credit" data-start="369.78" data-duration="7.23" data-track-index="3">Photo: Bermix Studio / Unsplash</div>
-      <div id="credit-56-3pm-cutoff" class="clip credit" data-start="377.01" data-duration="7.23" data-track-index="3">Photo: Chris Benson / Unsplash</div>
+      <div id="credit-55-cutoff-8h" class="clip credit" data-start="369.78" data-duration="10.22" data-track-index="3">Photo: Bermix Studio / Unsplash</div>
+      <div id="credit-56-3pm-cutoff" class="clip credit" data-start="380.0" data-duration="4.24" data-track-index="3">Photo: Chris Benson / Unsplash</div>
       <div id="credit-57-daily-exercise" class="clip credit" data-start="384.24" data-duration="4.3" data-track-index="3">Photo: Juan Jose Estrada / Unsplash</div>
       <div id="credit-58-not-late-workout" class="clip credit" data-start="388.54" data-duration="8.76" data-track-index="3">Photo: Luke Witter / Unsplash</div>
       <div id="credit-59-naps-late" class="clip credit" data-start="397.3" data-duration="2.96" data-track-index="3">Photo: Adrian Swancar / Unsplash</div>
@@ -477,10 +512,10 @@
       tl.fromTo("#beat-30-melatonin-mag .bg-img", {scale: 1.1}, {scale: 1.0, duration: 6.52, ease: "none"}, 198.26);
       tl.set   ("#beat-30-melatonin-mag .bg-img", {opacity: 0, scale: 1.1}, 204.78);
       tl.fromTo("#beat-31-not-medicine .bg-img", {opacity: 0}, {opacity: 1, duration: 0.35, ease: "none"}, 204.78);
-      tl.fromTo("#beat-31-not-medicine .bg-img", {scale: 1.0}, {scale: 1.1, duration: 6.23, ease: "none"}, 204.78);
-      tl.set   ("#beat-31-not-medicine .bg-img", {opacity: 0, scale: 1.0}, 211.01);
-      tl.fromTo("#beat-32-melatonin-hormone .bg-img", {opacity: 0}, {opacity: 1, duration: 0.35, ease: "none"}, 211.01);
-      tl.fromTo("#beat-32-melatonin-hormone .bg-img", {scale: 1.1}, {scale: 1.0, duration: 6.23, ease: "none"}, 211.01);
+      tl.fromTo("#beat-31-not-medicine .bg-img", {scale: 1.0}, {scale: 1.1, duration: 7.74, ease: "none"}, 204.78);
+      tl.set   ("#beat-31-not-medicine .bg-img", {opacity: 0, scale: 1.0}, 212.52);
+      tl.fromTo("#beat-32-melatonin-hormone .bg-img", {opacity: 0}, {opacity: 1, duration: 0.35, ease: "none"}, 212.52);
+      tl.fromTo("#beat-32-melatonin-hormone .bg-img", {scale: 1.1}, {scale: 1.0, duration: 4.72, ease: "none"}, 212.52);
       tl.set   ("#beat-32-melatonin-hormone .bg-img", {opacity: 0, scale: 1.1}, 217.24);
       tl.fromTo("#beat-33-signal-not-force .bg-img", {opacity: 0}, {opacity: 1, duration: 0.35, ease: "none"}, 217.24);
       tl.fromTo("#beat-33-signal-not-force .bg-img", {scale: 1.0}, {scale: 1.1, duration: 9.02, ease: "none"}, 217.24);
@@ -489,10 +524,10 @@
       tl.fromTo("#beat-34-consult-doctor .bg-img", {scale: 1.1}, {scale: 1.0, duration: 11.76, ease: "none"}, 226.26);
       tl.set   ("#beat-34-consult-doctor .bg-img", {opacity: 0, scale: 1.1}, 238.02);
       tl.fromTo("#beat-35-magnesium .bg-img", {opacity: 0}, {opacity: 1, duration: 0.35, ease: "none"}, 238.02);
-      tl.fromTo("#beat-35-magnesium .bg-img", {scale: 1.0}, {scale: 1.1, duration: 3.14, ease: "none"}, 238.02);
-      tl.set   ("#beat-35-magnesium .bg-img", {opacity: 0, scale: 1.0}, 241.16);
-      tl.fromTo("#beat-36-food-sources .bg-img", {opacity: 0}, {opacity: 1, duration: 0.35, ease: "none"}, 241.16);
-      tl.fromTo("#beat-36-food-sources .bg-img", {scale: 1.1}, {scale: 1.0, duration: 8.58, ease: "none"}, 241.16);
+      tl.fromTo("#beat-35-magnesium .bg-img", {scale: 1.0}, {scale: 1.1, duration: 6.28, ease: "none"}, 238.02);
+      tl.set   ("#beat-35-magnesium .bg-img", {opacity: 0, scale: 1.0}, 244.3);
+      tl.fromTo("#beat-36-food-sources .bg-img", {opacity: 0}, {opacity: 1, duration: 0.35, ease: "none"}, 244.3);
+      tl.fromTo("#beat-36-food-sources .bg-img", {scale: 1.1}, {scale: 1.0, duration: 5.44, ease: "none"}, 244.3);
       tl.set   ("#beat-36-food-sources .bg-img", {opacity: 0, scale: 1.1}, 249.74);
       tl.fromTo("#beat-37-not-cure .bg-img", {opacity: 0}, {opacity: 1, duration: 0.35, ease: "none"}, 249.74);
       tl.fromTo("#beat-37-not-cure .bg-img", {scale: 1.0}, {scale: 1.1, duration: 7.0, ease: "none"}, 249.74);
@@ -549,10 +584,10 @@
       tl.fromTo("#beat-54-shallow-sleep .bg-img", {scale: 1.1}, {scale: 1.0, duration: 7.02, ease: "none"}, 362.76);
       tl.set   ("#beat-54-shallow-sleep .bg-img", {opacity: 0, scale: 1.1}, 369.78);
       tl.fromTo("#beat-55-cutoff-8h .bg-img", {opacity: 0}, {opacity: 1, duration: 0.35, ease: "none"}, 369.78);
-      tl.fromTo("#beat-55-cutoff-8h .bg-img", {scale: 1.0}, {scale: 1.1, duration: 7.23, ease: "none"}, 369.78);
-      tl.set   ("#beat-55-cutoff-8h .bg-img", {opacity: 0, scale: 1.0}, 377.01);
-      tl.fromTo("#beat-56-3pm-cutoff .bg-img", {opacity: 0}, {opacity: 1, duration: 0.35, ease: "none"}, 377.01);
-      tl.fromTo("#beat-56-3pm-cutoff .bg-img", {scale: 1.1}, {scale: 1.0, duration: 7.23, ease: "none"}, 377.01);
+      tl.fromTo("#beat-55-cutoff-8h .bg-img", {scale: 1.0}, {scale: 1.1, duration: 10.22, ease: "none"}, 369.78);
+      tl.set   ("#beat-55-cutoff-8h .bg-img", {opacity: 0, scale: 1.0}, 380.0);
+      tl.fromTo("#beat-56-3pm-cutoff .bg-img", {opacity: 0}, {opacity: 1, duration: 0.35, ease: "none"}, 380.0);
+      tl.fromTo("#beat-56-3pm-cutoff .bg-img", {scale: 1.1}, {scale: 1.0, duration: 4.24, ease: "none"}, 380.0);
       tl.set   ("#beat-56-3pm-cutoff .bg-img", {opacity: 0, scale: 1.1}, 384.24);
       tl.fromTo("#beat-57-daily-exercise .bg-img", {opacity: 0}, {opacity: 1, duration: 0.35, ease: "none"}, 384.24);
       tl.fromTo("#beat-57-daily-exercise .bg-img", {scale: 1.0}, {scale: 1.1, duration: 4.3, ease: "none"}, 384.24);
