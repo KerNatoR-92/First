@@ -346,17 +346,10 @@
     {
       "id": "43-alcohol",
       "paragraphs": [
-        44
-      ],
-      "query": "glass wine dim room evening",
-      "orientation": "landscape"
-    },
-    {
-      "id": "44-alcohol-detail",
-      "paragraphs": [
+        44,
         45
       ],
-      "query": "waking up middle of night bed dark",
+      "query": "glass wine dim room evening",
       "orientation": "landscape"
     },
     {
