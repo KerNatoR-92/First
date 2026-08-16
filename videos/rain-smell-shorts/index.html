@@ -157,7 +157,7 @@
       id="root"
       data-composition-id="main"
       data-start="0"
-      data-duration="52"
+      data-duration="56"
       data-width="1080"
       data-height="1920"
     >
@@ -171,23 +171,23 @@
         data-volume="1.0"
       ></audio>
 
-      <!-- BGM: Wildfire (Jessie Villa) - instrumental, looped, ducked -->
+      <!-- BGM: Wildfire (Jessie Villa) - instrumental, looped, ducked, 56s -->
       <audio
         id="el-bgm"
-        src="public/bgm/wildfire-instrumental.m4a"
+        src="public/bgm/wildfire-56s.m4a"
         data-start="0"
-        data-duration="52"
+        data-duration="56"
         data-track-index="11"
-        data-volume="0.20"
+        data-volume="0.42"
       ></audio>
 
       <!-- progress bar -->
-      <div id="el-progress" class="progress clip" data-start="0" data-duration="52" data-track-index="9">
+      <div id="el-progress" class="progress clip" data-start="0" data-duration="56" data-track-index="9">
         <div class="bar" id="progress-bar"></div>
       </div>
 
       <!-- ============= STAGE (middle background scenes) ============= -->
-      <div id="el-stage" class="stage clip" data-start="0" data-duration="52" data-track-index="0">
+      <div id="el-stage" class="stage clip" data-start="0" data-duration="56" data-track-index="0">
       </div>
 
       <!-- SCENES: placed under `.stage` visually via absolute positioning -->
@@ -215,13 +215,18 @@
         <div class="bg" id="s6-bg" style="background-image:url('public/bg/11-breathing.jpg')"></div>
         <div class="veil"></div>
       </div>
-      <div id="el-s7" class="scene clip" data-start="46.20" data-duration="5.80" data-track-index="1">
+      <div id="el-s7" class="scene clip" data-start="46.20" data-duration="9.80" data-track-index="1">
         <div class="bg" id="s7-bg" style="background-image:url('public/bg/12-forest-mist.jpg')"></div>
         <div class="veil"></div>
       </div>
 
+      <!-- ============= Fade-to-black outro (52s → 56s) ============= -->
+      <div id="el-fadeout" class="clip" data-start="52.00" data-duration="4.00" data-track-index="12"
+           style="position:absolute; inset:0; width:1080px; height:1920px; background:#000; z-index:20; opacity:0; will-change:opacity;">
+      </div>
+
       <!-- ============= TOP strip (small brand + persistent title) ============= -->
-      <div id="el-title" class="titlebar clip" data-start="0" data-duration="52" data-track-index="6" data-layout-allow-occlusion="true">
+      <div id="el-title" class="titlebar clip" data-start="0" data-duration="56" data-track-index="6" data-layout-allow-occlusion="true">
         <div class="brand">
           <span class="dot"></span>
           <span class="chan">잡지식탁</span>
@@ -230,7 +235,7 @@
       </div>
 
       <!-- ============= BOTTOM caption bar (persistent) ============= -->
-      <div id="el-capbar" class="capbar clip" data-start="0" data-duration="52" data-track-index="5"></div>
+      <div id="el-capbar" class="capbar clip" data-start="0" data-duration="56" data-track-index="5"></div>
 
       <!-- ============= Caption lines (script-aligned, keep-all breaks) =============
            No mid-clause splits: 거/게 nominalizer + verb stays together;
@@ -275,7 +280,7 @@
       window.__timelines = window.__timelines || {};
       const tl = gsap.timeline({ paused: true });
 
-      /* progress bar across the whole timeline */
+      /* progress bar across the narrated portion (0 → 52s) */
       tl.fromTo("#progress-bar",
         { scaleX: 0 },
         { scaleX: 1, duration: 52, ease: "none" }, 0);
@@ -307,7 +312,13 @@
       sceneKB("s4", 20.10, 11.40);
       sceneKB("s5", 31.50, 5.60);
       sceneKB("s6", 37.10, 9.10);
-      sceneKB("s7", 46.20, 5.80);
+      sceneKB("s7", 46.20, 9.80);  // extended: holds through the outro fade
+
+      /* outro: fade to black 52s → 56s */
+      tl.fromTo("#el-fadeout",
+        { opacity: 0 },
+        { opacity: 1, duration: 4.0, ease: "power2.inOut" },
+        52.0);
 
       /* Each caption line: quick fade in / fade out; no per-word color change. */
       const totalLines = 33;
@@ -331,7 +342,7 @@
       tl.fromTo(".titlebar .dot",
         { scale: 0.85, opacity: 0.7 },
         { scale: 1.15, opacity: 1, duration: 1.2, ease: "sine.inOut",
-          repeat: Math.max(0, Math.floor(52 / 2.4) - 1), yoyo: true },
+          repeat: Math.max(0, Math.floor(56 / 2.4) - 1), yoyo: true },
         0);
 
       window.__timelines["main"] = tl;
