@@ -1,0 +1,394 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1080, height=1920" />
+    <title>잡지식탁 · 비 올 때 냄새나는 이유</title>
+    <script src="public/vendor/gsap.min.js"></script>
+    <style>
+      @font-face {
+        font-family: "Noto Sans CJK KR";
+        src: local("Noto Sans CJK KR"), local("Noto Sans KR"), local("NotoSansCJK-Regular");
+        font-weight: 400;
+      }
+      @font-face {
+        font-family: "Noto Sans CJK KR";
+        src: local("Noto Sans CJK KR Bold"), local("Noto Sans KR Bold"), local("NotoSansCJK-Bold");
+        font-weight: 700 900;
+      }
+      @font-face {
+        font-family: "Noto Sans KR";
+        src: local("Noto Sans CJK KR"), local("Noto Sans KR"), local("NotoSansCJK-Regular");
+        font-weight: 400;
+      }
+      @font-face {
+        font-family: "Noto Sans KR";
+        src: local("Noto Sans CJK KR Bold"), local("Noto Sans KR Bold"), local("NotoSansCJK-Bold");
+        font-weight: 700 900;
+      }
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      html, body {
+        width: 1080px; height: 1920px;
+        overflow: hidden;
+        background: #05060a;
+        color: #fff;
+        font-family: "Noto Sans CJK KR", "Noto Sans KR", "Noto Sans JP", sans-serif;
+        -webkit-font-smoothing: antialiased;
+      }
+      #root {
+        position: relative;
+        width: 1080px; height: 1920px;
+        overflow: hidden;
+        background: #05060a;
+      }
+      .bg {
+        position: absolute; inset: 0;
+        width: 1080px; height: 1920px;
+        background-size: cover;
+        background-position: center;
+        will-change: transform, opacity;
+      }
+      .veil {
+        position: absolute; inset: 0;
+        background: linear-gradient(180deg,
+          rgba(5,6,10,0.72) 0%,
+          rgba(5,6,10,0.28) 30%,
+          rgba(5,6,10,0.35) 55%,
+          rgba(5,6,10,0.92) 100%);
+        pointer-events: none;
+      }
+
+      /* channel brand mark (persistent) */
+      .brand {
+        position: absolute;
+        top: 90px; left: 60px;
+        display: flex; align-items: center; gap: 18px;
+        z-index: 5;
+      }
+      .brand .dot {
+        width: 22px; height: 22px;
+        border-radius: 50%;
+        background: #ffd84a;
+        box-shadow: 0 0 24px rgba(255,216,74,0.6);
+      }
+      .brand .name {
+        font-size: 36px; font-weight: 900;
+        letter-spacing: -0.02em;
+        color: #ffffff;
+      }
+      .brand .sub {
+        font-size: 22px; font-weight: 700;
+        color: rgba(255,255,255,0.65);
+        margin-left: 6px;
+      }
+
+      /* scene content */
+      .scene {
+        position: absolute; inset: 0;
+        width: 1080px; height: 1920px;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        padding: 0 80px 260px 80px;
+      }
+      .kicker {
+        display: inline-block;
+        font-size: 30px; font-weight: 800;
+        letter-spacing: 0.14em;
+        color: #05060a;
+        background: #ffd84a;
+        padding: 10px 22px;
+        border-radius: 8px;
+        margin-bottom: 28px;
+        align-self: flex-start;
+        will-change: transform, opacity;
+      }
+      .kicker.ghost {
+        background: rgba(255,255,255,0.08);
+        color: rgba(255,255,255,0.9);
+        border: 1px solid rgba(255,255,255,0.25);
+      }
+      .headline {
+        font-size: 108px;
+        font-weight: 900;
+        line-height: 1.06;
+        letter-spacing: -0.035em;
+        color: #ffffff;
+        text-shadow: 0 8px 40px rgba(0,0,0,0.55);
+        will-change: transform, opacity;
+      }
+      .headline.small { font-size: 92px; }
+      .headline .hl {
+        color: #ffd84a;
+      }
+      .subline {
+        margin-top: 28px;
+        font-size: 42px;
+        font-weight: 500;
+        line-height: 1.35;
+        color: rgba(255,255,255,0.92);
+        text-shadow: 0 4px 24px rgba(0,0,0,0.6);
+        max-width: 920px;
+        will-change: transform, opacity;
+      }
+
+      /* footer channel pill */
+      .footer {
+        position: absolute;
+        left: 0; right: 0; bottom: 80px;
+        display: flex; justify-content: center;
+        z-index: 5;
+      }
+      .footer .pill {
+        font-size: 26px; font-weight: 700;
+        color: rgba(255,255,255,0.85);
+        background: rgba(255,255,255,0.08);
+        border: 1px solid rgba(255,255,255,0.16);
+        padding: 12px 26px;
+        border-radius: 999px;
+      }
+
+      /* progress */
+      .progress {
+        position: absolute;
+        left: 0; right: 0; top: 0;
+        height: 8px;
+        background: rgba(255,255,255,0.08);
+        z-index: 6;
+      }
+      .progress .bar {
+        position: absolute; left: 0; top: 0;
+        width: 1080px; height: 8px;
+        background: linear-gradient(90deg, #ffd84a 0%, #ff8a3d 100%);
+        transform-origin: 0 50%;
+      }
+    </style>
+  </head>
+  <body>
+    <div
+      id="root"
+      data-composition-id="main"
+      data-start="0"
+      data-duration="52"
+      data-width="1080"
+      data-height="1920"
+    >
+      <!-- narration -->
+      <audio
+        id="el-narration"
+        src="narration.wav"
+        data-start="0"
+        data-duration="51.36"
+        data-track-index="10"
+        data-volume="1.0"
+      ></audio>
+
+      <!-- progress bar -->
+      <div id="el-progress" class="progress clip" data-start="0" data-duration="52" data-track-index="9">
+        <div class="bar" id="progress-bar"></div>
+      </div>
+
+      <!-- brand (persistent) -->
+      <div id="el-brand" class="brand clip" data-start="0" data-duration="52" data-track-index="7">
+        <span class="dot"></span>
+        <span class="name">잡지식탁</span>
+        <span class="sub">잡다한 지식이 무릎을 탁</span>
+      </div>
+
+      <!-- footer pill (persistent) -->
+      <div id="el-footer" class="footer clip" data-start="0" data-duration="52" data-track-index="8">
+        <div class="pill">▶ 잡지식탁 · 무릎탁 시리즈 #01</div>
+      </div>
+
+      <!-- ============= S1  0.00 – 4.40  Hook ============= -->
+      <div id="el-s1" class="scene clip" data-start="0.00" data-duration="4.50" data-track-index="1">
+        <div class="bg" id="s1-bg" style="background-image:url('public/bg/01-rain-window.jpg')"></div>
+        <div class="veil"></div>
+        <div style="position:relative;z-index:2">
+          <div class="kicker" id="s1-kicker">잡지식탁 · EP.01</div>
+          <div class="headline" id="s1-head">비 오면<br/><span class="hl">흙냄새</span> 진해지는 거<br/>느껴본 적 있어?</div>
+        </div>
+      </div>
+
+      <!-- ============= S2  4.40 – 7.50  Twist ============= -->
+      <div id="el-s2" class="scene clip" data-start="4.40" data-duration="3.20" data-track-index="2">
+        <div class="bg" id="s2-bg" style="background-image:url('public/bg/02-city-rain.jpg')"></div>
+        <div class="veil"></div>
+        <div style="position:relative;z-index:2">
+          <div class="kicker ghost" id="s2-kicker">사실은</div>
+          <div class="headline" id="s2-head">이 냄새,<br/><span class="hl">비에서 나는 게 아니야</span></div>
+        </div>
+      </div>
+
+      <!-- ============= S3  7.45 – 11.10  Ground stores it ============= -->
+      <div id="el-s3" class="scene clip" data-start="7.50" data-duration="3.75" data-track-index="1">
+        <div class="bg" id="s3-bg" style="background-image:url('public/bg/03-dry-earth.jpg')"></div>
+        <div class="veil"></div>
+        <div style="position:relative;z-index:2">
+          <div class="kicker ghost" id="s3-kicker">비 오기 전</div>
+          <div class="headline small" id="s3-head">땅 속에는<br/>식물·미생물이 만든<br/><span class="hl">수많은 냄새 물질</span>이 쌓여 있어</div>
+        </div>
+      </div>
+
+      <!-- ============= S4  11.10 – 17.30  Geosmin ============= -->
+      <div id="el-s4" class="scene clip" data-start="11.30" data-duration="6.20" data-track-index="2">
+        <div class="bg" id="s4-bg" style="background-image:url('public/bg/04-bacteria.jpg')"></div>
+        <div class="veil"></div>
+        <div style="position:relative;z-index:2">
+          <div class="kicker" id="s4-kicker">주범 · 지오스민</div>
+          <div class="headline" id="s4-head">그중 하나가<br/><span class="hl">지오스민</span></div>
+          <div class="subline" id="s4-sub">비 온 뒤 코끝에 남는<br/>바로 그 흙냄새의 정체</div>
+        </div>
+      </div>
+
+      <!-- ============= S5  17.30 – 19.30  Question ============= -->
+      <div id="el-s5" class="scene clip" data-start="17.50" data-duration="2.30" data-track-index="1">
+        <div class="bg" id="s5-bg" style="background-image:url('public/bg/08-storm.jpg')"></div>
+        <div class="veil"></div>
+        <div style="position:relative;z-index:2">
+          <div class="kicker ghost" id="s5-kicker">그런데 왜?</div>
+          <div class="headline" id="s5-head">비가 오면<br/>왜 <span class="hl">갑자기</span> 강해질까?</div>
+        </div>
+      </div>
+
+      <!-- ============= S6  19.30 – 25.50  Raindrop + air bubble ============= -->
+      <div id="el-s6" class="scene clip" data-start="19.80" data-duration="5.80" data-track-index="2">
+        <div class="bg" id="s6-bg" style="background-image:url('public/bg/10-ripple.jpg')"></div>
+        <div class="veil"></div>
+        <div style="position:relative;z-index:2">
+          <div class="kicker" id="s6-kicker">MECHANISM · 01</div>
+          <div class="headline small" id="s6-head">빗방울이 떨어질 때<br/>땅 표면의<br/><span class="hl">작은 공기방울</span>이 튀어 오른다</div>
+        </div>
+      </div>
+
+      <!-- ============= S7  25.50 – 31.30  Spread through air ============= -->
+      <div id="el-s7" class="scene clip" data-start="25.55" data-duration="5.75" data-track-index="1">
+        <div class="bg" id="s7-bg" style="background-image:url('public/bg/06-forest-rain.jpg')"></div>
+        <div class="veil"></div>
+        <div style="position:relative;z-index:2">
+          <div class="kicker" id="s7-kicker">MECHANISM · 02</div>
+          <div class="headline small" id="s7-head">냄새 물질이<br/>작은 입자에 실려<br/><span class="hl">공기 중으로 퍼진다</span></div>
+        </div>
+      </div>
+
+      <!-- ============= S8  31.30 – 37.10  Reframe ============= -->
+      <div id="el-s8" class="scene clip" data-start="31.50" data-duration="5.60" data-track-index="2">
+        <div class="bg" id="s8-bg" style="background-image:url('public/bg/08-storm.jpg')"></div>
+        <div class="veil"></div>
+        <div style="position:relative;z-index:2">
+          <div class="kicker ghost" id="s8-kicker">쉽게 말하면</div>
+          <div class="headline small" id="s8-head">비가 냄새를 만드는 게 아니라<br/><span class="hl">땅의 냄새를 공기에<br/>뿌려주는 것</span></div>
+        </div>
+      </div>
+
+      <!-- ============= S9  37.10 – 42.20  Nose sensitive ============= -->
+      <div id="el-s9" class="scene clip" data-start="37.20" data-duration="5.10" data-track-index="1">
+        <div class="bg" id="s9-bg" style="background-image:url('public/bg/11-breathing.jpg')"></div>
+        <div class="veil"></div>
+        <div style="position:relative;z-index:2">
+          <div class="kicker" id="s9-kicker">놀라운 사실</div>
+          <div class="headline" id="s9-head">사람 코는<br/>지오스민에<br/><span class="hl">굉장히 예민</span></div>
+        </div>
+      </div>
+
+      <!-- ============= S10 42.20 – 46.20  Rain incoming detector ============= -->
+      <div id="el-s10" class="scene clip" data-start="42.30" data-duration="4.00" data-track-index="2">
+        <div class="bg" id="s10-bg" style="background-image:url('public/bg/05-lightning.jpg')"></div>
+        <div class="veil"></div>
+        <div style="position:relative;z-index:2">
+          <div class="kicker ghost" id="s10-kicker">아주 적은 양에도</div>
+          <div class="headline" id="s10-head">“<span class="hl">어? 비 오려나?</span>”<br/>바로 알아챈다</div>
+        </div>
+      </div>
+
+      <!-- ============= S11 46.20 – 52.00  Payoff ============= -->
+      <div id="el-s11" class="scene clip" data-start="46.30" data-duration="5.70" data-track-index="1">
+        <div class="bg" id="s11-bg" style="background-image:url('public/bg/12-forest-mist.jpg')"></div>
+        <div class="veil"></div>
+        <div style="position:relative;z-index:2">
+          <div class="kicker" id="s11-kicker">무릎 탁 !</div>
+          <div class="headline small" id="s11-head">다음에 비가 오면<br/><span class="hl">지금 땅이 냄새를<br/>뿌리고 있구나</span></div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      window.__timelines = window.__timelines || {};
+      const tl = gsap.timeline({ paused: true });
+
+      // Progress bar across the whole timeline
+      tl.fromTo("#progress-bar",
+        { scaleX: 0 },
+        { scaleX: 1, duration: 52, ease: "none" }, 0);
+
+      // Brand dot subtle pulse
+      tl.fromTo("#el-brand .dot",
+        { scale: 0.85, opacity: 0.55 },
+        { scale: 1.15, opacity: 1, duration: 1.4, ease: "sine.inOut",
+          repeat: Math.max(0, Math.floor(52 / 2.8) - 1), yoyo: true },
+        0);
+
+      // Per-scene entrance / exit
+      function scene(id, start, dur, opts) {
+        opts = opts || {};
+        const bg = `#${id}-bg`;
+        const kicker = `#${id}-kicker`;
+        const head = `#${id}-head`;
+        const sub = `#${id}-sub`;
+
+        // ken-burns background
+        const from = opts.push === "down"
+          ? { scale: 1.08, y: -30, opacity: 0 }
+          : { scale: 1.08, y: 30, opacity: 0 };
+        const to = opts.push === "down"
+          ? { scale: 1.18, y: 30, opacity: 1, duration: dur, ease: "sine.inOut" }
+          : { scale: 1.18, y: -30, opacity: 1, duration: dur, ease: "sine.inOut" };
+        tl.fromTo(bg, from, to, start);
+
+        // fade at the end
+        const outLen = Math.min(0.55, dur * 0.25);
+        tl.to(bg, { opacity: 0, duration: outLen, ease: "power2.in" }, start + dur - outLen);
+
+        // kicker
+        tl.fromTo(kicker,
+          { y: 24, opacity: 0 },
+          { y: 0, opacity: 1, duration: 0.5, ease: "power3.out" },
+          start + 0.10);
+
+        // headline
+        tl.fromTo(head,
+          { y: 60, opacity: 0 },
+          { y: 0, opacity: 1, duration: 0.65, ease: "power3.out" },
+          start + 0.28);
+
+        // optional subline
+        if (document.querySelector(sub)) {
+          tl.fromTo(sub,
+            { y: 30, opacity: 0 },
+            { y: 0, opacity: 1, duration: 0.55, ease: "power2.out" },
+            start + 0.60);
+        }
+
+        // text exit
+        const exitAt = start + dur - Math.min(0.45, dur * 0.22);
+        tl.to([kicker, head, sub],
+          { y: -18, opacity: 0, duration: Math.min(0.4, dur * 0.22), ease: "power2.in" },
+          exitAt);
+      }
+
+      scene("s1",   0.00, 4.50);
+      scene("s2",   4.40, 3.20, { push: "down" });
+      scene("s3",   7.50, 3.75);
+      scene("s4",  11.30, 6.20);
+      scene("s5",  17.50, 2.30, { push: "down" });
+      scene("s6",  19.80, 5.80);
+      scene("s7",  25.55, 5.75);
+      scene("s8",  31.50, 5.60, { push: "down" });
+      scene("s9",  37.20, 5.10);
+      scene("s10", 42.30, 4.00, { push: "down" });
+      scene("s11", 46.30, 5.70);
+
+      window.__timelines["main"] = tl;
+    </script>
+  </body>
+</html>
