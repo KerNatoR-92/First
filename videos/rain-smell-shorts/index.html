@@ -42,72 +42,44 @@
         background: #05060a;
       }
 
-      /* ---------- Top title strip (white bg, static headline) ---------- */
+      /* ---------- Top strip (black, brand mark only) ---------- */
       .titlebar {
         position: absolute;
         top: 0; left: 0; right: 0;
-        height: 340px;
-        background: #ffffff;
+        height: 180px;
+        background: #05060a;
         z-index: 6;
-      }
-      .titlebar .row1 {
-        position: absolute;
-        top: 44px; left: 60px; right: 60px;
-        display: flex; align-items: center; gap: 14px;
+        display: flex; align-items: center;
+        justify-content: center;
       }
       .titlebar .dot {
-        width: 20px; height: 20px; border-radius: 50%;
-        background: #ff3d68;
-        box-shadow: 0 0 20px rgba(255,61,104,0.35);
+        width: 18px; height: 18px; border-radius: 50%;
+        background: #ffe86b;
+        box-shadow: 0 0 22px rgba(255,232,107,0.45);
+        margin-right: 16px;
       }
       .titlebar .chan {
-        font-size: 30px; font-weight: 900;
-        color: #05060a; letter-spacing: -0.02em;
-      }
-      .titlebar .chan-sub {
-        font-size: 22px; font-weight: 700;
-        color: rgba(5,6,10,0.45);
-        margin-left: 4px;
-      }
-      .titlebar .ep {
-        margin-left: auto;
-        font-size: 22px; font-weight: 800;
-        color: #05060a;
-        background: #ffe86b;
-        padding: 6px 14px;
-        border-radius: 6px;
-      }
-      .titlebar .headline {
-        font-size: 108px;
-        font-weight: 900;
-        line-height: 1.02;
-        letter-spacing: -0.045em;
-        color: #ff3d68;
-        position: absolute;
-        left: 60px; right: 60px;
-        bottom: 40px;
-      }
-      .titlebar .headline .accent {
-        color: #05060a;
+        font-size: 44px; font-weight: 900;
+        color: #ffffff; letter-spacing: -0.02em;
       }
 
       /* ---------- Middle image stage ---------- */
       .stage {
         position: absolute;
-        top: 340px; left: 0; right: 0;
-        height: 1180px;
+        top: 180px; left: 0; right: 0;
+        height: 1340px;
         overflow: hidden;
         background: #05060a;
       }
       .scene {
         position: absolute;
-        top: 340px; left: 0;
-        width: 1080px; height: 1180px;
+        top: 180px; left: 0;
+        width: 1080px; height: 1340px;
         overflow: hidden;
       }
       .bg {
         position: absolute; inset: 0;
-        width: 1080px; height: 1180px;
+        width: 1080px; height: 1340px;
         background-size: cover;
         background-position: center;
         will-change: transform, opacity;
@@ -128,42 +100,23 @@
         height: 400px;
         background: #05060a;
         z-index: 7;
-        padding: 48px 60px 40px 60px;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-      }
-      .capbar .label {
-        font-size: 22px; font-weight: 800;
-        letter-spacing: 0.18em;
-        color: #ffe86b;
-        margin-bottom: 26px;
       }
       .capline {
         position: absolute;
         left: 0; right: 0;
-        bottom: 130px;
+        bottom: 150px;
         text-align: center;
-        padding: 0 50px;
+        padding: 0 70px;
         z-index: 8;
-        font-size: 70px;
-        font-weight: 900;
-        line-height: 1.18;
-        letter-spacing: -0.02em;
+        font-size: 48px;
+        font-weight: 700;
+        line-height: 1.28;
+        letter-spacing: -0.01em;
         color: #ffffff;
-        text-shadow: 0 2px 14px rgba(0,0,0,0.7);
+        text-shadow: 0 2px 10px rgba(0,0,0,0.6);
         word-break: keep-all;
         overflow-wrap: normal;
         will-change: transform, opacity;
-      }
-      .footer-mark {
-        position: absolute;
-        left: 0; right: 0; bottom: 34px;
-        text-align: center;
-        font-size: 24px; font-weight: 700;
-        color: rgba(255,255,255,0.55);
-        letter-spacing: 0.05em;
       }
 
       /* progress ribbon at the very top edge */
@@ -240,23 +193,14 @@
         <div class="veil"></div>
       </div>
 
-      <!-- ============= TOP title strip (persistent) ============= -->
+      <!-- ============= TOP strip (black, brand only) ============= -->
       <div id="el-title" class="titlebar clip" data-start="0" data-duration="52" data-track-index="6">
-        <div class="row1" data-layout-allow-occlusion="true">
-          <span class="dot"></span>
-          <span class="chan">잡지식탁</span>
-          <span class="chan-sub">잡다한 지식이 무릎을 탁</span>
-          <span class="ep">EP.01</span>
-        </div>
-        <div class="headline" data-layout-allow-occlusion="true">
-          비 오면 왜<br/><span class="accent">흙냄새</span>가 날까?
-        </div>
+        <span class="dot"></span>
+        <span class="chan">잡지식탁</span>
       </div>
 
       <!-- ============= BOTTOM caption bar (persistent) ============= -->
-      <div id="el-capbar" class="capbar clip" data-start="0" data-duration="52" data-track-index="5">
-        <div class="footer-mark">잡지식탁 · 무릎탁 시리즈 #01</div>
-      </div>
+      <div id="el-capbar" class="capbar clip" data-start="0" data-duration="52" data-track-index="5"></div>
 
       <!-- ============= Caption lines (whisper-synced, script-aligned) =============
            Each line is one clip; no per-word color changes. -->
