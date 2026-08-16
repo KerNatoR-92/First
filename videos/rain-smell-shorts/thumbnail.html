@@ -25,47 +25,14 @@
       .veil {
         position: absolute; inset: 0;
         background:
-          radial-gradient(ellipse at 50% 40%, rgba(5,6,10,0.25) 0%, rgba(5,6,10,0.85) 100%),
-          linear-gradient(180deg, rgba(5,6,10,0.55) 0%, rgba(5,6,10,0.20) 45%, rgba(5,6,10,0.92) 100%);
+          radial-gradient(ellipse at 50% 50%, rgba(5,6,10,0.30) 0%, rgba(5,6,10,0.85) 100%),
+          linear-gradient(180deg, rgba(5,6,10,0.55) 0%, rgba(5,6,10,0.30) 45%, rgba(5,6,10,0.75) 100%);
       }
-
-      /* channel mark top-left */
-      .brand {
-        position: absolute;
-        top: 60px; left: 60px;
-        display: flex; align-items: center; gap: 14px;
-      }
-      .brand .dot {
-        width: 20px; height: 20px; border-radius: 50%;
-        background: #ffe86b;
-        box-shadow: 0 0 24px rgba(255,232,107,0.55);
-      }
-      .brand .chan {
-        font-size: 34px; font-weight: 900;
-        color: #ffffff;
-        letter-spacing: -0.01em;
-      }
-
-      /* top kicker chip */
-      .kicker {
-        position: absolute;
-        top: 380px; left: 50%;
-        transform: translateX(-50%);
-        display: inline-block;
-        font-size: 34px; font-weight: 900;
-        letter-spacing: 0.16em;
-        color: #05060a;
-        background: #ffe86b;
-        padding: 12px 26px;
-        border-radius: 10px;
-        white-space: nowrap;
-      }
-
-      /* main headline */
       .head {
         position: absolute;
         left: 40px; right: 40px;
-        top: 500px;
+        top: 50%;
+        transform: translateY(-50%);
         text-align: center;
         font-weight: 900;
         line-height: 1.05;
@@ -75,96 +42,18 @@
           0 0 40px rgba(0,0,0,0.85),
           0 8px 40px rgba(0,0,0,0.7);
       }
-      .head .l1 { display: block; font-size: 158px; }
-      .head .l2 { display: block; font-size: 158px; }
+      .head .l1 { display: block; font-size: 158px; white-space: nowrap; }
+      .head .l2 { display: block; font-size: 158px; white-space: nowrap; }
       .head .accent { color: #ffe86b; }
-
-      /* stat / hook line */
-      .hook {
-        position: absolute;
-        left: 60px; right: 60px;
-        bottom: 340px;
-        text-align: center;
-        font-size: 62px; font-weight: 800;
-        color: #ffffff;
-        letter-spacing: -0.02em;
-        line-height: 1.15;
-        text-shadow: 0 6px 30px rgba(0,0,0,0.85);
-      }
-      .hook .hl { color: #ffe86b; }
-
-      /* rain-drops accent */
-      .drops {
-        position: absolute;
-        bottom: 190px; left: 0; right: 0;
-        text-align: center;
-        font-size: 74px;
-        opacity: 0.75;
-      }
-
-      /* bottom footer bar */
-      .footer {
-        position: absolute;
-        left: 0; right: 0; bottom: 0;
-        height: 130px;
-        background: rgba(5,6,10,0.85);
-        display: flex; align-items: center; justify-content: space-between;
-        padding: 0 60px;
-        border-top: 3px solid #ffe86b;
-      }
-      .footer .tag {
-        font-size: 30px; font-weight: 800;
-        color: #ffe86b;
-        letter-spacing: 0.14em;
-      }
-      .footer .cta {
-        font-size: 30px; font-weight: 800;
-        color: #ffffff;
-      }
-
-      /* corner decoration */
-      .corner-tl, .corner-br {
-        position: absolute;
-        width: 90px; height: 90px;
-        border: 6px solid #ffe86b;
-      }
-      .corner-tl {
-        top: 40px; right: 40px;
-        border-right: none; border-bottom: none;
-      }
-      .corner-br {
-        bottom: 180px; left: 40px;
-        border-left: none; border-top: none;
-        opacity: 0;
-      }
     </style>
   </head>
   <body>
     <div class="stage">
       <div class="bg"></div>
       <div class="veil"></div>
-
-      <div class="brand">
-        <span class="dot"></span>
-        <span class="chan">잡지식탁</span>
-      </div>
-
-      <div class="kicker">잡다한 지식, 무릎 탁!</div>
-
       <div class="head">
         <span class="l1">비 오면 왜</span>
         <span class="l2"><span class="accent">흙냄새</span>가 날까?</span>
-      </div>
-
-      <div class="hook">
-        사실 <span class="hl">비 냄새가 아닙니다.</span>
-      </div>
-
-      <div class="drops">💧 · 💧 · 💧</div>
-
-      <div class="footer">
-        <span class="tag">잡다한 지식이 무릎을 탁</span>
-        <span class="cta">지금 보러 가기</span>
       </div>
     </div>
   </body>
