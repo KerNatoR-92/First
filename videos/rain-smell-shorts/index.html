@@ -46,31 +46,37 @@
       .titlebar {
         position: absolute;
         top: 0; left: 0; right: 0;
-        height: 280px;
+        height: 460px;
         background: #05060a;
         z-index: 6;
       }
       .titlebar .brand {
         position: absolute;
-        top: 42px; left: 48px;
-        display: flex; align-items: center; gap: 10px;
+        top: 56px; left: 60px;
+        height: 42px;
+        display: flex; align-items: center; gap: 12px;
       }
       .titlebar .brand .dot {
-        width: 12px; height: 12px; border-radius: 50%;
+        width: 14px; height: 14px; border-radius: 50%;
         background: #ffe86b;
-        box-shadow: 0 0 14px rgba(255,232,107,0.4);
+        box-shadow: 0 0 16px rgba(255,232,107,0.4);
       }
       .titlebar .brand .chan {
-        font-size: 24px; font-weight: 800;
-        color: rgba(255,255,255,0.85);
+        font-size: 28px; font-weight: 800;
+        color: rgba(255,255,255,0.9);
         letter-spacing: -0.01em;
+        line-height: 1;
       }
       .titlebar .title {
         position: absolute;
         left: 60px; right: 60px;
-        bottom: 46px;
+        top: 160px;         /* fixed baseline row below the brand — never overlaps */
+        bottom: 60px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
         text-align: center;
-        font-size: 76px;
+        font-size: 82px;
         font-weight: 900;
         line-height: 1.08;
         letter-spacing: -0.035em;
@@ -83,20 +89,20 @@
       /* ---------- Middle image stage ---------- */
       .stage {
         position: absolute;
-        top: 280px; left: 0; right: 0;
-        height: 1240px;
+        top: 460px; left: 0; right: 0;
+        height: 1060px;
         overflow: hidden;
         background: #05060a;
       }
       .scene {
         position: absolute;
-        top: 280px; left: 0;
-        width: 1080px; height: 1240px;
+        top: 460px; left: 0;
+        width: 1080px; height: 1060px;
         overflow: hidden;
       }
       .bg {
         position: absolute; inset: 0;
-        width: 1080px; height: 1240px;
+        width: 1080px; height: 1060px;
         background-size: cover;
         background-position: center;
         will-change: transform, opacity;
