@@ -73,6 +73,7 @@
         top: 160px;         /* fixed baseline row below the brand — never overlaps */
         bottom: 60px;
         display: flex;
+        flex-direction: column;
         align-items: center;
         justify-content: center;
         text-align: center;
@@ -82,6 +83,7 @@
         letter-spacing: -0.035em;
         color: #ffffff;
       }
+      .titlebar .title .line { display: block; }
       .titlebar .title .accent {
         color: #ffe86b;
       }
@@ -237,7 +239,7 @@
           <span class="dot"></span>
           <span class="chan">잡지식탁</span>
         </div>
-        <div class="title">비 오면 왜<br/><span class="accent">흙냄새</span>가 날까?</div>
+        <div class="title"><span class="line">비 오면 왜</span><span class="line"><span class="accent">흙냄새</span>가 날까?</span></div>
       </div>
 
       <!-- ============= BOTTOM caption bar (persistent) ============= -->
