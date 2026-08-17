@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <style>
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      html, body {
+        width: 1080px; height: 1920px;
+        overflow: hidden;
+        background: #05060a;
+        color: #fff;
+        font-family: "Noto Sans CJK KR", "Noto Sans KR", sans-serif;
+        -webkit-font-smoothing: antialiased;
+      }
+      .stage { position: absolute; inset: 0; width: 1080px; height: 1920px; overflow: hidden; }
+      .bg {
+        position: absolute; inset: 0;
+        width: 1080px; height: 1920px;
+        background-image: url("public/bg/10-ripple.jpg");
+        background-size: cover;
+        background-position: center;
+        transform: scale(1.08);
+        filter: contrast(1.05) saturate(0.95);
+      }
+      .veil {
+        position: absolute; inset: 0;
+        background:
+          radial-gradient(ellipse at 50% 50%, rgba(5,6,10,0.30) 0%, rgba(5,6,10,0.85) 100%),
+          linear-gradient(180deg, rgba(5,6,10,0.55) 0%, rgba(5,6,10,0.30) 45%, rgba(5,6,10,0.75) 100%);
+      }
+      .head {
+        position: absolute;
+        left: 40px; right: 40px;
+        top: 50%;
+        transform: translateY(-50%);
+        text-align: center;
+        font-weight: 900;
+        line-height: 1.05;
+        letter-spacing: -0.04em;
+        color: #ffffff;
+        text-shadow:
+          0 0 40px rgba(0,0,0,0.85),
+          0 8px 40px rgba(0,0,0,0.7);
+      }
+      .head .l1 { display: block; font-size: 158px; white-space: nowrap; }
+      .head .l2 { display: block; font-size: 158px; white-space: nowrap; }
+      .head .accent { color: #ffe86b; }
+
+      .brand {
+        position: absolute;
+        top: 60px; left: 60px;
+        display: flex; align-items: center; gap: 14px;
+        z-index: 3;
+      }
+      .brand .dot {
+        width: 18px; height: 18px; border-radius: 50%;
+        background: #ffe86b;
+        box-shadow: 0 0 22px rgba(255,232,107,0.55);
+      }
+      .brand .chan {
+        font-size: 34px; font-weight: 900;
+        color: #ffffff;
+        letter-spacing: -0.01em;
+        text-shadow: 0 2px 12px rgba(0,0,0,0.7);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="stage">
+      <div class="bg"></div>
+      <div class="veil"></div>
+      <div class="brand">
+        <span class="dot"></span>
+        <span class="chan">잡지식탁</span>
+      </div>
+      <div class="head">
+        <span class="l1">비 오면 왜</span>
+        <span class="l2"><span class="accent">흙냄새</span>가 날까?</span>
+      </div>
+    </div>
+  </body>
+</html>
