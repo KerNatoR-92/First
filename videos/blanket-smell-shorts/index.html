@@ -167,7 +167,7 @@
       id="root"
       data-composition-id="main"
       data-start="0.0"
-      data-duration="60"
+      data-duration="58.5"
       data-width="1080"
       data-height="1920"
     >
@@ -186,18 +186,18 @@
         id="el-bgm"
         src="public/bgm/wildfire-60s.m4a"
         data-start="0"
-        data-duration="60"
+        data-duration="58.5"
         data-track-index="11"
         data-volume="0.5376"
       ></audio>
 
       <!-- progress bar -->
-      <div id="el-progress" class="progress clip" data-start="0" data-duration="60" data-track-index="9">
+      <div id="el-progress" class="progress clip" data-start="0" data-duration="58.5" data-track-index="9">
         <div class="bar" id="progress-bar"></div>
       </div>
 
       <!-- ============= STAGE (middle background scenes) ============= -->
-      <div id="el-stage" class="stage clip" data-start="0" data-duration="60" data-track-index="0">
+      <div id="el-stage" class="stage clip" data-start="0" data-duration="58.5" data-track-index="0">
       </div>
 
       <!-- SCENES: middle band, alternating tracks -->
@@ -225,7 +225,7 @@
         <div class="bg" id="s6-bg" style="background-image:url('public/bg/06-laundry-hanging.jpg')"></div>
         <div class="veil"></div>
       </div>
-      <div id="el-s7" class="scene clip" data-start="46.94" data-duration="13.06" data-track-index="1">
+      <div id="el-s7" class="scene clip" data-start="46.94" data-duration="11.56" data-track-index="1">
         <div class="bg" id="s7-bg" style="background-image:url('public/bg/07-sunlight-bed.jpg')"></div>
         <div class="veil"></div>
       </div>
@@ -236,7 +236,7 @@
       </div>
 
       <!-- ============= TOP strip (small brand + persistent title) ============= -->
-      <div id="el-title" class="titlebar clip" data-start="0" data-duration="60" data-track-index="6" data-layout-allow-occlusion="true">
+      <div id="el-title" class="titlebar clip" data-start="0" data-duration="58.5" data-track-index="6" data-layout-allow-occlusion="true">
         <div class="brand">
           <img class="icon" src="public/brand/channel-icon.png" alt="잡지식탁" />
         </div>
@@ -244,7 +244,7 @@
       </div>
 
       <!-- ============= BOTTOM caption bar (persistent) ============= -->
-      <div id="el-capbar" class="capbar clip" data-start="0" data-duration="60" data-track-index="5"></div>
+      <div id="el-capbar" class="capbar clip" data-start="0" data-duration="58.5" data-track-index="5"></div>
 
       <!-- ============= Caption lines (script-aligned, keep-all breaks) =============
            No mid-clause splits: 거/게 nominalizer + verb stays together;
@@ -319,7 +319,7 @@
       sceneKB("s4", 20.16, 6.14);
       sceneKB("s5", 26.30, 7.32);
       sceneKB("s6", 33.62, 13.32);
-      sceneKB("s7", 46.94, 13.06);  // extended through the outro fade
+      sceneKB("s7", 46.94, 11.56);  // extends through the fade to 58.5s
 
       /* outro: fade to black 54.5s → 58.5s */
       tl.fromTo("#el-fadeout",
@@ -347,7 +347,7 @@
       tl.fromTo(".titlebar .icon",
         { scale: 0.96, opacity: 0.9 },
         { scale: 1.04, opacity: 1, duration: 1.4, ease: "sine.inOut",
-          repeat: Math.max(0, Math.floor(60/2.8) - 1), yoyo: true },
+          repeat: Math.max(0, Math.floor(58.5/2.8) - 1), yoyo: true },
         0);
 
       window.__timelines["main"] = tl;
