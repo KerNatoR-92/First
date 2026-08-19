@@ -35,60 +35,52 @@
         background-image: url('public/bg/01.jpg');
         background-size: cover; background-position: center;
       }
-      /* Strong dark veil for readability, but not fully black — first bg still visible */
+      /* Heavy overall darkening so the background reads as mood, not detail */
       .veil {
         position: absolute; inset: 0;
         background: linear-gradient(180deg,
-          rgba(5,6,10,0.62) 0%,
-          rgba(5,6,10,0.42) 25%,
-          rgba(5,6,10,0.72) 55%,
-          rgba(5,6,10,0.88) 100%);
+          rgba(5,6,10,0.78) 0%,
+          rgba(5,6,10,0.60) 40%,
+          rgba(5,6,10,0.68) 70%,
+          rgba(5,6,10,0.82) 100%);
       }
-      /* Brand top-left */
+
+      /* Small brand mark: yellow dot + wordmark */
       .brand {
-        position: absolute; top: 60px; left: 60px;
-        display: flex; align-items: center; gap: 22px;
+        position: absolute; top: 60px; left: 80px;
+        display: flex; align-items: center; gap: 20px;
       }
-      .brand .icon {
-        width: 160px; height: 160px; border-radius: 50%;
-        object-fit: cover; overflow: hidden;
-        box-shadow: 0 0 22px rgba(255,232,107,0.35), 0 4px 18px rgba(0,0,0,0.65);
+      .brand .dot {
+        width: 22px; height: 22px; border-radius: 50%;
+        background: #ffe86b;
+        box-shadow: 0 0 12px rgba(255,232,107,0.5);
       }
       .brand .wm {
-        font-weight: 900; font-size: 52px; letter-spacing: -0.02em;
-        color: #ffffff; text-shadow: 0 2px 12px rgba(0,0,0,0.7);
+        font-weight: 900; font-size: 42px; letter-spacing: -0.02em;
+        color: #ffffff;
+        text-shadow: 0 2px 12px rgba(0,0,0,0.7);
       }
 
-      /* Center big title */
+      /* Left-aligned huge title, positioned around mid-lower */
       .title-block {
         position: absolute;
-        left: 60px; right: 60px;
-        top: 50%; transform: translateY(-50%);
-        display: flex; flex-direction: column; align-items: center;
-        text-align: center;
-        gap: 12px;
-      }
-      .title-block .eyebrow {
-        font-weight: 700; font-size: 44px; letter-spacing: 0.28em;
-        color: #ffe86b; text-transform: uppercase;
-        text-shadow: 0 2px 10px rgba(0,0,0,0.6);
-        margin-bottom: 26px;
+        left: 80px; right: 80px;
+        top: 44%;
+        display: flex; flex-direction: column;
+        align-items: flex-start;
+        text-align: left;
       }
       .title-block .line {
-        font-weight: 900; font-size: 154px; line-height: 1.02;
-        letter-spacing: -0.045em; color: #ffffff;
+        font-weight: 900;
+        font-size: 148px;
+        line-height: 1.02;
+        letter-spacing: -0.045em;
+        color: #ffffff;
+        white-space: nowrap; word-break: keep-all;
         text-shadow: 0 3px 20px rgba(0,0,0,0.85), 0 0 40px rgba(0,0,0,0.5);
       }
+      .title-block .line + .line { margin-top: 6px; }
       .title-block .line .accent { color: #ffe86b; }
-
-      /* Bottom hook */
-      .bottom-hook {
-        position: absolute; left: 0; right: 0; bottom: 180px;
-        text-align: center;
-        font-weight: 800; font-size: 62px; letter-spacing: -0.02em;
-        color: #ffffff; text-shadow: 0 2px 14px rgba(0,0,0,0.85);
-      }
-      .bottom-hook .accent { color: #ffe86b; }
     </style>
   </head>
   <body>
@@ -97,18 +89,13 @@
       <div class="veil"></div>
 
       <div class="brand">
-        <img class="icon" src="public/brand/channel-icon.png" alt="잡지식탁" />
+        <span class="dot"></span>
         <span class="wm">잡지식탁</span>
       </div>
 
       <div class="title-block">
-        <div class="eyebrow">오늘의 궁금증</div>
-        <div class="line">샤워 후 거울</div>
-        <div class="line"><span class="accent">왜</span> 뿌예질까?</div>
-      </div>
-
-      <div class="bottom-hook">
-        정답은 <span class="accent">응결</span> 현상
+        <div class="line">샤워 뒤에 왜</div>
+        <div class="line"><span class="accent">거울</span>이 뿌예질까?</div>
       </div>
     </div>
   </body>
