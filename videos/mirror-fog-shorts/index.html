@@ -117,7 +117,7 @@
       id="root"
       data-composition-id="main"
       data-start="0"
-      data-duration="59.84"
+      data-duration="58.84"
       data-width="1080"
       data-height="1920"
     >
@@ -145,13 +145,13 @@
           <div class="bg" style="background-image: url('public/bg/05.jpg');"></div>
           <div class="veil"></div>
         </div>
-        <div class="scene clip" id="sc-6" data-start="47.86" data-duration="11.98" data-track-index="2">
+        <div class="scene clip" id="sc-6" data-start="47.86" data-duration="10.98" data-track-index="2">
           <div class="bg" style="background-image: url('public/bg/06.jpg');"></div>
           <div class="veil"></div>
         </div>
       </div>
 
-      <div class="titlebar clip" id="el-titlebar" data-start="0" data-duration="59.84" data-track-index="5">
+      <div class="titlebar clip" id="el-titlebar" data-start="0" data-duration="58.84" data-track-index="5">
         <div class="progress" id="el-progress"></div>
         <div class="brand">
           <img class="icon" id="el-icon" src="public/brand/channel-icon.png" alt="잡지식탁" />
@@ -162,7 +162,7 @@
         </div>
       </div>
 
-      <div class="capbar clip" id="el-capbar" data-start="0" data-duration="59.84" data-track-index="6"></div>
+      <div class="capbar clip" id="el-capbar" data-start="0" data-duration="58.84" data-track-index="6"></div>
 
       <!-- Captions: all shifted +0.5s to match delayed narration.
            cap-23 additional +0.1s per user request; cap-22 extended to fill gap. -->
@@ -201,7 +201,7 @@
 
       <!-- Fade-out overlay: starts AT narration end (55.84s), 4s duration → 59.84s (=root).
            Narration audio is NOT faded — the black overlay covers screen only. -->
-      <div class="fadeout clip" id="el-fade" data-start="55.84" data-duration="4.0" data-track-index="20"></div>
+      <div class="fadeout clip" id="el-fade" data-start="54.84" data-duration="4.0" data-track-index="20"></div>
 
       <!-- Audio:
            - Narration delayed 0.5s (this video only). data-duration = actual file length 55.34s
@@ -210,15 +210,16 @@
       <audio id="a-narration" src="narration.wav"
              data-start="0.5" data-duration="55.34" data-track-index="10" data-volume="1"></audio>
       <audio id="a-bgm" src="public/bgm/wildfire-60s.m4a"
-             data-start="0" data-duration="59.84" data-track-index="11" data-volume="0.5376"></audio>
+             data-start="0" data-duration="58.84" data-track-index="11" data-volume="0.5376"></audio>
     </div>
 
     <script>
       window.__timelines = window.__timelines || {};
       const tl = gsap.timeline({ paused: true });
-      const rootDuration = 59.84;
+      const rootDuration = 58.84;
       const narrationStart = 0.5;
       const narrationEnd = 55.84;
+      const fadeStart = 54.84;    // narrationEnd - 1s
 
       function sceneKB(id, start, dur) {
         const el = "#" + id;
@@ -234,7 +235,7 @@
       sceneKB("sc-3", 18.08, 8.54);
       sceneKB("sc-4", 26.62, 11.52);
       sceneKB("sc-5", 38.14, 9.72);
-      sceneKB("sc-6", 47.86, 11.98);
+      sceneKB("sc-6", 47.86, 10.98);
 
       document.querySelectorAll(".capline").forEach((el) => {
         const start = parseFloat(el.getAttribute("data-start"));
@@ -260,8 +261,8 @@
         yoyo: true, repeat: iconRepeat,
       }, 0);
 
-      // Fade-out: starts AT narration end (screen only).
-      tl.fromTo("#el-fade", { opacity: 0 }, { opacity: 1, duration: 4.0, ease: "power2.in" }, narrationEnd);
+      // Fade-out: starts 1s BEFORE narration end (screen only; narration audio not affected).
+      tl.fromTo("#el-fade", { opacity: 0 }, { opacity: 1, duration: 4.0, ease: "power2.in" }, fadeStart);
 
       window.__timelines["main"] = tl;
     </script>
