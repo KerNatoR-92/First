@@ -35,7 +35,6 @@
         background-image: url('public/bg/01.jpg');
         background-size: cover; background-position: center;
       }
-      /* Heavy overall darkening so the background reads as mood, not detail */
       .veil {
         position: absolute; inset: 0;
         background: linear-gradient(180deg,
@@ -45,7 +44,7 @@
           rgba(5,6,10,0.82) 100%);
       }
 
-      /* Small brand mark: yellow dot + wordmark */
+      /* Top-left brand chip: yellow dot + wordmark */
       .brand {
         position: absolute; top: 60px; left: 80px;
         display: flex; align-items: center; gap: 20px;
@@ -61,25 +60,24 @@
         text-shadow: 0 2px 12px rgba(0,0,0,0.7);
       }
 
-      /* Left-aligned huge title, positioned around mid-lower */
+      /* CENTER-aligned huge title, positioned around mid */
       .title-block {
         position: absolute;
-        left: 80px; right: 80px;
-        top: 44%;
+        left: 60px; right: 60px;
+        top: 50%; transform: translateY(-50%);
         display: flex; flex-direction: column;
-        align-items: flex-start;
-        text-align: left;
+        align-items: center; text-align: center;
       }
       .title-block .line {
         font-weight: 900;
-        font-size: 148px;
+        font-size: 156px;
         line-height: 1.02;
         letter-spacing: -0.045em;
         color: #ffffff;
         white-space: nowrap; word-break: keep-all;
         text-shadow: 0 3px 20px rgba(0,0,0,0.85), 0 0 40px rgba(0,0,0,0.5);
       }
-      .title-block .line + .line { margin-top: 6px; }
+      .title-block .line + .line { margin-top: 8px; }
       .title-block .line .accent { color: #ffe86b; }
     </style>
   </head>
@@ -94,8 +92,8 @@
       </div>
 
       <div class="title-block">
-        <div class="line">샤워 뒤에 왜</div>
-        <div class="line"><span class="accent">거울</span>이 뿌예질까?</div>
+        <div class="line">샤워 후 거울</div>
+        <div class="line"><span class="accent">왜</span> 뿌예질까?</div>
       </div>
     </div>
   </body>
