@@ -1,0 +1,263 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1080, height=1920" />
+    <script src="public/vendor/gsap.min.js"></script>
+    <style>
+      @font-face {
+        font-family: "NotoKR";
+        src: url("public/vendor/NotoSansKR-Regular.woff2") format("woff2");
+        font-weight: 400; font-display: block;
+      }
+      @font-face {
+        font-family: "NotoKR";
+        src: url("public/vendor/NotoSansKR-Bold.woff2") format("woff2");
+        font-weight: 700; font-display: block;
+      }
+      @font-face {
+        font-family: "NotoKR";
+        src: url("public/vendor/NotoSansKR-Black.woff2") format("woff2");
+        font-weight: 900; font-display: block;
+      }
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      html, body {
+        width: 1080px; height: 1920px; overflow: hidden;
+        background: #05060a;
+        font-family: "NotoKR", sans-serif;
+        -webkit-font-smoothing: antialiased;
+        color: #ffffff;
+      }
+      #root {
+        position: relative; width: 1080px; height: 1920px; overflow: hidden;
+        background: #05060a;
+      }
+
+      /* Top titlebar band (0-460px) */
+      .titlebar {
+        position: absolute; left: 0; top: 0; width: 1080px; height: 460px;
+        background: #05060a; z-index: 5;
+      }
+      .brand {
+        position: absolute; top: 40px; left: 60px; height: 160px;
+        display: flex; align-items: center; gap: 22px;
+      }
+      .brand .icon {
+        width: 160px; height: 160px; border-radius: 50%;
+        object-fit: cover; overflow: hidden;
+        box-shadow: 0 0 22px rgba(255,232,107,0.28), 0 4px 18px rgba(0,0,0,0.55);
+      }
+      .title {
+        position: absolute; left: 60px; right: 60px;
+        top: 224px; bottom: 40px;
+        display: flex; flex-direction: column;
+        justify-content: center; align-items: flex-start;
+        font-size: 82px; font-weight: 900;
+        letter-spacing: -0.035em; line-height: 1.08;
+        color: #ffffff;
+        text-shadow: 0 2px 12px rgba(0,0,0,0.7);
+      }
+      .title .line { display: block; }
+      .title .accent { color: #ffe86b; }
+
+      /* Middle stage band (460-1520) */
+      .stage {
+        position: absolute; left: 0; top: 460px;
+        width: 1080px; height: 1060px; overflow: hidden;
+        background: #05060a; z-index: 1;
+      }
+      .scene {
+        position: absolute; inset: 0;
+        width: 1080px; height: 1060px; overflow: hidden;
+      }
+      .scene .bg {
+        position: absolute; inset: 0;
+        background-size: cover; background-position: center;
+      }
+      .scene .veil {
+        position: absolute; inset: 0;
+        background: linear-gradient(180deg,
+          rgba(5,6,10,0.28) 0%,
+          rgba(5,6,10,0) 40%,
+          rgba(5,6,10,0) 60%,
+          rgba(5,6,10,0.55) 100%);
+      }
+
+      /* Bottom capbar band (1520-1920) */
+      .capbar {
+        position: absolute; left: 0; bottom: 0;
+        width: 1080px; height: 400px;
+        background: #05060a; z-index: 5;
+      }
+      .capline {
+        position: absolute; left: 0; right: 0; bottom: 280px;
+        text-align: center; z-index: 8;
+        font-size: 62px; font-weight: 800;
+        line-height: 1.22; letter-spacing: -0.025em;
+        color: #ffffff;
+        white-space: nowrap; word-break: keep-all;
+        text-shadow: 0 2px 12px rgba(0,0,0,0.7);
+      }
+      .capline .accent { color: #ffe86b; }
+
+      /* Top progress bar */
+      .progress {
+        position: absolute; left: 0; top: 0;
+        width: 1080px; height: 6px; z-index: 10;
+        background: linear-gradient(90deg, #ff3d68, #ffe86b);
+        transform-origin: left center;
+        transform: scaleX(0);
+      }
+
+      /* Fade-out overlay */
+      .fadeout {
+        position: absolute; inset: 0; z-index: 20;
+        background: #000; opacity: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <div
+      id="root"
+      data-composition-id="main"
+      data-start="0"
+      data-duration="57.34"
+      data-width="1080"
+      data-height="1920"
+    >
+      <!-- Middle stage: scenes with ken burns (tracks 1 and 2 alternating) -->
+      <div class="stage">
+        <div class="scene clip" id="sc-1" data-start="0" data-duration="8.5" data-track-index="1">
+          <div class="bg" style="background-image: url('public/bg/01.jpg');"></div>
+          <div class="veil"></div>
+        </div>
+        <div class="scene clip" id="sc-2" data-start="8.5" data-duration="9.08" data-track-index="2">
+          <div class="bg" style="background-image: url('public/bg/02.jpg');"></div>
+          <div class="veil"></div>
+        </div>
+        <div class="scene clip" id="sc-3" data-start="17.58" data-duration="8.54" data-track-index="1">
+          <div class="bg" style="background-image: url('public/bg/03.jpg');"></div>
+          <div class="veil"></div>
+        </div>
+        <div class="scene clip" id="sc-4" data-start="26.12" data-duration="11.52" data-track-index="2">
+          <div class="bg" style="background-image: url('public/bg/04.jpg');"></div>
+          <div class="veil"></div>
+        </div>
+        <div class="scene clip" id="sc-5" data-start="37.64" data-duration="9.72" data-track-index="1">
+          <div class="bg" style="background-image: url('public/bg/05.jpg');"></div>
+          <div class="veil"></div>
+        </div>
+        <div class="scene clip" id="sc-6" data-start="47.36" data-duration="9.98" data-track-index="2">
+          <div class="bg" style="background-image: url('public/bg/06.jpg');"></div>
+          <div class="veil"></div>
+        </div>
+      </div>
+
+      <!-- Top titlebar (fixed full-run) -->
+      <div class="titlebar clip" id="el-titlebar" data-start="0" data-duration="57.34" data-track-index="5">
+        <div class="progress" id="el-progress"></div>
+        <div class="brand">
+          <img class="icon" id="el-icon" src="public/brand/channel-icon.png" alt="잡지식탁" />
+        </div>
+        <div class="title">
+          <span class="line">샤워 후 거울</span>
+          <span class="line"><span class="accent">왜</span> 뿌예질까?</span>
+        </div>
+      </div>
+
+      <!-- Bottom capbar (fixed full-run) -->
+      <div class="capbar clip" id="el-capbar" data-start="0" data-duration="57.34" data-track-index="6"></div>
+
+      <!-- Captions (alternating tracks 3 and 4) -->
+      <div class="capline clip cap-in-capbar" id="cap-0"  data-start="0.00"  data-duration="1.10" data-track-index="3">샤워하고 나오면</div>
+      <div class="capline clip cap-in-capbar" id="cap-1"  data-start="1.10"  data-duration="1.60" data-track-index="4">거울이 <span class="accent">뿌예지는</span> 이유는?</div>
+      <div class="capline clip cap-in-capbar" id="cap-2"  data-start="3.30"  data-duration="1.30" data-track-index="3">샤워하는 욕실은</div>
+      <div class="capline clip cap-in-capbar" id="cap-3"  data-start="4.60"  data-duration="1.60" data-track-index="4">온도와 습도가 확 오르고</div>
+      <div class="capline clip cap-in-capbar" id="cap-4"  data-start="6.20"  data-duration="1.72" data-track-index="3">공기 중 <span class="accent">수증기</span>가 많아져</div>
+      <div class="capline clip cap-in-capbar" id="cap-5"  data-start="8.50"  data-duration="1.70" data-track-index="4">따뜻하고 습한 공기가</div>
+      <div class="capline clip cap-in-capbar" id="cap-6"  data-start="10.20" data-duration="2.04" data-track-index="3">차가운 거울에 닿으면</div>
+      <div class="capline clip cap-in-capbar" id="cap-7"  data-start="12.80" data-duration="2.00" data-track-index="4">수증기가 물방울로 변해</div>
+      <div class="capline clip cap-in-capbar" id="cap-8"  data-start="14.80" data-duration="2.78" data-track-index="3">이걸 <span class="accent">응결</span>이라고 해</div>
+      <div class="capline clip cap-in-capbar" id="cap-9"  data-start="18.20" data-duration="1.80" data-track-index="4">작은 물방울들이</div>
+      <div class="capline clip cap-in-capbar" id="cap-10" data-start="20.00" data-duration="1.78" data-track-index="3">거울에 촘촘히 생기고</div>
+      <div class="capline clip cap-in-capbar" id="cap-11" data-start="21.78" data-duration="2.22" data-track-index="4">빛을 여러 방향으로 흩어</div>
+      <div class="capline clip cap-in-capbar" id="cap-12" data-start="24.00" data-duration="2.12" data-track-index="3">그래서 거울이 <span class="accent">뿌예져</span></div>
+      <div class="capline clip cap-in-capbar" id="cap-13" data-start="26.84" data-duration="2.16" data-track-index="4">겨울엔 거울이 더 차가워</div>
+      <div class="capline clip cap-in-capbar" id="cap-14" data-start="29.00" data-duration="1.70" data-track-index="3">온도 차이가 커서</div>
+      <div class="capline clip cap-in-capbar" id="cap-15" data-start="30.70" data-duration="1.76" data-track-index="4">물방울이 더 잘 생겨</div>
+      <div class="capline clip cap-in-capbar" id="cap-16" data-start="33.14" data-duration="2.26" data-track-index="3">거꾸로 거울이 따뜻하면</div>
+      <div class="capline clip cap-in-capbar" id="cap-17" data-start="35.40" data-duration="2.24" data-track-index="4">물방울이 잘 안 생겨</div>
+      <div class="capline clip cap-in-capbar" id="cap-18" data-start="37.64" data-duration="1.96" data-track-index="3">찬물을 끼얹으면</div>
+      <div class="capline clip cap-in-capbar" id="cap-19" data-start="39.60" data-duration="2.36" data-track-index="4">금방 다시 뿌예지지만</div>
+      <div class="capline clip cap-in-capbar" id="cap-20" data-start="41.96" data-duration="1.84" data-track-index="3"><span class="accent">뜨거운 물</span>을 뿌리면</div>
+      <div class="capline clip cap-in-capbar" id="cap-21" data-start="43.80" data-duration="1.80" data-track-index="4">거울 온도가 올라가서</div>
+      <div class="capline clip cap-in-capbar" id="cap-22" data-start="45.60" data-duration="1.76" data-track-index="3">오래 깔끔하게 보여</div>
+      <div class="capline clip cap-in-capbar" id="cap-23" data-start="48.02" data-duration="2.78" data-track-index="4">결국 뿌예지는 이유는</div>
+      <div class="capline clip cap-in-capbar" id="cap-24" data-start="50.80" data-duration="3.74" data-track-index="3"><span class="accent">응결</span> 현상 때문이야</div>
+
+      <!-- Fade-out overlay (narration_end 54.54 - 1.2 = 53.34, duration 4s → ends at 57.34) -->
+      <div class="fadeout clip" id="el-fade" data-start="53.34" data-duration="4.0" data-track-index="20"></div>
+
+      <!-- Audio: narration (track 10) and BGM (track 11) -->
+      <audio id="a-narration" src="narration.wav"
+             data-start="0" data-duration="57.34" data-track-index="10" data-volume="1"></audio>
+      <audio id="a-bgm" src="public/bgm/wildfire-60s.m4a"
+             data-start="0" data-duration="57.34" data-track-index="11" data-volume="0.5376"></audio>
+    </div>
+
+    <script>
+      window.__timelines = window.__timelines || {};
+      const tl = gsap.timeline({ paused: true });
+      const rootDuration = 57.34;
+      const narrationEnd = 54.54;
+
+      // Ken burns helper — per template §6
+      function sceneKB(id, start, dur) {
+        const el = "#" + id;
+        tl.fromTo(el, { opacity: 0 }, { opacity: 1, duration: 0.55, ease: "power2.out" }, start);
+        tl.fromTo(el + " .bg",
+          { scale: 1.05, y: 20 },
+          { scale: 1.14, y: -20, duration: dur, ease: "sine.inOut" }, start);
+        const outDur = Math.min(0.55, dur * 0.18);
+        tl.to(el, { opacity: 0, duration: outDur, ease: "power2.in" }, start + dur - outDur);
+      }
+      sceneKB("sc-1", 0.0,   8.5);
+      sceneKB("sc-2", 8.5,   9.08);
+      sceneKB("sc-3", 17.58, 8.54);
+      sceneKB("sc-4", 26.12, 11.52);
+      sceneKB("sc-5", 37.64, 9.72);
+      sceneKB("sc-6", 47.36, 9.98);
+
+      // Captions: iterate .capline (template §7 — no ID hardcode)
+      document.querySelectorAll(".capline").forEach((el) => {
+        const start = parseFloat(el.getAttribute("data-start"));
+        const dur   = parseFloat(el.getAttribute("data-duration"));
+        const inD   = Math.max(0.18, Math.min(0.28, dur * 0.28));
+        const outD  = Math.max(0.14, Math.min(0.22, dur * 0.22));
+        tl.fromTo(el, { y: 14, opacity: 0 }, { y: 0, opacity: 1, duration: inD, ease: "power2.out" }, start);
+        tl.to(el, { y: -8, opacity: 0, duration: outD, ease: "power2.in" }, start + dur - outD);
+      });
+
+      // Top progress bar — narration end fill
+      tl.fromTo("#el-progress", { scaleX: 0 }, { scaleX: 1, duration: narrationEnd, ease: "none" }, 0);
+
+      // Icon micro-animation yoyo (template §9)
+      const iconRepeat = Math.max(0, Math.floor(rootDuration / 2.8) - 1);
+      tl.to("#el-icon", {
+        scale: 1.04, transformOrigin: "50% 50%",
+        duration: 1.4, ease: "sine.inOut",
+        yoyo: true, repeat: iconRepeat,
+      }, 0);
+      tl.to("#el-icon", {
+        opacity: 0.9,
+        duration: 1.4, ease: "sine.inOut",
+        yoyo: true, repeat: iconRepeat,
+      }, 0);
+
+      // Fade-out
+      tl.fromTo("#el-fade", { opacity: 0 }, { opacity: 1, duration: 4.0, ease: "power2.in" }, 53.34);
+
+      window.__timelines["main"] = tl;
+    </script>
+  </body>
+</html>
