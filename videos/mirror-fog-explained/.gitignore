@@ -1,0 +1,8 @@
+node_modules/
+.hyperframes/frame-packets/
+assets/gsap.min.js
+assets/voice/
+audio_engine_meta.json
+snapshots/
+public/narration.wav
+

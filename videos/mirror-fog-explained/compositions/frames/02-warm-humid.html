@@ -1,0 +1,143 @@
+<template>
+  <div id="root" data-composition-id="02-warm-humid" data-width="1080" data-height="1920" data-duration="5.65">
+    <style>
+      @font-face {font-family:"PretendardKR";src:url("assets/fonts/Pretendard-Regular.woff2") format("woff2");font-weight:400;font-display:block;}
+      @font-face {font-family:"PretendardKR";src:url("assets/fonts/Pretendard-SemiBold.woff2") format("woff2");font-weight:600;font-display:block;}
+      @font-face {font-family:"PretendardKR";src:url("assets/fonts/Pretendard-Bold.woff2") format("woff2");font-weight:800;font-display:block;}
+      @font-face {font-family:"JBMono";src:url("assets/fonts/JetBrainsMono-Regular.woff2") format("woff2");font-weight:400;font-display:block;}
+      #root {
+        width: 1080px; height: 1920px; position: relative; overflow: hidden;
+        font-family: "PretendardKR", sans-serif; color: #1F2BE0;
+      }
+      .frame02-bg {
+        position: absolute; inset: 0;
+        background: #F0EBDE;
+        background-image:
+          linear-gradient(to right, rgba(31,43,224,0.10) 1px, transparent 1px),
+          linear-gradient(to bottom, rgba(31,43,224,0.10) 1px, transparent 1px);
+        background-size: 40px 40px;
+      }
+      .frame02-hair-top, .frame02-hair-bot {
+        position: absolute; left: 44px; right: 44px; height: 2px; background: #1F2BE0;
+      }
+      .frame02-hair-top { top: 90px; }
+      .frame02-hair-bot { bottom: 90px; }
+      .frame02-brand {
+        position: absolute; top: 110px; left: 60px;
+        font-family: "JBMono", monospace; font-size: 22px; letter-spacing: 0.18em;
+        color: #1F2BE0; text-transform: uppercase;
+      }
+      .frame02-brand span { font-family: "PretendardKR"; font-weight: 800; letter-spacing: 0; text-transform: none; }
+      .frame02-page {
+        position: absolute; bottom: 110px; right: 60px;
+        font-family: "JBMono", monospace; font-size: 22px; color: #1F2BE0;
+      }
+      .frame02-nav {
+        position: absolute; bottom: 110px; left: 60px;
+        font-family: "JBMono", monospace; font-size: 22px; letter-spacing: 0.18em;
+        color: #1F2BE0; text-transform: uppercase;
+      }
+      .frame02-title {
+        position: absolute; left: 60px; top: 200px;
+        font-family: "PretendardKR"; font-weight: 800;
+        font-size: 96px; line-height: 1.02; letter-spacing: -0.03em;
+        color: #1F2BE0; max-width: 960px;
+      }
+      .frame02-sub {
+        position: absolute; left: 60px; top: 460px;
+        font-family: "PretendardKR"; font-weight: 400; font-size: 34px;
+        color: #5560E5; max-width: 960px; line-height: 1.35;
+      }
+      .frame02-metric {
+        position: absolute; width: 480px;
+        border: 2px solid #1F2BE0; background: rgba(240,235,222,0.75);
+        padding: 32px 36px;
+      }
+      .frame02-metric .k {
+        font-family: "JBMono", monospace; font-size: 20px;
+        letter-spacing: 0.18em; text-transform: uppercase; color: #1F2BE0;
+      }
+      .frame02-metric .v {
+        font-family: "PretendardKR"; font-weight: 800; font-size: 92px;
+        line-height: 1; color: #1F2BE0; margin-top: 18px;
+      }
+      .frame02-metric .u {
+        font-family: "PretendardKR"; font-weight: 400; font-size: 32px;
+        color: #5560E5; margin-top: 12px;
+      }
+      .frame02-bar {
+        margin-top: 22px; height: 12px; background: rgba(31,43,224,0.15);
+        position: relative; overflow: hidden;
+      }
+      .frame02-bar > i {
+        position: absolute; left: 0; top: 0; bottom: 0; width: 100%;
+        background: #1F2BE0; transform-origin: left center; transform: scaleX(0);
+      }
+      .frame02-m1 { left: 60px; top: 640px; }
+      .frame02-m2 { right: 60px; top: 640px; }
+      .frame02-note {
+        position: absolute; left: 60px; top: 1080px;
+        font-family: "PretendardKR"; font-weight: 600; font-size: 44px;
+        color: #1F2BE0; max-width: 960px; line-height: 1.25;
+      }
+      .frame02-steam {
+        position: absolute; border-radius: 50%;
+        background: radial-gradient(circle, rgba(31,43,224,0.22), rgba(31,43,224,0));
+        pointer-events: none;
+      }
+      .frame02-tick {
+        position: absolute; left: 60px; top: 1500px;
+        font-family: "JBMono", monospace; font-size: 20px; letter-spacing: 0.14em;
+        color: #1F2BE0; text-transform: uppercase;
+      }
+    </style>
+
+    <div class="clip frame02-bg" data-start="0" data-duration="5.65" data-track-index="1"></div>
+    <div class="clip frame02-hair-top" data-start="0" data-duration="5.65" data-track-index="2"></div>
+    <div class="clip frame02-hair-bot" data-start="0" data-duration="5.65" data-track-index="3"></div>
+    <div class="clip frame02-brand" data-start="0" data-duration="5.65" data-track-index="4">잡지식탁 &nbsp;·&nbsp; <span>매일의 궁금증</span></div>
+    <div class="clip frame02-nav" data-start="0" data-duration="5.65" data-track-index="5">Q · 02</div>
+    <div class="clip frame02-page" data-start="0" data-duration="5.65" data-track-index="6">002 / 007</div>
+
+    <div class="clip frame02-steam" id="frame02-s1" style="left: 380px; top: 1250px; width: 200px; height: 200px;" data-start="0" data-duration="5.65" data-track-index="7"></div>
+    <div class="clip frame02-steam" id="frame02-s2" style="left: 720px; top: 1160px; width: 240px; height: 240px;" data-start="0" data-duration="5.65" data-track-index="8"></div>
+    <div class="clip frame02-steam" id="frame02-s3" style="left: 120px; top: 1350px; width: 180px; height: 180px;" data-start="0" data-duration="5.65" data-track-index="9"></div>
+
+    <div class="clip frame02-title" id="frame02-title" data-start="0" data-duration="5.65" data-track-index="10">욕실이 데워진다</div>
+    <div class="clip frame02-sub" id="frame02-sub" data-start="0" data-duration="5.65" data-track-index="11">온도 · 습도 · 수증기가 한꺼번에 올라간다</div>
+
+    <div class="clip frame02-metric frame02-m1" id="frame02-m1" data-start="0" data-duration="5.65" data-track-index="12">
+      <div class="k">TEMP · 온도</div>
+      <div class="v" id="frame02-t-num">↑</div>
+      <div class="u">체온보다 더 따끈</div>
+      <div class="frame02-bar"><i id="frame02-t-bar"></i></div>
+    </div>
+    <div class="clip frame02-metric frame02-m2" id="frame02-m2" data-start="0" data-duration="5.65" data-track-index="13">
+      <div class="k">RH · 습도</div>
+      <div class="v" id="frame02-h-num">↑</div>
+      <div class="u">공기가 물을 머금는다</div>
+      <div class="frame02-bar"><i id="frame02-h-bar"></i></div>
+    </div>
+
+    <div class="clip frame02-note" id="frame02-note" data-start="0" data-duration="5.65" data-track-index="14">
+      공기 중 수증기 밀도<br/>급상승
+    </div>
+    <div class="clip frame02-tick" data-start="0" data-duration="5.65" data-track-index="15">— Stage 1 · 무대 세팅 —</div>
+
+    <script>
+      window.__timelines = window.__timelines || {};
+      const tl = gsap.timeline({ paused: true });
+      tl.fromTo("#frame02-title", { opacity: 0, y: -18 }, { opacity: 1, y: 0, duration: 0.5, ease: "power2.out" }, 0.0);
+      tl.fromTo("#frame02-sub",   { opacity: 0, x: -20 }, { opacity: 1, x: 0, duration: 0.5, ease: "power2.out" }, 0.35);
+      tl.fromTo("#frame02-m1",    { opacity: 0, y: 40 },  { opacity: 1, y: 0, duration: 0.55, ease: "power3.out" }, 0.9);
+      tl.fromTo("#frame02-t-bar", { scaleX: 0 },          { scaleX: 0.86, duration: 1.6, ease: "power2.out" }, 1.05);
+      tl.fromTo("#frame02-m2",    { opacity: 0, y: 40 },  { opacity: 1, y: 0, duration: 0.55, ease: "power3.out" }, 1.4);
+      tl.fromTo("#frame02-h-bar", { scaleX: 0 },          { scaleX: 0.92, duration: 1.6, ease: "power2.out" }, 1.55);
+      tl.fromTo("#frame02-note",  { opacity: 0, y: 20 },  { opacity: 1, y: 0, duration: 0.5, ease: "power2.out" }, 2.4);
+      tl.fromTo("#frame02-s1", { opacity: 0, y: 80, scale: 0.7 }, { opacity: 0.9, y: -30, scale: 1.15, duration: 4.5, ease: "sine.out" }, 0.4);
+      tl.fromTo("#frame02-s2", { opacity: 0, y: 120, scale: 0.6 }, { opacity: 0.85, y: -50, scale: 1.2, duration: 4.5, ease: "sine.out" }, 0.8);
+      tl.fromTo("#frame02-s3", { opacity: 0, y: 100, scale: 0.7 }, { opacity: 0.9, y: -40, scale: 1.1, duration: 4.5, ease: "sine.out" }, 0.2);
+      window.__timelines["02-warm-humid"] = tl;
+    </script>
+  </div>
+</template>

@@ -1,0 +1,119 @@
+<template>
+  <div id="root" data-composition-id="04-scatter" data-width="1080" data-height="1920" data-duration="11.2">
+    <style>
+      @font-face {font-family:"PretendardKR";src:url("assets/fonts/Pretendard-Regular.woff2") format("woff2");font-weight:400;font-display:block;}
+      @font-face {font-family:"PretendardKR";src:url("assets/fonts/Pretendard-SemiBold.woff2") format("woff2");font-weight:600;font-display:block;}
+      @font-face {font-family:"PretendardKR";src:url("assets/fonts/Pretendard-Bold.woff2") format("woff2");font-weight:800;font-display:block;}
+      @font-face {font-family:"JBMono";src:url("assets/fonts/JetBrainsMono-Regular.woff2") format("woff2");font-weight:400;font-display:block;}
+      #root { width:1080px; height:1920px; position:relative; overflow:hidden;
+        font-family:"PretendardKR",sans-serif; color:#1F2BE0; }
+      .f4-bg { position:absolute; inset:0; background:#F0EBDE;
+        background-image:linear-gradient(to right,rgba(31,43,224,0.10) 1px,transparent 1px),linear-gradient(to bottom,rgba(31,43,224,0.10) 1px,transparent 1px);
+        background-size:40px 40px; }
+      .f4-hair-top,.f4-hair-bot{position:absolute;left:44px;right:44px;height:2px;background:#1F2BE0;}
+      .f4-hair-top{top:90px;} .f4-hair-bot{bottom:90px;}
+      .f4-brand{position:absolute;top:110px;left:60px;font-family:"JBMono",monospace;font-size:22px;letter-spacing:0.18em;color:#1F2BE0;text-transform:uppercase;}
+      .f4-brand span{font-family:"PretendardKR";font-weight:800;letter-spacing:0;text-transform:none;}
+      .f4-page{position:absolute;bottom:110px;right:60px;font-family:"JBMono",monospace;font-size:22px;color:#1F2BE0;}
+      .f4-nav{position:absolute;bottom:110px;left:60px;font-family:"JBMono",monospace;font-size:22px;letter-spacing:0.18em;color:#1F2BE0;text-transform:uppercase;}
+
+      .f4-eyebrow{position:absolute;left:60px;top:200px;
+        font-family:"JBMono",monospace;font-size:24px;letter-spacing:0.22em;color:#1F2BE0;text-transform:uppercase;}
+      .f4-title{position:absolute;left:60px;top:250px;
+        font-family:"PretendardKR";font-weight:800;font-size:132px;line-height:0.96;letter-spacing:-0.03em;color:#1F2BE0;}
+      .f4-sub{position:absolute;left:60px;top:520px;
+        font-family:"PretendardKR";font-weight:400;font-size:34px;color:#5560E5;max-width:960px;line-height:1.3;}
+
+      /* macro of mirror surface with droplets */
+      .f4-surface{position:absolute;left:60px;top:660px;width:960px;height:560px;
+        background:linear-gradient(180deg,rgba(31,43,224,0.06),rgba(31,43,224,0.14));
+        border:2px solid #1F2BE0;overflow:hidden;}
+      .f4-surface .drop{position:absolute;border-radius:50%;
+        background:radial-gradient(circle at 35% 30%, rgba(240,235,222,0.9), rgba(31,43,224,0.65));
+        border:1px solid rgba(31,43,224,0.7);}
+      /* incoming rays */
+      .f4-ray-in{position:absolute;left:60px;top:660px;width:180px;height:6px;background:#1F2BE0;transform-origin:right center;}
+      .f4-ray-out{position:absolute;height:4px;background:#5560E5;transform-origin:left center;opacity:0.85;}
+      .f4-label{position:absolute;font-family:"JBMono",monospace;font-size:20px;letter-spacing:0.18em;color:#1F2BE0;text-transform:uppercase;}
+      .f4-lbl-in{left:60px;top:620px;}
+      .f4-eq{position:absolute;left:60px;top:1260px;
+        font-family:"PretendardKR";font-weight:800;font-size:64px;color:#1F2BE0;line-height:1.1;letter-spacing:-0.02em;}
+      .f4-eq b{color:#1F2BE0;}
+      .f4-eq em{font-style:normal;color:#5560E5;}
+      .f4-blur{position:absolute;left:60px;top:660px;width:960px;height:560px;
+        background:rgba(240,235,222,0.55);backdrop-filter:blur(2px);pointer-events:none;}
+      .f4-tick{position:absolute;left:60px;top:1500px;
+        font-family:"JBMono",monospace;font-size:20px;letter-spacing:0.14em;color:#1F2BE0;text-transform:uppercase;}
+    </style>
+
+    <div class="clip f4-bg" data-start="0" data-duration="11.2" data-track-index="1"></div>
+    <div class="clip f4-hair-top" data-start="0" data-duration="11.2" data-track-index="2"></div>
+    <div class="clip f4-hair-bot" data-start="0" data-duration="11.2" data-track-index="3"></div>
+    <div class="clip f4-brand" data-start="0" data-duration="11.2" data-track-index="4">잡지식탁 &nbsp;·&nbsp; <span>매일의 궁금증</span></div>
+    <div class="clip f4-nav" data-start="0" data-duration="11.2" data-track-index="5">Q · 04</div>
+    <div class="clip f4-page" data-start="0" data-duration="11.2" data-track-index="6">004 / 007</div>
+
+    <div class="clip f4-eyebrow" id="f4-eye" data-start="0" data-duration="11.2" data-track-index="7">Mechanism · 메커니즘</div>
+    <div class="clip f4-title" id="f4-title" data-start="0" data-duration="11.2" data-track-index="8">빛이 흩어진다</div>
+    <div class="clip f4-sub" id="f4-sub" data-start="0" data-duration="11.2" data-track-index="9">촘촘한 물방울마다 빛이 여러 방향으로 튄다</div>
+    <div class="clip f4-label f4-lbl-in" id="f4-lbl" data-start="0" data-duration="11.2" data-track-index="10">Incoming light · 들어오는 빛</div>
+    <div class="clip f4-surface" id="f4-surface" data-start="0" data-duration="11.2" data-track-index="11">
+      <!-- droplets -->
+      <div class="drop" id="f4-d1" style="left: 60px; top: 60px; width: 46px; height: 46px;"></div>
+      <div class="drop" id="f4-d2" style="left: 170px; top: 110px; width: 34px; height: 34px;"></div>
+      <div class="drop" id="f4-d3" style="left: 240px; top: 60px; width: 50px; height: 50px;"></div>
+      <div class="drop" id="f4-d4" style="left: 340px; top: 130px; width: 38px; height: 38px;"></div>
+      <div class="drop" id="f4-d5" style="left: 420px; top: 70px; width: 44px; height: 44px;"></div>
+      <div class="drop" id="f4-d6" style="left: 510px; top: 150px; width: 32px; height: 32px;"></div>
+      <div class="drop" id="f4-d7" style="left: 580px; top: 60px; width: 48px; height: 48px;"></div>
+      <div class="drop" id="f4-d8" style="left: 680px; top: 130px; width: 40px; height: 40px;"></div>
+      <div class="drop" id="f4-d9" style="left: 760px; top: 60px; width: 46px; height: 46px;"></div>
+      <div class="drop" id="f4-d10" style="left: 100px; top: 220px; width: 42px; height: 42px;"></div>
+      <div class="drop" id="f4-d11" style="left: 220px; top: 260px; width: 36px; height: 36px;"></div>
+      <div class="drop" id="f4-d12" style="left: 330px; top: 220px; width: 44px; height: 44px;"></div>
+      <div class="drop" id="f4-d13" style="left: 460px; top: 260px; width: 38px; height: 38px;"></div>
+      <div class="drop" id="f4-d14" style="left: 580px; top: 220px; width: 42px; height: 42px;"></div>
+      <div class="drop" id="f4-d15" style="left: 700px; top: 260px; width: 34px; height: 34px;"></div>
+      <div class="drop" id="f4-d16" style="left: 800px; top: 220px; width: 44px; height: 44px;"></div>
+      <div class="drop" id="f4-d17" style="left: 60px; top: 360px; width: 38px; height: 38px;"></div>
+      <div class="drop" id="f4-d18" style="left: 180px; top: 400px; width: 46px; height: 46px;"></div>
+      <div class="drop" id="f4-d19" style="left: 300px; top: 360px; width: 42px; height: 42px;"></div>
+      <div class="drop" id="f4-d20" style="left: 420px; top: 400px; width: 40px; height: 40px;"></div>
+      <div class="drop" id="f4-d21" style="left: 540px; top: 360px; width: 46px; height: 46px;"></div>
+      <div class="drop" id="f4-d22" style="left: 660px; top: 400px; width: 40px; height: 40px;"></div>
+      <div class="drop" id="f4-d23" style="left: 780px; top: 360px; width: 44px; height: 44px;"></div>
+      <div class="drop" id="f4-d24" style="left: 860px; top: 460px; width: 40px; height: 40px;"></div>
+    </div>
+    <div class="clip f4-blur" id="f4-blur" data-start="0" data-duration="11.2" data-track-index="12"></div>
+
+    <div class="clip f4-ray-in" id="f4-ray1" style="left: 80px; top: 780px; width: 260px;" data-start="0" data-duration="11.2" data-track-index="13"></div>
+    <div class="clip f4-ray-out" id="f4-o1" style="left: 340px; top: 780px; width: 220px; transform: rotate(28deg);" data-start="0" data-duration="11.2" data-track-index="14"></div>
+    <div class="clip f4-ray-out" id="f4-o2" style="left: 340px; top: 782px; width: 220px; transform: rotate(-24deg);" data-start="0" data-duration="11.2" data-track-index="15"></div>
+    <div class="clip f4-ray-out" id="f4-o3" style="left: 340px; top: 784px; width: 220px; transform: rotate(58deg);" data-start="0" data-duration="11.2" data-track-index="16"></div>
+    <div class="clip f4-ray-out" id="f4-o4" style="left: 340px; top: 780px; width: 220px; transform: rotate(-52deg);" data-start="0" data-duration="11.2" data-track-index="17"></div>
+
+    <div class="clip f4-eq" id="f4-eq" data-start="0" data-duration="11.2" data-track-index="18">
+      촘촘한 물방울 <em>×</em> 산란 <em>=</em> <b>뿌옇게</b>
+    </div>
+    <div class="clip f4-tick" data-start="0" data-duration="11.2" data-track-index="19">— Cause chain · 응결→산란→뿌옇음 —</div>
+
+    <script>
+      window.__timelines = window.__timelines || {};
+      const tl = gsap.timeline({ paused: true });
+      tl.fromTo("#f4-eye", { opacity: 0, y: -10 }, { opacity: 1, y: 0, duration: 0.4 }, 0.0);
+      tl.fromTo("#f4-title", { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.6, ease: "power2.out" }, 0.1);
+      tl.fromTo("#f4-sub", { opacity: 0, x: -20 }, { opacity: 1, x: 0, duration: 0.5, ease: "power2.out" }, 0.5);
+      tl.fromTo("#f4-surface", { opacity: 0, scale: 0.95 }, { opacity: 1, scale: 1, duration: 0.6, ease: "power2.out" }, 0.2);
+      tl.fromTo("#f4-lbl", { opacity: 0 }, { opacity: 1, duration: 0.3 }, 0.6);
+      tl.fromTo(".f4-surface .drop", { opacity: 0, scale: 0.3 }, { opacity: 1, scale: 1, duration: 0.35, ease: "back.out(2)", stagger: 0.03 }, 0.8);
+      tl.fromTo("#f4-ray1", { opacity: 0, scaleX: 0, transformOrigin: "left center" }, { opacity: 1, scaleX: 1, duration: 0.55, ease: "power2.out" }, 4.3);
+      tl.fromTo("#f4-o1", { opacity: 0, scaleX: 0 }, { opacity: 0.85, scaleX: 1, duration: 0.45, ease: "power2.out" }, 4.9);
+      tl.fromTo("#f4-o2", { opacity: 0, scaleX: 0 }, { opacity: 0.85, scaleX: 1, duration: 0.45, ease: "power2.out" }, 5.05);
+      tl.fromTo("#f4-o3", { opacity: 0, scaleX: 0 }, { opacity: 0.85, scaleX: 1, duration: 0.45, ease: "power2.out" }, 5.2);
+      tl.fromTo("#f4-o4", { opacity: 0, scaleX: 0 }, { opacity: 0.85, scaleX: 1, duration: 0.45, ease: "power2.out" }, 5.35);
+      tl.fromTo("#f4-blur", { opacity: 0 }, { opacity: 0.55, duration: 1.6, ease: "sine.out" }, 6.8);
+      tl.fromTo("#f4-eq", { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.55, ease: "power2.out" }, 7.6);
+      window.__timelines["04-scatter"] = tl;
+    </script>
+  </div>
+</template>

@@ -1,0 +1,111 @@
+<template>
+  <div id="root" data-composition-id="05-cold-vs-warm" data-width="1080" data-height="1920" data-duration="7.35">
+    <style>
+      @font-face {font-family:"PretendardKR";src:url("assets/fonts/Pretendard-Regular.woff2") format("woff2");font-weight:400;font-display:block;}
+      @font-face {font-family:"PretendardKR";src:url("assets/fonts/Pretendard-SemiBold.woff2") format("woff2");font-weight:600;font-display:block;}
+      @font-face {font-family:"PretendardKR";src:url("assets/fonts/Pretendard-Bold.woff2") format("woff2");font-weight:800;font-display:block;}
+      @font-face {font-family:"JBMono";src:url("assets/fonts/JetBrainsMono-Regular.woff2") format("woff2");font-weight:400;font-display:block;}
+      #root { width:1080px; height:1920px; position:relative; overflow:hidden;
+        font-family:"PretendardKR",sans-serif; color:#1F2BE0; }
+      .f5-bg{position:absolute;inset:0;background:#F0EBDE;
+        background-image:linear-gradient(to right,rgba(31,43,224,0.10) 1px,transparent 1px),linear-gradient(to bottom,rgba(31,43,224,0.10) 1px,transparent 1px);
+        background-size:40px 40px;}
+      .f5-hair-top,.f5-hair-bot{position:absolute;left:44px;right:44px;height:2px;background:#1F2BE0;}
+      .f5-hair-top{top:90px;} .f5-hair-bot{bottom:90px;}
+      .f5-brand{position:absolute;top:110px;left:60px;font-family:"JBMono",monospace;font-size:22px;letter-spacing:0.18em;color:#1F2BE0;text-transform:uppercase;}
+      .f5-brand span{font-family:"PretendardKR";font-weight:800;letter-spacing:0;text-transform:none;}
+      .f5-page{position:absolute;bottom:110px;right:60px;font-family:"JBMono",monospace;font-size:22px;color:#1F2BE0;}
+      .f5-nav{position:absolute;bottom:110px;left:60px;font-family:"JBMono",monospace;font-size:22px;letter-spacing:0.18em;color:#1F2BE0;text-transform:uppercase;}
+
+      .f5-eyebrow{position:absolute;left:60px;top:200px;
+        font-family:"JBMono",monospace;font-size:24px;letter-spacing:0.22em;color:#1F2BE0;text-transform:uppercase;}
+      .f5-title{position:absolute;left:60px;top:250px;
+        font-family:"PretendardKR";font-weight:800;font-size:128px;line-height:0.96;letter-spacing:-0.03em;color:#1F2BE0;}
+
+      .f5-card{position:absolute;width:900px;padding:36px 44px;border:2px solid #1F2BE0;background:rgba(240,235,222,0.7);}
+      .f5-card.cold{left:60px;top:560px;}
+      .f5-card.warm{left:60px;top:1020px;}
+      .f5-tag{font-family:"JBMono",monospace;font-size:22px;letter-spacing:0.22em;color:#1F2BE0;text-transform:uppercase;}
+      .f5-h{font-family:"PretendardKR";font-weight:800;font-size:88px;line-height:1;color:#1F2BE0;margin-top:12px;letter-spacing:-0.02em;}
+      .f5-body{font-family:"PretendardKR";font-weight:400;font-size:30px;color:#5560E5;margin-top:14px;line-height:1.35;}
+      .f5-dropbar{margin-top:28px;height:64px;position:relative;}
+      .f5-dropbar .d{position:absolute;bottom:0;border-radius:50% 50% 40% 40% / 60% 60% 40% 40%;background:#1F2BE0;}
+      .f5-delta{position:absolute;right:100px;top:610px;width:200px;text-align:center;}
+      .f5-delta .k{font-family:"JBMono",monospace;font-size:22px;letter-spacing:0.2em;color:#1F2BE0;text-transform:uppercase;}
+      .f5-delta .v{font-family:"PretendardKR";font-weight:800;font-size:180px;line-height:1;color:#1F2BE0;letter-spacing:-0.06em;margin-top:8px;}
+      .f5-delta .u{font-family:"JBMono",monospace;font-size:20px;letter-spacing:0.18em;color:#5560E5;text-transform:uppercase;margin-top:8px;}
+      .f5-tick{position:absolute;left:60px;top:1500px;
+        font-family:"JBMono",monospace;font-size:20px;letter-spacing:0.14em;color:#1F2BE0;text-transform:uppercase;}
+    </style>
+
+    <div class="clip f5-bg" data-start="0" data-duration="7.35" data-track-index="1"></div>
+    <div class="clip f5-hair-top" data-start="0" data-duration="7.35" data-track-index="2"></div>
+    <div class="clip f5-hair-bot" data-start="0" data-duration="7.35" data-track-index="3"></div>
+    <div class="clip f5-brand" data-start="0" data-duration="7.35" data-track-index="4">잡지식탁 &nbsp;·&nbsp; <span>매일의 궁금증</span></div>
+    <div class="clip f5-nav" data-start="0" data-duration="7.35" data-track-index="5">Q · 05</div>
+    <div class="clip f5-page" data-start="0" data-duration="7.35" data-track-index="6">005 / 007</div>
+
+    <div class="clip f5-eyebrow" id="f5-eye" data-start="0" data-duration="7.35" data-track-index="7">Variable · 조건 비교</div>
+    <div class="clip f5-title" id="f5-title" data-start="0" data-duration="7.35" data-track-index="8">온도차가 크면<br/>더 잘 뭉친다</div>
+
+    <div class="clip f5-card cold" id="f5-cold" data-start="0" data-duration="7.35" data-track-index="9">
+      <div class="f5-tag">Winter mirror · 차가운 거울</div>
+      <div class="f5-h">겨울</div>
+      <div class="f5-body">온도차 ↑ → 물방울 ↑</div>
+      <div class="f5-dropbar" id="f5-cbar">
+        <div class="d" style="left: 0px; width: 32px; height: 46px;"></div>
+        <div class="d" style="left: 46px; width: 26px; height: 38px;"></div>
+        <div class="d" style="left: 84px; width: 30px; height: 44px;"></div>
+        <div class="d" style="left: 128px; width: 22px; height: 32px;"></div>
+        <div class="d" style="left: 162px; width: 32px; height: 48px;"></div>
+        <div class="d" style="left: 208px; width: 28px; height: 42px;"></div>
+        <div class="d" style="left: 248px; width: 30px; height: 44px;"></div>
+        <div class="d" style="left: 292px; width: 24px; height: 34px;"></div>
+        <div class="d" style="left: 328px; width: 28px; height: 42px;"></div>
+        <div class="d" style="left: 368px; width: 32px; height: 46px;"></div>
+        <div class="d" style="left: 412px; width: 26px; height: 38px;"></div>
+        <div class="d" style="left: 450px; width: 30px; height: 44px;"></div>
+        <div class="d" style="left: 494px; width: 22px; height: 30px;"></div>
+        <div class="d" style="left: 528px; width: 28px; height: 42px;"></div>
+        <div class="d" style="left: 568px; width: 30px; height: 44px;"></div>
+        <div class="d" style="left: 612px; width: 24px; height: 32px;"></div>
+        <div class="d" style="left: 648px; width: 28px; height: 40px;"></div>
+        <div class="d" style="left: 688px; width: 30px; height: 44px;"></div>
+        <div class="d" style="left: 732px; width: 26px; height: 38px;"></div>
+        <div class="d" style="left: 770px; width: 32px; height: 46px;"></div>
+      </div>
+    </div>
+
+    <div class="clip f5-card warm" id="f5-warm" data-start="0" data-duration="7.35" data-track-index="10">
+      <div class="f5-tag">Warm mirror · 따뜻한 거울</div>
+      <div class="f5-h">따뜻</div>
+      <div class="f5-body">온도차 ↓ → 물방울 거의 없음</div>
+      <div class="f5-dropbar" id="f5-wbar">
+        <div class="d" style="left: 60px; width: 18px; height: 24px;"></div>
+        <div class="d" style="left: 240px; width: 20px; height: 26px;"></div>
+        <div class="d" style="left: 440px; width: 18px; height: 22px;"></div>
+        <div class="d" style="left: 640px; width: 20px; height: 26px;"></div>
+      </div>
+    </div>
+
+    <div class="clip f5-delta" id="f5-delta" data-start="0" data-duration="7.35" data-track-index="11" data-layout-allow-overlap>
+      <div class="k">ΔT · 온도차</div>
+      <div class="v">↑</div>
+      <div class="u">Bigger gap = more drops</div>
+    </div>
+    <div class="clip f5-tick" data-start="0" data-duration="7.35" data-track-index="12">— Contrast · 겨울 vs 따뜻 —</div>
+
+    <script>
+      window.__timelines = window.__timelines || {};
+      const tl = gsap.timeline({ paused: true });
+      tl.fromTo("#f5-eye", { opacity: 0, y: -10 }, { opacity: 1, y: 0, duration: 0.4 }, 0.0);
+      tl.fromTo("#f5-title", { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.6, ease: "power2.out" }, 0.1);
+      tl.fromTo("#f5-cold", { opacity: 0, x: -60 }, { opacity: 1, x: 0, duration: 0.6, ease: "power2.out" }, 0.6);
+      tl.fromTo("#f5-cbar .d", { opacity: 0, scaleY: 0, transformOrigin: "bottom center" }, { opacity: 1, scaleY: 1, duration: 0.4, ease: "back.out(1.8)", stagger: 0.04 }, 1.1);
+      tl.fromTo("#f5-warm", { opacity: 0, x: -60 }, { opacity: 1, x: 0, duration: 0.6, ease: "power2.out" }, 3.4);
+      tl.fromTo("#f5-wbar .d", { opacity: 0, scaleY: 0, transformOrigin: "bottom center" }, { opacity: 1, scaleY: 1, duration: 0.4, ease: "back.out(1.6)", stagger: 0.09 }, 3.9);
+      tl.fromTo("#f5-delta", { opacity: 0, scale: 0.7, x: 40 }, { opacity: 1, scale: 1, x: 0, duration: 0.7, ease: "back.out(1.7)" }, 0.9);
+      window.__timelines["05-cold-vs-warm"] = tl;
+    </script>
+  </div>
+</template>
