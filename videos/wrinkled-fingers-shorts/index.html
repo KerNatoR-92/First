@@ -3,28 +3,43 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=1080, height=1920" />
-    <title>물에 오래 있을 때 손가락이 쭈글쭈글해지는 이유</title>
+    <title>손가락에 물이 닿으면 쭈글쭈글해지는 이유</title>
     <script src="public/vendor/gsap.min.js"></script>
     <style>
       @font-face {
-        font-family: "Noto Sans CJK KR";
-        src: local("Noto Sans CJK KR"), local("Noto Sans KR"),
-             local("NotoSansKR-Regular"), local("Apple SD Gothic Neo"),
-             local("Malgun Gothic");
-        font-weight: 100 900;
+        font-family: "Noto Sans KR";
+        src: url("public/fonts/NotoSansKR-Bold.woff2") format("woff2");
+        font-weight: 700;
+        font-style: normal;
+        font-display: block;
       }
       @font-face {
         font-family: "Noto Sans KR";
-        src: local("Noto Sans KR"), local("NotoSansKR-Regular"),
-             local("Noto Sans CJK KR"), local("Apple SD Gothic Neo"),
-             local("Malgun Gothic");
-        font-weight: 100 900;
+        src: url("public/fonts/NotoSansKR-Black.woff2") format("woff2");
+        font-weight: 800 900;
+        font-style: normal;
+        font-display: block;
+      }
+      @font-face {
+        font-family: "Noto Sans CJK KR";
+        src: url("public/fonts/NotoSansKR-Bold.woff2") format("woff2");
+        font-weight: 700;
+        font-style: normal;
+        font-display: block;
+      }
+      @font-face {
+        font-family: "Noto Sans CJK KR";
+        src: url("public/fonts/NotoSansKR-Black.woff2") format("woff2");
+        font-weight: 800 900;
+        font-style: normal;
+        font-display: block;
       }
       @font-face {
         font-family: "Noto Sans JP";
-        src: local("Noto Sans JP"), local("NotoSansJP-Regular"),
-             local("Noto Sans CJK JP"), local("Hiragino Sans");
-        font-weight: 100 900;
+        src: url("public/fonts/NotoSansKR-Bold.woff2") format("woff2");
+        font-weight: 700;
+        font-style: normal;
+        font-display: block;
       }
       * { margin: 0; padding: 0; box-sizing: border-box; }
       html, body {
@@ -202,8 +217,6 @@
         <!-- Scene 1: 목욕/물놀이 훅 (0 - 4.77) -->
         <div id="scene-1" class="scene clip" data-start="0" data-duration="4.77" data-track-index="1">
           <div data-layout-allow-overflow class="bg bg-1"></div>
-          <div class="hero">🛁</div>
-          <div class="kicker">물놀이 <span class="accent">or</span> 목욕 후…</div>
           <div class="tint"></div>
           <div class="veil"></div>
         </div>
@@ -211,8 +224,6 @@
         <!-- Scene 2: 쭈글쭈글해진 손 (4.77 - 9.0) -->
         <div id="scene-2" class="scene clip" data-start="4.77" data-duration="4.23" data-track-index="2">
           <div data-layout-allow-overflow class="bg bg-2"></div>
-          <div class="hero">💧</div>
-          <div class="kicker right"><span class="accent">왜</span> 쭈글쭈글?</div>
           <div class="tint"></div>
           <div class="veil"></div>
         </div>
@@ -220,9 +231,6 @@
         <!-- Scene 3: 오해 (9.0 - 15.0) -->
         <div id="scene-3" class="scene clip" data-start="9.0" data-duration="6.0" data-track-index="1">
           <div data-layout-allow-overflow class="bg bg-3"></div>
-          <div class="hero">💭</div>
-          <div class="kicker"><span class="accent">오해:</span> 물을 먹어서?</div>
-          <div class="stamp">❌ 아니다</div>
           <div class="tint"></div>
           <div class="veil"></div>
         </div>
@@ -230,8 +238,6 @@
         <!-- Scene 4: 신경/혈관 반응 (15.0 - 19.77) -->
         <div id="scene-4" class="scene clip" data-start="15.0" data-duration="4.77" data-track-index="2">
           <div data-layout-allow-overflow class="bg bg-4"></div>
-          <div class="hero">🧠</div>
-          <div class="kicker">피부 신경 → <span class="accent">혈관 수축</span></div>
           <div class="tint"></div>
           <div class="veil"></div>
         </div>
@@ -239,8 +245,6 @@
         <!-- Scene 5: 혈액 감소 / 피부 당김 (19.77 - 26.99) -->
         <div id="scene-5" class="scene clip" data-start="19.77" data-duration="7.22" data-track-index="1">
           <div data-layout-allow-overflow class="bg bg-5"></div>
-          <div class="hero">🩸</div>
-          <div class="kicker">손끝 혈액 ↓ → <span class="accent">주름</span></div>
           <div class="tint"></div>
           <div class="veil"></div>
         </div>
@@ -248,8 +252,6 @@
         <!-- Scene 6: 왜? (26.99 - 30.0) -->
         <div id="scene-6" class="scene clip" data-start="26.99" data-duration="3.01" data-track-index="2">
           <div data-layout-allow-overflow class="bg bg-6"></div>
-          <div class="hero">❓</div>
-          <div class="kicker">그런데 <span class="accent">왜</span> 굳이?</div>
           <div class="tint"></div>
           <div class="veil"></div>
         </div>
@@ -257,8 +259,6 @@
         <!-- Scene 7: 그립 (30.0 - 34.78) -->
         <div id="scene-7" class="scene clip" data-start="30.0" data-duration="4.78" data-track-index="1">
           <div data-layout-allow-overflow class="bg bg-7"></div>
-          <div class="hero">🤲</div>
-          <div class="kicker">물속에서 <span class="accent">더 잘 잡기</span></div>
           <div class="tint"></div>
           <div class="veil"></div>
         </div>
@@ -266,8 +266,6 @@
         <!-- Scene 8: 배수로/트레드 (34.78 - 43.4) -->
         <div id="scene-8" class="scene clip" data-start="34.78" data-duration="8.62" data-track-index="2">
           <div data-layout-allow-overflow class="bg bg-8"></div>
-          <div class="hero">💧</div>
-          <div class="kicker">주름 = <span class="accent">배수로</span> · 미끄럼 ↓</div>
           <div class="tint"></div>
           <div class="veil"></div>
         </div>
@@ -275,8 +273,6 @@
         <!-- Scene 9: 결론 (43.4 - 55.35) -->
         <div id="scene-9" class="scene clip" data-start="43.4" data-duration="11.95" data-track-index="1">
           <div data-layout-allow-overflow class="bg bg-9"></div>
-          <div class="hero">✨</div>
-          <div class="kicker"><span class="accent">몸이 자동으로</span> 만드는 현상</div>
           <div class="tint"></div>
           <div class="veil"></div>
         </div>
@@ -288,8 +284,8 @@
           <div class="icon"></div>
         </div>
         <div class="title">
-          <span class="line">물에 오래 있을 때</span>
-          <span class="line">손가락이 <span class="accent">쭈글쭈글</span>해지는 이유</span>
+          <span class="line">손가락에 물이 닿으면</span>
+          <span class="line"><span class="accent">쭈글쭈글</span>해지는 이유</span>
         </div>
       </div>
 
@@ -381,11 +377,6 @@
         tl.fromTo(sel + " .bg",
           { scale: 1.05, y: 20 },
           { scale: 1.14, y: -20, duration: dur, ease: "sine.inOut", transformOrigin: "50% 50%" },
-          start);
-        // hero drift
-        tl.fromTo(sel + " .hero",
-          { scale: 0.96, y: 10 },
-          { scale: 1.06, y: -10, duration: dur, ease: "sine.inOut" },
           start);
         // out (last portion)
         const outDur = Math.min(0.55, dur * 0.18);
