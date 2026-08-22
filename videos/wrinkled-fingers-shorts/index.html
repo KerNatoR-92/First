@@ -94,11 +94,11 @@
         z-index: 2;
       }
       .scene .hero {
-        position: absolute; inset: 0;
+        position: absolute; right: 60px; bottom: 90px;
         display: flex; align-items: center; justify-content: center;
-        font-size: 460px; line-height: 1;
-        text-shadow: 0 20px 60px rgba(0,0,0,0.55);
-        filter: drop-shadow(0 12px 28px rgba(0,0,0,0.45));
+        font-size: 120px; line-height: 1;
+        opacity: 0.92;
+        filter: drop-shadow(0 8px 20px rgba(0,0,0,0.55));
         z-index: 3;
       }
       .scene .kicker {
@@ -121,43 +121,20 @@
         z-index: 4;
       }
 
-      /* scene-specific backgrounds (radial + linear gradients) */
-      .bg-1 { background:
-        radial-gradient(circle at 30% 25%, #6ec6ff 0%, transparent 55%),
-        radial-gradient(circle at 75% 80%, #1e5fb3 0%, transparent 60%),
-        linear-gradient(180deg, #0a2540 0%, #051a30 100%);
-      }
-      .bg-2 { background:
-        radial-gradient(circle at 60% 40%, #62d7c6 0%, transparent 60%),
-        linear-gradient(160deg, #0c3a3a 0%, #08221f 100%);
-      }
-      .bg-3 { background:
-        radial-gradient(circle at 45% 45%, #7c5cff 0%, transparent 60%),
-        linear-gradient(180deg, #2a1156 0%, #0e0630 100%);
-      }
-      .bg-4 { background:
-        radial-gradient(circle at 55% 40%, #ff4d78 0%, transparent 55%),
-        linear-gradient(180deg, #4a0a1e 0%, #1a0510 100%);
-      }
-      .bg-5 { background:
-        radial-gradient(circle at 40% 50%, #ff7ab6 0%, transparent 55%),
-        linear-gradient(180deg, #3b0740 0%, #16031a 100%);
-      }
-      .bg-6 { background:
-        radial-gradient(circle at 50% 50%, #ffb84d 0%, transparent 50%),
-        linear-gradient(180deg, #2e1400 0%, #0b0500 100%);
-      }
-      .bg-7 { background:
-        radial-gradient(circle at 55% 45%, #ffd166 0%, transparent 55%),
-        linear-gradient(180deg, #3d2200 0%, #170d00 100%);
-      }
-      .bg-8 { background:
-        radial-gradient(circle at 45% 40%, #4be3b3 0%, transparent 60%),
-        linear-gradient(180deg, #0d3b2b 0%, #05170f 100%);
-      }
-      .bg-9 { background:
-        radial-gradient(circle at 50% 45%, #ffe86b 0%, transparent 55%),
-        linear-gradient(180deg, #2a2200 0%, #0b0900 100%);
+      /* scene-specific photographic backgrounds (Unsplash · free commercial use) */
+      .bg-1 { background-image: url("public/bg/scene-1.jpg"); }
+      .bg-2 { background-image: url("public/bg/scene-2.jpg"); }
+      .bg-3 { background-image: url("public/bg/scene-3.jpg"); }
+      .bg-4 { background-image: url("public/bg/scene-4.jpg"); }
+      .bg-5 { background-image: url("public/bg/scene-5.jpg"); }
+      .bg-6 { background-image: url("public/bg/scene-6.jpg"); }
+      .bg-7 { background-image: url("public/bg/scene-7.jpg"); }
+      .bg-8 { background-image: url("public/bg/scene-8.jpg"); }
+      .bg-9 { background-image: url("public/bg/scene-9.jpg"); }
+      .scene .tint {
+        position: absolute; inset: 0;
+        background: linear-gradient(180deg, rgba(0,0,0,0.15) 0%, rgba(0,0,0,0.25) 45%, rgba(0,0,0,0.72) 100%);
+        z-index: 1;
       }
 
       /* drainage tread pattern overlay */
@@ -225,18 +202,18 @@
         <!-- Scene 1: 목욕/물놀이 훅 (0 - 4.77) -->
         <div id="scene-1" class="scene clip" data-start="0" data-duration="4.77" data-track-index="1">
           <div data-layout-allow-overflow class="bg bg-1"></div>
-          <div class="droplets"></div>
           <div class="hero">🛁</div>
           <div class="kicker">물놀이 <span class="accent">or</span> 목욕 후…</div>
+          <div class="tint"></div>
           <div class="veil"></div>
         </div>
 
         <!-- Scene 2: 쭈글쭈글해진 손 (4.77 - 9.0) -->
         <div id="scene-2" class="scene clip" data-start="4.77" data-duration="4.23" data-track-index="2">
           <div data-layout-allow-overflow class="bg bg-2"></div>
-          <div class="droplets"></div>
-          <div class="hero">🖐️</div>
+          <div class="hero">💧</div>
           <div class="kicker right"><span class="accent">왜</span> 쭈글쭈글?</div>
+          <div class="tint"></div>
           <div class="veil"></div>
         </div>
 
@@ -246,6 +223,7 @@
           <div class="hero">💭</div>
           <div class="kicker"><span class="accent">오해:</span> 물을 먹어서?</div>
           <div class="stamp">❌ 아니다</div>
+          <div class="tint"></div>
           <div class="veil"></div>
         </div>
 
@@ -254,6 +232,7 @@
           <div data-layout-allow-overflow class="bg bg-4"></div>
           <div class="hero">🧠</div>
           <div class="kicker">피부 신경 → <span class="accent">혈관 수축</span></div>
+          <div class="tint"></div>
           <div class="veil"></div>
         </div>
 
@@ -262,6 +241,7 @@
           <div data-layout-allow-overflow class="bg bg-5"></div>
           <div class="hero">🩸</div>
           <div class="kicker">손끝 혈액 ↓ → <span class="accent">주름</span></div>
+          <div class="tint"></div>
           <div class="veil"></div>
         </div>
 
@@ -270,6 +250,7 @@
           <div data-layout-allow-overflow class="bg bg-6"></div>
           <div class="hero">❓</div>
           <div class="kicker">그런데 <span class="accent">왜</span> 굳이?</div>
+          <div class="tint"></div>
           <div class="veil"></div>
         </div>
 
@@ -278,24 +259,25 @@
           <div data-layout-allow-overflow class="bg bg-7"></div>
           <div class="hero">🤲</div>
           <div class="kicker">물속에서 <span class="accent">더 잘 잡기</span></div>
+          <div class="tint"></div>
           <div class="veil"></div>
         </div>
 
         <!-- Scene 8: 배수로/트레드 (34.78 - 43.4) -->
         <div id="scene-8" class="scene clip" data-start="34.78" data-duration="8.62" data-track-index="2">
           <div data-layout-allow-overflow class="bg bg-8"></div>
-          <div class="tread"></div>
           <div class="hero">💧</div>
           <div class="kicker">주름 = <span class="accent">배수로</span> · 미끄럼 ↓</div>
+          <div class="tint"></div>
           <div class="veil"></div>
         </div>
 
         <!-- Scene 9: 결론 (43.4 - 55.35) -->
         <div id="scene-9" class="scene clip" data-start="43.4" data-duration="11.95" data-track-index="1">
           <div data-layout-allow-overflow class="bg bg-9"></div>
-          <div class="droplets"></div>
           <div class="hero">✨</div>
           <div class="kicker"><span class="accent">몸이 자동으로</span> 만드는 현상</div>
+          <div class="tint"></div>
           <div class="veil"></div>
         </div>
       </div>
@@ -356,7 +338,7 @@
              data-track-index="10"
              data-volume="1.0"></audio>
       <audio id="el-bgm" class="clip"
-             src="public/bgm/wildfire-60s.m4a"
+             src="public/bgm/wildfire-instrumental.m4a"
              data-start="0" data-duration="55.35"
              data-track-index="11"
              data-volume="0.5376"></audio>
