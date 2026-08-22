@@ -42,25 +42,10 @@
         background-size: cover;
         background-position: center;
       }
-      /* Dark veil for text legibility (light grade to keep photo mood) */
+      /* Dark veil — 배경 사진 전체를 균일하게 어둡게 (글자 판독성) */
       .veil {
         position: absolute; inset: 0;
-        background:
-          linear-gradient(180deg, rgba(0,0,0,0.30) 0%, rgba(0,0,0,0.15) 25%, rgba(0,0,0,0.55) 65%, rgba(0,0,0,0.80) 100%);
-      }
-      /* Extra dark spotlight behind the hero text zone */
-      .text-veil {
-        position: absolute;
-        left: 0; right: 0;
-        top: 720px;
-        height: 620px;
-        background: radial-gradient(ellipse 70% 70% at 50% 50%,
-          rgba(0,0,0,0.58) 0%,
-          rgba(0,0,0,0.42) 40%,
-          rgba(0,0,0,0.18) 75%,
-          rgba(0,0,0,0) 100%);
-        z-index: 1;
-        pointer-events: none;
+        background: rgba(0, 0, 0, 0.45);
       }
 
       /* Small brand mark: yellow dot + white text */
@@ -125,7 +110,6 @@
       <div class="canvas-bg"></div>
       <div class="thumb-bg"></div>
       <div class="veil"></div>
-      <div class="text-veil"></div>
 
       <div class="brand">
         <span class="dot"></span>
