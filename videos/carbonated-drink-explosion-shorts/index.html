@@ -196,12 +196,8 @@
 
       <!-- STAGE (scene layer) -->
       <div id="stage" class="stage clip" data-start="0" data-duration="56.64" data-track-index="1">
-        <div id="scene-1" class="scene clip" data-start="0"     data-duration="2.87"  data-track-index="1">
+        <div id="scene-1" class="scene clip" data-start="0"     data-duration="8.50"  data-track-index="1">
           <div class="bg" data-layout-allow-overflow="true" style="background-image:url('public/bg/bg-01.jpg')"></div>
-          <div class="veil"></div>
-        </div>
-        <div id="scene-2" class="scene clip" data-start="2.87"  data-duration="5.63"  data-track-index="2">
-          <div class="bg" data-layout-allow-overflow="true" style="background-image:url('public/bg/bg-02.jpg')"></div>
           <div class="veil"></div>
         </div>
         <div id="scene-3" class="scene clip" data-start="8.50"  data-duration="7.80"  data-track-index="1">
@@ -274,15 +270,15 @@
       <div id="cap-21" class="capline clip" data-start="36.06" data-duration="1.35" data-track-index="4">그러면서 커진 기포들이</div>
       <div id="cap-22" class="capline clip" data-start="37.45" data-duration="1.75" data-track-index="3">주변의 음료를 밀어 올리고</div>
       <div id="cap-23" class="capline clip" data-start="39.27" data-duration="1.05" data-track-index="4">결국 우리가 보는 것처럼</div>
-      <div id="cap-24" class="capline clip" data-start="40.36" data-duration="2.00" data-track-index="3">음료가 밖으로 <span class="accent">폭발</span>하듯</div>
-      <div id="cap-25" class="capline clip" data-start="42.40" data-duration="1.05" data-track-index="4">쏟아지는 거지</div>
+      <div id="cap-24" class="capline clip" data-start="40.36" data-duration="1.27" data-track-index="3">음료가 밖으로</div>
+      <div id="cap-25" class="capline clip" data-start="41.63" data-duration="1.82" data-track-index="4"><span class="accent">폭발</span>하듯 쏟아지는 거지</div>
       <div id="cap-26" class="capline clip" data-start="43.56" data-duration="1.55" data-track-index="3">즉, 탄산음료가 터지는 건</div>
       <div id="cap-27" class="capline clip" data-start="45.15" data-duration="1.90" data-track-index="4"><span class="accent">흔들어서</span> 압력이 갑자기</div>
-      <div id="cap-28" class="capline clip" data-start="47.10" data-duration="1.35" data-track-index="3">높아졌기 때문이 아니라</div>
-      <div id="cap-29" class="capline clip" data-start="48.56" data-duration="1.56" data-track-index="4">흔드는 과정에서 만들어진</div>
-      <div id="cap-30" class="capline clip" data-start="50.12" data-duration="1.35" data-track-index="3">작은 기포들이</div>
-      <div id="cap-31" class="capline clip" data-start="51.53" data-duration="0.99" data-track-index="4">뚜껑을 여는 순간</div>
-      <div id="cap-32" class="capline clip" data-start="52.52" data-duration="1.92" data-track-index="3"><span class="accent">급격하게</span> 커지기 때문이야</div>
+      <div id="cap-28" class="capline clip" data-start="47.10" data-duration="1.36" data-track-index="3">높아졌기 때문이 아니라</div>
+      <div id="cap-29" class="capline clip" data-start="48.46" data-duration="1.66" data-track-index="4">흔드는 과정에서 만들어진</div>
+      <div id="cap-30" class="capline clip" data-start="50.12" data-duration="1.01" data-track-index="3">작은 기포들이</div>
+      <div id="cap-31" class="capline clip" data-start="51.13" data-duration="1.09" data-track-index="4">뚜껑을 여는 순간</div>
+      <div id="cap-32" class="capline clip" data-start="52.22" data-duration="2.22" data-track-index="3"><span class="accent">급격하게</span> 커지기 때문이야</div>
 
       <!-- FADEOUT overlay (fades to black over last 4s) -->
       <div id="fadeout" class="fadeout clip" data-start="52.64" data-duration="4.00" data-track-index="90"></div>
@@ -328,8 +324,7 @@
         tl.to(sceneSel, { opacity: 0, duration: outDur, ease: "power2.in" }, start + dur - outDur);
       }
 
-      sceneKB("#scene-1", "#scene-1 .bg", 0.00, 2.87);
-      sceneKB("#scene-2", "#scene-2 .bg", 2.87, 5.63);
+      sceneKB("#scene-1", "#scene-1 .bg", 0.00, 8.50);
       sceneKB("#scene-3", "#scene-3 .bg", 8.50, 7.80);
       sceneKB("#scene-4", "#scene-4 .bg", 16.30, 4.90);
       sceneKB("#scene-5", "#scene-5 .bg", 21.20, 5.65);
