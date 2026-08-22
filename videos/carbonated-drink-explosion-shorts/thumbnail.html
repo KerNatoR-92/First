@@ -1,0 +1,169 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1080, height=1920" />
+    <script src="public/vendor/gsap.min.js"></script>
+    <style>
+      @font-face {
+        font-family: "Noto Sans KR";
+        font-style: normal;
+        font-weight: 400;
+        src: url("public/fonts/NotoSansKR-Regular.ttf") format("truetype");
+      }
+      @font-face {
+        font-family: "Noto Sans KR";
+        font-style: normal;
+        font-weight: 700;
+        src: url("public/fonts/NotoSansKR-Bold.ttf") format("truetype");
+      }
+      @font-face {
+        font-family: "Noto Sans KR";
+        font-style: normal;
+        font-weight: 900;
+        src: url("public/fonts/NotoSansKR-Black.ttf") format("truetype");
+      }
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      html, body {
+        width: 1080px;
+        height: 1920px;
+        overflow: hidden;
+        background: #05060a;
+        font-family: "Noto Sans KR", sans-serif;
+        -webkit-font-smoothing: antialiased;
+        color: #ffffff;
+      }
+      .canvas-bg {
+        position: absolute; inset: 0;
+        background: #05060a;
+      }
+      .thumb-bg {
+        position: absolute; inset: 0;
+        background-image: url("public/bg/bg-01.jpg");
+        background-size: cover;
+        background-position: center;
+      }
+      .veil {
+        position: absolute; inset: 0;
+        background:
+          radial-gradient(ellipse at 50% 45%, rgba(5,6,10,0.35) 0%, rgba(5,6,10,0.75) 55%, rgba(5,6,10,0.95) 100%),
+          linear-gradient(180deg, rgba(5,6,10,0.55) 0%, rgba(5,6,10,0.35) 40%, rgba(5,6,10,0.65) 80%, rgba(5,6,10,0.9) 100%);
+      }
+      .brand {
+        position: absolute;
+        top: 60px; left: 60px;
+        display: flex; align-items: center; gap: 22px;
+      }
+      .icon {
+        width: 200px; height: 200px;
+        border-radius: 999px;
+        background-image: url("public/brand/channel-icon.png");
+        background-size: cover; background-position: center;
+        box-shadow: 0 0 32px rgba(255,232,107,0.35), 0 8px 24px rgba(0,0,0,0.65);
+      }
+
+      .center-wrap {
+        position: absolute;
+        top: 340px; left: 40px; right: 40px; bottom: 260px;
+        display: flex; flex-direction: column;
+        align-items: center; justify-content: center;
+        text-align: center;
+      }
+      .kicker {
+        display: inline-block;
+        font-size: 56px;
+        font-weight: 800;
+        color: #05060a;
+        background: #ffe86b;
+        padding: 12px 40px;
+        border-radius: 999px;
+        letter-spacing: -0.02em;
+        box-shadow: 0 8px 22px rgba(0,0,0,0.55);
+        margin-bottom: 42px;
+      }
+      .hero {
+        color: #ffffff;
+        font-weight: 900;
+        font-size: 152px;
+        line-height: 1.02;
+        letter-spacing: -0.045em;
+        text-shadow:
+          0 6px 24px rgba(0,0,0,0.85),
+          0 2px 6px rgba(0,0,0,0.9);
+      }
+      .hero .row { display: block; }
+      .hero .accent {
+        color: #ffe86b;
+        text-shadow:
+          0 0 24px rgba(255,232,107,0.55),
+          0 6px 24px rgba(0,0,0,0.85);
+      }
+
+      .sub {
+        margin-top: 44px;
+        color: #ffffff;
+        font-size: 70px;
+        font-weight: 800;
+        letter-spacing: -0.03em;
+        text-shadow: 0 4px 14px rgba(0,0,0,0.85);
+      }
+      .sub .qmark { color: #ffe86b; }
+
+      .stripe {
+        position: absolute;
+        left: 0; right: 0; bottom: 150px;
+        height: 12px;
+        background: linear-gradient(90deg, #ff3d68, #ffe86b);
+        box-shadow: 0 0 26px rgba(255,232,107,0.45);
+      }
+      .foot {
+        position: absolute;
+        left: 0; right: 0; bottom: 60px;
+        text-align: center;
+        color: #ffe86b;
+        font-size: 46px;
+        font-weight: 900;
+        letter-spacing: 0.02em;
+        text-shadow: 0 4px 14px rgba(0,0,0,0.85);
+      }
+    </style>
+  </head>
+  <body>
+    <div
+      id="root"
+      data-composition-id="thumbnail"
+      data-start="0"
+      data-duration="2"
+      data-width="1080"
+      data-height="1920"
+      data-fps="30"
+    >
+      <div class="canvas-bg"></div>
+      <div class="thumb-bg"></div>
+      <div class="veil"></div>
+
+      <div class="brand">
+        <div class="icon"></div>
+      </div>
+
+      <div class="center-wrap">
+        <div class="kicker">잡학상식</div>
+        <div class="hero">
+          <span class="row">탄산음료를</span>
+          <span class="row">흔들면</span>
+          <span class="row">왜 <span class="accent">폭발</span>할까?</span>
+        </div>
+        <div class="sub">그 진짜 이유<span class="qmark">!</span></div>
+      </div>
+
+      <div class="stripe"></div>
+      <div class="foot">잡지식탁 · 60초 과학</div>
+    </div>
+
+    <script>
+      window.__timelines = window.__timelines || {};
+      const tl = gsap.timeline({ paused: true });
+      window.__timelines["thumbnail"] = tl;
+    </script>
+  </body>
+</html>
