@@ -1,0 +1,354 @@
+<!doctype html>
+<html lang="ko" data-resolution="portrait">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1080, height=1920" />
+    <script src="public/vendor/gsap.min.js"></script>
+    <style>
+      @font-face {
+        font-family: "Noto Sans CJK KR";
+        src: local("Noto Sans CJK KR"), local("Noto Sans KR"), local("NotoSansKR"), local("NotoSansCJKkr");
+        font-weight: 100 900;
+      }
+      @font-face {
+        font-family: "Noto Sans KR";
+        src: local("Noto Sans KR"), local("NotoSansKR"), local("Noto Sans CJK KR"), local("NotoSansCJKkr");
+        font-weight: 100 900;
+      }
+      @font-face {
+        font-family: "Noto Sans JP";
+        src: local("Noto Sans JP"), local("NotoSansJP"), local("Noto Sans CJK JP"), local("NotoSansCJKjp");
+        font-weight: 100 900;
+      }
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      html, body {
+        margin: 0;
+        width: 1080px;
+        height: 1920px;
+        overflow: hidden;
+        background: #05060a;
+      }
+      body {
+        font-family: "Noto Sans CJK KR", "Noto Sans KR", "Noto Sans JP", sans-serif;
+        -webkit-font-smoothing: antialiased;
+        color: #ffffff;
+      }
+
+      #root { position: relative; }
+
+      /* Full-bleed background fill (safety) */
+      .bg-fill {
+        position: absolute; inset: 0;
+        background: #05060a;
+      }
+
+      /* Top progress bar — pinned to the very top of the canvas */
+      .progress {
+        position: absolute;
+        top: 0; left: 0;
+        width: 1080px;
+        height: 6px;
+        background: linear-gradient(90deg, #ff3d68 0%, #ffe86b 100%);
+        transform-origin: left center;
+        z-index: 100;
+      }
+
+      /* ---------- Titlebar (top 460px band) ---------- */
+      .titlebar {
+        position: absolute;
+        top: 0; left: 0;
+        width: 1080px;
+        height: 460px;
+        background: #05060a;
+        z-index: 10;
+      }
+      .brand {
+        position: absolute;
+        top: 40px; left: 60px;
+        height: 160px;
+        display: flex;
+        align-items: center;
+        gap: 22px;
+      }
+      .icon {
+        width: 160px; height: 160px;
+        border-radius: 50%;
+        background: #0b0c11;
+        background-image: url("public/brand/channel-icon.png");
+        background-size: cover;
+        background-position: center;
+        box-shadow: 0 0 22px rgba(255,232,107,0.28), 0 4px 18px rgba(0,0,0,0.55);
+      }
+      .title {
+        position: absolute;
+        top: 224px; bottom: 40px;
+        left: 0; right: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        padding: 0 40px;
+      }
+      .title .line {
+        display: block;
+        font-size: 82px;
+        font-weight: 900;
+        letter-spacing: -0.035em;
+        line-height: 1.08;
+        color: #ffffff;
+        text-shadow: 0 2px 12px rgba(0,0,0,0.7);
+      }
+      .title .accent { color: #ffe86b; }
+
+      /* ---------- Stage (middle image band) ---------- */
+      .stage {
+        position: absolute;
+        top: 460px; left: 0;
+        width: 1080px; height: 1060px;
+        overflow: hidden;
+        background: #05060a;
+      }
+      .scene {
+        position: absolute;
+        inset: 0;
+        overflow: hidden;
+      }
+      .scene .bg {
+        position: absolute;
+        inset: 0;
+        background-size: cover;
+        background-position: center;
+        will-change: transform, opacity;
+      }
+      .scene .veil {
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(180deg,
+          rgba(5,6,10,0.35) 0%,
+          rgba(5,6,10,0.05) 30%,
+          rgba(5,6,10,0.10) 60%,
+          rgba(5,6,10,0.75) 100%);
+      }
+
+      /* ---------- Caption bar (bottom 400px band) ---------- */
+      .capbar {
+        position: absolute;
+        bottom: 0; left: 0;
+        width: 1080px;
+        height: 400px;
+        background: #05060a;
+        z-index: 10;
+      }
+      .capline {
+        position: absolute;
+        bottom: 280px;
+        left: 0; right: 0;
+        text-align: center;
+        font-size: 62px;
+        font-weight: 800;
+        line-height: 1.22;
+        letter-spacing: -0.025em;
+        color: #ffffff;
+        white-space: nowrap;
+        word-break: keep-all;
+        text-shadow: 0 2px 12px rgba(0,0,0,0.7);
+        will-change: transform, opacity;
+        z-index: 50;
+      }
+      .capline .accent { color: #ffe86b; }
+
+      /* ---------- Full-frame black fade-out ---------- */
+      .fadeout {
+        position: absolute;
+        inset: 0;
+        background: #000000;
+        z-index: 200;
+        opacity: 0;
+        pointer-events: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div
+      id="root"
+      data-composition-id="main"
+      data-start="0"
+      data-duration="58.14"
+      data-width="1080"
+      data-height="1920"
+    >
+      <div class="bg-fill"></div>
+
+      <!-- ===== Stage: 8 scenes alternating tracks 1/2 ===== -->
+      <div class="stage clip" id="el-stage" data-start="0" data-duration="58.14" data-track-index="0">
+        <div class="scene clip" id="scene-1" data-start="0" data-duration="5.2" data-track-index="1">
+          <div class="bg" style="background-image:url('public/bg/scene-1.jpg')"></div>
+          <div class="veil"></div>
+        </div>
+        <div class="scene clip" id="scene-2" data-start="4.8" data-duration="5.9" data-track-index="2">
+          <div class="bg" style="background-image:url('public/bg/scene-2.jpg')"></div>
+          <div class="veil"></div>
+        </div>
+        <div class="scene clip" id="scene-3" data-start="10.3" data-duration="7.5" data-track-index="1">
+          <div class="bg" style="background-image:url('public/bg/scene-3.jpg')"></div>
+          <div class="veil"></div>
+        </div>
+        <div class="scene clip" id="scene-4" data-start="17.4" data-duration="6.9" data-track-index="2">
+          <div class="bg" style="background-image:url('public/bg/scene-4.jpg')"></div>
+          <div class="veil"></div>
+        </div>
+        <div class="scene clip" id="scene-5" data-start="23.9" data-duration="8.7" data-track-index="1">
+          <div class="bg" style="background-image:url('public/bg/scene-5.jpg')"></div>
+          <div class="veil"></div>
+        </div>
+        <div class="scene clip" id="scene-6" data-start="32.2" data-duration="5.1" data-track-index="2">
+          <div class="bg" style="background-image:url('public/bg/scene-6.jpg')"></div>
+          <div class="veil"></div>
+        </div>
+        <div class="scene clip" id="scene-7" data-start="36.9" data-duration="8.4" data-track-index="1">
+          <div class="bg" style="background-image:url('public/bg/scene-7.jpg')"></div>
+          <div class="veil"></div>
+        </div>
+        <div class="scene clip" id="scene-8" data-start="44.9" data-duration="13.24" data-track-index="2">
+          <div class="bg" style="background-image:url('public/bg/scene-8.jpg')"></div>
+          <div class="veil"></div>
+        </div>
+      </div>
+
+      <!-- ===== Titlebar (fixed top band) ===== -->
+      <div class="titlebar clip" id="el-titlebar" data-start="0" data-duration="58.14" data-track-index="20">
+        <div class="brand">
+          <div class="icon" id="brand-icon"></div>
+        </div>
+        <div class="title">
+          <span class="line">녹음된 내 목소리가</span>
+          <span class="line"><span class="accent">낯설게</span> 느껴지는 이유</span>
+        </div>
+      </div>
+
+      <!-- ===== Progress bar (very top) ===== -->
+      <div class="progress clip" id="el-progress" data-start="0" data-duration="58.14" data-track-index="30"></div>
+
+      <!-- ===== Caption bar (fixed bottom band) ===== -->
+      <div class="capbar clip" id="el-capbar" data-start="0" data-duration="58.14" data-track-index="21"></div>
+
+      <!-- Captions (tracks 3 & 4 alternating) -->
+      <div class="capline clip" id="cap-0" data-start="0.20" data-duration="2.20" data-track-index="3">왜 자기 목소리를 녹음해서</div>
+      <div class="capline clip" id="cap-1" data-start="2.40" data-duration="2.10" data-track-index="4">들으면 <span class="accent">이상할까?</span></div>
+
+      <div class="capline clip" id="cap-2" data-start="4.80" data-duration="2.80" data-track-index="3">녹음한 내 목소리를 처음 들으면</div>
+      <div class="capline clip" id="cap-3" data-start="7.60" data-duration="2.90" data-track-index="4">어? 내 목소리가 이랬나?</div>
+
+      <div class="capline clip" id="cap-4" data-start="10.60" data-duration="2.30" data-track-index="3">녹음기가 <span class="accent">이상한 게 아니야</span></div>
+      <div class="capline clip" id="cap-5" data-start="12.90" data-duration="2.20" data-track-index="4">평소 듣는 내 목소리와</div>
+      <div class="capline clip" id="cap-6" data-start="15.10" data-duration="2.30" data-track-index="3">녹음된 목소리가 다르게 들려</div>
+
+      <div class="capline clip" id="cap-7" data-start="17.60" data-duration="2.20" data-track-index="4">말을 할 때 목소리는</div>
+      <div class="capline clip" id="cap-8" data-start="19.80" data-duration="2.40" data-track-index="3">공기를 통해 귀로 들어오면서</div>
+      <div class="capline clip" id="cap-9" data-start="22.20" data-duration="2.20" data-track-index="4">머리와 뼈를 통해서도</div>
+      <div class="capline clip" id="cap-10" data-start="24.40" data-duration="2.00" data-track-index="3">귀 안쪽으로 전달돼</div>
+
+      <div class="capline clip" id="cap-11" data-start="26.50" data-duration="2.30" data-track-index="4">이걸 <span class="accent">골전도</span>라고 하는데</div>
+      <div class="capline clip" id="cap-12" data-start="28.80" data-duration="2.30" data-track-index="3">뼈를 통해 전달되는 소리는</div>
+      <div class="capline clip" id="cap-13" data-start="31.10" data-duration="2.40" data-track-index="4"><span class="accent">낮은 주파수</span>가 더 강조돼</div>
+
+      <div class="capline clip" id="cap-14" data-start="33.60" data-duration="1.80" data-track-index="3">그래서 자기 목소리를</div>
+      <div class="capline clip" id="cap-15" data-start="35.40" data-duration="2.20" data-track-index="4">더 <span class="accent">낮고 묵직하게</span> 듣게 돼</div>
+
+      <div class="capline clip" id="cap-16" data-start="37.70" data-duration="2.30" data-track-index="3">그런데 녹음된 목소리는</div>
+      <div class="capline clip" id="cap-17" data-start="40.00" data-duration="2.50" data-track-index="4">공기 소리만 듣게 되니까</div>
+      <div class="capline clip" id="cap-18" data-start="42.50" data-duration="2.40" data-track-index="3">더 <span class="accent">높고 가볍게</span> 느껴져</div>
+
+      <div class="capline clip" id="cap-19" data-start="45.00" data-duration="2.40" data-track-index="4">녹음된 게 이상한 게 아니라</div>
+      <div class="capline clip" id="cap-20" data-start="47.40" data-duration="2.20" data-track-index="3">우리가 듣던 목소리가</div>
+      <div class="capline clip" id="cap-21" data-start="49.60" data-duration="2.20" data-track-index="4">실제와 조금 <span class="accent">달랐던 거야</span></div>
+
+      <div class="capline clip" id="cap-22" data-start="51.90" data-duration="2.10" data-track-index="3">결국 녹음된 목소리가</div>
+      <div class="capline clip" id="cap-23" data-start="54.00" data-duration="4.14" data-track-index="4">진짜 내 목소리에 <span class="accent">더 가까워</span></div>
+
+      <!-- Full-frame fade to black -->
+      <div class="fadeout clip" id="el-fadeout" data-start="54.14" data-duration="4.00" data-track-index="40"></div>
+
+      <!-- Audio tracks -->
+      <audio class="clip" id="narration"
+             src="narration.wav"
+             data-start="0" data-duration="55.34" data-track-index="10"
+             data-volume="1.0"></audio>
+      <audio class="clip" id="bgm"
+             src="public/bgm/wildfire-60s.m4a"
+             data-start="0" data-duration="58.14" data-track-index="11"
+             data-volume="0.5376"></audio>
+    </div>
+
+    <script>
+      window.__timelines = window.__timelines || {};
+      const tl = gsap.timeline({ paused: true });
+      const ROOT = 58.14;
+      const NARR_END = 55.34;
+
+      // ---- Progress bar: fills from 0 to narration end
+      tl.fromTo("#el-progress",
+        { scaleX: 0 },
+        { scaleX: 1, duration: NARR_END, ease: "none" }, 0);
+
+      // ---- Brand icon micro pulse
+      const iconReps = Math.max(0, Math.floor(ROOT / 2.8) - 1);
+      tl.to("#brand-icon", {
+        scale: 1.04, opacity: 1,
+        duration: 1.4, ease: "sine.inOut",
+        repeat: iconReps, yoyo: true,
+        transformOrigin: "50% 50%"
+      }, 0);
+
+      // ---- Scenes: ken burns per scene
+      function sceneKB(id, start, dur) {
+        const el = "#" + id;
+        // opacity in
+        tl.fromTo(el, { opacity: 0 }, { opacity: 1, duration: 0.55, ease: "power2.out" }, start);
+        // ken burns on inner .bg
+        tl.fromTo(el + " .bg",
+          { scale: 1.05, y: 20 },
+          { scale: 1.14, y: -20, duration: dur, ease: "sine.inOut", transformOrigin: "50% 50%" },
+          start);
+        // out fade
+        const outDur = Math.min(0.55, dur * 0.18);
+        tl.to(el, { opacity: 0, duration: outDur, ease: "power2.in" }, start + dur - outDur);
+      }
+
+      const scenes = [
+        ["scene-1", 0.00,  5.20],
+        ["scene-2", 4.80,  5.90],
+        ["scene-3", 10.30, 7.50],
+        ["scene-4", 17.40, 6.90],
+        ["scene-5", 23.90, 8.70],
+        ["scene-6", 32.20, 5.10],
+        ["scene-7", 36.90, 8.40],
+        ["scene-8", 44.90, 13.24],
+      ];
+      scenes.forEach(([id, s, d]) => sceneKB(id, s, d));
+
+      // ---- Captions: uniform in/out via .capline class (no id hardcoding)
+      document.querySelectorAll('.capline').forEach((el) => {
+        const start = parseFloat(el.dataset.start);
+        const dur = parseFloat(el.dataset.duration);
+        const inDur = Math.max(0.18, Math.min(0.28, dur * 0.18));
+        const outDur = Math.max(0.14, Math.min(0.22, dur * 0.12));
+        tl.fromTo(el, { y: 14, opacity: 0 }, { y: 0, opacity: 1, duration: inDur, ease: "power2.out" }, start);
+        tl.to(el, { y: -8, opacity: 0, duration: outDur, ease: "power2.in" }, start + dur - outDur);
+      });
+
+      // ---- Title subtle intro
+      tl.fromTo(".title .line",
+        { y: 18, opacity: 0 },
+        { y: 0, opacity: 1, duration: 0.7, ease: "power2.out", stagger: 0.12 }, 0.15);
+
+      // ---- Fade to black
+      tl.fromTo("#el-fadeout",
+        { opacity: 0 },
+        { opacity: 1, duration: 4.0, ease: "power2.inOut" }, 54.14);
+
+      window.__timelines["main"] = tl;
+    </script>
+  </body>
+</html>
