@@ -117,8 +117,7 @@
         background: #05060a; z-index: 20;
       }
       .capline {
-        position: absolute; left: 40px; right: 40px;
-        top: 50%;
+        position: absolute; left: 0; right: 0; bottom: 280px;
         text-align: center;
         font-size: 62px; font-weight: 800;
         line-height: 1.22; letter-spacing: -0.025em;
@@ -317,9 +316,9 @@
         const dur   = parseFloat(el.getAttribute("data-duration"));
         const inDur  = Math.max(0.18, Math.min(0.3, dur * 0.25));
         const outDur = Math.max(0.14, Math.min(0.25, dur * 0.2));
-        tl.set(el, { opacity: 0, y: 14, yPercent: -50 }, 0);
-        tl.to(el, { opacity: 1, y: 0, yPercent: -50, duration: inDur, ease: "power2.out" }, start);
-        tl.to(el, { opacity: 0, y: -8, yPercent: -50, duration: outDur, ease: "power2.in" },
+        tl.set(el, { opacity: 0, y: 14 }, 0);
+        tl.to(el, { opacity: 1, y: 0, duration: inDur, ease: "power2.out" }, start);
+        tl.to(el, { opacity: 0, y: -8, duration: outDur, ease: "power2.in" },
               start + dur - outDur);
       });
 
