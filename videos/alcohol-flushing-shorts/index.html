@@ -243,18 +243,18 @@
       <div id="cap-12" class="capline clip" data-start="19.72" data-duration="2.26" data-track-index="3">아세트산으로 잘 분해되지 않으면</div>
       <div id="cap-13" class="capline clip" data-start="22.00" data-duration="1.96" data-track-index="4">몸속에 더 많이 쌓이면서</div>
       <div id="cap-14" class="capline clip" data-start="23.98" data-duration="1.20" data-track-index="3">얼굴이 <span class="accent">빨개지거나</span></div>
-      <div id="cap-15" class="capline clip" data-start="25.20" data-duration="1.54" data-track-index="4">두근거림이 나타날 수 있어</div>
-      <div id="cap-16" class="capline clip" data-start="26.76" data-duration="2.68" data-track-index="3">그래서 얼굴이 빨개지는 건</div>
+      <div id="cap-15" class="capline clip" data-start="25.20" data-duration="2.34" data-track-index="4">두근거림이 나타날 수 있어</div>
+      <div id="cap-16" class="capline clip" data-start="27.56" data-duration="1.88" data-track-index="3">그래서 얼굴이 빨개지는 건</div>
       <div id="cap-17" class="capline clip" data-start="29.46" data-duration="1.98" data-track-index="4">단순히 술이 약해서가 아니라</div>
       <div id="cap-18" class="capline clip" data-start="31.46" data-duration="1.54" data-track-index="3"><span class="accent">아세트알데히드</span>를 처리하는</div>
       <div id="cap-19" class="capline clip" data-start="33.02" data-duration="1.12" data-track-index="4">능력의 <span class="accent">차이</span>가</div>
-      <div id="cap-20" class="capline clip" data-start="34.16" data-duration="2.06" data-track-index="3">하나의 원인이 될 수 있는 거야</div>
-      <div id="cap-21" class="capline clip" data-start="36.24" data-duration="2.52" data-track-index="4">반대로 얼굴이 안 빨개진다고</div>
-      <div id="cap-22" class="capline clip" data-start="38.78" data-duration="1.82" data-track-index="3">술에 강한 것도 아니고</div>
-      <div id="cap-23" class="capline clip" data-start="40.62" data-duration="2.70" data-track-index="4">즉 취하게 만드는 건 <span class="accent">에탄올</span>이고</div>
+      <div id="cap-20" class="capline clip" data-start="34.16" data-duration="2.18" data-track-index="3">하나의 원인이 될 수 있는 거야</div>
+      <div id="cap-21" class="capline clip" data-start="36.36" data-duration="2.40" data-track-index="4">반대로 얼굴이 안 빨개진다고</div>
+      <div id="cap-22" class="capline clip" data-start="38.78" data-duration="1.66" data-track-index="3">술에 강한 것도 아니고</div>
+      <div id="cap-23" class="capline clip" data-start="40.46" data-duration="2.86" data-track-index="4">즉 취하게 만드는 건 <span class="accent">에탄올</span>이고</div>
       <div id="cap-24" class="capline clip" data-start="43.34" data-duration="1.60" data-track-index="3">얼굴이 빨개지는 데에는</div>
-      <div id="cap-25" class="capline clip" data-start="44.96" data-duration="1.18" data-track-index="4"><span class="accent">아세트알데히드</span>가</div>
-      <div id="cap-26" class="capline clip" data-start="46.16" data-duration="1.71" data-track-index="3">중요하게 작용하는 거야</div>
+      <div id="cap-25" class="capline clip" data-start="44.96" data-duration="1.10" data-track-index="4"><span class="accent">아세트알데히드</span>가</div>
+      <div id="cap-26" class="capline clip" data-start="46.08" data-duration="1.79" data-track-index="3">중요하게 작용하는 거야</div>
 
       <!-- AUDIO -->
       <audio id="el-narration" class="clip"
@@ -322,15 +322,15 @@
       sceneKB("#scene-7", 26.76, 9.38);
       sceneKB("#scene-8", 36.14, 14.53);
 
-      // --- captions (fade-in 단축: 0.08~0.12s) ---
+      // --- captions ---
       document.querySelectorAll(".capline").forEach((el) => {
         const start = parseFloat(el.getAttribute("data-start"));
         const dur   = parseFloat(el.getAttribute("data-duration"));
-        const inDur  = Math.max(0.08, Math.min(0.12, dur * 0.15));
-        const outDur = Math.max(0.10, Math.min(0.18, dur * 0.15));
-        tl.set(el, { opacity: 0, y: 8 }, 0);
+        const inDur  = Math.max(0.18, Math.min(0.3, dur * 0.25));
+        const outDur = Math.max(0.14, Math.min(0.25, dur * 0.2));
+        tl.set(el, { opacity: 0, y: 14 }, 0);
         tl.to(el, { opacity: 1, y: 0, duration: inDur, ease: "power2.out" }, start);
-        tl.to(el, { opacity: 0, y: -6, duration: outDur, ease: "power2.in" },
+        tl.to(el, { opacity: 0, y: -8, duration: outDur, ease: "power2.in" },
               start + dur - outDur);
       });
 
